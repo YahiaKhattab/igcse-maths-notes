@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edexcel IAL Mathematics — Notes Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1730;
+      --navy-soft: #1B2C4D;
+      --paper: #F3EEE1;
+      --card: #FFFFFF;
+      --ink: #20283B;
+      --ink-soft: #5B6478;
+      --teal: #0E7C7B;
+      --teal-dim: #E1F0EF;
+      --ochre: #B9862E;
+      --ochre-dim: #F6EEDC;
+      --rust: #8C3419;
+      --line: #DED5C1;
+      --line-soft: #E9E3D4;
+      --radius: 12px;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-serif: Georgia, 'Iowan Old Style', serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-serif);
+      line-height: 1.6;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      background: var(--navy);
+      color: #EDF1F8;
+      padding: 72px 24px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 46px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 46px);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ochre);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+    }
+
+    .hero .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: var(--ochre);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(30px, 4.4vw, 46px);
+      line-height: 1.12;
+      margin: 0 0 16px;
+      letter-spacing: -.01em;
+      max-width: 16ch;
+    }
+
+    .hero p.lede {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: #AEBBD6;
+      max-width: 56ch;
+      margin: 0 0 30px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 22px;
+    }
+
+    .hero-stats .stat {
+      padding: 0 28px 0 0;
+      margin-right: 28px;
+      border-right: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .hero-stats .stat:last-child {
+      border-right: none;
+    }
+
+    .hero-stats .stat .n {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hero-stats .stat .l {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #8CA0C4;
+      margin-top: 6px;
+    }
+
+    /* ============ MAIN ============ */
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 24px 90px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+    }
+
+    .section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    /* ---- Paper-stub card ---- */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 1px 2px rgba(11, 23, 48, 0.05);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    a.card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(11, 23, 48, 0.12);
+      border-color: var(--teal);
+    }
+
+    .card.planned {
+      cursor: default;
+      opacity: 0.62;
+    }
+
+    .card-strip {
+      height: 14px;
+      background-image: repeating-linear-gradient(90deg,
+          var(--navy) 0 2px, transparent 2px 4px,
+          var(--navy) 4px 5px, transparent 5px 9px,
+          var(--navy) 9px 12px, transparent 12px 14px,
+          var(--navy) 14px 15px, transparent 15px 20px);
+      opacity: 0.85;
+    }
+
+    .card.planned .card-strip {
+      filter: grayscale(1);
+      opacity: 0.35;
+    }
+
+    .card-body {
+      padding: 20px 20px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-code {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 6px;
+      letter-spacing: -.01em;
+    }
+
+    .card-desc {
+      font-family: var(--font-serif);
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin: 0 0 16px;
+      line-height: 1.55;
+    }
+
+    .card-meta {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--line-soft);
+    }
+
+    .card-meta .units {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-soft);
+    }
+
+    .card-cta {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: .02em;
+    }
+
+    a.card:hover .card-cta {
+      text-decoration: underline;
+    }
+
+    /* ---- Stamp ---- */
+    .stamp {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 5px 9px;
+      border: 1.5px solid var(--teal);
+      border-radius: 5px;
+      color: var(--teal);
+      transform: rotate(-6deg);
+    }
+
+    .stamp.planned {
+      border-color: var(--ink-soft);
+      color: var(--ink-soft);
+      border-style: dashed;
+    }
+
+    /* ---- Roadmap note ---- */
+    .roadmap-note {
+      margin-top: 36px;
+      font-family: var(--font-serif);
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      font-style: italic;
+      max-width: 60ch;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 24px 50px;
+      color: var(--ink-soft);
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+    }
+
+    @media (max-width:600px) {
+      .hero {
+        padding: 56px 20px 44px;
+      }
+
+      main {
+        padding: 38px 20px 70px;
+      }
+
+      .hero-stats .stat {
+        padding-right: 18px;
+        margin-right: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Personal revision library</p>
+      <h1>Edexcel International Mathematics Notes</h1>
+      <p class="lede">One place to reach every module's notes: theory, formulas, and worked examples, built up unit by
+        unit across the qualification.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="n">4</div>
+          <div class="l">Papers complete</div>
+        </div>
+        <div class="stat">
+          <div class="n">4</div>
+          <div class="l">Papers soon</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+<div class="section-label">OL Mathematics</div>
+    <div class="grid">
+
+      <a class="card" href="Final revision 1H notes.html">
+        <div class="stamp">Complete</div>
+        <div class="card-strip"></div>
+        <div class="card-body">
+          <div class="card-code"><span>4MA1 &middot; 1H</span></div>
+          <h2 class="card-title">Paper 1H</h2>
+          <p class="card-desc">Higher Tier, Paper 1: the full specification in one sitting — number, algebra,
+            geometry and statistics, exam-ready.</p>
+          <div class="card-meta">
+            <span class="units">2 hours &middot; 100 marks</span>
+            <span class="card-cta">Open notes &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="Final_revision_2H_notes -1.html">
+        <div class="stamp">Complete</div>
+        <div class="card-strip"></div>
+        <div class="card-body">
+          <div class="card-code"><span>4MA1 &middot; 2H</span></div>
+          <h2 class="card-title">Paper 2H</h2>
+          <p class="card-desc">Higher Tier, Paper 2: the second full-spec paper — number, algebra, geometry and
+            statistics, exam-ready.</p>
+          <div class="card-meta">
+            <span class="units">2 hours &middot; 100 marks</span>
+            <span class="card-cta">Open notes &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="section-label" style="margin-top:44px;">Pure Mathematics</div>
+    <div class="grid">
+
+      <a class="card" href="pure-mathematics-1.html">
+        <div class="stamp">Complete</div>
+        <div class="card-strip"></div>
+        <div class="card-body">
+          <div class="card-code"><span>WMA11 &middot; P1</span></div>
+          <h2 class="card-title">Pure Mathematics 1</h2>
+          <p class="card-desc">Algebra and functions, coordinate geometry, trigonometry, differentiation and integration
+            — the foundations everything else builds on.</p>
+          <div class="card-meta">
+            <span class="units">12 topics &middot; 5 units</span>
+            <span class="card-cta">Open notes &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="pure-mathematics-2.html">
+        <div class="stamp">Complete</div>
+        <div class="card-strip"></div>
+        <div class="card-body">
+          <div class="card-code"><span>WMA12 &middot; P2</span></div>
+          <h2 class="card-title">Pure Mathematics 2</h2>
+          <p class="card-desc">Proof, the binomial expansion, circles, exponentials and logarithms, radians, and
+            calculus extended to trig, e, and ln.</p>
+          <div class="card-meta">
+            <span class="units">12 topics &middot; 7 units</span>
+            <span class="card-cta">Open notes &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="card planned" aria-disabled="true">
+        <div class="stamp planned">Planned</div>
+        <div class="card-strip"></div>
+        <div class="card-body">
+          <div class="card-code"><span>WMA13 &middot; P3</span></div>
+          <h2 class="card-title">Pure Mathematics 3</h2>
+          <p class="card-desc">Algebraic methods, further trigonometry, exponentials and logarithms, differentiation,
+            integration and numerical methods.</p>
+          <div class="card-meta">
+            <span class="units">Not started</span>
+            <span class="card-cta" style="color:var(--ink-soft);">Coming later</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card planned" aria-disabled="true">
+        <div class="stamp planned">Planned</div>
+        <div class="card-strip"></div>
+        <div class="card-body">
+          <div class="card-code"><span>WMA14 &middot; P4</span></div>
+          <h2 class="card-title">Pure Mathematics 4</h2>
+          <p class="card-desc">Proof, further algebra, coordinate geometry, the binomial expansion, differentiation,
+            integration and vectors.</p>
+          <div class="card-meta">
+            <span class="units">Not started</span>
+            <span class="card-cta" style="color:var(--ink-soft);">Coming later</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-label" style="margin-top:44px;">Applications</div>
+    <div class="grid">
+
+      <div class="card planned" aria-disabled="true">
+        <div class="stamp planned">Planned</div>
+        <div class="card-strip"></div>
+        <div class="card-body">
+          <div class="card-code"><span>WST01 &middot; S1</span></div>
+          <h2 class="card-title">Statistics 1</h2>
+          <p class="card-desc">Mathematical models in probability and statistics, data representation, probability, and
+            the binomial and normal distributions.</p>
+          <div class="card-meta">
+            <span class="units">Not started</span>
+            <span class="card-cta" style="color:var(--ink-soft);">Coming later</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card planned" aria-disabled="true">
+        <div class="stamp planned">Planned</div>
+        <div class="card-strip"></div>
+        <div class="card-body">
+          <div class="card-code"><span>WME01 &middot; M1</span></div>
+          <h2 class="card-title">Mechanics 1</h2>
+          <p class="card-desc">Mathematical models in mechanics, vectors, kinematics, dynamics of a particle, statics,
+            and moments.</p>
+          <div class="card-meta">
+            <span class="units">Not started</span>
+            <span class="card-cta" style="color:var(--ink-soft);">Coming later</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="roadmap-note">More modules are added as they're finished.</p>
+  </main>
+
+  <footer>Revision notes &middot; Edexcel International Mathematics &middot; Good Luck</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure Mathematics 2 — Edexcel International A Level Notes</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+<style>
+:root{
+  --navy:#0f2545;
+  --navy-2:#16345e;
+  --blue:#1d5bbf;
+  --blue-light:#e8f0fd;
+  --accent:#c9862c;
+  --accent-2:#a8471f;
+  --green:#1c7c54;
+  --green-light:#e7f6ee;
+  --red:#a8321f;
+  --red-light:#fbeceb;
+  --ink:#1c2430;
+  --ink-soft:#4a5568;
+  --paper:#fbfaf7;
+  --card:#ffffff;
+  --line:#e2e0d8;
+  --sidebar-w:290px;
+  --radius:10px;
+  --shadow:0 2px 10px rgba(15,37,69,0.06);
+  --shadow-lg:0 8px 30px rgba(15,37,69,0.12);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Georgia','Iowan Old Style',-apple-system,BlinkMacSystemFont,'Segoe UI',serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+  font-size:16.5px;
+}
+
+/* ---------- Layout ---------- */
+.layout{display:flex;min-height:100vh;}
+
+.sidebar{
+  width:var(--sidebar-w);
+  flex-shrink:0;
+  background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);
+  color:#e9edf5;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
+  padding:0 0 30px 0;
+  scrollbar-width:thin;
+  scrollbar-color:#3a5883 transparent;
+}
+.sidebar::-webkit-scrollbar{width:6px;}
+.sidebar::-webkit-scrollbar-thumb{background:#3a5883;border-radius:3px;}
+
+.sidebar-header{
+  padding:28px 24px 20px 24px;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  position:sticky;
+  top:0;
+  background:var(--navy);
+  z-index:5;
+}
+.sidebar-header .kicker{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:6px;
+}
+.sidebar-header h1{
+  font-size:21px;
+  margin:0 0 4px 0;
+  font-weight:700;
+  line-height:1.3;
+  color:#fff;
+}
+.sidebar-header .sub{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  color:#a9bcdb;
+}
+
+.nav-unit{padding:14px 0 4px 0;}
+.nav-unit-title{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:10.5px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  color:#7d93bd;
+  font-weight:700;
+  padding:8px 24px 6px 24px;
+}
+.nav-link{
+  display:block;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:13.8px;
+  color:#c7d3e8;
+  text-decoration:none;
+  padding:8px 24px 8px 30px;
+  border-left:3px solid transparent;
+  transition:all .15s ease;
+  line-height:1.4;
+}
+.nav-link:hover{background:rgba(255,255,255,0.06);color:#fff;}
+.nav-link.active{
+  background:rgba(255,255,255,0.09);
+  border-left:3px solid var(--accent);
+  color:#fff;
+  font-weight:600;
+}
+.nav-link .num{
+  display:inline-block;
+  width:20px;
+  color:#8fa3c9;
+  font-size:12px;
+}
+
+.main{
+  flex:1;
+  min-width:0;
+  padding:0;
+}
+.topbar{
+  display:none;
+}
+.content{
+  max-width:840px;
+  margin:0 auto;
+  padding:50px 48px 100px 48px;
+}
+
+/* ---------- Cover ---------- */
+.cover{
+  padding:70px 48px 50px 48px;
+  max-width:840px;
+  margin:0 auto;
+  border-bottom:3px double var(--line);
+  margin-bottom:20px;
+}
+.cover .kicker{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--blue);
+  font-weight:700;
+  margin-bottom:14px;
+}
+.cover h1{
+  font-size:42px;
+  margin:0 0 12px 0;
+  color:var(--navy);
+  line-height:1.15;
+}
+.cover .tagline{
+  font-size:18px;
+  color:var(--ink-soft);
+  font-style:italic;
+  margin-bottom:28px;
+}
+.cover-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:30px;
+}
+.cover-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px 18px;
+  box-shadow:var(--shadow);
+}
+.cover-card .label{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:10.5px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:6px;
+}
+.cover-card .val{font-size:14.5px;color:var(--ink);font-family:'Helvetica Neue',Arial,sans-serif;}
+
+/* ---------- Typography ---------- */
+.unit-marker{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--blue);
+  font-weight:700;
+  margin:0 0 8px 0;
+  padding-top:40px;
+}
+.unit-marker.first{padding-top:0;}
+
+h2.topic-title{
+  font-size:30px;
+  color:var(--navy);
+  margin:0 0 6px 0;
+  padding-bottom:14px;
+  border-bottom:2px solid var(--navy);
+  scroll-margin-top:24px;
+}
+.topic-meta{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  margin:10px 0 28px 0;
+}
+
+h3{
+  font-size:21px;
+  color:var(--navy-2);
+  margin:38px 0 14px 0;
+  scroll-margin-top:24px;
+}
+h4{
+  font-size:17px;
+  color:var(--navy-2);
+  margin:26px 0 10px 0;
+}
+p{margin:0 0 15px 0;}
+ul,ol{margin:0 0 15px 0;padding-left:24px;}
+li{margin-bottom:6px;}
+strong{color:var(--navy);}
+em.def{color:var(--accent-2);font-style:italic;}
+
+a{color:var(--blue);}
+
+/* ---------- Callouts ---------- */
+.box{
+  border-radius:var(--radius);
+  padding:18px 22px;
+  margin:20px 0;
+  box-shadow:var(--shadow);
+  border-left:4px solid;
+}
+.box-title{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+.box p:last-child{margin-bottom:0;}
+
+.formula{background:var(--blue-light);border-color:var(--blue);}
+.formula .box-title{color:var(--blue);}
+
+.tip{background:var(--green-light);border-color:var(--green);}
+.tip .box-title{color:var(--green);}
+
+.warning{background:var(--red-light);border-color:var(--red);}
+.warning .box-title{color:var(--red);}
+
+.note{background:#f4f1ea;border-color:var(--accent);}
+.note .box-title{color:var(--accent-2);}
+
+/* ---------- Worked examples ---------- */
+.example{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  margin:22px 0;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.example-header{
+  background:var(--navy);
+  color:#fff;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:0.6px;
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.example-header .tag{
+  background:var(--accent);
+  color:#2a1d0c;
+  font-size:10.5px;
+  padding:2px 8px;
+  border-radius:20px;
+  letter-spacing:0.5px;
+}
+.example-body{padding:18px 22px 20px 22px;}
+.step{
+  display:flex;
+  gap:14px;
+  margin-bottom:14px;
+  align-items:flex-start;
+}
+.step:last-child{margin-bottom:0;}
+.step-num{
+  flex-shrink:0;
+  width:26px;height:26px;
+  border-radius:50%;
+  background:var(--blue);
+  color:#fff;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+.step-content{flex:1;padding-top:2px;}
+.step-content .sk{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;
+  color:var(--ink-soft);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  margin-bottom:3px;
+}
+.example-answer{
+  margin-top:14px;
+  padding:10px 16px;
+  background:var(--green-light);
+  border-radius:6px;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:14px;
+  color:var(--green);
+  font-weight:700;
+}
+.example-question{
+  padding:16px 22px 4px 22px;
+}
+.example-question p{
+  margin:0;
+  font-weight:600;
+  color:var(--ink);
+}
+.solution-toggle{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  background:var(--paper);
+  border:none;
+  border-top:1px solid var(--line);
+  margin-top:16px;
+  padding:11px 22px;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  color:var(--blue);
+  cursor:pointer;
+  transition:background .15s ease;
+  text-align:left;
+}
+.solution-toggle:hover{background:var(--blue-light);}
+.solution-toggle .toggle-icon{
+  transition:transform .25s ease;
+  font-size:11px;
+  flex-shrink:0;
+}
+.solution-toggle.open .toggle-icon{transform:rotate(180deg);}
+.example-solution{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease;
+}
+.example-solution .example-body{padding-top:16px;}
+
+/* ---------- Cross-reference / connection box ---------- */
+.connect{background:#eef1f7;border-color:var(--navy-2);}
+.connect .box-title{color:var(--navy-2);}
+.connect a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;}
+.connect a:hover{color:var(--accent-2);}
+.toggle-all-btn{
+  display:block;
+  width:100%;
+  margin-top:14px;
+  padding:9px 14px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:8px;
+  color:#e9edf5;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:11.5px;
+  font-weight:700;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.toggle-all-btn:hover{background:rgba(255,255,255,0.16);}
+.doc-switcher{
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:60;
+  display:flex;
+  align-items:center;
+  gap:2px;
+  background:rgba(15,37,69,0.94);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:999px;
+  padding:4px;
+  box-shadow:0 4px 18px rgba(15,37,69,0.28);
+}
+.doc-switcher a{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:11.5px;
+  letter-spacing:0.4px;
+  text-decoration:none;
+  color:#a9bcdb;
+  padding:7px 13px;
+  border-radius:999px;
+  transition:background .15s ease, color .15s ease;
+  white-space:nowrap;
+}
+.doc-switcher a:hover{color:#fff;background:rgba(255,255,255,0.08);}
+.doc-switcher a.current{background:var(--accent);color:#2a1d0c;font-weight:700;}
+@media (max-width:600px){
+  .doc-switcher{top:auto;bottom:16px;right:16px;left:16px;justify-content:center;}
+}
+
+
+/* ---------- Tables ---------- */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:20px 0;
+  font-size:15px;
+  box-shadow:var(--shadow);
+  border-radius:8px;
+  overflow:hidden;
+}
+th{
+  background:var(--navy);
+  color:#fff;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  padding:10px 14px;
+  text-align:left;
+}
+td{
+  padding:10px 14px;
+  border-bottom:1px solid var(--line);
+  background:var(--card);
+}
+tr:last-child td{border-bottom:none;}
+tr:nth-child(even) td{background:#f7f6f1;}
+
+/* ---------- Diagram wrapper ---------- */
+.diagram{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px;
+  margin:22px 0;
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+.diagram svg{max-width:100%;height:auto;}
+.diagram-caption{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  margin-top:10px;
+  font-style:italic;
+}
+
+/* ---------- Two column ---------- */
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin:20px 0;
+}
+@media (max-width:700px){.two-col{grid-template-columns:1fr;}}
+
+/* ---------- Formula sheet ---------- */
+.formula-sheet{
+  padding:50px 48px 100px 48px;
+  max-width:840px;
+  margin:0 auto;
+}
+.fs-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:20px;
+}
+@media (max-width:700px){.fs-grid{grid-template-columns:1fr;}}
+.fs-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px 20px;
+  box-shadow:var(--shadow);
+}
+.fs-card h4{
+  margin:0 0 10px 0;
+  font-size:14px;
+  color:var(--blue);
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  letter-spacing:0.4px;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--line);
+  padding-bottom:8px;
+}
+.fs-card .fline{margin-bottom:9px;font-size:14.5px;}
+.fs-card .fline:last-child{margin-bottom:0;}
+.fs-card .flabel{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:11.5px;
+  color:var(--ink-soft);
+  display:block;
+  margin-bottom:2px;
+}
+
+/* mobile */
+@media (max-width:900px){
+  .sidebar{position:fixed;left:0;top:0;z-index:50;transform:translateX(-100%);transition:transform .25s ease;box-shadow:var(--shadow-lg);}
+  .sidebar.open{transform:translateX(0);}
+  .topbar{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 20px;background:var(--navy);color:#fff;
+    position:sticky;top:0;z-index:40;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+  }
+  .topbar button{
+    background:rgba(255,255,255,0.12);border:none;color:#fff;
+    width:36px;height:36px;border-radius:8px;font-size:18px;cursor:pointer;
+  }
+  .topbar .tbtitle{font-size:14.5px;font-weight:700;}
+  .content,.cover,.formula-sheet{padding-left:22px;padding-right:22px;}
+  .cover-grid{grid-template-columns:1fr;}
+  .cover h1{font-size:30px;}
+  .overlay{display:none;position:fixed;inset:0;background:rgba(15,37,69,0.4);z-index:45;}
+  .overlay.show{display:block;}
+}
+
+footer.doc-footer{
+  text-align:center;
+  padding:40px 20px 60px 20px;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  border-top:1px solid var(--line);
+  max-width:840px;
+  margin:0 auto;
+}
+</style>
+</head>
+<body>
+
+<nav class="doc-switcher" aria-label="Switch notes">
+  <a href="index.html">&larr; Index</a>
+  <a href="pure-mathematics-1.html">P1</a>
+  <a href="pure-mathematics-2.html" class="current">P2</a>
+</nav>
+
+<div class="topbar">
+  <button id="menuBtn" aria-label="Open menu">&#9776;</button>
+  <div class="tbtitle">Pure Mathematics 2 Notes</div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="kicker">Edexcel International A Level</div>
+      <h1>Pure Mathematics 2</h1>
+      <div class="sub">Complete Study Notes &middot; 12 Topics</div>
+      <button id="toggleAllBtn" class="toggle-all-btn" type="button">Expand All Examples</button>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit 1 &middot; Algebraic Methods</div>
+      <a class="nav-link" href="#t1"><span class="num">01</span>Factor &amp; Remainder Theorem</a>
+      <a class="nav-link" href="#t2"><span class="num">02</span>The Binomial Expansion</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit 2 &middot; Coordinate Geometry</div>
+      <a class="nav-link" href="#t3"><span class="num">03</span>Circles</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit 3 &middot; Exponentials &amp; Logs</div>
+      <a class="nav-link" href="#t4"><span class="num">04</span>Exponentials &amp; Logarithms</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit 4 &middot; Trigonometry</div>
+      <a class="nav-link" href="#t5"><span class="num">05</span>Radians, Graphs &amp; Identities</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit 5 &middot; Calculus</div>
+      <a class="nav-link" href="#t6"><span class="num">06</span>Differentiation</a>
+      <a class="nav-link" href="#t7"><span class="num">07</span>Integration</a>
+      <a class="nav-link" href="#t8"><span class="num">08</span>The Trapezium Rule</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit 6 &middot; Sequences &amp; Series</div>
+      <a class="nav-link" href="#t9"><span class="num">09</span>Arithmetic Sequences</a>
+      <a class="nav-link" href="#t10"><span class="num">10</span>Geometric Sequences</a>
+      <a class="nav-link" href="#t11"><span class="num">11</span>Sigma Notation</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit 7 &middot; Proof</div>
+      <a class="nav-link" href="#t12"><span class="num">12</span>Methods of Proof</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Reference</div>
+      <a class="nav-link" href="#formulasheet"><span class="num">&#9733;</span>Formula Sheet</a>
+    </div>
+  </nav>
+
+  <div class="main">
+    <div class="cover">
+      <div class="kicker">Edexcel International A Level &middot; WMA12</div>
+      <h1>Pure Mathematics 2</h1>
+      <div class="tagline">Complete notes covering all 12 topics, built for exam-ready understanding.</div>
+      <div class="cover-grid">
+        <div class="cover-card"><div class="label">Syllabus</div><div class="val">Edexcel IAL Pure 2</div></div>
+        <div class="cover-card"><div class="label">Coverage</div><div class="val">12 topics &middot; 7 units</div></div>
+        <div class="cover-card"><div class="label">Companion to</div><div class="val">Pure Mathematics 1 Notes</div></div>
+      </div>
+    </div>
+
+    <div class="content" id="contentroot">
+<div class="unit-marker first">Unit 1 &middot; Algebraic Methods</div>
+<h2 class="topic-title" id="t1">1. Factor &amp; Remainder Theorem</h2>
+<div class="topic-meta">Polynomial division &middot; testing factors &middot; factorising cubics &middot; the remainder theorem</div>
+
+<p>A <em class="def">polynomial</em> is an expression made up of terms with non-negative whole-number powers of $x$, such as $3x^3+5x^2+3x+5$. Polynomials of degree 3 (cubics) and degree 4 (quartics) appear frequently in P2 — you need to be able to divide them, test them for factors, and fully factorise them.</p>
+
+<h3>The Factor Theorem</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Factor Theorem</div>
+<p>If $f(x)$ is a polynomial and $f(a)=0$, then $(x-a)$ is a factor of $f(x)$.</p>
+<p>More generally, if $f\left(\dfrac{a}{b}\right)=0$, then $(bx-a)$ is a factor of $f(x)$.</p>
+</div>
+
+<p>This works both ways: if $(x-a)$ is a factor, substituting $x=a$ into $f(x)$ must give zero. This gives a quick way to <strong>test</strong> whether a linear expression is a factor of a polynomial, without doing any division at all.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Testing a factor</span></div>
+<div class="example-question">
+<p>Show that $(x-2)$ is a factor of $f(x) = x^3 - 3x^2 - 4x + 12$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Identify the root to test</div>Since the factor is $(x-2)$, we substitute $x=2$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Substitute</div>$f(2) = (2)^3 - 3(2)^2 - 4(2) + 12 = 8 - 12 - 8 + 12 = 0$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Conclude</div>Since $f(2)=0$, by the factor theorem $(x-2)$ is a factor of $f(x)$.</div>
+</div>
+<div class="example-answer">✓ $(x-2)$ is confirmed as a factor</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Which values to try</div>
+<p>When you need to <em>find</em> a factor from scratch (rather than test a given one), try factors of the constant term first — for $f(x)=x^3-3x^2-4x+12$, try $x = \pm1,\pm2,\pm3,\pm4,\pm6,\pm12$. If the leading coefficient isn't 1, also consider fractions $\dfrac{p}{q}$ where $p$ divides the constant term and $q$ divides the leading coefficient.</p>
+</div>
+
+<h3>The Remainder Theorem</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Remainder Theorem</div>
+<p>If a polynomial $f(x)$ is divided by $(x-a)$, the remainder is $f(a)$.</p>
+<p>If $f(x)$ is divided by $(bx-a)$, the remainder is $f\left(\dfrac{a}{b}\right)$.</p>
+</div>
+
+<p>The factor theorem is really just a special case of the remainder theorem: a factor is simply a divisor that leaves a remainder of zero.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Finding a remainder</span></div>
+<div class="example-question">
+<p>Find the remainder when $f(x) = 2x^3 + x^2 - 5x + 3$ is divided by $(x+2)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Write the divisor as $(x-a)$</div>$(x+2) = (x-(-2))$, so $a=-2$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Evaluate $f(a)$</div>$f(-2) = 2(-2)^3+(-2)^2-5(-2)+3 = -16+4+10+3=1$</div>
+</div>
+<div class="example-answer">Remainder = 1</div>
+</div>
+</div>
+</div>
+
+<h3>Fully Factorising a Cubic</h3>
+<p>Once you've found <strong>one</strong> linear factor using the factor theorem, divide the cubic by that factor to leave a quadratic, then factorise (or use the quadratic formula on) the quadratic to find the remaining factors.</p>
+
+<div class="two-col">
+<div class="box note">
+<div class="box-title">Method A &mdash; Algebraic Long Division</div>
+<p>Divide the cubic by the known factor term-by-term, exactly like long division of numbers, keeping track of place value in powers of $x$.</p>
+</div>
+<div class="box note">
+<div class="box-title">Method B &mdash; Comparing Coefficients</div>
+<p>Write $f(x) = (x-a)(px^2+qx+r)$, expand the right-hand side, and match coefficients of $x^3$, $x^2$, $x$ and the constant term to find $p$, $q$, $r$.</p>
+</div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Full factorisation</span></div>
+<div class="example-question">
+<p>Fully factorise $f(x) = x^3 - 3x^2 - 4x + 12$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find a first factor</div>From the earlier example, $f(2)=0$, so $(x-2)$ is a factor.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Compare coefficients</div>Let $f(x) = (x-2)(x^2+bx+c)$. Expanding: $x^3+bx^2+cx-2x^2-2bx-2c = x^3+(b-2)x^2+(c-2b)x-2c$.<br>Comparing constants: $-2c=12 \Rightarrow c=-6$.<br>Comparing $x^2$: $b-2=-3 \Rightarrow b=-1$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Write the quadratic factor</div>$f(x) = (x-2)(x^2-x-6)$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Factorise the quadratic</div>$x^2-x-6 = (x-3)(x+2)$</div>
+</div>
+<div class="example-answer">$f(x) = (x-2)(x-3)(x+2)$</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Always check your final factorisation by expanding it back out, or by testing one more root. A sign error in the comparing-coefficients step is the most common cause of lost marks in this topic.</p>
+</div>
+
+<h4>Sketching from a Factorised Cubic</h4>
+<p>Once fully factorised, $f(x) = (x-2)(x-3)(x+2)$ tells you immediately that the curve crosses the $x$-axis at $x=2,\ 3,\ -2$, and crosses the $y$-axis at $f(0) = (-2)(-3)(2) = 12$. Since the coefficient of $x^3$ is positive, the graph starts low on the left and rises to the right, alternating direction at each root.</p>
+
+
+<h2 class="topic-title" id="t2">2. The Binomial Expansion</h2>
+<div class="topic-meta">Pascal's triangle &middot; $\binom{n}{r}$ notation &middot; expanding $(a+b)^n$ &middot; finding a specific term</div>
+
+<p>The binomial expansion gives a shortcut for expanding brackets of the form $(a+b)^n$ for a positive integer $n$, without multiplying everything out by hand.</p>
+
+<h3>Binomial Coefficients</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Binomial Coefficient</div>
+<p>$$\binom{n}{r} = {}^nC_r = \frac{n!}{r!(n-r)!}$$</p>
+<p>This counts the number of ways of choosing $r$ items from $n$, and gives the coefficients in the expansion of $(a+b)^n$.</p>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg">
+  <text x="280" y="24" text-anchor="middle" font-family="Helvetica Neue,Arial" font-size="13" fill="#4a5568" font-weight="700">PASCAL'S TRIANGLE</text>
+  <g font-family="Georgia,serif" font-size="17" fill="#0f2545" text-anchor="middle">
+    <text x="280" y="60">1</text>
+    <text x="245" y="92">1</text><text x="315" y="92">1</text>
+    <text x="210" y="124">1</text><text x="280" y="124">2</text><text x="350" y="124">1</text>
+    <text x="175" y="156">1</text><text x="245" y="156">3</text><text x="315" y="156">3</text><text x="385" y="156">1</text>
+    <text x="140" y="188">1</text><text x="210" y="188">4</text><text x="280" y="188">6</text><text x="350" y="188">4</text><text x="420" y="188">1</text>
+    <text x="105" y="220">1</text><text x="175" y="220">5</text><text x="245" y="220">10</text><text x="315" y="220">10</text><text x="385" y="220">5</text><text x="455" y="220">1</text>
+  </g>
+  <g font-family="Helvetica Neue,Arial" font-size="11" fill="#a8471f" text-anchor="start">
+    <text x="470" y="60">n = 0</text>
+    <text x="470" y="92">n = 1</text>
+    <text x="470" y="124">n = 2</text>
+    <text x="470" y="156">n = 3</text>
+    <text x="470" y="188">n = 4</text>
+    <text x="470" y="220">n = 5</text>
+  </g>
+</svg>
+<div class="diagram-caption">Each row gives the coefficients for $(a+b)^n$. Each entry is the sum of the two entries diagonally above it.</div>
+</div>
+
+<p>Pascal's triangle is quick for small $n$, but for larger $n$ (or when you only need one term), use $\binom{n}{r}$ directly.</p>
+
+<h3>The General Expansion</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Binomial Expansion</div>
+<p>$$(a+b)^n = a^n + \binom{n}{1}a^{n-1}b + \binom{n}{2}a^{n-2}b^2 + \dots + \binom{n}{r}a^{n-r}b^r + \dots + b^n$$</p>
+<p>The general term is $\binom{n}{r}a^{n-r}b^r$, and there are $n+1$ terms in total.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Full expansion</span></div>
+<div class="example-question">
+<p>Expand $(2+3x)^4$ in ascending powers of $x$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Set up with $a=2$, $b=3x$, $n=4$</div>Coefficients from row $n=4$ of Pascal's triangle: $1, 4, 6, 4, 1$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Write each term</div>
+$1\cdot 2^4 + 4\cdot 2^3(3x) + 6\cdot 2^2(3x)^2 + 4\cdot 2^1(3x)^3 + 1\cdot(3x)^4$
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Simplify each term</div>
+$16 + 4(8)(3x) + 6(4)(9x^2) + 4(2)(27x^3) + 81x^4$<br>
+$= 16 + 96x + 216x^2 + 216x^3 + 81x^4$
+</div>
+</div>
+<div class="example-answer">$(2+3x)^4 = 16 + 96x + 216x^2 + 216x^3 + 81x^4$</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Don't forget to raise <strong>both</strong> $a$ and $b$ to the appropriate powers — a very common error is expanding $(2+3x)^4$ as if it were $(1+3x)^4$, forgetting that $2^{n-r}$ needs to be included in every term, not just the first.</p>
+</div>
+
+<h3>Finding a Specific Term</h3>
+<p>You often don't need the whole expansion — just one particular term, such as the coefficient of $x^3$. Use the general term formula directly.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">One term only</span></div>
+<div class="example-question">
+<p>Find the coefficient of $x^3$ in the expansion of $(1-2x)^{7}$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Write the general term</div>With $a=1,\ b=-2x,\ n=7$: general term $=\binom{7}{r}(1)^{7-r}(-2x)^r = \binom{7}{r}(-2)^r x^r$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Set the power equal to 3</div>We need $r=3$: $\binom{7}{3}(-2)^3 = 35 \times (-8) = -280$</div>
+</div>
+<div class="example-answer">Coefficient of $x^3$ is $-280$</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Using expansions for estimates</div>
+<p>Binomial expansions can approximate numerical values. For example, substituting a small value of $x$ into $(1+x)^n$ and its expansion gives an approximation for $(1+x)^n$ using only the first few terms — useful when a full calculation would be impractical.</p>
+</div>
+
+
+<div class="unit-marker">Unit 2 &middot; Coordinate Geometry</div>
+<h2 class="topic-title" id="t3">3. Circles</h2>
+<div class="topic-meta">Equation of a circle &middot; center and radius &middot; tangents &middot; circle theorems</div>
+
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p>Finding a circle's center and radius reuses <a href="pure-mathematics-1.html#quadratics">P1 &mdash; Quadratics</a> (completing the square), and tangent problems reuse <a href="pure-mathematics-1.html#discriminant">P1 &mdash; The Discriminant</a> (setting $D=0$).</p>
+</div>
+
+<h3>The Equation of a Circle</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Circle centered at $(a,b)$</div>
+<p>$$(x-a)^2+(y-b)^2=r^2$$</p>
+<p>This is the set of all points a fixed distance $r$ (the radius) from the center $(a,b)$ — it comes directly from the distance formula.</p>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="200" cy="150" r="90" fill="none" stroke="#1d5bbf" stroke-width="2.5"/>
+  <circle cx="200" cy="150" r="3" fill="#0f2545"/>
+  <text x="208" y="146" font-family="Helvetica Neue,Arial" font-size="13" fill="#0f2545">(a, b)</text>
+  <line x1="200" y1="150" x2="264" y2="105" stroke="#a8471f" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="222" y="115" font-family="Georgia,serif" font-style="italic" font-size="14" fill="#a8471f">r</text>
+  <circle cx="264" cy="105" r="3" fill="#a8471f"/>
+  <text x="272" y="102" font-family="Georgia,serif" font-size="13" fill="#1c2430">(x, y)</text>
+  <line x1="30" y1="150" x2="380" y2="150" stroke="#c9c6ba" stroke-width="1"/>
+  <line x1="200" y1="20" x2="200" y2="280" stroke="#c9c6ba" stroke-width="1"/>
+</svg>
+<div class="diagram-caption">Every point $(x,y)$ on the circle is a distance $r$ from the center $(a,b)$.</div>
+</div>
+
+<h3>General Form of a Circle's Equation</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Expanded (general) form</div>
+<p>$$x^2+y^2+2gx+2fy+c=0$$</p>
+<p>has center $(-g,\,-f)$ and radius $r=\sqrt{g^2+f^2-c}$.</p>
+</div>
+
+<p>This form arises from expanding $(x-a)^2+(y-b)^2=r^2$. To go from the general form back to center/radius form, <strong>complete the square</strong> on the $x$ terms and the $y$ terms separately.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Completing the square</span></div>
+<div class="example-question">
+<p>Find the center and radius of the circle $x^2+y^2-6x+4y-3=0$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Group $x$ and $y$ terms</div>$(x^2-6x) + (y^2+4y) = 3$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Complete the square on each bracket</div>$(x-3)^2-9 + (y+2)^2-4 = 3$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Rearrange to circle form</div>$(x-3)^2+(y+2)^2 = 3+9+4 = 16$</div>
+</div>
+<div class="example-answer">Center $(3,-2)$, radius $r=\sqrt{16}=4$</div>
+</div>
+</div>
+</div>
+
+<h3>Key Circle Theorems</h3>
+<div class="two-col">
+<div class="diagram" style="margin:0;">
+<svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="130" cy="110" r="80" fill="none" stroke="#1d5bbf" stroke-width="2"/>
+  <line x1="50" y1="110" x2="210" y2="110" stroke="#0f2545" stroke-width="2"/>
+  <circle cx="50" cy="110" r="2.5" fill="#0f2545"/>
+  <circle cx="210" cy="110" r="2.5" fill="#0f2545"/>
+  <line x1="50" y1="110" x2="150" y2="35" stroke="#a8471f" stroke-width="2"/>
+  <line x1="210" y1="110" x2="150" y2="35" stroke="#a8471f" stroke-width="2"/>
+  <circle cx="150" cy="35" r="2.5" fill="#a8471f"/>
+  <path d="M 138 55 L 148 55 L 148 45" fill="none" stroke="#1c7c54" stroke-width="2"/>
+  <text x="120" y="200" font-family="Helvetica Neue,Arial" font-size="12" fill="#4a5568">Angle in a semicircle = 90°</text>
+</svg>
+</div>
+<div class="diagram" style="margin:0;">
+<svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="130" cy="110" r="80" fill="none" stroke="#1d5bbf" stroke-width="2"/>
+  <circle cx="130" cy="110" r="2.5" fill="#0f2545"/>
+  <line x1="65" y1="65" x2="185" y2="145" stroke="#0f2545" stroke-width="2"/>
+  <circle cx="65" cy="65" r="2.5" fill="#0f2545"/>
+  <circle cx="185" cy="145" r="2.5" fill="#0f2545"/>
+  <line x1="130" y1="110" x2="125" y2="105" stroke="#a8471f" stroke-width="2" stroke-dasharray="3,2"/>
+  <path d="M 118 98 L 112 104 L 118 110" fill="none" stroke="#1c7c54" stroke-width="2" transform="rotate(45 125 105)"/>
+  <text x="95" y="200" font-family="Helvetica Neue,Arial" font-size="12" fill="#4a5568">Perpendicular from center bisects a chord</text>
+</svg>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; The three circle facts you'll use constantly</div>
+<p><strong>1.</strong> The angle subtended by a diameter at the circumference is always $90°$.<br>
+<strong>2.</strong> The perpendicular from the center to a chord bisects the chord (and vice versa).<br>
+<strong>3.</strong> A tangent to a circle is always perpendicular to the radius at the point of contact.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Using the tangent property</span></div>
+<div class="example-question">
+<p>A circle has equation $(x-1)^2+(y-2)^2=25$. Find the equation of the tangent to the circle at the point $(4,6)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find the gradient of the radius</div>Center $(1,2)$ to $(4,6)$: gradient $=\dfrac{6-2}{4-1}=\dfrac{4}{3}$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Use the perpendicular gradient</div>Tangent $\perp$ radius, so tangent gradient $=-\dfrac{3}{4}$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Use $y-y_1=m(x-x_1)$ through $(4,6)$</div>$y-6=-\dfrac{3}{4}(x-4) \Rightarrow 4y-24=-3x+12 \Rightarrow 3x+4y=36$</div>
+</div>
+<div class="example-answer">$3x+4y=36$</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Remember to check a point genuinely lies <em>on</em> the circle before using it as a tangent point — substitute it into the circle's equation first if it isn't already stated to be on the circle.</p>
+</div>
+
+
+<div class="unit-marker">Unit 3 &middot; Exponentials &amp; Logarithms</div>
+<h2 class="topic-title" id="t4">4. Exponentials &amp; Logarithms</h2>
+<div class="topic-meta">The constant $e$ &middot; natural logarithms &middot; laws of logs &middot; solving equations &middot; growth &amp; decay</div>
+
+<h3>The Exponential Function</h3>
+<p>The number $e \approx 2.71828\ldots$ is a special mathematical constant (like $\pi$) that arises naturally in growth and decay processes. The function $y=e^x$ is called <em class="def">the</em> exponential function because it is its own derivative — more on that in the Differentiation topic.</p>
+
+<div class="box formula">
+<div class="box-title">Definition &mdash; Natural Logarithm</div>
+<p>$$\ln x = \log_e x$$</p>
+<p>$\ln x$ and $e^x$ are inverse functions: $\ln(e^x)=x$ and $e^{\ln x}=x$ for $x>0$.</p>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg">
+  <line x1="40" y1="260" x2="440" y2="260" stroke="#c9c6ba" stroke-width="1.5"/>
+  <line x1="40" y1="260" x2="40" y2="20" stroke="#c9c6ba" stroke-width="1.5"/>
+  <text x="430" y="278" font-family="Georgia,serif" font-size="13" fill="#4a5568">x</text>
+  <text x="24" y="26" font-family="Georgia,serif" font-size="13" fill="#4a5568">y</text>
+  <!-- y = e^x -->
+  <path d="M 60,260 C 130,255 190,235 240,190 C 290,140 320,90 350,30" fill="none" stroke="#1d5bbf" stroke-width="2.5"/>
+  <text x="340" y="45" font-family="Georgia,serif" font-size="14" fill="#1d5bbf">y = eˣ</text>
+  <!-- y = ln x -->
+  <path d="M 55,285 C 90,260 130,240 170,225 C 240,205 320,180 420,155" fill="none" stroke="#a8471f" stroke-width="2.5"/>
+  <text x="360" y="150" font-family="Georgia,serif" font-size="14" fill="#a8471f">y = ln x</text>
+  <!-- y = x -->
+  <line x1="45" y1="255" x2="255" y2="45" stroke="#c9c6ba" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="255" y="40" font-family="Georgia,serif" font-size="12" fill="#8a8677">y = x</text>
+  <circle cx="200" cy="260" r="2.5" fill="#0f2545"/>
+  <text x="195" y="278" font-family="Georgia,serif" font-size="12" fill="#0f2545">1</text>
+  <circle cx="40" cy="220" r="2.5" fill="#0f2545"/>
+  <text x="14" y="224" font-family="Georgia,serif" font-size="12" fill="#0f2545">1</text>
+</svg>
+<div class="diagram-caption">$y=e^x$ and $y=\ln x$ are reflections of each other in the line $y=x$, since they are inverse functions.</div>
+</div>
+
+<h3>Laws of Logarithms</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Laws of Logs</div>
+<p>$$\log_a x + \log_a y = \log_a(xy)$$
+$$\log_a x - \log_a y = \log_a\left(\frac{x}{y}\right)$$
+$$\log_a(x^n) = n\log_a x$$
+$$\log_a a = 1 \qquad \log_a 1 = 0$$</p>
+</div>
+
+<div class="box note">
+<div class="box-title">Note &mdash; Change of Base</div>
+<p>$$\log_a x = \frac{\log_b x}{\log_b a}$$
+Use this to evaluate logs on a calculator in a base it doesn't directly support, or to compare logs with different bases.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Simplifying logs</span></div>
+<div class="example-question">
+<p>Write $2\ln 5 - \ln 10$ as a single logarithm.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Apply the power law</div>$2\ln 5 = \ln(5^2)=\ln 25$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Apply the subtraction law</div>$\ln 25 - \ln 10 = \ln\left(\dfrac{25}{10}\right) = \ln 2.5$</div>
+</div>
+<div class="example-answer">$\ln 2.5$</div>
+</div>
+</div>
+</div>
+
+<h3>Solving Exponential &amp; Log Equations</h3>
+<div class="box tip">
+<div class="box-title">Tip &mdash; Two standard approaches</div>
+<p><strong>Exponential equation</strong> (unknown in the power): take $\ln$ of both sides.<br>
+<strong>Log equation</strong> (unknown inside a log): combine into a single log, then raise $e$ (or the relevant base) to both sides.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Exponential equation</span></div>
+<div class="example-question">
+<p>Solve $e^{2x-1}=15$, giving your answer to 3 significant figures.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Take $\ln$ of both sides</div>$\ln\left(e^{2x-1}\right)=\ln 15 \Rightarrow 2x-1=\ln 15$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Solve for $x$</div>$2x = 1+\ln 15 = 3.708\ldots \Rightarrow x = 1.854\ldots$</div>
+</div>
+<div class="example-answer">$x = 1.85$ (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Logarithmic equation</span></div>
+<div class="example-question">
+<p>Solve $\ln(x+3) - \ln x = 2$, $x>0$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Combine into a single log</div>$\ln\left(\dfrac{x+3}{x}\right)=2$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Remove the log by raising $e$ to both sides</div>$\dfrac{x+3}{x}=e^2$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Solve for $x$</div>$x+3=e^2x \Rightarrow 3 = x(e^2-1) \Rightarrow x=\dfrac{3}{e^2-1}$</div>
+</div>
+<div class="example-answer">$x \approx 0.474$</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Always check log solutions are valid — you cannot take the log of a negative number or zero. If solving a quadratic in $\ln x$ or $e^x$ produces two roots, one may need to be rejected.</p>
+</div>
+
+<h3>Exponential Growth &amp; Decay</h3>
+<p>Models of the form $y=Ae^{kt}$ describe quantities that grow ($k>0$) or decay ($k>0$ with a negative exponent, or $k<0$) at a rate proportional to their current size — population growth, radioactive decay, cooling, and compound-interest-style problems all take this form. $A$ is the value when $t=0$.</p>
+
+
+<div class="unit-marker">Unit 4 &middot; Trigonometry</div>
+<h2 class="topic-title" id="t5">5. Radians, Graphs &amp; Identities</h2>
+<div class="topic-meta">Radian measure &middot; arc length &amp; sector area &middot; sine &amp; cosine rules &middot; graphs &amp; identities &middot; solving equations</div>
+
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p>This topic continues directly from <a href="pure-mathematics-1.html#trig">P1 &mdash; Trigonometry</a>, which covers the sine rule, cosine rule, and right-angle triangles in degrees.</p>
+</div>
+
+<h3>Radians</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Radians</div>
+<p>$$\pi \text{ radians} = 180°$$</p>
+<p>To convert degrees $\to$ radians, multiply by $\dfrac{\pi}{180}$. To convert radians $\to$ degrees, multiply by $\dfrac{180}{\pi}$.</p>
+</div>
+
+<table>
+<tr><th>Degrees</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>180°</th><th>360°</th></tr>
+<tr><td>Radians</td><td>$0$</td><td>$\frac{\pi}{6}$</td><td>$\frac{\pi}{4}$</td><td>$\frac{\pi}{3}$</td><td>$\frac{\pi}{2}$</td><td>$\pi$</td><td>$2\pi$</td></tr>
+</table>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Why radians?</div>
+<p>Radians make calculus with trig functions work cleanly (e.g. $\frac{d}{dx}(\sin x)=\cos x$ is only true when $x$ is in radians), and they make the arc length and sector area formulas below beautifully simple. From P2 onward, angles are usually given in radians unless stated otherwise.</p>
+</div>
+
+<h3>Arc Length &amp; Sector Area</h3>
+<div class="diagram">
+<svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 160 130 L 160 40 A 90 90 0 0 1 230 190 Z" fill="#e8f0fd" stroke="#1d5bbf" stroke-width="2"/>
+  <circle cx="160" cy="130" r="2.5" fill="#0f2545"/>
+  <text x="140" y="150" font-family="Georgia,serif" font-size="13" fill="#0f2545">O</text>
+  <path d="M 175 100 A 30 30 0 0 1 190 130" fill="none" stroke="#a8471f" stroke-width="2"/>
+  <text x="188" y="108" font-family="Georgia,serif" font-style="italic" font-size="14" fill="#a8471f">θ</text>
+  <text x="150" y="82" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#1c2430">r</text>
+  <text x="200" y="170" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#1c2430">r</text>
+  <path d="M 165 42 A 90 90 0 0 1 228 188" fill="none" stroke="#1c7c54" stroke-width="3"/>
+  <text x="230" y="90" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#1c7c54">arc s</text>
+</svg>
+<div class="diagram-caption">A sector of radius $r$ and angle $\theta$ (in radians), with arc length $s$.</div>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Sectors (θ in radians)</div>
+<p>Arc length: $$s=r\theta$$</p>
+<p>Sector area: $$A=\frac{1}{2}r^2\theta$$</p>
+<p>Segment area (sector minus triangle): $$A_{\text{segment}}=\frac{1}{2}r^2(\theta-\sin\theta)$$</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Sector problem</span></div>
+<div class="example-question">
+<p>A sector has radius $8\text{ cm}$ and angle $1.2$ radians. Find its arc length and area.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Arc length</div>$s = r\theta = 8 \times 1.2 = 9.6\text{ cm}$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Area</div>$A=\frac{1}{2}r^2\theta = \frac{1}{2}(64)(1.2)=38.4\text{ cm}^2$</div>
+</div>
+<div class="example-answer">Arc length $=9.6$ cm, Area $=38.4$ cm²</div>
+</div>
+</div>
+</div>
+
+<h3>The Sine Rule &amp; Cosine Rule</h3>
+<p>For a general (non right-angled) triangle with sides $a,b,c$ opposite angles $A,B,C$:</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Sine Rule</div>
+<p>$$\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}$$</p>
+<p>Use when you know a matching angle/side pair, plus one more side or angle.</p>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Cosine Rule</div>
+<p>$$a^2=b^2+c^2-2bc\cos A$$</p>
+<p>Rearranged to find an angle: $$\cos A = \frac{b^2+c^2-a^2}{2bc}$$</p>
+<p>Use when you know all three sides (SSS), or two sides and the included angle (SAS).</p>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Area of a Triangle</div>
+<p>$$A=\frac{1}{2}ab\sin C$$</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake &mdash; The Ambiguous Case</div>
+<p>When using the sine rule to find an angle given two sides and a non-included angle (SSA), there can be <strong>two</strong> valid solutions — one acute and one obtuse ($180°-\theta$). Always check whether the obtuse case makes sense given the context.</p>
+</div>
+
+<h3>Graphs of the Trig Functions</h3>
+<div class="diagram">
+<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+  <line x1="30" y1="100" x2="480" y2="100" stroke="#c9c6ba" stroke-width="1"/>
+  <line x1="30" y1="20" x2="30" y2="180" stroke="#c9c6ba" stroke-width="1"/>
+  <path d="M 30,100 C 65,20 100,20 135,100 C 170,180 205,180 240,100 C 275,20 310,20 345,100 C 380,180 415,180 450,100" fill="none" stroke="#1d5bbf" stroke-width="2.5"/>
+  <text x="455" y="95" font-family="Georgia,serif" font-size="14" fill="#1d5bbf">sin x</text>
+  <text x="20" y="18" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568">y</text>
+  <text x="130" y="115" font-family="Georgia,serif" font-size="11" fill="#8a8677">π</text>
+  <text x="235" y="115" font-family="Georgia,serif" font-size="11" fill="#8a8677">2π</text>
+  <text x="10" y="25" font-family="Georgia,serif" font-size="11" fill="#8a8677">1</text>
+  <text x="10" y="180" font-family="Georgia,serif" font-size="11" fill="#8a8677">-1</text>
+</svg>
+<div class="diagram-caption">$y=\sin x$ — period $2\pi$, amplitude 1, passes through the origin.</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+  <line x1="30" y1="100" x2="480" y2="100" stroke="#c9c6ba" stroke-width="1"/>
+  <line x1="30" y1="20" x2="30" y2="180" stroke="#c9c6ba" stroke-width="1"/>
+  <path d="M 30,20 C 65,20 100,180 135,180 C 170,180 205,20 240,20 C 275,20 310,180 345,180 C 380,180 415,20 450,20" fill="none" stroke="#a8471f" stroke-width="2.5"/>
+  <text x="455" y="30" font-family="Georgia,serif" font-size="14" fill="#a8471f">cos x</text>
+  <text x="10" y="25" font-family="Georgia,serif" font-size="11" fill="#8a8677">1</text>
+  <text x="10" y="180" font-family="Georgia,serif" font-size="11" fill="#8a8677">-1</text>
+</svg>
+<div class="diagram-caption">$y=\cos x$ — same shape as $\sin x$, shifted left by $\dfrac{\pi}{2}$.</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+  <line x1="30" y1="100" x2="480" y2="100" stroke="#c9c6ba" stroke-width="1"/>
+  <line x1="30" y1="20" x2="30" y2="180" stroke="#c9c6ba" stroke-width="1"/>
+  <path d="M 30,100 C 55,55 65,25 82,20" fill="none" stroke="#1c7c54" stroke-width="2.5"/>
+  <path d="M 82,180 C 100,175 130,145 155,100 C 180,55 210,25 227,20" fill="none" stroke="#1c7c54" stroke-width="2.5"/>
+  <path d="M 227,180 C 245,175 275,145 300,100 C 325,55 355,25 372,20" fill="none" stroke="#1c7c54" stroke-width="2.5"/>
+  <path d="M 372,180 C 390,175 420,145 445,100 C 460,75 470,55 475,45" fill="none" stroke="#1c7c54" stroke-width="2.5"/>
+  <line x1="82" y1="20" x2="82" y2="180" stroke="#e0ded4" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="227" y1="20" x2="227" y2="180" stroke="#e0ded4" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="372" y1="20" x2="372" y2="180" stroke="#e0ded4" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="445" y="60" font-family="Georgia,serif" font-size="14" fill="#1c7c54">tan x</text>
+  <text x="75" y="195" font-family="Georgia,serif" font-size="11" fill="#8a8677">π/2</text>
+</svg>
+<div class="diagram-caption">$y=\tan x$ — period $\pi$, with vertical asymptotes wherever $\cos x = 0$.</div>
+</div>
+
+<table>
+<tr><th>Function</th><th>Period</th><th>Range</th><th>Asymptotes</th></tr>
+<tr><td>$\sin x$</td><td>$2\pi$</td><td>$-1 \le y \le 1$</td><td>none</td></tr>
+<tr><td>$\cos x$</td><td>$2\pi$</td><td>$-1 \le y \le 1$</td><td>none</td></tr>
+<tr><td>$\tan x$</td><td>$\pi$</td><td>all reals</td><td>$x=\dfrac{\pi}{2}+k\pi$</td></tr>
+</table>
+
+<h3>Trig Identities</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Core Identities</div>
+<p>$$\tan\theta = \frac{\sin\theta}{\cos\theta}$$</p>
+<p>$$\sin^2\theta+\cos^2\theta=1$$</p>
+</div>
+
+<p>The identity $\sin^2\theta+\cos^2\theta=1$ comes directly from Pythagoras' theorem applied to a right-angled triangle in the unit circle, and is the single most useful trig identity in P2 — it lets you rewrite equations that mix $\sin$ and $\cos$ (or $\sin^2$ and $\cos^2$) entirely in terms of one function.</p>
+
+<h3>Solving Trig Equations</h3>
+<div class="box tip">
+<div class="box-title">Tip &mdash; General method</div>
+<p><strong>1.</strong> Rearrange to isolate the trig function.<br>
+<strong>2.</strong> Find the principal value using inverse trig ($\sin^{-1}$, $\cos^{-1}$, $\tan^{-1}$).<br>
+<strong>3.</strong> Use symmetry of the graph (or the CAST diagram) to find all other solutions inside the given interval.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Solving over an interval</span></div>
+<div class="example-question">
+<p>Solve $\sin\theta = 0.6$ for $0 \le \theta \le 2\pi$, giving answers to 3 s.f.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find the principal value</div>$\theta = \sin^{-1}(0.6) = 0.6435\ldots$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Find the second solution</div>Since $\sin$ is positive in the first and second quadrants: $\theta = \pi - 0.6435 = 2.498\ldots$</div>
+</div>
+<div class="example-answer">$\theta = 0.644$ or $\theta = 2.50$ (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Make sure your calculator is in the correct mode (radians vs. degrees) to match the question, and always check whether all found solutions actually lie within the given interval before writing your final answer.</p>
+</div>
+
+
+<div class="unit-marker">Unit 5 &middot; Calculus</div>
+<h2 class="topic-title" id="t6">6. Differentiation</h2>
+<div class="topic-meta">Derivatives of $\sin x,\cos x,e^x,\ln x$ &middot; chain, product &amp; quotient rules &middot; tangents &amp; normals &middot; stationary points</div>
+
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p>This topic builds on <a href="pure-mathematics-1.html#differentiation">P1 &mdash; Differentiation</a>, which covers the power rule and locating stationary points.</p>
+</div>
+
+<p>P2 extends differentiation beyond powers of $x$ to trig, exponential and log functions, and introduces the three key rules for differentiating combinations of functions.</p>
+
+<h3>Standard Derivatives</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Standard Derivatives</div>
+<table style="box-shadow:none;margin:6px 0 0 0;">
+<tr><th>$f(x)$</th><th>$f'(x)$</th></tr>
+<tr><td>$x^n$</td><td>$nx^{n-1}$</td></tr>
+<tr><td>$\sin x$</td><td>$\cos x$</td></tr>
+<tr><td>$\cos x$</td><td>$-\sin x$</td></tr>
+<tr><td>$e^x$</td><td>$e^x$</td></tr>
+<tr><td>$\ln x$</td><td>$\dfrac{1}{x}$</td></tr>
+</table>
+</div>
+
+<div class="box note">
+<div class="box-title">Note &mdash; Radians required</div>
+<p>The derivatives of $\sin x$ and $\cos x$ shown above are only valid when $x$ is measured in <strong>radians</strong>. This is one of the key reasons P2 works in radians throughout the calculus topics.</p>
+</div>
+
+<h3>The Chain Rule</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Chain Rule</div>
+<p>For a composite function $y=f(g(x))$:
+$$\frac{dy}{dx}=f'(g(x))\cdot g'(x)$$
+Equivalently, if $y$ is a function of $u$, and $u$ is a function of $x$:
+$$\frac{dy}{dx}=\frac{dy}{du}\times\frac{du}{dx}$$</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Chain rule</span></div>
+<div class="example-question">
+<p>Differentiate $y=\sin(3x^2+1)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Let $u=3x^2+1$</div>Then $y=\sin u$, with $\dfrac{du}{dx}=6x$ and $\dfrac{dy}{du}=\cos u$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Multiply</div>$\dfrac{dy}{dx}=\cos u \times 6x = 6x\cos(3x^2+1)$</div>
+</div>
+<div class="example-answer">$\dfrac{dy}{dx}=6x\cos(3x^2+1)$</div>
+</div>
+</div>
+</div>
+
+<h3>The Product Rule</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Product Rule</div>
+<p>For $y=uv$ where $u$ and $v$ are both functions of $x$:
+$$\frac{dy}{dx}=u\frac{dv}{dx}+v\frac{du}{dx}$$</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Product rule</span></div>
+<div class="example-question">
+<p>Differentiate $y=x^2e^x$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Identify $u$ and $v$</div>$u=x^2 \Rightarrow \dfrac{du}{dx}=2x$; \quad $v=e^x \Rightarrow \dfrac{dv}{dx}=e^x$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Apply the formula</div>$\dfrac{dy}{dx}=x^2 e^x + e^x(2x) = xe^x(x+2)$</div>
+</div>
+<div class="example-answer">$\dfrac{dy}{dx}=xe^x(x+2)$</div>
+</div>
+</div>
+</div>
+
+<h3>The Quotient Rule</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Quotient Rule</div>
+<p>For $y=\dfrac{u}{v}$:
+$$\frac{dy}{dx}=\frac{v\dfrac{du}{dx}-u\dfrac{dv}{dx}}{v^2}$$</p>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Remembering the order</div>
+<p>Say it out loud: "bottom times derivative of top, minus top times derivative of bottom, all over bottom squared." Getting the subtraction the right way round is the single biggest source of errors in this rule.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Quotient rule</span></div>
+<div class="example-question">
+<p>Differentiate $y=\dfrac{\ln x}{x^2}$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Identify $u$ and $v$</div>$u=\ln x \Rightarrow \dfrac{du}{dx}=\dfrac1x$; \quad $v=x^2 \Rightarrow \dfrac{dv}{dx}=2x$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Apply the formula</div>$\dfrac{dy}{dx}=\dfrac{x^2\cdot\frac1x - \ln x \cdot 2x}{x^4}=\dfrac{x-2x\ln x}{x^4}=\dfrac{1-2\ln x}{x^3}$</div>
+</div>
+<div class="example-answer">$\dfrac{dy}{dx}=\dfrac{1-2\ln x}{x^3}$</div>
+</div>
+</div>
+</div>
+
+<h3>Tangents &amp; Normals</h3>
+<div class="diagram">
+<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 40,220 C 100,220 130,60 220,60 C 280,60 320,120 370,50" fill="none" stroke="#1d5bbf" stroke-width="2.5"/>
+  <circle cx="220" cy="60" r="3.5" fill="#0f2545"/>
+  <line x1="120" y1="130" x2="320" y2="10" stroke="#a8471f" stroke-width="2"/>
+  <text x="322" y="12" font-family="Georgia,serif" font-size="13" fill="#a8471f">tangent</text>
+  <line x1="170" y1="10" x2="270" y2="180" stroke="#1c7c54" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="250" y="185" font-family="Georgia,serif" font-size="13" fill="#1c7c54">normal</text>
+</svg>
+<div class="diagram-caption">The tangent touches the curve with the same gradient; the normal is perpendicular to the tangent at that point.</div>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Tangent &amp; Normal</div>
+<p>At the point $(x_1,y_1)$ where the gradient is $m=f'(x_1)$:</p>
+<p><strong>Tangent</strong> (gradient $m$): $\quad y-y_1=m(x-x_1)$</p>
+<p><strong>Normal</strong> (gradient $-\dfrac1m$, perpendicular): $\quad y-y_1=-\dfrac{1}{m}(x-x_1)$</p>
+</div>
+
+<h3>Stationary Points</h3>
+<p>A stationary point occurs where $\dfrac{dy}{dx}=0$. To classify it, use the second derivative:</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Second Derivative Test</div>
+<p>If $\dfrac{d^2y}{dx^2}>0$ at a stationary point $\Rightarrow$ <strong>local minimum</strong>.</p>
+<p>If $\dfrac{d^2y}{dx^2}<0$ at a stationary point $\Rightarrow$ <strong>local maximum</strong>.</p>
+<p>If $\dfrac{d^2y}{dx^2}=0$, the test is inconclusive — check the gradient either side instead (possible point of inflection).</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Don't forget the chain rule when differentiating something like $e^{2x}$ or $\sin(4x)$ — the "extra factor" from differentiating the inside function is easy to drop under exam pressure.</p>
+</div>
+
+
+<h2 class="topic-title" id="t7">7. Integration</h2>
+<div class="topic-meta">Standard integrals &middot; definite integrals &middot; area under a curve &middot; integration by recognition</div>
+
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p>This topic builds on <a href="pure-mathematics-1.html#integration">P1 &mdash; Integration</a>, which covers the reverse power rule for polynomials.</p>
+</div>
+
+<p>Integration is the reverse process of differentiation. P2 introduces integrals of $\sin x$, $\cos x$, $e^x$ and $\dfrac1x$, alongside definite integrals for finding areas.</p>
+
+<h3>Standard Integrals</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Standard Integrals (+ constant $c$)</div>
+<table style="box-shadow:none;margin:6px 0 0 0;">
+<tr><th>$f(x)$</th><th>$\int f(x)\,dx$</th></tr>
+<tr><td>$x^n\ (n\ne-1)$</td><td>$\dfrac{x^{n+1}}{n+1}+c$</td></tr>
+<tr><td>$\dfrac1x$</td><td>$\ln|x|+c$</td></tr>
+<tr><td>$e^x$</td><td>$e^x+c$</td></tr>
+<tr><td>$\sin x$</td><td>$-\cos x+c$</td></tr>
+<tr><td>$\cos x$</td><td>$\sin x+c$</td></tr>
+</table>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Never forget the constant of integration $+c$ for an <strong>indefinite</strong> integral — it disappears only in a <em>definite</em> integral, where the two limits cause it to cancel.</p>
+</div>
+
+<h3>Integrating Linear Substitutions "by Recognition"</h3>
+<p>When the inside of a function is linear ($ax+b$), you can integrate directly by recognising the reverse chain rule, dividing by the coefficient of $x$.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Linear Compositions</div>
+<p>$$\int e^{ax+b}\,dx=\frac{1}{a}e^{ax+b}+c \qquad \int \sin(ax+b)\,dx=-\frac{1}{a}\cos(ax+b)+c$$
+$$\int \cos(ax+b)\,dx=\frac{1}{a}\sin(ax+b)+c \qquad \int \frac{1}{ax+b}\,dx=\frac1a\ln|ax+b|+c$$</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Integration by recognition</span></div>
+<div class="example-question">
+<p>Find $\displaystyle\int (2x-1)^{-1} - 3\cos(2x)\; dx$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Integrate term by term</div>$\displaystyle\int \frac{1}{2x-1}\,dx = \frac12\ln|2x-1|$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Integrate the second term</div>$\displaystyle\int 3\cos(2x)\,dx = 3\times\frac12\sin(2x)=\frac32\sin(2x)$</div>
+</div>
+<div class="example-answer">$\dfrac12\ln|2x-1| - \dfrac32\sin(2x) + c$</div>
+</div>
+</div>
+</div>
+
+<h3>Definite Integrals &amp; Area</h3>
+<div class="diagram">
+<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+  <line x1="30" y1="190" x2="380" y2="190" stroke="#c9c6ba" stroke-width="1.2"/>
+  <path d="M 60,190 C 100,60 260,40 340,190 Z" fill="#e8f0fd" stroke="none"/>
+  <path d="M 40,200 C 90,40 280,20 370,180" fill="none" stroke="#1d5bbf" stroke-width="2.5"/>
+  <line x1="60" y1="190" x2="60" y2="140" stroke="#0f2545" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="340" y1="190" x2="340" y2="150" stroke="#0f2545" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="55" y="208" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#0f2545">a</text>
+  <text x="335" y="208" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#0f2545">b</text>
+  <text x="180" y="120" font-family="Georgia,serif" font-style="italic" font-size="16" fill="#1d5bbf">A</text>
+</svg>
+<div class="diagram-caption">$\displaystyle A=\int_a^b f(x)\,dx$ gives the area between the curve and the $x$-axis, from $x=a$ to $x=b$.</div>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Fundamental Theorem of Calculus</div>
+<p>$$\int_a^b f(x)\,dx = \Big[F(x)\Big]_a^b = F(b)-F(a)$$
+where $F(x)$ is any antiderivative of $f(x)$.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Definite integral / area</span></div>
+<div class="example-question">
+<p>Find the area between the curve $y=\sin x$, the $x$-axis, and the lines $x=0$ and $x=\pi$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Set up the integral</div>$A=\displaystyle\int_0^\pi \sin x\, dx = \Big[-\cos x\Big]_0^\pi$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Substitute the limits</div>$=(-\cos\pi) - (-\cos 0) = -(-1) - (-1) = 1+1=2$</div>
+</div>
+<div class="example-answer">Area $=2$ square units</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake &mdash; Areas below the axis</div>
+<p>If a curve dips below the $x$-axis over part of the interval, the definite integral there comes out <strong>negative</strong>. If you want the actual (positive) area, split the integral at the root(s) and take the absolute value of each part separately before adding.</p>
+</div>
+
+
+<h2 class="topic-title" id="t8">8. The Trapezium Rule</h2>
+<div class="topic-meta">Numerical integration &middot; estimating areas &middot; over- and under-estimates</div>
+
+<p>Some functions can't be integrated using standard techniques (or an exact integral simply isn't needed). The <em class="def">trapezium rule</em> approximates the area under a curve by splitting it into equal-width strips and treating each strip as a trapezium rather than a true curved region.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg">
+  <line x1="30" y1="190" x2="400" y2="190" stroke="#c9c6ba" stroke-width="1.2"/>
+  <path d="M 40,180 C 90,50 300,30 390,150" fill="none" stroke="#c9c6ba" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <g stroke="#1d5bbf" stroke-width="1.8" fill="#e8f0fd">
+    <polygon points="40,190 40,180 128,86 128,190"/>
+    <polygon points="128,190 128,86 216,46 216,190"/>
+    <polygon points="216,190 216,46 304,58 304,190"/>
+    <polygon points="304,190 304,58 392,150 392,190"/>
+  </g>
+  <g stroke="#0f2545" stroke-width="1.3">
+    <line x1="40" y1="190" x2="40" y2="180"/>
+    <line x1="128" y1="190" x2="128" y2="86"/>
+    <line x1="216" y1="190" x2="216" y2="46"/>
+    <line x1="304" y1="190" x2="304" y2="58"/>
+    <line x1="392" y1="190" x2="392" y2="150"/>
+  </g>
+  <g font-family="Georgia,serif" font-style="italic" font-size="12" fill="#0f2545" text-anchor="middle">
+    <text x="40" y="205">y₀</text><text x="128" y="205">y₁</text><text x="216" y="205">y₂</text><text x="304" y="205">y₃</text><text x="392" y="205">y₄</text>
+  </g>
+  <text x="215" y="10" font-family="Helvetica Neue,Arial" font-size="12" fill="#4a5568" text-anchor="middle">strip width h, n = 4 strips</text>
+</svg>
+<div class="diagram-caption">Each strip is treated as a trapezium using the two $y$-values at its edges.</div>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Trapezium Rule</div>
+<p>$$\int_a^b y\,dx \approx \frac{h}{2}\Big[(y_0+y_n) + 2(y_1+y_2+\dots+y_{n-1})\Big]$$</p>
+<p>where $h=\dfrac{b-a}{n}$ is the strip width, and $y_0,y_1,\ldots,y_n$ are the $y$-values at $n+1$ equally spaced $x$-values from $a$ to $b$.</p>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Reading it in words</div>
+<p>"Half the strip width, times (the first $y$ plus the last $y$, plus twice everything in between)." The first and last ordinates are only counted once each — every ordinate in between is shared by two trapezia, so it's counted twice.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Applying the trapezium rule</span></div>
+<div class="example-question">
+<p>Use the trapezium rule with 4 strips to estimate $\displaystyle\int_0^2 e^{x^2}\,dx$, using the table of values below.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<table>
+<tr><th>$x$</th><td>0</td><td>0.5</td><td>1</td><td>1.5</td><td>2</td></tr>
+<tr><th>$y=e^{x^2}$</th><td>1.000</td><td>1.284</td><td>2.718</td><td>9.488</td><td>54.598</td></tr>
+</table>
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find the strip width</div>$h=\dfrac{2-0}{4}=0.5$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Substitute into the formula</div>
+$\int_0^2 e^{x^2}dx \approx \dfrac{0.5}{2}\Big[(1.000+54.598)+2(1.284+2.718+9.488)\Big]$
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Evaluate</div>$=0.25\big[55.598 + 2(13.490)\big]=0.25(55.598+26.980)=0.25(82.578)=20.6$</div>
+</div>
+<div class="example-answer">$\displaystyle\int_0^2 e^{x^2}\,dx \approx 20.6$ (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<h3>Over-estimates and Under-estimates</h3>
+<div class="two-col">
+<div class="box note">
+<div class="box-title">Curve is convex (∪-shaped)</div>
+<p>The straight-line tops of the trapezia sit <strong>above</strong> the curve, so the trapezium rule gives an <strong>over-estimate</strong> of the true area.</p>
+</div>
+<div class="box note">
+<div class="box-title">Curve is concave (∩-shaped)</div>
+<p>The straight-line tops sit <strong>below</strong> the curve, so the trapezium rule gives an <strong>under-estimate</strong> of the true area.</p>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Using more strips (a smaller $h$) always improves the estimate's accuracy — but it does <em>not</em> change whether the estimate is an over- or under-estimate, since that only depends on the curve's concavity.</p>
+</div>
+
+
+<div class="unit-marker">Unit 6 &middot; Sequences &amp; Series</div>
+<h2 class="topic-title" id="t9">9. Arithmetic Sequences</h2>
+<div class="topic-meta">nth term &middot; common difference &middot; sum of an arithmetic series</div>
+
+<p>An <em class="def">arithmetic sequence</em> is one where each term is found by adding a fixed amount — the <em class="def">common difference</em>, $d$ — to the previous term. For example: $3,\,7,\,11,\,15,\,\ldots$ has first term $a=3$ and common difference $d=4$.</p>
+
+<h3>The nth Term</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; nth Term of an Arithmetic Sequence</div>
+<p>$$u_n = a + (n-1)d$$</p>
+<p>where $a$ is the first term and $d$ is the common difference.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Finding a term</span></div>
+<div class="example-question">
+<p>An arithmetic sequence has first term $5$ and common difference $-3$. Find the 20th term.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Substitute into the formula</div>$u_{20} = 5 + (20-1)(-3) = 5 - 57 = -52$</div>
+</div>
+<div class="example-answer">$u_{20} = -52$</div>
+</div>
+</div>
+</div>
+
+<h3>Sum of an Arithmetic Series</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Sum of the first $n$ terms</div>
+<p>$$S_n = \frac{n}{2}\big[2a+(n-1)d\big] = \frac{n}{2}(a+l)$$</p>
+<p>where $l$ is the last (nth) term. The second form is useful whenever the last term is already known.</p>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Where this formula comes from</div>
+<p>Pairing the first and last term, second and second-last term, and so on, each pair sums to $a+l$. There are $\frac{n}{2}$ such pairs, giving $S_n=\frac{n}{2}(a+l)$ — this is the same trick famously used by Gauss to sum $1$ to $100$.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Sum of a series</span></div>
+<div class="example-question">
+<p>Find the sum of the first 30 terms of the arithmetic sequence $8, 11, 14, \ldots$</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Identify $a$, $d$, $n$</div>$a=8$, $d=3$, $n=30$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Substitute into $S_n$</div>$S_{30}=\dfrac{30}{2}\big[2(8)+(29)(3)\big] = 15\big[16+87\big]=15(103)$</div>
+</div>
+<div class="example-answer">$S_{30} = 1545$</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>The coefficient of $d$ inside the brackets is $(n-1)$, <strong>not</strong> $n$ — a very common slip is writing $2a+nd$ instead of $2a+(n-1)d$.</p>
+</div>
+
+<h3>Solving Problems with Simultaneous Equations</h3>
+<p>Many exam questions give you two pieces of information (e.g. two known terms, or a term and a sum) and ask you to find $a$ and $d$. Set up two equations using the formulas above and solve simultaneously.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Finding a and d</span></div>
+<div class="example-question">
+<p>In an arithmetic sequence, $u_5=17$ and $u_{12}=45$. Find $a$ and $d$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Write two equations</div>$a+4d=17 \quad (1)$<br>$a+11d=45 \quad (2)$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Subtract (1) from (2)</div>$7d=28 \Rightarrow d=4$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Substitute back</div>$a+4(4)=17 \Rightarrow a=1$</div>
+</div>
+<div class="example-answer">$a=1,\ d=4$</div>
+</div>
+</div>
+</div>
+
+
+<h2 class="topic-title" id="t10">10. Geometric Sequences</h2>
+<div class="topic-meta">nth term &middot; common ratio &middot; sum of finite series &middot; sum to infinity</div>
+
+<p>A <em class="def">geometric sequence</em> is one where each term is found by multiplying the previous term by a fixed value — the <em class="def">common ratio</em>, $r$. For example: $2,\,6,\,18,\,54,\ldots$ has first term $a=2$ and common ratio $r=3$.</p>
+
+<h3>The nth Term</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; nth Term of a Geometric Sequence</div>
+<p>$$u_n = ar^{n-1}$$</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Finding a term</span></div>
+<div class="example-question">
+<p>A geometric sequence has first term $4$ and common ratio $\frac12$. Find the 8th term.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Substitute into the formula</div>$u_8 = 4\left(\dfrac12\right)^7 = 4 \times \dfrac{1}{128} = \dfrac{1}{32}$</div>
+</div>
+<div class="example-answer">$u_8=\dfrac{1}{32}$</div>
+</div>
+</div>
+</div>
+
+<h3>Sum of a Geometric Series</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Sum of the first $n$ terms</div>
+<p>$$S_n=\frac{a(1-r^n)}{1-r} = \frac{a(r^n-1)}{r-1}$$</p>
+<p>Both forms are equivalent — use whichever avoids a negative denominator (the first when $r<1$, the second when $r>1$).</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Sum of a series</span></div>
+<div class="example-question">
+<p>Find the sum of the first 10 terms of $3, 6, 12, 24,\ldots$</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Identify $a$, $r$, $n$</div>$a=3$, $r=2$, $n=10$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Substitute (using the $r>1$ form)</div>$S_{10}=\dfrac{3(2^{10}-1)}{2-1} = 3(1024-1)=3(1023)$</div>
+</div>
+<div class="example-answer">$S_{10}=3069$</div>
+</div>
+</div>
+</div>
+
+<h3>Sum to Infinity</h3>
+<div class="diagram">
+<svg viewBox="0 0 420 150" xmlns="http://www.w3.org/2000/svg">
+  <line x1="30" y1="120" x2="400" y2="120" stroke="#c9c6ba" stroke-width="1.2"/>
+  <line x1="30" y1="120" x2="30" y2="20" stroke="#c9c6ba" stroke-width="1.2"/>
+  <g fill="#1d5bbf" opacity="0.85">
+    <rect x="40" y="30" width="120" height="14"/>
+    <rect x="40" y="48" width="60" height="14"/>
+    <rect x="40" y="66" width="30" height="14"/>
+    <rect x="40" y="84" width="15" height="14"/>
+    <rect x="40" y="102" width="7.5" height="14"/>
+  </g>
+  <line x1="200" y1="20" x2="200" y2="120" stroke="#a8471f" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="205" y="30" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#a8471f">S∞</text>
+</svg>
+<div class="diagram-caption">When $|r|<1$, each term shrinks toward zero, and the running total converges to a finite limit $S_\infty$.</div>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Sum to Infinity</div>
+<p>$$S_\infty = \frac{a}{1-r}, \qquad \text{valid only when } |r|<1$$</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>$S_\infty$ only exists when $-1<r<1$. If $|r|\ge1$, the series diverges (grows without bound, or oscillates) and has no sum to infinity — always state the condition on $r$ when using this formula.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Sum to infinity</span></div>
+<div class="example-question">
+<p>Find $S_\infty$ for the geometric series $20 + 10 + 5 + 2.5 + \ldots$</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Identify $a$ and $r$</div>$a=20$, $r=\dfrac{10}{20}=0.5$ (and $|0.5|<1$, so the sum to infinity exists)</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Substitute</div>$S_\infty=\dfrac{20}{1-0.5}=\dfrac{20}{0.5}=40$</div>
+</div>
+<div class="example-answer">$S_\infty = 40$</div>
+</div>
+</div>
+</div>
+
+
+<h2 class="topic-title" id="t11">11. Sigma Notation</h2>
+<div class="topic-meta">Reading $\sum$ notation &middot; evaluating series &middot; writing series in sigma form</div>
+
+<p>Sigma notation, $\sum$, is a compact way of writing the sum of a sequence of terms without listing every one out.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Sigma Notation</div>
+<p>$$\sum_{r=1}^{n} u_r = u_1+u_2+u_3+\dots+u_n$$</p>
+<p>The variable under $\sum$ (here $r$) is the counter, running from the lower limit to the upper limit inclusive.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Evaluating a sum</span></div>
+<div class="example-question">
+<p>Evaluate $\displaystyle\sum_{r=1}^{5}(2r+1)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">List the terms</div>$r=1:3,\ r=2:5,\ r=3:7,\ r=4:9,\ r=5:11$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Add them</div>$3+5+7+9+11=35$</div>
+</div>
+<div class="example-answer">$\displaystyle\sum_{r=1}^{5}(2r+1) = 35$</div>
+</div>
+</div>
+</div>
+
+<h3>Sigma Notation for Arithmetic &amp; Geometric Series</h3>
+<p>Because $\sum$ is just shorthand for "add these terms up," any series written in sigma notation with a linear expression in $r$ (like $2r+1$ above) is an <strong>arithmetic</strong> series, and can be summed directly using $S_n=\dfrac{n}{2}(a+l)$ instead of adding term-by-term — this is much faster for large $n$.</p>
+
+<p>Similarly, a sigma sum with $r$ appearing in an <strong>exponent</strong> (like $3^r$ or $2\times5^r$) is a <strong>geometric</strong> series, and can be summed with $S_n=\dfrac{a(1-r^n)}{1-r}$.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Recognising a geometric sum</span></div>
+<div class="example-question">
+<p>Evaluate $\displaystyle\sum_{r=1}^{6} 3(2)^{r-1}$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Recognise the series type</div>This is geometric: $a=3$ (the $r=1$ term), $r_{\text{ratio}}=2$, $n=6$ terms.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Apply the geometric sum formula</div>$S_6 = \dfrac{3(2^6-1)}{2-1}=3(63)$</div>
+</div>
+<div class="example-answer">$\displaystyle\sum_{r=1}^{6} 3(2)^{r-1} = 189$</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Splitting sums</div>
+<p>$\sum$ distributes over addition and constant multiples:
+$$\sum_{r=1}^n \big(au_r + bv_r\big) = a\sum_{r=1}^n u_r + b\sum_{r=1}^n v_r$$
+This lets you break a complicated sum into simpler arithmetic/geometric pieces.</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Double-check the number of terms being summed: $\displaystyle\sum_{r=1}^{n}$ has $n$ terms, but $\displaystyle\sum_{r=0}^{n}$ has $n+1$ terms (since it includes $r=0$). Miscounting the number of terms is a very common way to get $S_n$ formulas wrong.</p>
+</div>
+
+
+<div class="unit-marker">Unit 7 &middot; Proof</div>
+<h2 class="topic-title" id="t12">12. Methods of Proof</h2>
+<div class="topic-meta">Proof by deduction &middot; proof by exhaustion &middot; proof by contradiction &middot; disproof by counter-example</div>
+
+<p>A <em class="def">mathematical proof</em> is a watertight logical argument that establishes a statement is true for <strong>every</strong> case it claims to cover — not just a few examples. P2 introduces several standard proof techniques.</p>
+
+<h3>Proof by Deduction</h3>
+<div class="box formula">
+<div class="box-title">Idea &mdash; Direct / Deductive Proof</div>
+<p>Start from known facts or definitions, and use logical algebraic steps to arrive at the statement you want to prove — true for a <strong>general</strong> case, not a specific number.</p>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Represent generality with algebra</div>
+<p>To prove something about "any even number," write it as $2n$ (for integer $n$) rather than picking a specific even number like $4$ or $10$. This is what makes the proof general rather than just an example.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Proof by deduction</span></div>
+<div class="example-question">
+<p>Prove that the sum of two consecutive odd numbers is always divisible by 4.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Represent the general case algebraically</div>Let the two consecutive odd numbers be $2n+1$ and $2n+3$, for integer $n$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Add them</div>$(2n+1)+(2n+3) = 4n+4 = 4(n+1)$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Conclude</div>Since $n+1$ is an integer, $4(n+1)$ is a multiple of 4. So the sum of two consecutive odd numbers is always divisible by 4. $\blacksquare$</div>
+</div>
+</div>
+</div>
+</div>
+
+<h3>Proof by Exhaustion</h3>
+<div class="box formula">
+<div class="box-title">Idea &mdash; Proof by Exhaustion</div>
+<p>Break the statement into a <strong>finite</strong> number of cases, and check that each case individually holds true. This only works when the possibilities can be fully listed — it does not work for infinite sets of numbers.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Proof by exhaustion</span></div>
+<div class="example-question">
+<p>Prove that $n^2+n$ is even for every integer $n$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Identify the finite cases</div>Every integer $n$ is either even or odd — just two cases to check.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Case 1: $n$ even</div>Let $n=2k$. Then $n^2+n = 4k^2+2k = 2(2k^2+k)$, which is even.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Case 2: $n$ odd</div>Let $n=2k+1$. Then $n^2+n = (2k+1)^2+(2k+1) = 4k^2+4k+1+2k+1 = 4k^2+6k+2 = 2(2k^2+3k+1)$, which is even.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Conclude</div>Both possible cases give an even result, so $n^2+n$ is even for all integers $n$. $\blacksquare$</div>
+</div>
+</div>
+</div>
+</div>
+
+<h3>Proof by Contradiction</h3>
+<div class="box formula">
+<div class="box-title">Idea &mdash; Proof by Contradiction</div>
+<p><strong>1.</strong> Assume the <em>opposite</em> of the statement is true.<br>
+<strong>2.</strong> Follow logical steps from that assumption.<br>
+<strong>3.</strong> Arrive at something impossible or self-contradictory.<br>
+<strong>4.</strong> Conclude the original assumption must be false, so the statement is true.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Classic proof by contradiction</span></div>
+<div class="example-question">
+<p>Prove that $\sqrt2$ is irrational.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Assume the opposite</div>Suppose $\sqrt2$ <em>is</em> rational. Then $\sqrt2=\dfrac{p}{q}$ for integers $p,q$ with no common factors (fully simplified).</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Manipulate algebraically</div>Squaring: $2=\dfrac{p^2}{q^2} \Rightarrow p^2=2q^2$. So $p^2$ is even, which means $p$ itself must be even. Let $p=2m$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Substitute and simplify</div>$(2m)^2=2q^2 \Rightarrow 4m^2=2q^2 \Rightarrow q^2=2m^2$. So $q^2$ is also even, meaning $q$ is even too.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Identify the contradiction</div>Both $p$ and $q$ are even, so they share a common factor of 2. This contradicts the assumption that $p$ and $q$ had no common factors.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">Conclude</div>The assumption must be false, so $\sqrt2$ cannot be written as $\dfrac{p}{q}$ — it is irrational. $\blacksquare$</div>
+</div>
+</div>
+</div>
+</div>
+
+<h3>Disproof by Counter-Example</h3>
+<div class="box formula">
+<div class="box-title">Idea &mdash; Disproving a Statement</div>
+<p>To show a general statement is <strong>false</strong>, you only need to find <strong>one</strong> example where it fails. A single valid counter-example is enough to disprove a claim entirely — no algebra required.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Counter-example</span></div>
+<div class="example-question">
+<p>Disprove the statement: "$n^2+n+41$ is prime for all positive integers $n$."</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Test a value</div>Try $n=41$: $41^2+41+41 = 41(41+1+1)=41(43)$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Conclude</div>This factorises as $41\times43$, so it is not prime. The statement is false — $n=41$ is a counter-example. $\blacksquare$</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Checking a statement for several specific numbers (e.g. $n=1,2,3$) and finding it works is <strong>never</strong> a valid proof — it only shows the statement holds for those particular cases. Only proof by exhaustion (checking <em>every</em> possible case) or a general algebraic argument counts as a genuine proof.</p>
+</div>
+
+
+    </div>
+
+
+<div class="formula-sheet" id="formulasheet">
+  <div class="unit-marker first">Quick Reference</div>
+  <h2 class="topic-title">Formula Sheet</h2>
+  <div class="topic-meta">Every key result from P2, compressed onto one page for fast revision.</div>
+
+  <div class="fs-grid">
+
+    <div class="fs-card">
+      <h4>1 &middot; Factor / Remainder Theorem</h4>
+      <div class="fline"><span class="flabel">Factor theorem</span>$f(a)=0 \Leftrightarrow (x-a)$ is a factor</div>
+      <div class="fline"><span class="flabel">General factor</span>$f\left(\frac{a}{b}\right)=0 \Leftrightarrow (bx-a)$ is a factor</div>
+      <div class="fline"><span class="flabel">Remainder theorem</span>remainder on dividing by $(x-a)$ is $f(a)$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>2 &middot; Binomial Expansion</h4>
+      <div class="fline"><span class="flabel">Coefficient</span>$\binom{n}{r}=\dfrac{n!}{r!(n-r)!}$</div>
+      <div class="fline"><span class="flabel">Expansion</span>$(a+b)^n=\sum\limits_{r=0}^{n}\binom{n}{r}a^{n-r}b^r$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>3 &middot; Circles</h4>
+      <div class="fline"><span class="flabel">Center-radius form</span>$(x-a)^2+(y-b)^2=r^2$</div>
+      <div class="fline"><span class="flabel">General form</span>$x^2+y^2+2gx+2fy+c=0$, center $(-g,-f)$, $r=\sqrt{g^2+f^2-c}$</div>
+      <div class="fline"><span class="flabel">Key facts</span>angle in semicircle $=90°$; tangent $\perp$ radius; $\perp$ bisector of chord passes through center</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>4 &middot; Exponentials &amp; Logs</h4>
+      <div class="fline"><span class="flabel">Log laws</span>$\log x+\log y=\log(xy)$; $\log x-\log y=\log\frac{x}{y}$; $\log(x^n)=n\log x$</div>
+      <div class="fline"><span class="flabel">Change of base</span>$\log_a x=\dfrac{\log_b x}{\log_b a}$</div>
+      <div class="fline"><span class="flabel">Inverses</span>$\ln(e^x)=x$; $e^{\ln x}=x$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>5 &middot; Trigonometry</h4>
+      <div class="fline"><span class="flabel">Radians</span>$\pi$ rad $=180°$</div>
+      <div class="fline"><span class="flabel">Sector</span>$s=r\theta$; $A=\frac12 r^2\theta$; segment $=\frac12r^2(\theta-\sin\theta)$</div>
+      <div class="fline"><span class="flabel">Sine rule</span>$\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}$</div>
+      <div class="fline"><span class="flabel">Cosine rule</span>$a^2=b^2+c^2-2bc\cos A$</div>
+      <div class="fline"><span class="flabel">Area</span>$A=\frac12ab\sin C$</div>
+      <div class="fline"><span class="flabel">Identities</span>$\tan\theta=\dfrac{\sin\theta}{\cos\theta}$; $\sin^2\theta+\cos^2\theta=1$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>6 &middot; Differentiation</h4>
+      <div class="fline"><span class="flabel">Standard derivatives</span>$x^n\!\to\! nx^{n-1}$; $\sin x\!\to\!\cos x$; $\cos x\!\to\!-\sin x$; $e^x\!\to\! e^x$; $\ln x\!\to\!\frac1x$</div>
+      <div class="fline"><span class="flabel">Chain rule</span>$\dfrac{dy}{dx}=\dfrac{dy}{du}\times\dfrac{du}{dx}$</div>
+      <div class="fline"><span class="flabel">Product rule</span>$\dfrac{dy}{dx}=u\dfrac{dv}{dx}+v\dfrac{du}{dx}$</div>
+      <div class="fline"><span class="flabel">Quotient rule</span>$\dfrac{dy}{dx}=\dfrac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2}$</div>
+      <div class="fline"><span class="flabel">Stationary points</span>$\frac{d^2y}{dx^2}>0$ min; $<0$ max</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>7 &middot; Integration</h4>
+      <div class="fline"><span class="flabel">Standard integrals</span>$x^n\!\to\!\frac{x^{n+1}}{n+1}$; $\frac1x\!\to\!\ln|x|$; $e^x\!\to\! e^x$; $\sin x\!\to\!-\cos x$; $\cos x\!\to\!\sin x$ (each $+c$)</div>
+      <div class="fline"><span class="flabel">Linear inside</span>$\int e^{ax+b}dx=\frac1a e^{ax+b}+c$</div>
+      <div class="fline"><span class="flabel">Definite integral</span>$\int_a^b f(x)dx=F(b)-F(a)$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>8 &middot; Trapezium Rule</h4>
+      <div class="fline"><span class="flabel">Formula</span>$\int_a^b y\,dx\approx\frac{h}{2}\big[(y_0+y_n)+2(y_1+\dots+y_{n-1})\big]$</div>
+      <div class="fline"><span class="flabel">Strip width</span>$h=\dfrac{b-a}{n}$</div>
+      <div class="fline"><span class="flabel">Bias</span>convex $\to$ over-estimate; concave $\to$ under-estimate</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>9 &middot; Arithmetic Sequences</h4>
+      <div class="fline"><span class="flabel">nth term</span>$u_n=a+(n-1)d$</div>
+      <div class="fline"><span class="flabel">Sum</span>$S_n=\frac{n}{2}\big[2a+(n-1)d\big]=\frac{n}{2}(a+l)$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>10 &middot; Geometric Sequences</h4>
+      <div class="fline"><span class="flabel">nth term</span>$u_n=ar^{n-1}$</div>
+      <div class="fline"><span class="flabel">Sum</span>$S_n=\dfrac{a(1-r^n)}{1-r}=\dfrac{a(r^n-1)}{r-1}$</div>
+      <div class="fline"><span class="flabel">Sum to infinity</span>$S_\infty=\dfrac{a}{1-r}$, valid for $|r|<1$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>11 &middot; Sigma Notation</h4>
+      <div class="fline"><span class="flabel">Definition</span>$\sum\limits_{r=1}^n u_r=u_1+u_2+\dots+u_n$</div>
+      <div class="fline"><span class="flabel">Linearity</span>$\sum(au_r+bv_r)=a\sum u_r+b\sum v_r$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>12 &middot; Proof</h4>
+      <div class="fline"><span class="flabel">Deduction</span>general algebra $\to$ conclusion</div>
+      <div class="fline"><span class="flabel">Exhaustion</span>check every finite case</div>
+      <div class="fline"><span class="flabel">Contradiction</span>assume the opposite $\to$ derive a contradiction</div>
+      <div class="fline"><span class="flabel">Counter-example</span>one failing case disproves a general claim</div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="doc-footer">
+  Pure Mathematics 2 &middot; Edexcel International A Level &middot; Companion to the Pure Mathematics 1 notes
+</footer>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  renderMathInElement(document.body,{
+    delimiters:[
+      {left:"$$",right:"$$",display:true},
+      {left:"$",right:"$",display:false}
+    ],
+    throwOnError:false
+  });
+
+  // mobile menu
+  const menuBtn=document.getElementById('menuBtn');
+  const sidebar=document.getElementById('sidebar');
+  const overlay=document.getElementById('overlay');
+  if(menuBtn){
+    menuBtn.addEventListener('click',()=>{sidebar.classList.add('open');overlay.classList.add('show');});
+    overlay.addEventListener('click',()=>{sidebar.classList.remove('open');overlay.classList.remove('show');});
+    sidebar.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>{sidebar.classList.remove('open');overlay.classList.remove('show');}));
+  }
+
+  // scrollspy
+  const links=document.querySelectorAll('.nav-link');
+  const sections=Array.from(links).map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
+  function onScroll(){
+    let idx=-1;
+    sections.forEach((sec,i)=>{
+      const r=sec.getBoundingClientRect();
+      if(r.top<=140) idx=i;
+    });
+    links.forEach(l=>l.classList.remove('active'));
+    if(idx>=0) links[idx].classList.add('active');
+  }
+
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // accordion: worked example solution toggles
+  document.querySelectorAll('.solution-toggle').forEach(function(btn){
+    var panel = btn.nextElementSibling;
+    btn.addEventListener('click', function(){
+      var isOpen = btn.classList.contains('open');
+      if(isOpen){
+        panel.style.maxHeight = panel.scrollHeight + 'px'; // set explicit height first
+        requestAnimationFrame(function(){ panel.style.maxHeight = '0px'; });
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        btn.querySelector('.toggle-label').textContent = 'Show worked solution';
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+        btn.querySelector('.toggle-label').textContent = 'Hide worked solution';
+        panel.addEventListener('transitionend', function te(){
+          if(btn.classList.contains('open')) panel.style.maxHeight = 'none';
+          panel.removeEventListener('transitionend', te);
+        });
+      }
+    });
+  });
+
+  // expand all / collapse all
+  const toggleAllBtn = document.getElementById('toggleAllBtn');
+  if(toggleAllBtn){
+    toggleAllBtn.addEventListener('click', function(){
+      const allToggles = document.querySelectorAll('.solution-toggle');
+      const anyClosed = Array.from(allToggles).some(b => !b.classList.contains('open'));
+      allToggles.forEach(function(btn){
+        const panel = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        if(anyClosed && !isOpen){
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded','true');
+          btn.querySelector('.toggle-label').textContent = 'Hide worked solution';
+          panel.addEventListener('transitionend', function te(){
+            if(btn.classList.contains('open')) panel.style.maxHeight = 'none';
+            panel.removeEventListener('transitionend', te);
+          });
+        } else if(!anyClosed && isOpen){
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          requestAnimationFrame(function(){ panel.style.maxHeight = '0px'; });
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          btn.querySelector('.toggle-label').textContent = 'Show worked solution';
+        }
+      });
+      toggleAllBtn.textContent = anyClosed ? 'Collapse All Examples' : 'Expand All Examples';
+    });
+  }
+});
+</script>
+</body>
+</html>

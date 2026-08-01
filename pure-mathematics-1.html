@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure Mathematics 1 — Edexcel International A Level Notes</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+<style>
+:root{
+  --navy:#0f2545;
+  --navy-2:#16345e;
+  --blue:#1d5bbf;
+  --blue-light:#e8f0fd;
+  --accent:#c9862c;
+  --accent-2:#a8471f;
+  --green:#1c7c54;
+  --green-light:#e7f6ee;
+  --red:#a8321f;
+  --red-light:#fbeceb;
+  --ink:#1c2430;
+  --ink-soft:#4a5568;
+  --paper:#fbfaf7;
+  --card:#ffffff;
+  --line:#e2e0d8;
+  --sidebar-w:290px;
+  --radius:10px;
+  --shadow:0 2px 10px rgba(15,37,69,0.06);
+  --shadow-lg:0 8px 30px rgba(15,37,69,0.12);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Georgia','Iowan Old Style',-apple-system,BlinkMacSystemFont,'Segoe UI',serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+  font-size:16.5px;
+}
+
+/* ---------- Layout ---------- */
+.layout{display:flex;min-height:100vh;}
+
+.sidebar{
+  width:var(--sidebar-w);
+  flex-shrink:0;
+  background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);
+  color:#e9edf5;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
+  padding:0 0 30px 0;
+  scrollbar-width:thin;
+  scrollbar-color:#3a5883 transparent;
+}
+.sidebar::-webkit-scrollbar{width:6px;}
+.sidebar::-webkit-scrollbar-thumb{background:#3a5883;border-radius:3px;}
+
+.sidebar-header{
+  padding:28px 24px 20px 24px;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  position:sticky;
+  top:0;
+  background:var(--navy);
+  z-index:5;
+}
+.sidebar-header .kicker{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:6px;
+}
+.sidebar-header h1{
+  font-size:21px;
+  margin:0 0 4px 0;
+  font-weight:700;
+  line-height:1.3;
+  color:#fff;
+}
+.sidebar-header .sub{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  color:#a9bcdb;
+}
+
+.nav-unit{padding:14px 0 4px 0;}
+.nav-unit-title{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:10.5px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  color:#7d93bd;
+  font-weight:700;
+  padding:8px 24px 6px 24px;
+}
+.nav-link{
+  display:block;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:13.8px;
+  color:#c7d3e8;
+  text-decoration:none;
+  padding:8px 24px 8px 30px;
+  border-left:3px solid transparent;
+  transition:all .15s ease;
+  line-height:1.4;
+}
+.nav-link:hover{background:rgba(255,255,255,0.06);color:#fff;}
+.nav-link.active{
+  background:rgba(255,255,255,0.09);
+  border-left:3px solid var(--accent);
+  color:#fff;
+  font-weight:600;
+}
+.nav-link .num{
+  display:inline-block;
+  width:20px;
+  color:#8fa3c9;
+  font-size:12px;
+}
+
+.main{
+  flex:1;
+  min-width:0;
+  padding:0;
+}
+.topbar{
+  display:none;
+}
+.content{
+  max-width:840px;
+  margin:0 auto;
+  padding:50px 48px 100px 48px;
+}
+
+/* ---------- Cover ---------- */
+.cover{
+  padding:70px 48px 50px 48px;
+  max-width:840px;
+  margin:0 auto;
+  border-bottom:3px double var(--line);
+  margin-bottom:20px;
+}
+.cover .kicker{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--blue);
+  font-weight:700;
+  margin-bottom:14px;
+}
+.cover h1{
+  font-size:42px;
+  margin:0 0 12px 0;
+  color:var(--navy);
+  line-height:1.15;
+}
+.cover .tagline{
+  font-size:18px;
+  color:var(--ink-soft);
+  font-style:italic;
+  margin-bottom:28px;
+}
+.cover-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:30px;
+}
+.cover-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px 18px;
+  box-shadow:var(--shadow);
+}
+.cover-card .label{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:10.5px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:6px;
+}
+.cover-card .val{font-size:14.5px;color:var(--ink);font-family:'Helvetica Neue',Arial,sans-serif;}
+
+/* ---------- Typography ---------- */
+.unit-marker{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--blue);
+  font-weight:700;
+  margin:0 0 8px 0;
+  padding-top:40px;
+}
+.unit-marker.first{padding-top:0;}
+
+h2.topic-title{
+  font-size:30px;
+  color:var(--navy);
+  margin:0 0 6px 0;
+  padding-bottom:14px;
+  border-bottom:2px solid var(--navy);
+  scroll-margin-top:24px;
+}
+.topic-meta{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  margin:10px 0 28px 0;
+}
+
+h3{
+  font-size:21px;
+  color:var(--navy-2);
+  margin:38px 0 14px 0;
+  scroll-margin-top:24px;
+}
+h4{
+  font-size:17px;
+  color:var(--navy-2);
+  margin:26px 0 10px 0;
+}
+p{margin:0 0 15px 0;}
+ul,ol{margin:0 0 15px 0;padding-left:24px;}
+li{margin-bottom:6px;}
+strong{color:var(--navy);}
+em.def{color:var(--accent-2);font-style:italic;}
+
+a{color:var(--blue);}
+
+/* ---------- Callouts ---------- */
+.box{
+  border-radius:var(--radius);
+  padding:18px 22px;
+  margin:20px 0;
+  box-shadow:var(--shadow);
+  border-left:4px solid;
+}
+.box-title{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+.box p:last-child{margin-bottom:0;}
+
+.formula{background:var(--blue-light);border-color:var(--blue);}
+.formula .box-title{color:var(--blue);}
+
+.tip{background:var(--green-light);border-color:var(--green);}
+.tip .box-title{color:var(--green);}
+
+.warning{background:var(--red-light);border-color:var(--red);}
+.warning .box-title{color:var(--red);}
+
+.note{background:#f4f1ea;border-color:var(--accent);}
+.note .box-title{color:var(--accent-2);}
+
+/* ---------- Worked examples ---------- */
+.example{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  margin:22px 0;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.example-header{
+  background:var(--navy);
+  color:#fff;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:0.6px;
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.example-header .tag{
+  background:var(--accent);
+  color:#2a1d0c;
+  font-size:10.5px;
+  padding:2px 8px;
+  border-radius:20px;
+  letter-spacing:0.5px;
+}
+.example-body{padding:18px 22px 20px 22px;}
+.step{
+  display:flex;
+  gap:14px;
+  margin-bottom:14px;
+  align-items:flex-start;
+}
+.step:last-child{margin-bottom:0;}
+.step-num{
+  flex-shrink:0;
+  width:26px;height:26px;
+  border-radius:50%;
+  background:var(--blue);
+  color:#fff;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+.step-content{flex:1;padding-top:2px;}
+.step-content .sk{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;
+  color:var(--ink-soft);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  margin-bottom:3px;
+}
+.example-answer{
+  margin-top:14px;
+  padding:10px 16px;
+  background:var(--green-light);
+  border-radius:6px;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:14px;
+  color:var(--green);
+  font-weight:700;
+}
+.example-question{
+  padding:16px 22px 4px 22px;
+}
+.example-question p{
+  margin:0;
+  font-weight:600;
+  color:var(--ink);
+}
+.solution-toggle{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  background:var(--paper);
+  border:none;
+  border-top:1px solid var(--line);
+  margin-top:16px;
+  padding:11px 22px;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  color:var(--blue);
+  cursor:pointer;
+  transition:background .15s ease;
+  text-align:left;
+}
+.solution-toggle:hover{background:var(--blue-light);}
+.solution-toggle .toggle-icon{
+  transition:transform .25s ease;
+  font-size:11px;
+  flex-shrink:0;
+}
+.solution-toggle.open .toggle-icon{transform:rotate(180deg);}
+.example-solution{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease;
+}
+.example-solution .example-body{padding-top:16px;}
+
+/* ---------- Cross-reference / connection box ---------- */
+.connect{background:#eef1f7;border-color:var(--navy-2);}
+.connect .box-title{color:var(--navy-2);}
+.connect a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;}
+.connect a:hover{color:var(--accent-2);}
+.toggle-all-btn{
+  display:block;
+  width:100%;
+  margin-top:14px;
+  padding:9px 14px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:8px;
+  color:#e9edf5;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:11.5px;
+  font-weight:700;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.toggle-all-btn:hover{background:rgba(255,255,255,0.16);}
+
+
+/* ---------- Tables ---------- */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:20px 0;
+  font-size:15px;
+  box-shadow:var(--shadow);
+  border-radius:8px;
+  overflow:hidden;
+}
+th{
+  background:var(--navy);
+  color:#fff;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  padding:10px 14px;
+  text-align:left;
+}
+td{
+  padding:10px 14px;
+  border-bottom:1px solid var(--line);
+  background:var(--card);
+}
+tr:last-child td{border-bottom:none;}
+tr:nth-child(even) td{background:#f7f6f1;}
+
+/* ---------- Diagram wrapper ---------- */
+.diagram{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px;
+  margin:22px 0;
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+.diagram svg{max-width:100%;height:auto;}
+.diagram-caption{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  margin-top:10px;
+  font-style:italic;
+}
+
+/* ---------- Diagram row (multiple side-by-side figures) ---------- */
+.diagram-row{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin:22px 0;
+}
+.diagram-row .d-item{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  flex:1 1 220px;
+  max-width:280px;
+}
+.diagram-row .d-item svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.diagram-row .d-item figcaption{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;
+  color:var(--ink-soft);
+  margin-top:10px;
+  font-style:italic;
+}
+
+/* ---------- Two column ---------- */
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin:20px 0;
+}
+@media (max-width:700px){.two-col{grid-template-columns:1fr;}}
+
+/* ---------- Grid cells (inline mini formula grid) ---------- */
+.grid-cells{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:12px;
+  margin:16px 0 22px 0;
+}
+.grid-cells .gcell{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 16px;
+  box-shadow:var(--shadow);
+}
+.grid-cells .gcell .glabel{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+  color:var(--accent-2);
+  font-weight:700;
+  margin-bottom:7px;
+}
+.grid-cells .gcell .gval{font-size:15px;}
+
+/* ---------- Formula sheet ---------- */
+.formula-sheet{
+  padding:50px 48px 100px 48px;
+  max-width:840px;
+  margin:0 auto;
+}
+.fs-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:20px;
+}
+@media (max-width:700px){.fs-grid{grid-template-columns:1fr;}}
+.fs-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px 20px;
+  box-shadow:var(--shadow);
+}
+.fs-card h4{
+  margin:0 0 10px 0;
+  font-size:14px;
+  color:var(--blue);
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  letter-spacing:0.4px;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--line);
+  padding-bottom:8px;
+}
+.fs-card .fline{margin-bottom:9px;font-size:14.5px;}
+.fs-card .fline:last-child{margin-bottom:0;}
+.fs-card .flabel{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:11.5px;
+  color:var(--ink-soft);
+  display:block;
+  margin-bottom:2px;
+}
+
+/* ---------- Doc switcher (cross-navigation pill) ---------- */
+.doc-switcher{
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:60;
+  display:flex;
+  align-items:center;
+  gap:2px;
+  background:rgba(15,37,69,0.94);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:999px;
+  padding:4px;
+  box-shadow:0 4px 18px rgba(15,37,69,0.28);
+}
+.doc-switcher a{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:11.5px;
+  letter-spacing:0.4px;
+  text-decoration:none;
+  color:#a9bcdb;
+  padding:7px 13px;
+  border-radius:999px;
+  transition:background .15s ease, color .15s ease;
+  white-space:nowrap;
+}
+.doc-switcher a:hover{color:#fff;background:rgba(255,255,255,0.08);}
+.doc-switcher a.current{background:var(--accent);color:#2a1d0c;font-weight:700;}
+@media (max-width:600px){
+  .doc-switcher{top:auto;bottom:16px;right:16px;left:16px;justify-content:center;}
+}
+
+/* mobile */
+@media (max-width:900px){
+  .sidebar{position:fixed;left:0;top:0;z-index:50;transform:translateX(-100%);transition:transform .25s ease;box-shadow:var(--shadow-lg);}
+  .sidebar.open{transform:translateX(0);}
+  .topbar{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 20px;background:var(--navy);color:#fff;
+    position:sticky;top:0;z-index:40;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+  }
+  .topbar button{
+    background:rgba(255,255,255,0.12);border:none;color:#fff;
+    width:36px;height:36px;border-radius:8px;font-size:18px;cursor:pointer;
+  }
+  .topbar .tbtitle{font-size:14.5px;font-weight:700;}
+  .content,.cover,.formula-sheet{padding-left:22px;padding-right:22px;}
+  .cover-grid{grid-template-columns:1fr;}
+  .cover h1{font-size:30px;}
+  .overlay{display:none;position:fixed;inset:0;background:rgba(15,37,69,0.4);z-index:45;}
+  .overlay.show{display:block;}
+}
+
+footer.doc-footer{
+  text-align:center;
+  padding:40px 20px 60px 20px;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  border-top:1px solid var(--line);
+  max-width:840px;
+  margin:0 auto;
+}
+</style>
+</head>
+<body>
+
+<nav class="doc-switcher" aria-label="Switch notes">
+  <a href="index.html">&larr; Index</a>
+  <a href="pure-mathematics-1.html" class="current">P1</a>
+  <a href="pure-mathematics-2.html">P2</a>
+</nav>
+
+<div class="topbar">
+  <button id="menuBtn" aria-label="Open menu">&#9776;</button>
+  <div class="tbtitle">Pure Mathematics 1 Notes</div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="kicker">Edexcel International A Level</div>
+      <h1>Pure Mathematics 1</h1>
+      <div class="sub">Complete Study Notes &middot; 12 Topics</div>
+      <button id="toggleAllBtn" class="toggle-all-btn" type="button">Expand All Examples</button>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit A &middot; Algebra Foundations</div>
+      <a class="nav-link" href="#surds"><span class="num">01</span>Surds</a>
+      <a class="nav-link" href="#simultaneous"><span class="num">02</span>Simultaneous Equations</a>
+      <a class="nav-link" href="#quadratics"><span class="num">03</span>Quadratics</a>
+      <a class="nav-link" href="#inequalities"><span class="num">04</span>Inequalities</a>
+      <a class="nav-link" href="#discriminant"><span class="num">05</span>The Discriminant</a>
+      <a class="nav-link" href="#indices"><span class="num">06</span>Indices</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit B &middot; Curves &amp; Functions</div>
+      <a class="nav-link" href="#transformations"><span class="num">07</span>Transformations of Curves</a>
+      <a class="nav-link" href="#sketching"><span class="num">08</span>Sketching Functions</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit C &middot; Coordinate Geometry</div>
+      <a class="nav-link" href="#lines"><span class="num">09</span>Lines</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit D &middot; Trigonometry</div>
+      <a class="nav-link" href="#trig"><span class="num">10</span>Trigonometry</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit E &middot; Calculus</div>
+      <a class="nav-link" href="#differentiation"><span class="num">11</span>Differentiation</a>
+      <a class="nav-link" href="#integration"><span class="num">12</span>Integration</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Reference</div>
+      <a class="nav-link" href="#cheatsheet"><span class="num">&#9733;</span>Formula Sheet</a>
+    </div>
+  </nav>
+
+  <div class="main">
+    <div class="cover">
+      <div class="kicker">Edexcel International A Level &middot; Pure Mathematics</div>
+      <h1>Pure Mathematics 1</h1>
+      <div class="tagline">A working reference for every core method in the P1 syllabus: rules, formulas, and worked examples, organised the way you'll actually need them in the exam room.</div>
+      <div class="cover-grid">
+        <div class="cover-card"><div class="label">Coverage</div><div class="val">12 topics &middot; 5 units</div></div>
+        <div class="cover-card"><div class="label">Includes</div><div class="val">+ Formula Sheet</div></div>
+        <div class="cover-card"><div class="label">Companion to</div><div class="val">Pure Mathematics 2 Notes</div></div>
+      </div>
+    </div>
+
+    <div class="content" id="contentroot">
+<div class="unit-marker first">Unit A &middot; Algebra Foundations</div>
+<h2 class="topic-title" id="surds">1. Surds</h2>
+<div class="topic-meta">Irrational roots, and the four moves that let you manipulate them like ordinary numbers.</div>
+
+<p>A surd is a root, usually a square root, that can't be simplified to a whole number, so it stays written in root form to keep the answer exact.</p>
+
+<h3>Core Rules</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Surd Rules</div>
+<p>$$\sqrt{a}\times\sqrt{b}=\sqrt{ab}$$</p>
+<p>$$\dfrac{\sqrt{a}}{\sqrt{b}}=\sqrt{\dfrac{a}{b}}$$</p>
+<p>$$a\sqrt{b}+c\sqrt{b}=(a+c)\sqrt{b}$$</p>
+<p>$$a\sqrt{b}-c\sqrt{b}=(a-c)\sqrt{b}$$</p>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Only like surds (same number under the root) can be added or subtracted — simplify each surd first to check whether they secretly match.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Expanding surds</span></div>
+<div class="example-question">
+<p>Expand and simplify $\sqrt{5}(1-2\sqrt5)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Expand</div>$\sqrt5 \times 1 - \sqrt5\times2\sqrt5 = \sqrt5 - 2(\sqrt5\times\sqrt5)$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Simplify</div>$\sqrt5\times\sqrt5 = 5$, so this becomes $\sqrt5 - 2(5)$</div>
+</div>
+<div class="example-answer">$\sqrt5 - 10$</div>
+</div>
+</div>
+</div>
+
+<h3>Rationalising the Denominator</h3>
+<p>Rationalising means removing a surd from the denominator, so the fraction is written in a standard, comparable form.</p>
+
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Form $\dfrac{1}{\sqrt a}$</div><div class="gval">Multiply top and bottom by $\sqrt A$</div></div>
+<div class="gcell"><div class="glabel">Form $\dfrac{1}{\sqrt a \pm \sqrt b}$</div><div class="gval">Multiply top and bottom by the conjugate $\sqrt A \mp \sqrt B$</div></div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Conjugate rationalising</span></div>
+<div class="example-question">
+<p>Rationalise $\dfrac{5}{2+\sqrt7}$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Conjugate</div>Multiply top and bottom by $2-\sqrt7$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Denominator</div>$(2+\sqrt7)(2-\sqrt7) = 4 - 7 = -3$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Numerator</div>$5(2-\sqrt7) = 10-5\sqrt7$</div>
+</div>
+<div class="example-answer">$\dfrac{10-5\sqrt7}{-3} = \dfrac{5\sqrt7-10}{3}$</div>
+</div>
+</div>
+</div>
+
+
+<h2 class="topic-title" id="simultaneous">2. Simultaneous Equations</h2>
+<div class="topic-meta">Finding where two graphs meet: linear-linear, or linear-nonlinear.</div>
+
+<p>Solving simultaneous equations means finding the intersection point(s) of two graphs: two lines (linear-linear), or a line and a curve/circle (linear-nonlinear).</p>
+
+<h3>Linear &ndash; Linear</h3>
+<p>Use elimination or substitution / or a calculator's simultaneous-equation solver when only numeric coefficients are involved. (MODE 5 1)</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Elimination</span></div>
+<div class="example-question">
+<p>Solve $3x+2y=8$ and $2x+5y=-2$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Match coeffs</div>$\times5$: $15x+10y=40$ &nbsp;&nbsp;&nbsp;$\times2$: $4x+10y=-4$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Subtract</div>$11x = 44 \Rightarrow x=4$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Back-substitute</div>$3(4)+2y=8 \Rightarrow y=-2$</div>
+</div>
+</div>
+</div>
+</div>
+
+<h3>Linear &ndash; Nonlinear</h3>
+<ol>
+<li>Make $x$ or $y$ the subject in the <em>linear</em> equation (easiest when its coefficient is $+1$ or $-1$).</li>
+<li>Substitute into the nonlinear equation.</li>
+<li>Solve the resulting quadratic (calculator MODE 5 3) to get one coordinate, then substitute back for the other.</li>
+</ol>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Substituting the nonlinear equation into the linear one (instead of the reverse) usually makes the algebra far messier — so always eliminate using the linear equation first.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Line meets curve</span></div>
+<div class="example-question">
+<p>Solve $y = x+1$ and $y = x^2-x-1$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Substitute</div>$x+1 = x^2-x-1$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Rearrange</div>$x^2-2x-2=0$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Solve</div>$x = \dfrac{2\pm\sqrt{4+8}}{2} = 1\pm\sqrt3$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Back-substitute</div>$y=x+1$ for each root gives the two intersection points</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<h2 class="topic-title" id="quadratics">3. Quadratics</h2>
+<div class="topic-meta">Solving $ax^2+bx+c=0$, and rewriting it to reveal the turning point.</div>
+
+<p>A quadratic equation has the form $ax^2+bx+c=0$ where $a\neq0$. It can have two real roots, one repeated root, or no real roots.</p>
+
+<h3>Quadratic Formula</h3>
+<div class="box formula">
+<div class="box-title">Formula</div>
+<p>$$x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$$</p>
+</div>
+
+<h3 id="CTS">Completing the Square</h3>
+<div class="box formula">
+<div class="box-title">Formula</div>
+<p>$$a\left(x+\dfrac{b}{2a}\right)^2 - \dfrac{b^2}{4a} + c$$</p>
+</div>
+
+<p>This form shows the turning point directly at $\left(-\dfrac{b}{2a},\; c-\dfrac{b^2}{4a}\right)$: crucial for sketching and for minimum/maximum problems.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Completing the square</span></div>
+<div class="example-question">
+<p>Write $2x^2-8x+3$ in completed-square form.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Factor out $a$</div>$2(x^2-4x)+3$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Halve, square</div>$2\big[(x-2)^2-4\big]+3$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Simplify</div>$2(x-2)^2-8+3 = 2(x-2)^2-5$</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="box connect">
+<div class="box-title">&#8614; Continues In</div>
+<p>This method returns in <a href="pure-mathematics-2.html#t3">P2 &mdash; Circles</a>, where completing the square on $x^2+y^2+2gx+2fy+c=0$ is exactly how you find a circle's center and radius.</p>
+</div>
+
+<h2 class="topic-title" id="inequalities">4. Inequalities</h2>
+<div class="topic-meta">Linear inequalities, quadratic inequalities, and shading regions for linear programming.</div>
+
+<h3>Linear Inequalities</h3>
+<ul>
+<li>Solve exactly like a linear equation.</li>
+<li>Keep the variable on the left-hand side where possible.</li>
+<li>Multiplying or dividing by a <strong>negative</strong> number flips the inequality sign.</li>
+</ul>
+
+<h3>Quadratic Inequalities</h3>
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Never solve using the equation-solver (MODE 5 3) unless the right-hand side is zero and the coefficient of x² is positive: rearrange first.</p>
+</div>
+
+<table>
+<tr><th>Inequality form</th><th>Solution form</th></tr>
+<tr><td>$ax^2+bx+c > 0$</td><td>$x > x_{\text{big}}$ &nbsp;or&nbsp; $x < x_{\text{small}}$</td></tr>
+<tr><td>$ax^2+bx+c < 0$</td><td>$x_{\text{small}} < x < x_{\text{big}}$</td></tr>
+</table>
+
+<div class="example">
+<div class="example-header">Worked Example</div>
+<div class="example-question">
+<p>Solve $x^2+5x \geq -6$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Rearrange</div>$x^2+5x+6 \geq 0$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Factorise</div>$(x+2)(x+3)\geq0$, roots at $x=-2,\,-3$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Answer</div>Positive coefficient, so outside the roots: $x\leq-3$ or $x\geq-2$</div>
+</div>
+</div>
+</div>
+</div>
+
+<h3>Shading for Linear Programming</h3>
+<ul>
+<li>Shaded region <strong>above</strong> a line/curve satisfies $y > f(x)$ or $y \geq f(x)$.</li>
+<li>Shaded region <strong>below</strong> a line/curve satisfies $y < f(x)$ or $y \leq f(x)$.</li>
+</ul>
+
+<div class="diagram-row">
+<div class="d-item">
+<svg viewBox="0 0 220 170" width="220" height="170">
+<line x1="20" y1="150" x2="200" y2="150" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="30" y1="20" x2="30" y2="160" stroke="#c9c6ba" stroke-width="1"/>
+<polygon points="40,150 190,40 190,150" fill="#1d5bbf" fill-opacity="0.14"/>
+<line x1="40" y1="150" x2="190" y2="40" stroke="#1d5bbf" stroke-width="2"/>
+<text x="120" y="105" font-family="Helvetica Neue,Arial" font-size="12" fill="#1d5bbf">y &lt; f(x)</text>
+</svg>
+<figcaption>shading below the line</figcaption>
+</div>
+<div class="d-item">
+<svg viewBox="0 0 220 170" width="220" height="170">
+<line x1="20" y1="150" x2="200" y2="150" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="30" y1="20" x2="30" y2="160" stroke="#c9c6ba" stroke-width="1"/>
+<polygon points="40,150 190,40 40,40" fill="#a8321f" fill-opacity="0.12"/>
+<line x1="40" y1="150" x2="190" y2="40" stroke="#a8321f" stroke-width="2"/>
+<text x="55" y="60" font-family="Helvetica Neue,Arial" font-size="12" fill="#a8321f">y &gt; f(x)</text>
+</svg>
+<figcaption>shading above the line</figcaption>
+</div>
+</div>
+
+
+<h2 class="topic-title" id="discriminant">5. The Discriminant</h2>
+<div class="topic-meta">One expression tells you how many times a quadratic meets the x-axis, or two curves meet each other.</div>
+
+<div class="box connect">
+<div class="box-title">&#8614; Continues In</div>
+<p>The same "set the discriminant to zero" logic reappears in <a href="pure-mathematics-2.html#t3">P2 &mdash; Circles</a> when finding the tangent to a circle from a line.</p>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula</div>
+<p>$$D = b^2-4ac$$</p>
+</div>
+
+<table>
+<tr><th>Value</th><th>Meaning</th></tr>
+<tr><td>$D=0$</td><td>One real (repeated) root: curve touches the x-axis, or two graphs are tangent</td></tr>
+<tr><td>$D>0$</td><td>Two real roots: curve crosses the x-axis twice, or two graphs meet at two points</td></tr>
+<tr><td>$D<0$</td><td>No real roots: curve doesn't touch the x-axis, or two graphs never meet</td></tr>
+</table>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Keywords</div>
+<p>"Tangent" or "meets exactly once" &rarr; D=0. &nbsp;"Meets at two points" &rarr; D&gt;0. &nbsp;"Does not meet/intersect" &rarr; D&lt;0.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example</div>
+<div class="example-question">
+<p>Find $k$ such that $y=kx+3$ is tangent to $y=x^2+2x+5$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Equate</div>$x^2+2x+5 = kx+3 \Rightarrow x^2+(2-k)x+2=0$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Tangent &rArr; D = 0</div>$(2-k)^2 - 8 = 0$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Solve</div>$2-k = \pm2\sqrt2 \Rightarrow k = 2\mp2\sqrt2$</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<h2 class="topic-title" id="indices">6. Indices</h2>
+<div class="topic-meta">The laws that let you simplify powers without ever expanding them.</div>
+
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Multiplying</div><div class="gval">$a^m\times a^n=a^{m+n}$</div></div>
+<div class="gcell"><div class="glabel">Dividing</div><div class="gval">$a^m\div a^n=a^{m-n}$</div></div>
+<div class="gcell"><div class="glabel">Power of a power</div><div class="gval">$(a^m)^n=a^{mn}$</div></div>
+<div class="gcell"><div class="glabel">Negative power</div><div class="gval">$a^{-m}=\dfrac{1}{a^m}$</div></div>
+<div class="gcell"><div class="glabel">Zero power</div><div class="gval">$a^0=1$</div></div>
+<div class="gcell"><div class="glabel">Fractional power</div><div class="gval">$a^{\frac{m}{n}}=\sqrt[n]{a^m}$</div></div>
+<div class="gcell"><div class="glabel">Root form</div><div class="gval">$\sqrt[m]{a}=a^{\frac1m}$</div></div>
+<div class="gcell"><div class="glabel">Equal bases</div><div class="gval">if $a^x=a^y$ then $x=y$</div></div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Whenever an equation has the unknown in the exponent, the goal is almost always to write both sides with the same base so you can equate the powers directly.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example</div>
+<div class="example-question">
+<p>Solve $9^{x} = 27^{2-x}$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Common base</div>$9=3^2$, $27=3^3$, so $3^{2x}=3^{3(2-x)}$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Equate powers</div>$2x = 6-3x$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Answer</div>$5x=6 \Rightarrow x=\dfrac{6}{5}$</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="unit-marker">Unit B &middot; Curves &amp; Functions</div>
+<h2 class="topic-title" id="transformations">7. Transformations of Curves</h2>
+<div class="topic-meta">Six moves for shifting, flipping, and stretching any graph $y=f(x)$.</div>
+
+<p>Changes made <strong>inside</strong> the brackets of $f(x)$ transform the curve horizontally (along $x$). Changes made <strong>outside</strong> the brackets transform it vertically (along $y$).</p>
+
+<table>
+<tr><th>Transformation on $x$</th><th>Transformation on $y$</th></tr>
+<tr><td>$f(x\pm a)$ &rarr; translation on the x-axis</td><td>$f(x)\pm a$ &rarr; translation on the y-axis</td></tr>
+<tr><td>$f(-x)$ &rarr; reflection in the y-axis</td><td>$-f(x)$ &rarr; reflection in the x-axis</td></tr>
+<tr><td>$f(ax)$ &rarr; stretch on the x-axis</td><td>$a\,f(x)$ &rarr; stretch on the y-axis</td></tr>
+</table>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>To solve for a point on the transformed curve, work backwards from the graph: for an X-transformation apply the OPPOSITE operation to your coordinate; for a Y-transformation apply the SAME operation.</p>
+</div>
+
+<div class="diagram-row">
+<div class="d-item">
+<svg viewBox="0 0 200 150" width="200" height="150">
+<line x1="10" y1="120" x2="190" y2="120" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="100" y1="10" x2="100" y2="140" stroke="#c9c6ba" stroke-width="1"/>
+<path d="M40,110 Q100,20 160,110" stroke="#c9c6ba" stroke-width="1.6" fill="none" stroke-dasharray="3 3"/>
+<path d="M60,110 Q120,20 180,110" stroke="#1d5bbf" stroke-width="2.2" fill="none"/>
+<text x="128" y="14" font-family="Helvetica Neue,Arial" font-size="10" fill="#1d5bbf">f(x-a)</text>
+</svg>
+<figcaption>translation on x</figcaption>
+</div>
+<div class="d-item">
+<svg viewBox="0 0 200 150" width="200" height="150">
+<line x1="10" y1="120" x2="190" y2="120" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="100" y1="10" x2="100" y2="140" stroke="#c9c6ba" stroke-width="1"/>
+<path d="M40,110 Q100,20 160,110" stroke="#c9c6ba" stroke-width="1.6" fill="none" stroke-dasharray="3 3"/>
+<path d="M40,80 Q100,-10 160,80" stroke="#c9862c" stroke-width="2.2" fill="none"/>
+<text x="10" y="55" font-family="Helvetica Neue,Arial" font-size="10" fill="#c9862c">f(x)+a</text>
+</svg>
+<figcaption>translation on y</figcaption>
+</div>
+<div class="d-item">
+<svg viewBox="0 0 200 150" width="200" height="150">
+<line x1="10" y1="70" x2="190" y2="70" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="100" y1="10" x2="100" y2="140" stroke="#c9c6ba" stroke-width="1"/>
+<path d="M40,60 Q100,-30 160,60" stroke="#c9c6ba" stroke-width="1.6" fill="none" stroke-dasharray="3 3"/>
+<path d="M40,80 Q100,190 160,80" stroke="#a8321f" stroke-width="2.2" fill="none"/>
+<text x="150" y="120" font-family="Helvetica Neue,Arial" font-size="10" fill="#a8321f">-f(x)</text>
+</svg>
+<figcaption>reflection in x-axis</figcaption>
+</div>
+</div>
+
+
+<h2 class="topic-title" id="sketching">8. Sketching Functions</h2>
+<div class="topic-meta">Linear, quadratic, cubic and reciprocal curves: the same four questions, answered every time.</div>
+
+<p>From any sketch, examiners expect you to read off: the intersections with each axis, and the intervals where $f(x)$ is positive or negative. The core graph shapes worth knowing cold are <strong>linear</strong>, <strong>quadratic</strong>, <strong>cubic</strong>, $\dfrac{1}{f(x)}$ and $\dfrac{1}{f(x)^2}$.</p>
+
+<h3>Type 1: Linear &mdash; $y=mx+c$</h3>
+<ol>
+<li>x-intercept: set $y=0$ and solve for $x$</li>
+<li>y-intercept: set $x=0$</li>
+<li>Gradient from the sign of $m$: positive &rarr; increasing, negative &rarr; decreasing</li>
+</ol>
+
+<div class="diagram-row">
+<div class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130">
+<line x1="10" y1="65" x2="170" y2="65" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="90" y1="10" x2="90" y2="120" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="25" y1="105" x2="155" y2="25" stroke="#1d5bbf" stroke-width="2.2"/>
+</svg>
+<figcaption>$m>0$: increasing</figcaption>
+</div>
+<div class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130">
+<line x1="10" y1="65" x2="170" y2="65" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="90" y1="10" x2="90" y2="120" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="25" y1="25" x2="155" y2="105" stroke="#a8321f" stroke-width="2.2"/>
+</svg>
+<figcaption>$m<0$: decreasing</figcaption>
+</div>
+</div>
+
+<h3>Type 2: Quadratic &mdash; $y=ax^2+bx+c$</h3>
+<ol>
+<li>x-intercept(s): set $y=0$ and solve (MODE 5 &rarr; 3). Use the discriminant to determine how many roots exist.</li>
+<li>y-intercept: set $x=0$</li>
+<li>Turning point: $x=-\dfrac{b}{2a}$, or read directly from <a href="#CTS">completed-square form</a>.</li>
+<li>Shape: $a>0$ opens upward, $a<0$ opens downward.</li>
+</ol>
+
+<div class="diagram-row">
+<div class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130">
+<line x1="10" y1="105" x2="170" y2="105" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="90" y1="10" x2="90" y2="120" stroke="#c9c6ba" stroke-width="1"/>
+<path d="M30,100 Q90,10 150,100" stroke="#1d5bbf" stroke-width="2.2" fill="none"/>
+<circle cx="90" cy="55" r="2.6" fill="#1d5bbf"/>
+</svg>
+<figcaption>$a<0$: maximum</figcaption>
+</div>
+<div class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130">
+<line x1="10" y1="60" x2="170" y2="60" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="90" y1="10" x2="90" y2="120" stroke="#c9c6ba" stroke-width="1"/>
+<path d="M30,20 Q90,110 150,20" stroke="#a8321f" stroke-width="2.2" fill="none"/>
+<circle cx="90" cy="65" r="2.6" fill="#a8321f"/>
+</svg>
+<figcaption>$a>0$: minimum</figcaption>
+</div>
+</div>
+
+<h3>Type 3: Cubic &mdash; $y=ax^3+bx^2+cx+d$</h3>
+<ol>
+<li>x-intercept(s): set $y=0$ and solve (MODE 5 &rarr; 4, or factorise if possible).</li>
+<li>y-intercept: set $x=0$</li>
+<li>Overall shape depends on the sign of $a$.</li>
+</ol>
+
+<div class="diagram-row">
+<div class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130">
+<line x1="10" y1="65" x2="170" y2="65" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="90" y1="10" x2="90" y2="120" stroke="#c9c6ba" stroke-width="1"/>
+<path d="M30,100 C60,20 90,110 90,65 C90,20 120,110 150,20" stroke="#1d5bbf" stroke-width="2.2" fill="none"/>
+</svg>
+<figcaption>$a>0$: rises to the right</figcaption>
+</div>
+<div class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130">
+<line x1="10" y1="65" x2="170" y2="65" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="90" y1="10" x2="90" y2="120" stroke="#c9c6ba" stroke-width="1"/>
+<path d="M30,20 C60,110 90,20 90,65 C90,110 120,20 150,100" stroke="#a8321f" stroke-width="2.2" fill="none"/>
+</svg>
+<figcaption>$a<0$: falls to the right</figcaption>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>A cubic curve can have one, two (one repeated), or three real x-intercepts.</p>
+</div>
+
+<h3>Type 4: Reciprocal &mdash; $\dfrac1{f(x)}$ and $\dfrac1{f(x)^2}$</h3>
+<ol>
+<li>x-intercept: set $y=0$ (often none / check whether the numerator can ever be zero)</li>
+<li>y-intercept: set $x=0$</li>
+<li>Find the vertical and horizontal <strong>asymptotes</strong></li>
+<li>Use the asymptotes to fix the shape, then sketch</li>
+</ol>
+
+<div class="diagram-row">
+<div class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130">
+<line x1="10" y1="65" x2="170" y2="65" stroke="#c9c6ba" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="90" y1="10" x2="90" y2="120" stroke="#c9c6ba" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M95,10 C100,45 115,60 165,63" stroke="#c9862c" stroke-width="2.2" fill="none"/>
+<path d="M85,120 C80,85 65,70 15,67" stroke="#c9862c" stroke-width="2.2" fill="none"/>
+</svg>
+<figcaption>$\frac1{f(x)}$: two branches</figcaption>
+</div>
+<div class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130">
+<line x1="10" y1="65" x2="170" y2="65" stroke="#c9c6ba" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="90" y1="10" x2="90" y2="120" stroke="#c9c6ba" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M15,63 C45,62 70,55 82,18" stroke="#c9862c" stroke-width="2.2" fill="none"/>
+<path d="M98,18 C110,55 135,62 165,63" stroke="#c9862c" stroke-width="2.2" fill="none"/>
+</svg>
+<figcaption>$\frac{1}{f(x)^2}$: two positive branches</figcaption>
+</div>
+</div>
+
+<div class="box note">
+<div class="box-title">Note</div>
+<p><strong>Remember:</strong> Every zero of <em>f(x)</em> becomes a vertical asymptote of $\frac{1}{f(x)}$ and $\frac{1}{f(x)^2}$.</p>
+</div>
+
+
+<div class="unit-marker">Unit C &middot; Coordinate Geometry</div>
+<h2 class="topic-title" id="lines">9. Lines</h2>
+<div class="topic-meta">Everything two coordinates can tell you, and how to build the equation of a line from them.</div>
+
+<p>Given any two points, you can always compute the gradient, the distance between them, and their midpoint.</p>
+
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Gradient</div><div class="gval">$$m=\dfrac{y_2-y_1}{x_2-x_1}$$</div></div>
+<div class="gcell"><div class="glabel">Distance</div><div class="gval">$$d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$$</div></div>
+<div class="gcell"><div class="glabel">Midpoint</div><div class="gval">$$\left(\dfrac{x_1+x_2}{2},\dfrac{y_1+y_2}{2}\right)$$</div></div>
+</div>
+
+<p>The equation of a straight line takes the form $y=mx+c$.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Equation from two points</span></div>
+<div class="example-question">
+<p>Find the equation of the line through $(1,5)$ and $(2,8)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Gradient</div>$m=\dfrac{8-5}{2-1}=3$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Substitute</div>$5 = 3(1)+c \Rightarrow c=2$</div>
+</div>
+<div class="example-answer">$y=3x+2$</div>
+</div>
+</div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Perpendicular line</span></div>
+<div class="example-question">
+<p>Find the line through $(2,3)$ perpendicular to $y=2x+7$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Perp. gradient</div>$m_1 m_2=-1 \Rightarrow m_2 = -\dfrac12$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Substitute</div>$3=-\dfrac12(2)+c \Rightarrow c=4$</div>
+</div>
+<div class="example-answer">$y=-\dfrac12x+4$</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Keywords</div>
+<p>Meets the x-axis &rarr; set y=0. &nbsp;Meets the y-axis &rarr; set x=0. &nbsp;Two lines intersect &rarr; solve simultaneously. &nbsp;Asked for an area &rarr; sketch everything you're given first.</p>
+</div>
+
+
+<div class="unit-marker">Unit D &middot; Trigonometry</div>
+<h2 class="topic-title" id="trig">10. Trigonometry</h2>
+<div class="topic-meta">Right-angle and non-right-angle triangles, radians, and the three trig graphs.</div>
+
+<div class="box connect">
+<div class="box-title">&#8614; Continues In</div>
+<p>This topic continues directly in <a href="pure-mathematics-2.html#t5">P2 &mdash; Radians, Graphs &amp; Identities</a>, which extends the sine and cosine rules to radians, sectors, and trig identities.</p>
+</div>
+
+<ul>
+<li>Angles in any triangle sum to $180°$.</li>
+<li>An equilateral triangle has three $60°$ angles and three equal sides.</li>
+<li>An isosceles triangle has two equal sides and two equal angles.</li>
+</ul>
+
+<h3>Right-Angle Triangles</h3>
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Pythagoras: find a side</div><div class="gval">$c^2=a^2+b^2$</div></div>
+<div class="gcell"><div class="glabel">SOH &middot; CAH &middot; TOA: one side + an angle</div><div class="gval">$\sin x=\dfrac{opp}{hyp}$<br>$\cos x=\dfrac{adj}{hyp}$<br>$\tan x=\dfrac{opp}{adj}$</div></div>
+<div class="gcell"><div class="glabel">Inverse ratios: find an angle</div><div class="gval">$x=\sin^{-1}\!\left(\dfrac{opp}{hyp}\right)$, and similarly for $\cos^{-1}$, $\tan^{-1}$</div></div>
+<div class="gcell"><div class="glabel">Area</div><div class="gval">$\tfrac12\times \text{base}\times\text{height}$</div></div>
+</div>
+
+<h3>Non-Right-Angle Triangles</h3>
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Sine rule</div><div class="gval">$$\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}$$side: need 2 angles + 1 side &middot; angle: need 2 sides + 1 angle</div></div>
+<div class="gcell"><div class="glabel">Cosine rule &mdash; side</div><div class="gval">$$b^2=a^2+c^2-2ac\cos B$$needs 2 sides + the included angle</div></div>
+<div class="gcell"><div class="glabel">Cosine rule &mdash; angle</div><div class="gval">$$A=\cos^{-1}\!\left(\dfrac{b^2+c^2-a^2}{2bc}\right)$$needs all 3 sides</div></div>
+<div class="gcell"><div class="glabel">Area</div><div class="gval">$\tfrac12 ab\sin C$</div></div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Cosine rule</span></div>
+<div class="example-question">
+<p>A triangle has $a=7$, $c=9$, and included angle $B=52°$. Find $b$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Substitute</div>$b^2 = 7^2+9^2-2(7)(9)\cos52°$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Evaluate</div>$b^2 = 49+81-77.5 \approx 52.5$</div>
+</div>
+<div class="example-answer">$b \approx 7.25$</div>
+</div>
+</div>
+</div>
+
+<h3>Radians &amp; Sectors</h3>
+<div class="box formula">
+<div class="box-title">Formula</div>
+<p>$\pi \text{ rad} = 180°$</p>
+<p>Area of sector $=\tfrac12 \theta r^2$ &nbsp;&nbsp;&nbsp;&nbsp;Arc length $=\theta r$ &nbsp;<span style="color:var(--ink-soft);font-size:12.5px;">($\theta$ in radians)</span></p>
+</div>
+
+<h3>Trig Graphs</h3>
+<p>Know the shape, period, and key values of all three — they underpin every trig-equation and transformation question.</p>
+
+<div class="diagram-row">
+<div class="d-item">
+<svg viewBox="0 0 220 110" width="220" height="110">
+<line x1="10" y1="55" x2="210" y2="55" stroke="#c9c6ba" stroke-width="1"/>
+<path d="M10,55 C30,10 50,10 70,55 C90,100 110,100 130,55 C150,10 170,10 190,55 C200,77 205,77 210,66" stroke="#1d5bbf" stroke-width="2.2" fill="none"/>
+</svg>
+<figcaption>y = sin x — period 360°</figcaption>
+</div>
+<div class="d-item">
+<svg viewBox="0 0 220 110" width="220" height="110">
+<line x1="10" y1="55" x2="210" y2="55" stroke="#c9c6ba" stroke-width="1"/>
+<path d="M10,10 C30,10 50,100 70,100 C90,100 110,10 130,10 C150,10 170,100 190,100 C200,100 205,55 210,32" stroke="#c9862c" stroke-width="2.2" fill="none"/>
+</svg>
+<figcaption>y = cos x — period 360°</figcaption>
+</div>
+<div class="d-item">
+<svg viewBox="0 0 220 110" width="220" height="110">
+<line x1="10" y1="55" x2="210" y2="55" stroke="#c9c6ba" stroke-width="1"/>
+<line x1="60" y1="5" x2="60" y2="105" stroke="#a8321f" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="160" y1="5" x2="160" y2="105" stroke="#a8321f" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M15,90 C35,60 50,55 58,15" stroke="#a8321f" stroke-width="2.2" fill="none"/>
+<path d="M62,95 C70,55 85,50 105,55 C125,60 140,55 158,15" stroke="#a8321f" stroke-width="2.2" fill="none"/>
+<path d="M162,95 C170,60 185,55 205,20" stroke="#a8321f" stroke-width="2.2" fill="none"/>
+</svg>
+<figcaption>y = tan x — period 180°, asymptotes</figcaption>
+</div>
+</div>
+
+
+<div class="unit-marker">Unit E &middot; Calculus</div>
+<h2 class="topic-title" id="differentiation">11. Differentiation</h2>
+<div class="topic-meta">Finding the gradient function — the rate of change at any point on a curve.</div>
+
+<div class="box connect">
+<div class="box-title">&#8614; Continues In</div>
+<p>This topic continues in <a href="pure-mathematics-2.html#t6">P2 &mdash; Differentiation</a>, which adds the chain, product and quotient rules, plus derivatives of $\sin x$, $\cos x$, $e^x$ and $\ln x$.</p>
+</div>
+
+<p>Differentiation, written $y'$ or $\dfrac{dy}{dx}$, gives the gradient of a curve at a specific point.</p>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>A term can only be differentiated once its variable is written in the numerator — rewrite any fraction (e.g. split it into separate terms) before differentiating.</p>
+</div>
+
+<h3>Rules</h3>
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Power rule</div><div class="gval">$y=ax^n \;\Rightarrow\; \dfrac{dy}{dx}=anx^{n-1}$</div></div>
+<div class="gcell"><div class="glabel">Linear term</div><div class="gval">$y=ax \;\Rightarrow\; \dfrac{dy}{dx}=a$</div></div>
+<div class="gcell"><div class="glabel">Constant term</div><div class="gval">$y=a \;\Rightarrow\; \dfrac{dy}{dx}=0$</div></div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example</div>
+<div class="example-question">
+<p>Differentiate $y=\dfrac{5x^2+8x-10}{x}$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Split</div>$y = 5x+8-10x^{-1}$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Differentiate</div>$\dfrac{dy}{dx} = 5+0+10x^{-2}$</div>
+</div>
+<div class="example-answer">$\dfrac{dy}{dx} = 5+\dfrac{10}{x^2}$</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>$\dfrac{dy}{dx}=0$ locates stationary (turning) points — set the derivative to zero and solve whenever a question asks for a maximum, minimum, or the gradient at a specific $x$.</p>
+</div>
+
+
+<h2 class="topic-title" id="integration">12. Integration</h2>
+<div class="topic-meta">Reversing differentiation to recover the original function.</div>
+
+<div class="box connect">
+<div class="box-title">&#8614; Continues In</div>
+<p>This topic continues in <a href="pure-mathematics-2.html#t7">P2 &mdash; Integration</a>, which adds standard integrals for $\sin x$, $\cos x$, $e^x$ and $\dfrac1x$, plus definite integrals and area.</p>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 280 70" width="280" height="70">
+<text x="10" y="30" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430">y</text>
+<path d="M30,20 L150,20" stroke="#c9862c" stroke-width="1.6" marker-end="url(#arrow1)"/>
+<text x="60" y="14" font-family="Helvetica Neue,Arial" font-size="10" fill="#c9862c">differentiation</text>
+<text x="160" y="30" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430">dy/dx</text>
+<path d="M150,50 L30,50" stroke="#1d5bbf" stroke-width="1.6" marker-end="url(#arrow2)"/>
+<text x="55" y="65" font-family="Helvetica Neue,Arial" font-size="10" fill="#1d5bbf">integration</text>
+<defs>
+<marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c9862c"/></marker>
+<marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#1d5bbf"/></marker>
+</defs>
+</svg>
+<div class="diagram-caption">integration undoes differentiation</div>
+</div>
+
+<h3>Rule</h3>
+<div class="box formula">
+<div class="box-title">Formula</div>
+<p>$$\int ax^n\,dx=\dfrac{ax^{n+1}}{n+1}+c$$</p>
+</div>
+<ol>
+<li>Add one to the power.</li>
+<li>Divide by the new power.</li>
+<li>Add the constant of integration, $c$ — unless the question gives limits (definite integral) or a boundary condition to solve for it.</li>
+</ol>
+
+<div class="example">
+<div class="example-header">Worked Example</div>
+<div class="example-question">
+<p>Find $\displaystyle\int \left(2x^2-3x-\dfrac{6}{x^2}\right)dx$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Rewrite</div>$\int \left(2x^2 - 3x - 6x^{-2}\right)dx$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Integrate each term</div>$\dfrac{2x^3}{3} - \dfrac{3x^2}{2} - \dfrac{6x^{-1}}{-1}$</div>
+</div>
+<div class="example-answer">$\dfrac{2x^3}{3} - \dfrac{3x^2}{2} + \dfrac{6}{x} + c$</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>A boundary condition (a point the curve passes through) lets you solve for $c$ — substitute the given $x$ and $y$ into your integrated expression once the integration itself is done.</p>
+</div>
+
+
+    </div>
+
+<div class="formula-sheet" id="cheatsheet">
+  <div class="unit-marker first">Quick Recall</div>
+  <h2 class="topic-title">Formula Sheet</h2>
+  <div class="topic-meta">Everything above, compressed to one scan for the night before the exam.</div>
+
+  <div class="fs-grid">
+
+    <div class="fs-card">
+      <h4>Surds</h4>
+      <div class="fline">$\sqrt a\sqrt b=\sqrt{ab}$</div>
+      <div class="fline">$\frac{1}{\sqrt a\pm\sqrt b}$: multiply by the conjugate $\sqrt a\mp\sqrt b$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Quadratics</h4>
+      <div class="fline">$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$</div>
+      <div class="fline">$a\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a}+c$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Discriminant</h4>
+      <div class="fline">$D=b^2-4ac$</div>
+      <div class="fline">$D=0$ tangent &middot; $D>0$ two meets &middot; $D<0$ no meet</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Indices</h4>
+      <div class="fline">$a^m a^n=a^{m+n}$, &nbsp;$a^m\div a^n=a^{m-n}$</div>
+      <div class="fline">$a^{-m}=\frac1{a^m}$, &nbsp;$a^{\frac mn}=\sqrt[n]{a^m}$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Transformations</h4>
+      <div class="fline">$f(x\pm a)$: shift x &nbsp;&middot;&nbsp; $f(x)\pm a$: shift y</div>
+      <div class="fline">$f(-x)$: reflect in y &nbsp;&middot;&nbsp; $-f(x)$: reflect in x</div>
+      <div class="fline">$f(ax)$: stretch x &nbsp;&middot;&nbsp; $a f(x)$: stretch y</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Lines</h4>
+      <div class="fline">$m=\frac{y_2-y_1}{x_2-x_1}$</div>
+      <div class="fline">$d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$</div>
+      <div class="fline">midpoint $=\left(\frac{x_1+x_2}2,\frac{y_1+y_2}2\right)$</div>
+      <div class="fline">perpendicular gradients: $m_1m_2=-1$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Right-Angle Trig</h4>
+      <div class="fline">$c^2=a^2+b^2$</div>
+      <div class="fline">$\sin=\frac{opp}{hyp}$, $\cos=\frac{adj}{hyp}$, $\tan=\frac{opp}{adj}$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Non-Right-Angle Trig</h4>
+      <div class="fline">$\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}$</div>
+      <div class="fline">$a^2=b^2+c^2-2bc\cos A$</div>
+      <div class="fline">Area $=\frac12 ab\sin C$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Radians</h4>
+      <div class="fline">$\pi$ rad $=180°$</div>
+      <div class="fline">sector area $=\frac12\theta r^2$, arc $=\theta r$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Differentiation</h4>
+      <div class="fline">$y=ax^n \Rightarrow \frac{dy}{dx}=anx^{n-1}$</div>
+      <div class="fline">stationary points: $\frac{dy}{dx}=0$</div>
+    </div>
+
+    <div class="fs-card">
+      <h4>Integration</h4>
+      <div class="fline">$\int ax^n\,dx=\frac{ax^{n+1}}{n+1}+c$</div>
+      <div class="fline">use a boundary point to solve for $c$</div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="doc-footer">
+  Compiled reference notes &middot; not a substitute for the full syllabus &middot; check the current Edexcel International A Level Pure Mathematics specification for exact requirements
+</footer>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  renderMathInElement(document.body,{
+    delimiters:[
+      {left:"$$",right:"$$",display:true},
+      {left:"$",right:"$",display:false}
+    ],
+    throwOnError:false
+  });
+
+  // mobile menu
+  const menuBtn=document.getElementById('menuBtn');
+  const sidebar=document.getElementById('sidebar');
+  const overlay=document.getElementById('overlay');
+  if(menuBtn){
+    menuBtn.addEventListener('click',()=>{sidebar.classList.add('open');overlay.classList.add('show');});
+    overlay.addEventListener('click',()=>{sidebar.classList.remove('open');overlay.classList.remove('show');});
+    sidebar.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>{sidebar.classList.remove('open');overlay.classList.remove('show');}));
+  }
+
+  // scrollspy
+  const links=document.querySelectorAll('.nav-link');
+  const sections=Array.from(links).map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
+  function onScroll(){
+    let idx=-1;
+    sections.forEach((sec,i)=>{
+      const r=sec.getBoundingClientRect();
+      if(r.top<=140) idx=i;
+    });
+    links.forEach(l=>l.classList.remove('active'));
+    if(idx>=0) links[idx].classList.add('active');
+  }
+
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // accordion: worked example solution toggles
+  document.querySelectorAll('.solution-toggle').forEach(function(btn){
+    var panel = btn.nextElementSibling;
+    btn.addEventListener('click', function(){
+      var isOpen = btn.classList.contains('open');
+      if(isOpen){
+        panel.style.maxHeight = panel.scrollHeight + 'px'; // set explicit height first
+        requestAnimationFrame(function(){ panel.style.maxHeight = '0px'; });
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        btn.querySelector('.toggle-label').textContent = 'Show worked solution';
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+        btn.querySelector('.toggle-label').textContent = 'Hide worked solution';
+        panel.addEventListener('transitionend', function te(){
+          if(btn.classList.contains('open')) panel.style.maxHeight = 'none';
+          panel.removeEventListener('transitionend', te);
+        });
+      }
+    });
+  });
+
+  // expand all / collapse all
+  const toggleAllBtn = document.getElementById('toggleAllBtn');
+  if(toggleAllBtn){
+    toggleAllBtn.addEventListener('click', function(){
+      const allToggles = document.querySelectorAll('.solution-toggle');
+      const anyClosed = Array.from(allToggles).some(b => !b.classList.contains('open'));
+      allToggles.forEach(function(btn){
+        const panel = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        if(anyClosed && !isOpen){
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded','true');
+          btn.querySelector('.toggle-label').textContent = 'Hide worked solution';
+          panel.addEventListener('transitionend', function te(){
+            if(btn.classList.contains('open')) panel.style.maxHeight = 'none';
+            panel.removeEventListener('transitionend', te);
+          });
+        } else if(!anyClosed && isOpen){
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          requestAnimationFrame(function(){ panel.style.maxHeight = '0px'; });
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          btn.querySelector('.toggle-label').textContent = 'Show worked solution';
+        }
+      });
+      toggleAllBtn.textContent = anyClosed ? 'Collapse All Examples' : 'Expand All Examples';
+    });
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,2796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1H Final Revision — O-Level Math</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<style>
+  :root {
+    --bg: #f8f6f0;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --text-muted: #5a5a7a;
+    --border: #e2dfd8;
+    --purple: #7c3aed;
+    --purple-light: #ede9fe;
+    --purple-mid: #c4b5fd;
+    --teal: #0d9488;
+    --teal-light: #ccfbf1;
+    --amber: #d97706;
+    --amber-light: #fef3c7;
+    --coral: #e04b30;
+    --coral-light: #fde8e4;
+    --green: #16a34a;
+    --green-light: #dcfce7;
+    --blue: #2563eb;
+    --blue-light: #dbeafe;
+    --pink: #db2777;
+    --pink-light: #fce7f3;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── TOP HEADER ── */
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    position: relative;
+  }
+  header p {
+    margin-top: 0.4rem;
+    opacity: 0.7;
+    font-size: 1rem;
+    position: relative;
+  }
+  header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+    position: relative;
+  }
+
+  /* ── NAV TABS ── */
+  nav {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-link {
+    display: inline-block;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 1rem 1.1rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+    -webkit-tap-highlight-color: rgba(124,58,237,0.2);
+    touch-action: manipulation;
+  }
+  .nav-link:hover { color: var(--purple); }
+  .nav-link:target-within { color: var(--purple); border-bottom-color: var(--purple); }
+  nav button:hover { color: var(--purple); }
+  nav button.active {
+    color: var(--purple);
+    border-bottom-color: var(--purple);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .section { display: none; }
+  .section:target { scroll-margin-top: 0; }
+  .section:target { display: block; }
+  /* Show algebra by default when no target is set */
+  main:not(:has(.section:target)) #algebra { display: block; }
+
+  /* ── TOPIC HEADER ── */
+  .topic-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.8rem;
+  }
+  .topic-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .topic-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.2rem;
+    box-shadow: var(--shadow);
+  }
+  .card-title {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .card-title .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── SUBSECTION ── */
+  .subsection {
+    background: var(--purple-light);
+    border-left: 4px solid var(--purple);
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1rem;
+    margin: 0.8rem 0 0.6rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--purple);
+  }
+  .subsection.teal { background: var(--teal-light); border-color: var(--teal); color: var(--teal); }
+  .subsection.amber { background: var(--amber-light); border-color: var(--amber); color: var(--amber); }
+  .subsection.coral { background: var(--coral-light); border-color: var(--coral); color: var(--coral); }
+  .subsection.green { background: var(--green-light); border-color: var(--green); color: var(--green); }
+  .subsection.blue { background: var(--blue-light); border-color: var(--blue); color: var(--blue); }
+  .subsection.pink { background: var(--pink-light); border-color: var(--pink); color: var(--pink); }
+
+  /* ── RULE BOX ── */
+  .rule {
+    background: #fafaf8;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    margin: 0.6rem 0;
+    font-size: 0.92rem;
+  }
+  .rule p { margin-bottom: 0.3rem; }
+  .rule p:last-child { margin-bottom: 0; }
+
+  /* ── STEPS ── */
+  .steps { list-style: none; padding: 0; margin: 0.5rem 0; }
+  .steps li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.45rem 0;
+    font-size: 0.92rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .steps li:last-child { border-bottom: none; }
+  .step-num {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── FORMULA BOX ── */
+  .formula-box {
+    background: #1a1a2e;
+    color: #e2e8f0;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin: 0.7rem 0;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+  .formula-box .katex { color: #93c5fd; }
+  .formula-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.25rem 0;
+  }
+  .formula-label {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    min-width: 90px;
+  }
+
+  /* ── EXAMPLE BOX ── */
+  .example {
+    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+    border: 1px solid #86efac;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin: 0.7rem 0;
+    font-size: 0.9rem;
+  }
+  .example-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── NOTE BOX ── */
+  .note {
+    background: var(--amber-light);
+    border: 1px solid #fcd34d;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0;
+    font-size: 0.88rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .note-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .note strong { color: var(--amber); }
+
+  /* ── MATH DISPLAY ── */
+  .math-line {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    color: var(--text);
+    line-height: 1.9;
+  }
+
+  /* ── GRID ── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  /* ── FORMULA TABLE ── */
+  .ftable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 0.5rem 0;
+  }
+  .ftable th {
+    background: var(--purple-light);
+    color: var(--purple);
+    font-weight: 700;
+    padding: 0.5rem 0.8rem;
+    text-align: left;
+    border-radius: 6px 6px 0 0;
+  }
+  .ftable td {
+    padding: 0.45rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Fira Mono', monospace;
+  }
+  .ftable tr:last-child td { border-bottom: none; }
+  .ftable tr:nth-child(even) td { background: #fafaf8; }
+
+  /* ── SHAPE CARD ── */
+  .shape-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.9rem;
+  }
+  .shape-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .shape-card svg { margin-bottom: 0.5rem; }
+  .shape-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .shape-card p { font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Mono', monospace; line-height: 1.6; }
+
+  /* ── PILL TAG ── */
+  .pill {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+  .pill.purple { background: var(--purple-light); color: var(--purple); }
+  .pill.teal { background: var(--teal-light); color: var(--teal); }
+  .pill.amber { background: var(--amber-light); color: var(--amber); }
+  .pill.coral { background: var(--coral-light); color: var(--coral); }
+
+  /* ── ARROW ── */
+  .arrow { color: var(--purple); font-weight: 700; margin: 0 0.3rem; }
+
+  /* ── HIGHLIGHT ── */
+  .hl { background: var(--purple-light); border-radius: 4px; padding: 1px 5px; color: var(--purple); font-weight: 700; }
+  .hl.teal { background: var(--teal-light); color: var(--teal); }
+  .hl.amber { background: var(--amber-light); color: var(--amber); }
+  .hl.coral { background: var(--coral-light); color: var(--coral); }
+  .hl.green { background: var(--green-light); color: var(--green); }
+
+  /* ── IMPORTANT BOX ── */
+  .important {
+    background: linear-gradient(135deg, var(--coral-light), #fff5f5);
+    border: 1.5px solid var(--coral);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    margin: 0.7rem 0;
+    font-size: 0.88rem;
+  }
+  .important-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--coral);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+  }
+
+
+
+  /* ── REAL ROOT SIGN ── */
+  .rt { display: inline-flex; align-items: flex-start; vertical-align: middle; font-style: normal; }
+  .rt-sym { font-size: 1.15em; line-height: 1; margin-right: 1px; position: relative; top: 0.05em; }
+  .rt-body { border-top: 2px solid currentColor; padding: 1px 3px 0 1px; line-height: 1.3; font-size: 0.95em; white-space: nowrap; }
+  /* superscript powers */
+  .pw { display: inline; vertical-align: super; font-size: 0.7em; font-weight: 700; line-height: 1; }
+  /* ── VISUAL FRACTIONS ── */
+  .vf { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 3px; line-height: 1.1; }
+  .vfn { border-bottom: 2px solid currentColor; padding: 0 5px 2px; font-weight: 800; font-size: 0.95em; white-space: nowrap; }
+  .vfd { padding: 2px 5px 0; font-weight: 800; font-size: 0.95em; white-space: nowrap; }
+  .formula-box .vf { font-size: 1rem; }
+  .formula-box .vfn, .formula-box .vfd { color: #93c5fd; border-color: #93c5fd; }
+
+  /* ── WATERMARK ── */
+  body::after {
+    content: 'Fares Elamin';
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--purple);
+    opacity: 0.18;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Diagonal repeat watermark on each section */
+  .section::before {
+    content: 'Fares Elamin';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-family: 'Nunito', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--purple);
+    opacity: 0.04;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+  }
+  code { font-family: 'Fira Mono', monospace; font-size: 0.88em; }
+</style>
+</head>
+<body>
+
+<style>
+  .doc-switcher{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:300;
+    display:flex;
+    align-items:center;
+    gap:2px;
+    background:rgba(26,26,46,0.94);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:999px;
+    padding:4px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.28);
+    font-family:'Nunito',sans-serif;
+  }
+  .doc-switcher a{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.02em;
+    text-decoration:none;
+    color:#c7c3e0;
+    padding:6px 12px;
+    border-radius:999px;
+    transition:background .15s ease, color .15s ease;
+    white-space:nowrap;
+  }
+  .doc-switcher a:hover{ color:#fff; background:rgba(255,255,255,0.08); }
+  .doc-switcher a.current{ background:#7c3aed; color:#fff; }
+  @media (max-width:640px){
+    .doc-switcher{ top:auto; bottom:14px; left:14px; right:auto; }
+  }
+</style>
+<nav class="doc-switcher" aria-label="Switch notes">
+  <a href="index.html">&larr; Index</a>
+  <a href="Final revision 1H notes.html" class="current">1H</a>
+  <a href="Final_revision_2H_notes -1.html">2H</a>
+</nav>
+
+<header>
+  <h1>📐 1H Final Revision</h1>
+  <p>O-Level Mathematics — Complete Notes</p>
+  <span class="badge">Algebra · Trigonometry · Statistics · Geometry & More</span>
+  <div style="margin-top:1rem; display:flex; gap:1.5rem; justify-content:center; align-items:center; position:relative;">
+    <span style="font-family:'Nunito',sans-serif; font-size:0.9rem; color:rgba(255,255,255,0.75); font-weight:700; letter-spacing:0.5px;">✍️ Eng. Fares Elamin</span>
+    <span style="width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,0.3);"></span>
+    <span style="font-family:'Nunito',sans-serif; font-size:0.9rem; color:rgba(255,255,255,0.75); font-weight:700; letter-spacing:0.5px;">📞 01012993645</span>
+  </div>
+</header>
+
+<nav id="nav">
+  <a href="#algebra" class="nav-link" id="nav-algebra">Algebra</a>
+  <a href="#trig" class="nav-link" id="nav-trig">Trigonometry</a>
+  <a href="#shapes" class="nav-link" id="nav-shapes">2D Shapes</a>
+  <a href="#lines" class="nav-link" id="nav-lines">Lines</a>
+  <a href="#curves" class="nav-link" id="nav-curves">Curves</a>
+  <a href="#sets" class="nav-link" id="nav-sets">Sets</a>
+  <a href="#stats" class="nav-link" id="nav-stats">Statistics</a>
+  <a href="#accuracy" class="nav-link" id="nav-accuracy">Accuracy</a>
+  <a href="#physics" class="nav-link" id="nav-physics">Physics</a>
+  <a href="#probability" class="nav-link" id="nav-probability">Probability</a>
+  <a href="#histogram" class="nav-link" id="nav-histogram">Histogram</a>
+  <a href="#trig3d" class="nav-link" id="nav-trig3d">3D Trig</a>
+  <a href="#percentage" class="nav-link" id="nav-percentage">Percentage</a>
+  <a href="#stdform" class="nav-link" id="nav-stdform">Standard Form</a>
+  <a href="#currency" class="nav-link" id="nav-currency">Currency</a>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  ALGEBRA                                                       -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="algebra">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#ede9fe; font-size:1.5rem;">🔢</div>
+    <h2>Algebra</h2>
+  </div>
+
+  <!-- A. Expansion -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>A — Expansion</div>
+    <div class="rule">
+      <p>✦ Multiply <strong>each term</strong> in the bracket by <strong>ALL</strong> the other terms in the other bracket.</p>
+    </div>
+    <div class="example">
+      <div class="example-label">Example</div>
+      <div class="math-line">(x + 5)(x − 6) = x² + 5x − 6x − 30 = <span class="hl">x² − x − 30</span></div>
+    </div>
+    <div class="note">
+      <span class="note-icon">⚠️</span>
+      <span><strong>Note:</strong> (x − 2)² → (1st term)² + (2 × 1st × 2nd) + (2nd term)² = <span class="hl">x² − 4x + 4</span></span>
+    </div>
+  </div>
+
+  <!-- B. Factorization -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--teal)"></span>B — Factorization</div>
+    <div class="subsection teal">Steps — always check in this order:</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">1</span><span>Always check for <strong>Highest Common Factor (HCF)</strong></span></li>
+      <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">2</span><span>Check if it's a <strong>Difference of Two Squares</strong> → e.g. 2x² − 8y²</span></li>
+      <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">3</span><span>Check if it's a <strong>Quadratic</strong> (Mode 5-3)</span></li>
+    </ol>
+    <div class="grid-2" style="margin-top:0.8rem">
+      <div class="example">
+        <div class="example-label">Example 1 — HCF</div>
+        <div class="math-line">5a + 15ab = <span class="hl teal">5a(1 + 3b)</span></div>
+      </div>
+      <div class="example">
+        <div class="example-label">Example 2 — Diff of Squares</div>
+        <div class="math-line">4c² − 16d² = 4(c² − 4d²) = <span class="hl teal">4(c−2d)(c+2d)</span></div>
+      </div>
+    </div>
+    <div class="example">
+      <div class="example-label">Example 3 — Quadratic</div>
+      <div class="math-line">2x² + 8x − 10 ÷ 2 = x² + 4x − 5 = <span class="hl teal">(x − 1)(x + 5)</span></div>
+    </div>
+  </div>
+
+  <!-- C. Fractions -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--amber)"></span>C — Algebraic Fractions</div>
+
+    <div class="subsection amber">i) Numerical Fractions</div>
+
+    <style>
+      .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 4px; }
+      .frac .fnum { border-bottom: 2.5px solid currentColor; padding: 0 6px 3px; font-weight: 800; font-size: 1.05rem; line-height: 1.2; }
+      .frac .fden { padding: 3px 6px 0; font-weight: 800; font-size: 1.05rem; line-height: 1.2; }
+      .frac-row { display: flex; align-items: center; gap: 8px; padding: 14px 16px; background: #fafaf8; border: 1px solid var(--border); border-radius: 10px; margin: 8px 0; flex-wrap: wrap; min-height: 64px; }
+      .frac-op { font-size: 1.2rem; font-weight: 800; color: var(--amber); }
+      .frac-eq { font-size: 1.2rem; font-weight: 700; color: var(--text-muted); }
+      .frac-tag { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--amber); background: var(--amber-light); border-radius: 6px; padding: 3px 9px; margin-right: 4px; white-space: nowrap; align-self: center; }
+      .flip-badge { font-size: 0.78rem; color: var(--coral); font-weight: 800; background: var(--coral-light); border-radius: 6px; padding: 3px 7px; }
+    </style>
+
+    <!-- ADD -->
+    <div class="frac-row">
+      <span class="frac-tag">Add</span>
+      <div class="frac" style="color:var(--blue)"><span class="fnum">a</span><span class="fden">b</span></div>
+      <span class="frac-op">+</span>
+      <div class="frac" style="color:var(--coral)"><span class="fnum">c</span><span class="fden">d</span></div>
+      <span class="frac-eq">=</span>
+      <div class="frac"><span class="fnum" style="display:flex;gap:5px;align-items:center"><span style="color:var(--blue)">a</span><span style="color:#888">×</span><span style="color:var(--coral)">d</span><span style="color:#888">+</span><span style="color:var(--coral)">c</span><span style="color:#888">×</span><span style="color:var(--blue)">b</span></span><span class="fden" style="display:flex;gap:5px;align-items:center"><span style="color:var(--blue)">b</span><span style="color:#888">×</span><span style="color:var(--coral)">d</span></span></div>
+      <svg width="130" height="52" viewBox="0 0 130 52" style="flex-shrink:0;margin-left:6px">
+        <defs>
+          <marker id="a1" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="var(--blue)"/></marker>
+          <marker id="a2" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="var(--coral)"/></marker>
+        </defs>
+        <text x="18" y="14" text-anchor="middle" font-size="13" font-weight="800" fill="var(--blue)" font-family="Nunito">a</text>
+        <text x="18" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="var(--blue)" font-family="Nunito">b</text>
+        <text x="108" y="14" text-anchor="middle" font-size="13" font-weight="800" fill="var(--coral)" font-family="Nunito">c</text>
+        <text x="108" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="var(--coral)" font-family="Nunito">d</text>
+        <!-- a × d: top-left to bottom-right -->
+        <path d="M 26,12 Q 65,26 100,34" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-dasharray="4,2" marker-end="url(#a1)"/>
+        <!-- c × b: top-right to bottom-left -->
+        <path d="M 100,12 Q 65,26 26,34" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-dasharray="4,2" marker-end="url(#a2)"/>
+        <text x="55" y="10" text-anchor="middle" font-size="9" fill="var(--blue)" font-family="Nunito" font-weight="600">a × d</text>
+        <text x="55" y="50" text-anchor="middle" font-size="9" fill="var(--coral)" font-family="Nunito" font-weight="600">c × b</text>
+      </svg>
+    </div>
+
+    <!-- SUBTRACT -->
+    <div class="frac-row">
+      <span class="frac-tag">Subtract</span>
+      <div class="frac" style="color:var(--blue)"><span class="fnum">a</span><span class="fden">b</span></div>
+      <span class="frac-op">−</span>
+      <div class="frac" style="color:var(--coral)"><span class="fnum">c</span><span class="fden">d</span></div>
+      <span class="frac-eq">=</span>
+      <div class="frac"><span class="fnum" style="display:flex;gap:5px;align-items:center"><span style="color:var(--blue)">a</span><span style="color:#888">×</span><span style="color:var(--coral)">d</span><span style="color:#888">−</span><span style="color:var(--coral)">c</span><span style="color:#888">×</span><span style="color:var(--blue)">b</span></span><span class="fden" style="display:flex;gap:5px;align-items:center"><span style="color:var(--blue)">b</span><span style="color:#888">×</span><span style="color:var(--coral)">d</span></span></div>
+      <svg width="130" height="52" viewBox="0 0 130 52" style="flex-shrink:0;margin-left:6px">
+        <defs>
+          <marker id="a3" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="var(--blue)"/></marker>
+          <marker id="a4" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="var(--coral)"/></marker>
+        </defs>
+        <text x="18" y="14" text-anchor="middle" font-size="13" font-weight="800" fill="var(--blue)" font-family="Nunito">a</text>
+        <text x="18" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="var(--blue)" font-family="Nunito">b</text>
+        <text x="108" y="14" text-anchor="middle" font-size="13" font-weight="800" fill="var(--coral)" font-family="Nunito">c</text>
+        <text x="108" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="var(--coral)" font-family="Nunito">d</text>
+        <path d="M 26,12 Q 65,26 100,34" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-dasharray="4,2" marker-end="url(#a3)"/>
+        <path d="M 100,12 Q 65,26 26,34" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-dasharray="4,2" marker-end="url(#a4)"/>
+        <text x="55" y="10" text-anchor="middle" font-size="9" fill="var(--blue)" font-family="Nunito" font-weight="600">a × d</text>
+        <text x="55" y="50" text-anchor="middle" font-size="9" fill="var(--coral)" font-family="Nunito" font-weight="600">c × b</text>
+      </svg>
+    </div>
+
+    <!-- MULTIPLY -->
+    <div class="frac-row">
+      <span class="frac-tag">Multiply</span>
+      <div class="frac" style="color:var(--blue)"><span class="fnum">a</span><span class="fden">b</span></div>
+      <span class="frac-op">×</span>
+      <div class="frac" style="color:var(--coral)"><span class="fnum">c</span><span class="fden">d</span></div>
+      <span class="frac-eq">=</span>
+      <div class="frac"><span class="fnum" style="display:flex;gap:5px;align-items:center"><span style="color:var(--blue)">a</span><span style="color:#888">×</span><span style="color:var(--coral)">c</span></span><span class="fden" style="display:flex;gap:5px;align-items:center"><span style="color:var(--blue)">b</span><span style="color:#888">×</span><span style="color:var(--coral)">d</span></span></div>
+      <svg width="110" height="52" viewBox="0 0 110 52" style="flex-shrink:0;margin-left:6px">
+        <defs>
+          <marker id="a5" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="var(--blue)"/></marker>
+          <marker id="a6" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="var(--coral)"/></marker>
+        </defs>
+        <text x="12" y="16" text-anchor="middle" font-size="13" font-weight="800" fill="var(--blue)" font-family="Nunito">a</text>
+        <text x="12" y="40" text-anchor="middle" font-size="13" font-weight="800" fill="var(--blue)" font-family="Nunito">b</text>
+        <text x="95" y="16" text-anchor="middle" font-size="13" font-weight="800" fill="var(--coral)" font-family="Nunito">c</text>
+        <text x="95" y="40" text-anchor="middle" font-size="13" font-weight="800" fill="var(--coral)" font-family="Nunito">d</text>
+        <!-- top straight arrow a→c -->
+        <path d="M 20,13 L 86,13" fill="none" stroke="var(--blue)" stroke-width="1.8" marker-end="url(#a5)"/>
+        <!-- bottom straight arrow b→d -->
+        <path d="M 20,37 L 86,37" fill="none" stroke="var(--coral)" stroke-width="1.8" marker-end="url(#a6)"/>
+        <text x="53" y="9" text-anchor="middle" font-size="8.5" fill="var(--blue)" font-family="Nunito" font-weight="600">top × top</text>
+        <text x="53" y="50" text-anchor="middle" font-size="8.5" fill="var(--coral)" font-family="Nunito" font-weight="600">bottom × bottom</text>
+      </svg>
+    </div>
+
+    <!-- DIVIDE -->
+    <div class="frac-row">
+      <span class="frac-tag">Divide</span>
+      <div class="frac" style="color:var(--blue)"><span class="fnum">a</span><span class="fden">b</span></div>
+      <span class="frac-op">÷</span>
+      <div class="frac" style="color:var(--coral)"><span class="fnum">c</span><span class="fden">d</span></div>
+      <span class="frac-eq">=</span>
+      <div class="frac" style="color:var(--blue)"><span class="fnum">a</span><span class="fden">b</span></div>
+      <span class="frac-op">×</span>
+      <div class="frac" style="color:var(--coral);border:2px solid var(--coral);border-radius:8px;padding:2px 4px">
+        <span class="fnum" style="color:var(--coral)">d</span>
+        <span class="fden" style="color:var(--coral)">c</span>
+      </div>
+      <span class="frac-eq">=</span>
+      <div class="frac"><span class="fnum">ad</span><span class="fden">bc</span></div>
+      <span class="flip-badge">↕ flip 2nd fraction!</span>
+    </div>
+
+    <div class="subsection amber">ii) Single Fractions</div>
+    <div class="rule">
+      <p>✦ Try to <strong>factorize</strong> the equations, then see if there are terms that cancel each other.</p>
+    </div>
+    <div class="example">
+      <div class="example-label">Example</div>
+      <div class="math-line"><span class="vf" style="color:var(--text)"><span class="vfn">6x³ + 13x² − 5x</span><span class="vfd">4x² − 25</span></span></div>
+      <div class="math-line">= <span class="vf" style="color:var(--text)"><span class="vfn">x(6x² + 13x − 5)</span><span class="vfd">(2x−5)(2x+5)</span></span></div>
+      <div class="math-line">= <span class="vf" style="color:var(--text)"><span class="vfn">x(3x−1)(2x+5)</span><span class="vfd">(2x−5)(2x+5)</span></span></div>
+      <div class="math-line">= <span class="hl amber"><span class="vf" style="color:var(--text)"><span class="vfn">x(3x − 1)</span><span class="vfd">(2x − 5)</span></span></span></div>
+    </div>
+
+    <div class="subsection amber">iii) Non-Single Fractions</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--amber-light);color:var(--amber)">1</span>Try to factorize if possible</li>
+      <li><span class="step-num" style="background:var(--amber-light);color:var(--amber)">2</span>Make a <strong>common denominator</strong></li>
+      <li><span class="step-num" style="background:var(--amber-light);color:var(--amber)">3</span>Expand brackets in the <strong>numerator only</strong></li>
+      <li><span class="step-num" style="background:var(--amber-light);color:var(--amber)">4</span>Factorize and simplify</li>
+    </ol>
+    <div class="example">
+      <div class="example-label">Example</div>
+      <div class="math-line"><span class="vf" style="color:var(--text)"><span class="vfn">x+1</span><span class="vfd">x+2</span></span> − <span class="vf" style="color:var(--text)"><span class="vfn">x−2</span><span class="vfd">x−1</span></span></div>
+      <div class="math-line">= <span class="vf" style="color:var(--text)"><span class="vfn">(x−1)(x+1) − (x−2)(x+2)</span><span class="vfd">(x+2)(x−1)</span></span></div>
+      <div class="math-line">= <span class="vf" style="color:var(--text)"><span class="vfn">x²−1 − x²+4</span><span class="vfd">(x+2)(x−1)</span></span></div>
+      <div class="math-line">= <span class="hl amber"><span class="vf" style="color:var(--text)"><span class="vfn">3</span><span class="vfd">(x+2)(x−1)</span></span></span></div>
+    </div>
+  </div>
+
+  <!-- D. Equations -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--coral)"></span>D — Equations</div>
+    <div class="rule"><p>✦ Solve to get the letter (variable) alone on one side.</p></div>
+    <div class="example">
+      <div class="example-label">Example</div>
+      <div class="math-line">4(3p + 1) = 15p + 8</div>
+      <div class="math-line">12p + 4 = 15p + 8</div>
+      <div class="math-line">−3p = 4 <span class="arrow">→</span> <span class="hl coral">p = <span class="vf" style="color:var(--text)"><span class="vfn">−4</span><span class="vfd">3</span></span></span></div>
+    </div>
+    <div class="note">
+      <span class="note-icon">✅</span>
+      <span><strong>Check:</strong> Put the value you found back into the original equation to verify!</span>
+    </div>
+  </div>
+
+  <!-- E. Solving Fractions -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--blue)"></span>E — Solving Fractional Equations</div>
+    <div class="example">
+      <div class="example-label">Example</div>
+      <div class="math-line"><span class="vf" style="color:var(--text)"><span class="vfn">9 + 2x</span><span class="vfd">4</span></span> = 3x + 2</div>
+      <div class="math-line">9 + 2x = 4(3x + 2)</div>
+      <div class="math-line">9 + 2x = 12x + 8</div>
+      <div class="math-line">10x = 1 <span class="arrow">→</span> <span class="hl blue">x = <span class="vf" style="color:var(--text)"><span class="vfn">1</span><span class="vfd">10</span></span></span></div>
+    </div>
+    <div class="important">
+      <div class="important-label">⚠️ Important Rule</div>
+      <p>You can only multiply the denominator to the other side if the <strong>whole fraction</strong> is alone on one side. If there are other terms, move them first!</p>
+      <div class="math-line" style="margin-top:0.5rem">e.g. <span class="vf" style="color:var(--text)"><span class="vfn">9+2x</span><span class="vfd">4</span></span> − 2 = 3x + 2 → you must move the 2 first, THEN multiply by 4</div>
+    </div>
+
+    <div class="subsection blue">Quadratic Equations — 2 Methods</div>
+    <div class="grid-2">
+      <div class="rule">
+        <p style="font-weight:700;color:var(--blue)">Method 1: Factorize (Mode 5-3)</p>
+        <div class="math-line">x² + 6x − 7 = 0</div>
+        <div class="math-line">(x − 1)(x + 7) = 0</div>
+        <div class="math-line"><span class="hl blue">x = 1 , x = −7</span></div>
+      </div>
+      <div class="rule">
+        <p style="font-weight:700;color:var(--blue)">Method 2: Quadratic Formula</p>
+        <div class="math-line" style="text-align:center; font-size:1rem">x = <span class="vf" style="color:var(--text)"><span class="vfn">−b ± <span class="rt"><span class="rt-sym">√</span><span class="rt-body">b²−4ac</span></span></span><span class="vfd">2a</span></span></div>
+        <div class="math-line" style="font-size:0.82rem;color:var(--text-muted)">where ax² + bx + c = 0</div>
+      </div>
+    </div>
+    <div class="note">
+      <span class="note-icon">📝</span>
+      <span><strong>Note:</strong> x² − 16 = 0 for example can be done with Mode 5-3. The term beside x is 0 (no x term), so enter: a=1, b=0, c=−16.</span>
+    </div>
+  </div>
+
+  <!-- F. Completing the Square -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--pink)"></span>F — Completing the Square</div>
+
+    <div class="subsection pink">Case 1: No coefficient for x²</div>
+    <div class="example">
+      <div class="example-label">Example: x² − 10x + 40</div>
+      <ol class="steps">
+        <li><span class="step-num" style="background:var(--pink-light);color:var(--pink)">1</span>Write (x − b/2)² → (x − 10/2)² = <span class="hl pink">(x − 5)²</span></li>
+        <li><span class="step-num" style="background:var(--pink-light);color:var(--pink)">2</span>Add the last term beside the bracket → (x−5)² + 40</li>
+        <li><span class="step-num" style="background:var(--pink-light);color:var(--pink)">3</span>Square the 2nd term in bracket and put it outside with −ve sign → (x−5)² + 40 − 25</li>
+        <li><span class="step-num" style="background:var(--pink-light);color:var(--pink)">4</span>Simplify → <span class="hl pink">(x − 5)² + 15</span></li>
+      </ol>
+    </div>
+
+    <div class="subsection pink">Case 2: Coefficient for x²</div>
+    <div class="example">
+      <div class="example-label">Example: 3x² − 12x + 7</div>
+      <ol class="steps">
+        <li><span class="step-num" style="background:var(--pink-light);color:var(--pink)">1</span>Take the coefficient as a common factor from first 2 terms only → 3(x² − 4x) + 7</li>
+        <li><span class="step-num" style="background:var(--pink-light);color:var(--pink)">2</span>Do (x − b/2)² for what's inside the bracket → 3(x − 2)²</li>
+        <li><span class="step-num" style="background:var(--pink-light);color:var(--pink)">3</span>Add last term beside the bracket → 3(x−2)² + 7</li>
+        <li><span class="step-num" style="background:var(--pink-light);color:var(--pink)">4</span>Square the 2nd term in bracket, multiply by the number outside, then subtract → 3(x−2)² + 7 − 3×(2²)</li>
+        <li><span class="step-num" style="background:var(--pink-light);color:var(--pink)">5</span>Simplify → <span class="hl pink">3(x − 2)² − 5</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div style="margin: 2rem 0 1rem; border-top: 2px dashed var(--border); padding-top: 1.5rem;">
+    <div class="topic-header" style="margin-bottom:1.2rem">
+      <div class="topic-icon" style="background:#fef3c7; font-size:1.5rem;">√</div>
+      <h2 style="font-size:1.3rem">G — Surds</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--amber)"></span>Rules of Surds</div>
+    <table class="ftable">
+      <thead><tr><th>#</th><th>Rule</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>a<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b</span></span> + c<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b</span></span> = (a+c)<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b</span></span></td><td>3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span> + 2<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span> = 5<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span></td></tr>
+        <tr><td>2</td><td>a<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b</span></span> − c<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b</span></span> = (a−c)<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b</span></span></td><td>7<span class="rt"><span class="rt-sym">√</span><span class="rt-body">3</span></span> − 4<span class="rt"><span class="rt-sym">√</span><span class="rt-body">3</span></span> = 3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">3</span></span></td></tr>
+        <tr><td>3</td><td>a<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b</span></span> × c<span class="rt"><span class="rt-sym">√</span><span class="rt-body">d</span></span> = ac<span class="rt"><span class="rt-sym">√</span><span class="rt-body">bd</span></span></td><td>2<span class="rt"><span class="rt-sym">√</span><span class="rt-body">3</span></span> × 3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span> = 6<span class="rt"><span class="rt-sym">√</span><span class="rt-body">15</span></span></td></tr>
+        <tr><td>4</td><td>a<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b</span></span> × c<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b</span></span> = ac<span class="rt"><span class="rt-sym">√</span><span class="rt-body">b²</span></span> = <strong>acb</strong></td><td>2<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span> × 3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span> = 6×5 = 30</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--amber)"></span>Rationalizing the Denominator — 2 Cases</div>
+
+    <div class="subsection amber">Case 1: Simple surd in denominator</div>
+    <div class="rule">
+      <p>Multiply top and bottom by the surd in the denominator.</p>
+    </div>
+    <div class="example">
+      <div class="example-label">Example: <span class="vf" style="color:var(--text)"><span class="vfn">2</span><span class="vfd"><span class="rt"><span class="rt-sym">√</span><span class="rt-body">8</span></span></span></span></div>
+      <div class="math-line"><span class="vf" style="color:var(--text)"><span class="vfn">2</span><span class="vfd"><span class="rt"><span class="rt-sym">√</span><span class="rt-body">8</span></span></span></span> × <span class="vf" style="color:var(--text)"><span class="vfn"><span class="rt"><span class="rt-sym">√</span><span class="rt-body">8</span></span></span><span class="vfd"><span class="rt"><span class="rt-sym">√</span><span class="rt-body">8</span></span></span></span> = <span class="vf" style="color:var(--text)"><span class="vfn">2<span class="rt"><span class="rt-sym">√</span><span class="rt-body">8</span></span></span><span class="vfd">8</span></span> = <span class="hl amber"><span class="vf" style="color:var(--text)"><span class="vfn"><span class="rt"><span class="rt-sym">√</span><span class="rt-body">2</span></span></span><span class="vfd">2</span></span></span></div>
+    </div>
+
+    <div class="subsection amber">Case 2 (Important): Surd in binomial denominator</div>
+    <div class="rule">
+      <p>Multiply top and bottom by the <strong>conjugate</strong>.</p>
+      <p style="margin-top:0.4rem">Conjugate of (2 + 3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span>) is <span class="hl amber">(2 − 3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span>)</span></p>
+    </div>
+    <div class="example">
+      <div class="example-label">Example: <span class="vf" style="color:var(--text)"><span class="vfn">2</span><span class="vfd">2 + 3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span></span></span></div>
+      <div class="math-line">= <span class="vf" style="color:var(--text)"><span class="vfn">2(2 − 3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span>)</span><span class="vfd">(2 + 3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span>)(2 − 3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span>)</span></span></div>
+      <div class="math-line">= <span class="vf" style="color:var(--text)"><span class="vfn">4 − 6<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span></span><span class="vfd">4 − 45</span></span></div>
+      <div class="math-line">= <span class="hl amber"><span class="vf" style="color:var(--text)"><span class="vfn">4 − 6<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span></span><span class="vfd">−41</span></span></span></div>
+    </div>
+    <div class="note">
+      <span class="note-icon">💡</span>
+      <span>Multiplying two conjugates: just do (1st × 1st) − (2nd × 2nd). So (2+3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span>)(2−3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span>) = 4 − 45 = −41</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--amber)"></span>Important Notes</div>
+    <ol class="steps">
+      <li>
+        <span class="step-num" style="background:var(--amber-light);color:var(--amber)">1</span>
+        <span>If I am multiplying 2 conjugate numbers I can do: (multiply 1st term by 1st term) − (multiply 2nd by 2nd)<br>
+        <div class="math-line" style="margin-top:0.4rem">(2+3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span>)(2−3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">5</span></span>) = 4 − 45 = <span class="hl amber">−41</span></div></span>
+      </li>
+      <li>
+        <span class="step-num" style="background:var(--amber-light);color:var(--amber)">2</span>
+        <span><span class="rt"><span class="rt-sym">√</span><span class="rt-body">27</span></span> → if I want to convert it to a<span class="rt"><span class="rt-sym">√</span><span class="rt-body">3</span></span>, find what value multiplied by 3 gives 27<br>
+        <div class="math-line" style="margin-top:0.4rem"><span class="rt"><span class="rt-sym">√</span><span class="rt-body">27</span></span> = <span class="rt"><span class="rt-sym">√</span><span class="rt-body">9×3</span></span> → take the 9 outside = <span class="hl amber">3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">3</span></span> ✓</span></div></span>
+      </li>
+      <li>
+        <span class="step-num" style="background:var(--amber-light);color:var(--amber)">3</span>
+        <span>3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">4</span></span> → if I want it in form <span class="rt"><span class="rt-sym">√</span><span class="rt-body">a</span></span>, then square what is outside and multiply by what is inside<br>
+        <div class="math-line" style="margin-top:0.4rem">3<span class="rt"><span class="rt-sym">√</span><span class="rt-body">4</span></span> = <span class="rt"><span class="rt-sym">√</span><span class="rt-body">3²×4</span></span> = <span class="hl amber"><span class="rt"><span class="rt-sym">√</span><span class="rt-body">36</span></span> ✓</span></div></span>
+      </li>
+    </ol>
+  </div>
+
+  <div style="margin: 2rem 0 1rem; border-top: 2px dashed var(--border); padding-top: 1.5rem;">
+    <div class="topic-header" style="margin-bottom:1.2rem">
+      <div class="topic-icon" style="background:#dbeafe; font-size:1.5rem;">ⁿ</div>
+      <h2 style="font-size:1.3rem">H — Powers & Roots</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--blue)"></span>Laws of Indices</div>
+    <table class="ftable">
+      <thead><tr><th>Law</th><th>Formula</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Multiply (same base)</td><td>yᵃ × yᵇ = yᵃ⁺ᵇ</td><td>y² × y³ = y⁵</td></tr>
+        <tr><td>Divide (same base)</td><td>yᵇ ÷ yᵃ = yᵇ⁻ᵃ</td><td>y⁵ ÷ y³ = y²</td></tr>
+        <tr><td>Power of product</td><td>yᵇ × zᵇ = (yz)ᵇ</td><td>2³ × 3³ = (6)³ = 216</td></tr>
+        <tr><td>Power of fraction</td><td><span class="vf" style="color:var(--text)"><span class="vfn">yˣ</span><span class="vfd">zˣ</span></span> = (<span class="vf" style="color:var(--text)"><span class="vfn">y</span><span class="vfd">z</span></span>)ˣ</td><td><span class="vf" style="color:var(--text)"><span class="vfn">2ˣ</span><span class="vfd">3ˣ</span></span> = (<span class="vf" style="color:var(--text)"><span class="vfn">2</span><span class="vfd">3</span></span>)ˣ</td></tr>
+        <tr><td>Power of power</td><td>(yˣ × y²)ᵖ = yˣᵖ × y²ᵖ</td><td>(2³ × 2⁷)² = 2⁶ × 2¹⁴ = 2²⁰</td></tr>
+        <tr><td>Square root</td><td><span class="rt"><span class="rt-sym">√</span><span class="rt-body">y</span></span> = y<span class="pw"><span class="vf" style="color:var(--text)"><span class="vfn">1</span><span class="vfd">2</span></span></span></td><td><span class="rt"><span class="rt-sym">√</span><span class="rt-body">3</span></span> = 3<span class="pw"><span class="vf" style="color:var(--text)"><span class="vfn">1</span><span class="vfd">2</span></span></span></td></tr>
+        <tr><td>Negative power</td><td><span class="vf" style="color:var(--text)"><span class="vfn">1</span><span class="vfd">x</span></span> = x⁻¹</td><td><span class="vf" style="color:var(--text)"><span class="vfn">1</span><span class="vfd">x²</span></span> = x⁻², &nbsp; <span class="vf" style="color:var(--text)"><span class="vfn">2</span><span class="vfd">x³</span></span> = 2x⁻³</td></tr>
+        <tr><td>Flip negative power</td><td>(<span class="vf" style="color:var(--text)"><span class="vfn">y</span><span class="vfd">z</span></span>)⁻ˣ = (<span class="vf" style="color:var(--text)"><span class="vfn">z</span><span class="vfd">y</span></span>)ˣ</td><td>(<span class="vf" style="color:var(--text)"><span class="vfn">3</span><span class="vfd">4</span></span>)⁻² = (<span class="vf" style="color:var(--text)"><span class="vfn">4</span><span class="vfd">3</span></span>)²</td></tr>
+        <tr><td>Zero power</td><td>y⁰ = 1</td><td>5⁰ = 1</td></tr>
+        <tr><td>1 to any power</td><td>1ᵃ = 1</td><td>(a ≠ 0)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--blue)"></span>Solving Power Equations</div>
+    <div class="rule">
+      <p>✦ Convert all numbers to the <strong>smallest base</strong> in the question.</p>
+    </div>
+    <div class="example">
+      <div class="example-label">Solve: 2²ʸ × 2³ʸ⁺² = <span class="vf" style="color:var(--text)"><span class="vfn">8⁵ʸ</span><span class="vfd">4ⁿ</span></span> (express n in terms of y)</div>
+      <div class="math-line">2²ʸ × 2³ʸ⁺² = <span class="vf" style="color:var(--text)"><span class="vfn">(2³)⁵ʸ</span><span class="vfd">(2²)ⁿ</span></span></div>
+      <div class="math-line">2<span class="pw">2y+3y+2</span> = <span class="vf" style="color:var(--text)"><span class="vfn">2<span class="pw">15y</span></span><span class="vfd">2<span class="pw">2n</span></span></span></div>
+      <div class="math-line">2<span class="pw">5y+2</span> = 2<span class="pw">15y−2n</span></div>
+      <div class="math-line">Since same base → 5y + 2 = 15y − 2n</div>
+      <div class="math-line">−2n = −10y + 2 → <span class="hl blue">n = 5y − 1</span></div>
+    </div>
+  </div>
+
+
+  <!-- G. Decimals, HCF & LCM -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>G — Recurring Decimals to Fractions</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">1</span>See how many digits have no dot — multiply so only the right hand side has numbers with dots (repeating digits)</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">2</span>See how many different digits have dots — multiply by 10, 100, 1000…</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">3</span>Subtract and solve</li>
+    </ol>
+    <div class="example">
+      <div class="example-label">Show 0.57̄2̄ = 63/110</div>
+      <div class="math-line">x = 0.572727… (only 5 has no dot → multiply by 10)</div>
+      <div class="math-line">10x = 5.72727… (2 different repeating digits → multiply by 100)</div>
+      <div class="math-line">1000x = 572.727…</div>
+      <div class="math-line">1000x − 10x = 990x = 567</div>
+      <div class="math-line">x = <span class="vf" style="color:var(--text)"><span class="vfn">567</span><span class="vfd">990</span></span> = <span class="hl green"><span class="vf" style="color:var(--text)"><span class="vfn">63</span><span class="vfd">110</span></span> ✓</span></div>
+    </div>
+  </div>
+
+  <!-- HCF & LCM -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>H — HCF and LCM</div>
+    <div class="grid-2">
+      <div class="rule">
+        <p style="font-weight:700;color:var(--green)">LCM</p>
+        <p>Take <strong>everything</strong>, and if something is common take the <strong>highest power</strong>.</p>
+      </div>
+      <div class="rule">
+        <p style="font-weight:700;color:var(--teal)">HCF</p>
+        <p>Take only the <strong>common</strong> parts from both, but with the <strong>lowest power</strong>.</p>
+      </div>
+    </div>
+    <div class="example">
+      <div class="example-label">Example: A = 2³×3²×5×7, B = 2⁵×3×7²</div>
+      <div class="math-line">HCF = 2³ × 3 × 7</div>
+      <div class="math-line">LCM = 2⁵ × 3² × 5 × 7²</div>
+    </div>
+    <div class="example">
+      <div class="example-label">Example: HCF and LCM of (36, 120)</div>
+      <div class="math-line">36 = 2² × 3²   |   120 = 2³ × 3 × 5</div>
+      <div class="math-line">HCF = 2² × 3 = <span class="hl green">12</span></div>
+      <div class="math-line">LCM = 2³ × 3² × 5 = <span class="hl green">360</span></div>
+    </div>
+  </div>
+
+  <!-- Simultaneous -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--coral)"></span>I — Simultaneous Equations</div>
+    <div class="subsection coral">Type 1: 2 Linear Equations — 2 methods</div>
+
+    <!-- METHOD 1 ELIMINATION -->
+    <div class="rule">
+      <p style="font-weight:700;color:var(--coral)">Method 1: Elimination</p>
+      <p style="margin-bottom:0.7rem">Multiply one or both equations by a number to <strong>equate coefficients</strong>, then subtract.</p>
+      <div style="font-family:'Fira Mono',monospace; font-size:0.9rem; line-height:2.2;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="min-width:140px;">3x + 4y = 16</span>
+          <span style="color:var(--coral); font-weight:800; background:var(--coral-light); border-radius:5px; padding:1px 8px;">×2</span>
+          <span style="color:var(--text-muted);">→</span>
+          <span style="color:var(--blue); font-weight:700;">6x + 8y = 20</span>
+          <span style="color:var(--text-muted); font-size:0.78rem;">⎫</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="min-width:140px;">2x + 3y = 7</span>
+          <span style="color:var(--coral); font-weight:800; background:var(--coral-light); border-radius:5px; padding:1px 8px;">×3</span>
+          <span style="color:var(--text-muted);">→</span>
+          <span style="color:var(--blue); font-weight:700;">6x + 9y = 21</span>
+          <span style="color:var(--text-muted); font-size:0.78rem;">⎭</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; border-top:2px solid var(--coral); padding-top:6px; margin-top:2px;">
+          <span style="min-width:140px; color:var(--coral); font-size:0.82rem; font-weight:700;">subtract ↑</span>
+          <span style="color:var(--text-muted);">→</span>
+          <span>−y = −1</span>
+          <span style="color:var(--text-muted);">→</span>
+          <span class="hl coral">y = 1</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="min-width:140px; color:var(--teal); font-size:0.82rem;">sub y=1 back in →</span>
+          <span>6x + 8(1) = 20 → 6x = 12 →</span>
+          <span class="hl coral">x = 2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- METHOD 2 SUBSTITUTION -->
+    <div class="rule">
+      <p style="font-weight:700;color:var(--coral)">Method 2: Substitution</p>
+      <p style="margin-bottom:0.7rem">Make x or y the subject in one equation, then substitute into the other.</p>
+      <div style="font-family:'Fira Mono',monospace; font-size:0.9rem; line-height:2;">
+
+        <!-- eq 1 -->
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span style="background:var(--coral-light); color:var(--coral); border-radius:5px; padding:2px 8px; font-size:0.8rem; font-weight:800; flex-shrink:0;">① </span>
+          <span>3x + 4y = 10</span>
+          <span style="color:var(--text-muted);">→ make x subject →</span>
+          <span style="color:var(--blue); font-weight:700;">x = <span class="vf" style="color:var(--blue)"><span class="vfn">−4y + 10</span><span class="vfd">3</span></span></span>
+        </div>
+
+        <!-- eq 2 with arrow -->
+        <div style="display:flex; align-items:flex-start; gap:10px; margin-top:4px; flex-wrap:wrap;">
+          <span style="background:var(--purple-light); color:var(--purple); border-radius:5px; padding:2px 8px; font-size:0.8rem; font-weight:800; flex-shrink:0; margin-top:2px;">② </span>
+          <div>
+            <div>2x + 3y = 7</div>
+            <!-- arrow down into substitution -->
+            <div style="display:flex; align-items:center; gap:8px; margin:2px 0;">
+              <svg width="100" height="30" viewBox="0 0 100 30">
+                <defs><marker id="m1" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="var(--coral)"/></marker></defs>
+                <path d="M 5,6 Q 50,2 90,22" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-dasharray="4,2" marker-end="url(#m1)"/>
+                <text x="46" y="12" text-anchor="middle" font-size="9" fill="var(--coral)" font-family="Nunito" font-weight="700">sub ① here</text>
+              </svg>
+              <span>2 × <span class="vf" style="color:var(--text)"><span class="vfn">−4y+10</span><span class="vfd">3</span></span> + 3y = 7</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span style="color:var(--text-muted); font-size:0.82rem;">→</span>
+              <span><span class="vf" style="color:var(--text)"><span class="vfn">−8y+20</span><span class="vfd">3</span></span> + 3y = 7</span>
+              <span style="color:var(--text-muted);">→</span>
+              <span>−8y + 20 + 9y = 21</span>
+              <span style="color:var(--text-muted);">→</span>
+              <span class="hl coral">y = 1</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span style="color:var(--teal); font-size:0.82rem;">sub y=1 in ①</span>
+              <span style="color:var(--text-muted);">→</span>
+              <span>x = <span class="vf" style="color:var(--text)"><span class="vfn">−4(1)+10</span><span class="vfd">3</span></span> = <span class="vf" style="color:var(--text)"><span class="vfn">6</span><span class="vfd">3</span></span></span>
+              <span style="color:var(--text-muted);">→</span>
+              <span class="hl coral">x = 2</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="subsection coral">Type 2: 1 Linear + 1 Non-Linear</div>
+    <div class="rule">
+      <p style="margin-bottom:0.7rem">✦ Make x or y the subject in the <strong>linear equation</strong>, then substitute into the other (ends with Mode 5-3).</p>
+      <div style="font-family:'Fira Mono',monospace; font-size:0.9rem; line-height:2;">
+
+        <!-- eq 1 linear -->
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span style="background:var(--coral-light); color:var(--coral); border-radius:5px; padding:2px 8px; font-size:0.8rem; font-weight:800; flex-shrink:0;">① Linear</span>
+          <span>2x + y = 1</span>
+          <span style="color:var(--text-muted);">→ make y subject →</span>
+          <span style="color:var(--blue); font-weight:700;">y = −2x + 1</span>
+        </div>
+
+        <!-- eq 2 non-linear -->
+        <div style="display:flex; align-items:flex-start; gap:10px; margin-top:4px; flex-wrap:wrap;">
+          <span style="background:var(--purple-light); color:var(--purple); border-radius:5px; padding:2px 8px; font-size:0.8rem; font-weight:800; flex-shrink:0; margin-top:2px;">② Non-linear</span>
+          <div>
+            <div>x² + y² = 13</div>
+            <div style="display:flex; align-items:center; gap:8px; margin:2px 0;">
+              <svg width="100" height="30" viewBox="0 0 100 30">
+                <defs><marker id="m2" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto"><path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="var(--blue)"/></marker></defs>
+                <path d="M 5,6 Q 50,2 90,22" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-dasharray="4,2" marker-end="url(#m2)"/>
+                <text x="46" y="12" text-anchor="middle" font-size="9" fill="var(--blue)" font-family="Nunito" font-weight="700">sub ① here</text>
+              </svg>
+              <span>x² + (−2x+1)² = 13</span>
+            </div>
+            <div>x² + 4x² − 4x + 1 = 13</div>
+            <div>5x² − 4x − 12 = 0 &nbsp;<span style="color:var(--text-muted); font-size:0.82rem;">(Mode 5-3)</span></div>
+            <div style="display:flex; gap:2rem; flex-wrap:wrap; margin-top:6px;">
+              <div style="background:var(--green-light); border-radius:8px; padding:6px 12px;">
+                x = 2<br>
+                <span style="color:var(--teal); font-size:0.82rem;">sub in ①:</span> y = −2(2)+1<br>
+                <span class="hl coral">y = −3</span>
+              </div>
+              <div style="background:var(--blue-light); border-radius:8px; padding:6px 12px;">
+                x = <span class="vf" style="color:var(--text)"><span class="vfn">−6</span><span class="vfd">5</span></span><br>
+                <span style="color:var(--teal); font-size:0.82rem;">sub in ①:</span> y = −2(<span class="vf" style="color:var(--text)"><span class="vfn">−6</span><span class="vfd">5</span></span>)+1<br>
+                <span class="hl coral">y = <span class="vf" style="color:var(--text)"><span class="vfn">17</span><span class="vfd">5</span></span></span>
+              </div>
+            </div>
+            <div style="margin-top:8px; font-size:0.9rem;">
+              Solutions: &nbsp;<span class="hl coral">(2 , −3)</span> &nbsp;&nbsp; and &nbsp;&nbsp; <span class="hl coral">(<span class="vf" style="color:var(--text)"><span class="vfn">−6</span><span class="vfd">5</span></span> , <span class="vf" style="color:var(--text)"><span class="vfn">17</span><span class="vfd">5</span></span>)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Inequalities -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>J — Inequalities</div>
+    <div class="rule">
+      <p>✦ Solved exactly like an equation. There are 3 types.</p>
+    </div>
+    <div class="important">
+      <div class="important-label">⚠️ Critical Rule</div>
+      <p>If you <strong>multiply or divide by a negative number</strong>, you must <strong>FLIP the inequality sign</strong>! (> becomes <)</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="example">
+        <div class="example-label">Linear Inequality</div>
+        <div class="math-line">4x + 5 > 10</div>
+        <div class="math-line">4x > 5</div>
+        <div class="math-line"><span class="hl">x > <span class="vf" style="color:var(--text)"><span class="vfn">5</span><span class="vfd">4</span></span></span></div>
+      </div>
+      <div class="example">
+        <div class="example-label">Compound Inequality</div>
+        <div class="math-line">3 ≤ 3x − 5 ≤ 22</div>
+        <div class="math-line">8 ≤ 3x ≤ 27</div>
+        <div class="math-line"><span class="hl"><span class="vf" style="color:var(--text)"><span class="vfn">8</span><span class="vfd">3</span></span> ≤ x ≤ 9</span></div>
+        <!-- Number line -->
+        <svg width="200" height="44" viewBox="0 0 200 44" style="margin-top:8px; display:block;">
+          <!-- main line -->
+          <line x1="20" y1="22" x2="180" y2="22" stroke="var(--text)" stroke-width="1.8"/>
+          <!-- left arrow -->
+          <polygon points="20,22 30,17 30,27" fill="var(--text)"/>
+          <!-- right arrow -->
+          <polygon points="180,22 170,17 170,27" fill="var(--text)"/>
+          <!-- left point (open circle) at x=8/3 ≈ position 70 -->
+          <circle cx="70" cy="22" r="5" fill="var(--purple)" stroke="var(--purple)" stroke-width="2"/>
+          <!-- right point (filled circle) at x=9, position 145 -->
+          <circle cx="145" cy="22" r="5" fill="var(--purple)" stroke="var(--purple)" stroke-width="2"/>
+          <!-- shaded line between -->
+          <line x1="75" y1="22" x2="140" y2="22" stroke="var(--purple)" stroke-width="3"/>
+          <!-- labels -->
+          <text x="70" y="40" text-anchor="middle" font-size="11" fill="var(--text)" font-family="Nunito" font-weight="700">8/3</text>
+          <text x="145" y="40" text-anchor="middle" font-size="11" fill="var(--text)" font-family="Nunito" font-weight="700">9</text>
+        </svg>
+        <div style="font-size:0.8rem; color:var(--text-muted); margin-top:2px;">● = included (≤ or ≥) &nbsp;|&nbsp; ○ = not included (&lt; or &gt;)</div>
+      </div>
+    </div>
+
+    <div class="subsection">Quadratic Inequality</div>
+    <div class="rule">
+      <p>✦ Never solve until RHS = 0. Then use Mode 5-3 to find roots.</p>
+    </div>
+    <div class="grid-2">
+
+      <!-- CASE LHS > 0 -->
+      <div style="background:var(--green-light); border:1px solid #86efac; border-radius:10px; padding:1rem;">
+        <div style="font-weight:800; color:var(--green); font-size:0.88rem; margin-bottom:0.5rem;">LHS &gt; 0 &nbsp;or&nbsp; LHS ≥ 0</div>
+        <div style="background:var(--card); border-radius:8px; padding:0.6rem 0.9rem; margin-bottom:0.7rem; border-left:3px solid var(--green);">
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:4px;">Answer shape:</div>
+          <div style="font-weight:800; color:var(--green); font-size:0.9rem;">x &gt; <span style="color:var(--coral);">bigger root</span></div>
+          <div style="font-weight:800; color:var(--green); font-size:0.9rem; margin-top:2px;">x &lt; <span style="color:var(--coral);">smaller root</span></div>
+        </div>
+        <div class="math-line">x² + 5x &gt; 6</div>
+        <div style="display:flex; align-items:center; gap:6px; font-family:'Fira Mono',monospace; font-size:0.88rem; margin:4px 0;">
+          <span style="color:var(--coral); font-size:0.8rem; font-weight:700;">move 6 →</span>
+          <span style="color:var(--blue); font-weight:700;">x² + 5x − 6 &gt; 0</span>
+        </div>
+        <div class="math-line">(x−1)(x+6) &gt; 0</div>
+        <div style="margin-top:6px; padding:6px 10px; background:var(--purple-light); border-radius:6px; font-weight:800; color:var(--purple);">
+          x &gt; 1 &nbsp;&nbsp; or &nbsp;&nbsp; x &lt; −6
+        </div>
+      </div>
+
+      <!-- CASE LHS < 0 -->
+      <div style="background:var(--coral-light); border:1px solid #fca5a5; border-radius:10px; padding:1rem;">
+        <div style="font-weight:800; color:var(--coral); font-size:0.88rem; margin-bottom:0.5rem;">LHS &lt; 0 &nbsp;or&nbsp; LHS ≤ 0</div>
+        <div style="background:var(--card); border-radius:8px; padding:0.6rem 0.9rem; margin-bottom:0.7rem; border-left:3px solid var(--coral);">
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:4px;">Answer shape:</div>
+          <div style="font-weight:800; color:var(--coral); font-size:0.9rem;"><span style="color:var(--blue);">smaller root</span> &lt; x &lt; <span style="color:var(--blue);">bigger root</span></div>
+          <div style="font-size:0.8rem; color:var(--text-muted); margin-top:4px; font-style:italic;">x is in between the two roots</div>
+        </div>
+        <div class="math-line">−x² + 7x − 6 &lt; 0</div>
+        <div style="display:flex; align-items:center; gap:6px; font-family:'Fira Mono',monospace; font-size:0.88rem; margin:4px 0;">
+          <span style="color:var(--coral); font-size:0.8rem; font-weight:700;">already RHS=0 →</span>
+          <span style="color:var(--blue); font-weight:700;">−x² + 7x − 6 &lt; 0</span>
+        </div>
+        <div class="math-line">(x−6)(x−1) &lt; 0</div>
+        <div style="margin-top:6px; padding:6px 10px; background:var(--purple-light); border-radius:6px; font-weight:800; color:var(--purple);">
+          1 &lt; x &lt; 6
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Subject of Formula -->
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--teal)"></span>K — Subject of Formula</div>
+    <div class="rule"><p>✦ Put the variable you want to be the subject on <strong>one side</strong>.</p></div>
+    <div class="example">
+      <div class="example-label">Example: Make Z the subject of N = <span class="vf" style="color:var(--text)"><span class="vfn">4Z</span><span class="vfd">m+Z</span></span></div>
+      <div class="math-line">N(m + Z) = 4Z</div>
+      <div class="math-line">Nm + NZ = 4Z</div>
+      <div class="math-line">4Z − NZ = Nm</div>
+      <div class="math-line">Z(4 − N) = Nm</div>
+      <div class="math-line"><span class="hl teal">Z = <span class="vf" style="color:var(--text)"><span class="vfn">Nm</span><span class="vfd">4 − N</span></span></span></div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  POWERS (was SURDS)                                                         -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  TRIGONOMETRY                                                  -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="trig">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#ccfbf1; font-size:1.5rem;">📐</div>
+    <h2>Trigonometry</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--teal)"></span>Key Fact</div>
+    <div class="rule"><p>✦ Sum of angles in any triangle = <strong>180°</strong></p></div>
+    <div class="note">
+      <span class="note-icon">💡</span>
+      <span>In many questions, you can use both rules (sine + cosine) in the same question!</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--teal)"></span>Type 1: Right-Angle Triangles</div>
+    <div style="display:grid; grid-template-columns: 1fr auto; gap:1.2rem; align-items:start; background:#1a1a2e; border-radius:10px; padding:1.2rem;">
+
+      <!-- LEFT: all formulas -->
+      <div style="font-family:'Fira Mono',monospace; font-size:0.92rem; color:#e2e8f0;">
+
+        <!-- SOH CAH TOA with fractions -->
+        <div style="display:grid; grid-template-columns: 80px 1fr; gap:10px 12px; align-items:center;">
+          <span style="color:#94a3b8;">sin(θ)</span><span>= <span class="vf" style="color:#93c5fd"><span class="vfn">OPP</span><span class="vfd">HYP</span></span></span>
+          <span style="color:#94a3b8;">cos(θ)</span><span>= <span class="vf" style="color:#93c5fd"><span class="vfn">ADJ</span><span class="vfd">HYP</span></span></span>
+          <span style="color:#94a3b8;">tan(θ)</span><span>= <span class="vf" style="color:#93c5fd"><span class="vfn">OPP</span><span class="vfd">ADJ</span></span></span>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,0.1);margin:0.8rem 0"></div>
+
+        <!-- Pythagoras -->
+        <div style="display:grid; grid-template-columns: 80px 1fr; gap:10px 12px; align-items:center;">
+          <span style="color:#94a3b8;">HYP</span><span>= <span class="rt" style="color:#93c5fd"><span class="rt-sym">√</span><span class="rt-body">OPP² + ADJ²</span></span></span>
+          <span style="color:#94a3b8;">OPP</span><span>= <span class="rt" style="color:#93c5fd"><span class="rt-sym">√</span><span class="rt-body">HYP² − ADJ²</span></span></span>
+          <span style="color:#94a3b8;">ADJ</span><span>= <span class="rt" style="color:#93c5fd"><span class="rt-sym">√</span><span class="rt-body">HYP² − OPP²</span></span></span>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,0.1);margin:0.8rem 0"></div>
+
+        <!-- Area formulas + triangle side by side -->
+        <div style="display:flex; gap:1.5rem; align-items:center; flex-wrap:wrap;">
+          <div>
+            <div style="color:#94a3b8; margin-bottom:8px;">Area</div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+              <span style="color:#94a3b8; min-width:18px;">1.</span>
+              <span><span class="vf" style="color:#93c5fd"><span class="vfn">1</span><span class="vfd">2</span></span> × base × height</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:#94a3b8; min-width:18px;">2.</span>
+              <span><span class="vf" style="color:#93c5fd"><span class="vfn">1</span><span class="vfd">2</span></span> × a × b × sin(θ)</span>
+            </div>
+          </div>
+
+          <!-- area triangle: isoceles, θ between sides a and b at top vertex -->
+          <svg width="140" height="108" viewBox="0 0 140 108">
+            <!-- triangle: apex top-center, base at bottom -->
+            <polygon points="70,8 10,90 130,90" fill="none" stroke="#7c3aed" stroke-width="2"/>
+            <!-- height dashed from apex to base -->
+            <line x1="70" y1="8" x2="70" y2="90" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4,2"/>
+            <!-- side a (left) -->
+            <text x="30" y="56" font-size="12" fill="#f87171" font-family="Nunito" font-weight="800">a</text>
+            <!-- side b (right) -->
+            <text x="102" y="56" font-size="12" fill="#f87171" font-family="Nunito" font-weight="800">b</text>
+            <!-- h label beside dashed line -->
+            <text x="76" y="54" font-size="12" fill="#fbbf24" font-family="Nunito" font-weight="700">h</text>
+            <!-- base label -->
+            <text x="70" y="98" text-anchor="middle" font-size="11" fill="#93c5fd" font-family="Nunito" font-weight="700">base</text>
+            <!-- θ symbol at top vertex, no arc -->
+            <text x="70" y="38" text-anchor="middle" font-size="13" fill="#fbbf24" font-family="Nunito" font-weight="800">θ</text>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: right-angle triangle -->
+      <div style="padding-top:4px;">
+        <svg width="150" height="160" viewBox="0 0 150 160">
+          <!-- triangle: right angle bottom-left, θ at bottom-right -->
+          <polygon points="20,135 20,15 135,135" fill="none" stroke="#7c3aed" stroke-width="2.2"/>
+          <!-- right angle box at bottom-left -->
+          <rect x="20" y="119" width="15" height="15" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+          <!-- θ symbol at bottom-right corner, no arc -->
+          <text x="108" y="128" font-size="14" fill="#fbbf24" font-family="Nunito" font-weight="800">θ</text>
+          <!-- HYP along diagonal, rotated to match slope -->
+          <text x="95" y="62" text-anchor="middle" font-size="12" fill="#f87171" font-family="Nunito" font-weight="800" transform="rotate(-47,95,62)">HYP</text>
+          <!-- OPP along left vertical edge, rotated -->
+          <text x="8" y="78" text-anchor="middle" font-size="12" fill="#34d399" font-family="Nunito" font-weight="800" transform="rotate(-90,8,78)">OPP</text>
+          <!-- ADJ along bottom edge -->
+          <text x="76" y="152" text-anchor="middle" font-size="12" fill="#93c5fd" font-family="Nunito" font-weight="800">ADJ</text>
+        </svg>
+      </div>
+
+    </div>
+
+    </div>
+    <div class="grid-2">
+      <div class="note">
+        <span class="note-icon">📐</span>
+        <span><strong>Equilateral triangle:</strong> all sides and angles equal, area = <span class="vf" style="color:var(--text)"><span class="vfn"><span class="rt"><span class="rt-sym">√</span><span class="rt-body">3</span></span></span><span class="vfd">4</span></span> × s²</span>
+      </div>
+      <div class="note">
+        <span class="note-icon">📐</span>
+        <span><strong>Isosceles triangle:</strong> 2 sides equal, 2 angles equal</span>
+      </div>
+    </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--teal)"></span>Type 2: Non Right-Angle Triangles</div>
+    <div class="grid-2">
+
+      <!-- SINE RULE -->
+      <div style="background:#1a1a2e; border-radius:10px; padding:1rem;">
+        <div style="font-weight:800; color:#2dd4bf; font-size:0.95rem; margin-bottom:0.5rem;">Sine Rule</div>
+        <div style="font-size:0.82rem; color:#94a3b8; margin-bottom:0.8rem;">Use when: 2 sides + 1 angle &nbsp;OR&nbsp; 2 angles + 1 side</div>
+
+        <!-- formula -->
+        <div style="font-family:'Fira Mono',monospace; font-size:1rem; color:#e2e8f0; display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
+          <span class="vf" style="color:#93c5fd"><span class="vfn">a</span><span class="vfd">sin(A)</span></span>
+          <span style="color:#94a3b8;">=</span>
+          <span class="vf" style="color:#93c5fd"><span class="vfn">b</span><span class="vfd">sin(B)</span></span>
+          <span style="color:#94a3b8;">=</span>
+          <span class="vf" style="color:#93c5fd"><span class="vfn">c</span><span class="vfd">sin(C)</span></span>
+        </div>
+
+        <!-- triangle: labelled with A B C angles and a b c sides -->
+        <svg width="170" height="120" viewBox="0 0 170 120">
+          <polygon points="20,105 85,10 150,105" fill="none" stroke="#7c3aed" stroke-width="2"/>
+          <!-- sides: a opposite A (bottom), b opposite B (right), c opposite C (left) -->
+          <!-- side a: bottom, between B and C -->
+          <text x="85" y="118" text-anchor="middle" font-size="13" fill="#f87171" font-family="Nunito" font-weight="800">a</text>
+          <!-- side b: left side (between A top and C bottom-right) -->
+          <text x="122" y="65" font-size="13" fill="#34d399" font-family="Nunito" font-weight="800">b</text>
+          <!-- side c: right side (between A top and B bottom-left) -->
+          <text x="38" y="65" font-size="13" fill="#93c5fd" font-family="Nunito" font-weight="800">c</text>
+          <!-- angle A at top -->
+          <text x="85" y="8" text-anchor="middle" font-size="13" fill="#fbbf24" font-family="Nunito" font-weight="800">A</text>
+          <!-- angle B at bottom-left -->
+          <text x="8" y="112" font-size="13" fill="#fbbf24" font-family="Nunito" font-weight="800">B</text>
+          <!-- angle C at bottom-right -->
+          <text x="152" y="112" font-size="13" fill="#fbbf24" font-family="Nunito" font-weight="800">C</text>
+        </svg>
+        <div style="font-size:0.78rem; color:#94a3b8; margin-top:4px;">a is opposite A, b opposite B, c opposite C</div>
+      </div>
+
+      <!-- COSINE RULE -->
+      <div style="background:#1a1a2e; border-radius:10px; padding:1rem;">
+        <div style="font-weight:800; color:#2dd4bf; font-size:0.95rem; margin-bottom:0.5rem;">Cosine Rule</div>
+        <div style="font-size:0.82rem; color:#94a3b8; margin-bottom:0.8rem;">Use when: 3 sides &nbsp;OR&nbsp; 2 sides + angle <strong style="color:#fbbf24;">in between</strong></div>
+
+        <!-- formula -->
+        <div style="font-family:'Fira Mono',monospace; font-size:1rem; color:#e2e8f0; margin-bottom:1rem; line-height:1.8;">
+          <span style="color:#f87171;">c²</span> = <span style="color:#34d399;">a²</span> + <span style="color:#93c5fd;">b²</span> − 2<span style="color:#34d399;">a</span><span style="color:#93c5fd;">b</span>·cos(<span style="color:#fbbf24;">C</span>)
+        </div>
+
+        <!-- triangle: C is the angle between sides a and b, c is opposite -->
+        <svg width="170" height="120" viewBox="0 0 170 120">
+          <polygon points="20,105 150,105 100,15" fill="none" stroke="#7c3aed" stroke-width="2"/>
+          <!-- C angle at bottom-left (between sides a and b going to top and right) -->
+          <text x="8" y="112" font-size="13" fill="#fbbf24" font-family="Nunito" font-weight="800">C</text>
+          <!-- side a: left side from C to top -->
+          <text x="44" y="58" font-size="13" fill="#34d399" font-family="Nunito" font-weight="800">a</text>
+          <!-- side b: bottom from C to right vertex -->
+          <text x="85" y="118" text-anchor="middle" font-size="13" fill="#93c5fd" font-family="Nunito" font-weight="800">b</text>
+          <!-- side c: right side, opposite to C -->
+          <text x="138" y="62" font-size="13" fill="#f87171" font-family="Nunito" font-weight="800">c</text>
+          <!-- angle bracket showing C is between a and b -->
+
+        </svg>
+        <div style="font-size:0.78rem; color:#94a3b8; margin-top:4px;">C is the angle <strong style="color:#fbbf24;">between</strong> sides a and b</div>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <span class="note-icon">💡</span>
+      <span>In many questions, you can use <strong>both rules</strong> (sine + cosine) in the same question!</span>
+    </div>
+  </div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  2D SHAPES                                                     -->
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="shapes">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#fce7f3; font-size:1.5rem;">⬡</div>
+    <h2>2D Shapes</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--pink)"></span>Shape Formulas</div>
+    <div class="shape-grid">
+
+      <!-- RECTANGLE -->
+      <div class="shape-card">
+        <svg width="130" height="75" viewBox="0 0 130 75">
+          <rect x="15" y="12" width="90" height="48" fill="none" stroke="var(--pink)" stroke-width="2"/>
+          <!-- L label centred above top edge -->
+          <text x="60" y="9" text-anchor="middle" font-size="12" fill="var(--pink)" font-family="Nunito" font-weight="700">L</text>
+          <!-- W label centred to right of right edge -->
+          <text x="109" y="40" text-anchor="start" font-size="12" fill="var(--pink)" font-family="Nunito" font-weight="700">W</text>
+          <!-- parallel marks on top & bottom (L sides) -->
+          <line x1="53" y1="12" x2="58" y2="12" stroke="var(--pink)" stroke-width="1.5"/>
+          <line x1="62" y1="12" x2="67" y2="12" stroke="var(--pink)" stroke-width="1.5"/>
+          <line x1="53" y1="60" x2="58" y2="60" stroke="var(--pink)" stroke-width="1.5"/>
+          <line x1="62" y1="60" x2="67" y2="60" stroke="var(--pink)" stroke-width="1.5"/>
+          <!-- parallel marks on left & right (W sides) -->
+          <line x1="15" y1="34" x2="15" y2="39" stroke="var(--pink)" stroke-width="1.5"/>
+          <line x1="105" y1="34" x2="105" y2="39" stroke="var(--pink)" stroke-width="1.5"/>
+        </svg>
+        <h4>Rectangle</h4>
+        <p>Area = L × W<br>Opp. sides parallel &amp; equal</p>
+      </div>
+
+      <!-- SQUARE -->
+      <div class="shape-card">
+        <svg width="90" height="90" viewBox="0 0 90 90">
+          <rect x="10" y="10" width="68" height="68" fill="none" stroke="var(--purple)" stroke-width="2"/>
+          <!-- diagonal -->
+          <line x1="10" y1="10" x2="78" y2="78" stroke="var(--purple-mid)" stroke-width="1.2" stroke-dasharray="4,2"/>
+          <!-- S label top -->
+          <text x="44" y="8" text-anchor="middle" font-size="11" fill="var(--purple)" font-family="Nunito" font-weight="700">S</text>
+          <!-- S label right -->
+          <text x="84" y="48" text-anchor="middle" font-size="11" fill="var(--purple)" font-family="Nunito" font-weight="700">S</text>
+          <!-- d label on diagonal -->
+          <text x="52" y="38" font-size="10" fill="var(--purple-mid)" font-family="Nunito" font-weight="700" transform="rotate(45,52,38)">d</text>
+          <!-- right angle marks at all 4 corners -->
+          <rect x="10" y="10" width="8" height="8" fill="none" stroke="var(--purple)" stroke-width="1"/>
+          <rect x="70" y="10" width="8" height="8" fill="none" stroke="var(--purple)" stroke-width="1"/>
+          <rect x="10" y="70" width="8" height="8" fill="none" stroke="var(--purple)" stroke-width="1"/>
+          <rect x="70" y="70" width="8" height="8" fill="none" stroke="var(--purple)" stroke-width="1"/>
+        </svg>
+        <h4>Square</h4>
+        <p>Area = S²<br>d = S<span class="rt"><span class="rt-sym">√</span><span class="rt-body">2</span></span><br>All sides equal, all angles 90°</p>
+      </div>
+
+      <!-- PARALLELOGRAM -->
+      <div class="shape-card">
+        <svg width="120" height="75" viewBox="0 0 120 75">
+          <!-- proper parallelogram: offset top -->
+          <polygon points="20,60 10,15 90,15 100,60" fill="none" stroke="var(--teal)" stroke-width="2"/>
+          <!-- height dashed line -->
+          <line x1="20" y1="15" x2="20" y2="60" stroke="var(--teal)" stroke-width="1.5" stroke-dasharray="4,2"/>
+          <!-- right angle box at base of height -->
+          <rect x="20" y="50" width="8" height="8" fill="none" stroke="var(--teal)" stroke-width="1.2"/>
+          <!-- b label on bottom -->
+          <text x="60" y="73" text-anchor="middle" font-size="11" fill="var(--teal)" font-family="Nunito" font-weight="700">b</text>
+          <!-- a label on left slant side -->
+          <text x="7" y="42" text-anchor="middle" font-size="11" fill="var(--teal)" font-family="Nunito" font-weight="700">a</text>
+          <!-- h label beside dashed line -->
+          <text x="32" y="42" font-size="11" fill="var(--teal)" font-family="Nunito" font-weight="700">h</text>
+          <!-- θ at bottom-left corner -->
+          <text x="28" y="58" font-size="10" fill="#fbbf24" font-family="Nunito" font-weight="700">θ</text>
+          <!-- parallel marks on top and bottom -->
+          <line x1="42" y1="15" x2="47" y2="15" stroke="var(--teal)" stroke-width="1.5"/>
+          <line x1="55" y1="15" x2="60" y2="15" stroke="var(--teal)" stroke-width="1.5"/>
+          <line x1="52" y1="60" x2="57" y2="60" stroke="var(--teal)" stroke-width="1.5"/>
+          <line x1="65" y1="60" x2="70" y2="60" stroke="var(--teal)" stroke-width="1.5"/>
+        </svg>
+        <h4>Parallelogram</h4>
+        <p>Area = b × h<br>or a × b × sin(θ)</p>
+      </div>
+
+      <!-- TRAPEZIUM -->
+      <div class="shape-card">
+        <svg width="170" height="110" viewBox="0 0 170 110">
+          <!-- Trapezium: b₂ bottom x=8..162, b₁ top x=42..128 -->
+
+          <!-- Left triangle shaded -->
+          <polygon points="8,80 42,80 42,20" fill="#fde68a" stroke="var(--amber)" stroke-width="1.5"/>
+          <!-- Right triangle shaded -->
+          <polygon points="128,20 162,80 128,80" fill="#fde68a" stroke="var(--amber)" stroke-width="1.5"/>
+          <!-- Middle rectangle shaded -->
+          <rect x="42" y="20" width="86" height="60" fill="rgba(217,119,6,0.12)" stroke="var(--amber)" stroke-width="1.5"/>
+
+          <!-- Outer trapezium outline on top -->
+          <polygon points="42,20 128,20 162,80 8,80" fill="none" stroke="var(--amber)" stroke-width="2.2"/>
+
+          <!-- Vertical dashed lines showing segmentation -->
+          <line x1="42" y1="20" x2="42" y2="80" stroke="var(--amber)" stroke-width="1.2" stroke-dasharray="3,2"/>
+          <line x1="128" y1="20" x2="128" y2="80" stroke="var(--amber)" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+          <!-- height dashed -->
+          <line x1="85" y1="20" x2="85" y2="80" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="4,2"/>
+          <rect x="85" y="72" width="7" height="7" fill="none" stroke="var(--amber)" stroke-width="1.2"/>
+          <text x="93" y="55" font-size="11" fill="var(--amber)" font-family="Nunito" font-weight="700">h</text>
+
+          <!-- b₁ top label -->
+          <text x="85" y="14" text-anchor="middle" font-size="11" fill="var(--amber)" font-family="Nunito" font-weight="700">b₁</text>
+          <!-- b₂ bottom label -->
+          <text x="85" y="97" text-anchor="middle" font-size="11" fill="var(--amber)" font-family="Nunito" font-weight="700">b₂</text>
+
+          <!-- (b₂-b₁)/2 labels on left and right triangles base -->
+          <text x="25" y="95" text-anchor="middle" font-size="8.5" fill="#92400e" font-family="Nunito" font-weight="700">(b₂−b₁)/2</text>
+          <text x="145" y="95" text-anchor="middle" font-size="8.5" fill="#92400e" font-family="Nunito" font-weight="700">(b₂−b₁)/2</text>
+        </svg>
+        <h4>Trapezium</h4>
+        <p>Area = <span class="vf" style="color:var(--text)"><span class="vfn">b₁+b₂</span><span class="vfd">2</span></span> × h</p>
+      </div>
+
+      <!-- CIRCLE -->
+      <div class="shape-card">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="32" fill="none" stroke="var(--coral)" stroke-width="2"/>
+          <line x1="40" y1="40" x2="72" y2="40" stroke="var(--coral)" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="2.5" fill="var(--coral)"/>
+          <text x="56" y="35" font-size="12" fill="var(--coral)" font-family="Nunito" font-weight="700">r</text>
+        </svg>
+        <h4>Circle</h4>
+        <p>Area = πr²<br>Circumference = 2πr</p>
+      </div>
+
+      <!-- SEMI-CIRCLE -->
+      <div class="shape-card">
+        <svg width="90" height="60" viewBox="0 0 90 60">
+          <path d="M 8 50 A 37 37 0 0 1 82 50 Z" fill="none" stroke="var(--blue)" stroke-width="2"/>
+          <line x1="8" y1="50" x2="82" y2="50" stroke="var(--blue)" stroke-width="2"/>
+          <line x1="45" y1="50" x2="45" y2="13" stroke="var(--blue)" stroke-width="1.2" stroke-dasharray="3,2"/>
+          <circle cx="45" cy="50" r="2.5" fill="var(--blue)"/>
+          <text x="50" y="35" font-size="12" fill="var(--blue)" font-family="Nunito" font-weight="700">r</text>
+          <!-- r label on base too -->
+          <text x="65" y="47" font-size="11" fill="var(--blue)" font-family="Nunito" font-weight="700">r</text>
+          <text x="20" y="47" font-size="11" fill="var(--blue)" font-family="Nunito" font-weight="700">r</text>
+        </svg>
+        <h4>Semi-Circle</h4>
+        <p>Area = <span class="vf" style="color:var(--text)"><span class="vfn">πr²</span><span class="vfd">2</span></span><br>Circumference (arc) = πr<br>Perimeter = πr + 2r</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--coral)"></span>Sector (Part of a Circle)</div>
+    <div class="formula-box">
+      <div class="formula-row"><span class="formula-label">Area</span><span>= <span class="vf" style="color:var(--text)"><span class="vfn">θ</span><span class="vfd">360</span></span> × πr²</span></div>
+      <div class="formula-row"><span class="formula-label">Arc length</span><span>= <span class="vf" style="color:var(--text)"><span class="vfn">θ</span><span class="vfd">360</span></span> × 2πr</span></div>
+      <div class="formula-row"><span class="formula-label">Perimeter</span><span>= arc + 2r = <span class="vf" style="color:var(--text)"><span class="vfn">θ</span><span class="vfd">360</span></span> × 2πr + 2r</span></div>
+    </div>
+    <div class="subsection coral">Important Notes</div>
+    <ul style="padding-left:1.2rem; font-size:0.9rem; line-height:1.9">
+      <li>If given 2 shapes inside each other → shaded area = area of outside shape − area of inside shape</li>
+      <li>If shaded area is given, write the equation: area outside − area inside = given region</li>
+      <li>In trapezium, remember the segmentation: the two sides = (b₂ − b₁)/2 each side</li>
+    </ul>
+    <div class="rule" style="margin-top:0.7rem">
+      <p style="font-weight:700">Angle of Elevation and Depression</p>
+      <p>✦ Angle of elevation/depression of B <strong>from A</strong> → always take the letter <strong>after "from"</strong> (here A).</p>
+      <p style="margin-top:0.3rem">Depression = look down 👇 | Elevation = look up 👆</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  LINES                                                         -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="lines">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#ede9fe; font-size:1.5rem;">📏</div>
+    <h2>Lines</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Key Formulas</div>
+    <div class="formula-box">
+      <div class="formula-row"><span class="formula-label">Line equation</span><span>y = mx + c</span></div>
+      <div class="formula-row"><span class="formula-label">Slope/Gradient</span><span>m = <span class="vf" style="color:var(--text)"><span class="vfn">y₂ − y₁</span><span class="vfd">x₂ − x₁</span></span></span></div>
+      <div class="formula-row"><span class="formula-label">Distance</span><span>d = <span class="rt"><span class="rt-sym">√</span><span class="rt-body">(y₂−y₁)² + (x₂−x₁)²</span></span></span></div>
+      <div class="formula-row"><span class="formula-label">Midpoint</span><span>= (<span class="vf" style="color:var(--text)"><span class="vfn">x₁+x₂</span><span class="vfd">2</span></span> , <span class="vf" style="color:var(--text)"><span class="vfn">y₁+y₂</span><span class="vfd">2</span></span>)</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Key Rules</div>
+    <ul style="padding-left:1.2rem; font-size:0.9rem; line-height:1.9">
+      <li>2 lines <strong>parallel</strong> → same slope (m₁ = m₂)</li>
+      <li>2 lines <strong>perpendicular</strong> → slopes multiply to −1 (m₁ × m₂ = −1), so flip and negate <span style="color:var(--text-muted); font-size:0.85rem;">(شقلب وقلب)</span></li>
+      <li>Line meets <strong>x-axis</strong> → put y = 0 and get x</li>
+      <li>Line meets <strong>y-axis</strong> → put x = 0 and get y</li>
+      <li>2 lines <strong>intersect</strong> → equate them and solve</li>
+      <li>If equation is given as 2y + 3x = 5 → make y the subject: y = <span class="vf"><span class="vfn">−3</span><span class="vfd">2</span></span>x + <span class="vf"><span class="vfn">5</span><span class="vfd">2</span></span> ⚠️ <strong>Important!</strong></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Getting the Equation of a Line</div>
+    <div class="subsection">Step 1: Get m (gradient)</div>
+    <div class="rule">
+      <p>Either use (y₂ − y₁)/(x₂ − x₁) if you have 2 points, or if there's a parallel/perpendicular line, use its slope (or flip and negate <span style="color:var(--text-muted); font-size:0.85rem;">(شقلب وقلب)</span> for perpendicular).</p>
+    </div>
+    <div class="subsection">Step 2: Get c (y-intercept)</div>
+    <div class="rule">
+      <p>There is ALWAYS a point the line passes through — substitute that point into y = mx + c to get c.</p>
+      <div class="math-line" style="margin-top:0.4rem">Example: y = 2x + c, passes through (2, 3) → 3 = 2(2) + c → c = −1 → <span class="hl">y = 2x − 1</span></div>
+    </div>
+    <div class="note"><span class="note-icon">📌</span><span>Lines questions will ALWAYS be solved using slope, distance, or midpoint rules. Always sketch if shapes are given!</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Linear Shading</div>
+
+    <!-- solid/dotted rule -->
+    <div style="display:flex; gap:1.5rem; margin-bottom:1rem; flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:8px; background:var(--green-light); border-radius:8px; padding:6px 14px;">
+        <svg width="40" height="12" viewBox="0 0 40 12"><line x1="0" y1="6" x2="40" y2="6" stroke="var(--green)" stroke-width="2.5"/></svg>
+        <span style="font-weight:700; color:var(--green); font-size:0.9rem;">≥ or ≤ → solid line</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; background:var(--purple-light); border-radius:8px; padding:6px 14px;">
+        <svg width="40" height="12" viewBox="0 0 40 12"><line x1="0" y1="6" x2="40" y2="6" stroke="var(--purple)" stroke-width="2.5" stroke-dasharray="5,3"/></svg>
+        <span style="font-weight:700; color:var(--purple); font-size:0.9rem;">&gt; or &lt; → dotted line</span>
+      </div>
+    </div>
+
+    <!-- three cases -->
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+
+      <!-- case 1 -->
+      <div style="display:grid; grid-template-columns: 140px 1fr; gap:0; border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+        <div style="background:var(--purple-light); padding:0.8rem 1rem; display:flex; align-items:center; justify-content:center; width:140px; min-width:140px;">
+          <span style="font-family:'Fira Mono',monospace; font-weight:700; color:var(--purple); font-size:0.88rem; white-space:nowrap;">y &gt; 2x − 2</span>
+        </div>
+        <div style="padding:0.8rem 1rem; font-size:0.88rem; line-height:1.8;">
+          <div><span style="color:var(--purple); font-weight:700;">①</span> Draw the line <span style="font-family:'Fira Mono',monospace; font-weight:700;">y = 2x − 2</span></div>
+          <div><span style="color:var(--purple); font-weight:700;">②</span> <span style="color:var(--green); font-weight:700;">&gt; means shade ABOVE</span> the line</div>
+          <div style="color:var(--text-muted); font-size:0.82rem;">&lt; means shade below</div>
+        </div>
+      </div>
+
+      <!-- case 2 -->
+      <div style="display:grid; grid-template-columns: 140px 1fr; gap:0; border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+        <div style="background:var(--blue-light); padding:0.8rem 1rem; display:flex; align-items:center; justify-content:center; width:140px; min-width:140px;">
+          <span style="font-family:'Fira Mono',monospace; font-weight:700; color:var(--blue); font-size:0.88rem; white-space:nowrap;">x &gt; 2</span>
+        </div>
+        <div style="padding:0.8rem 1rem; font-size:0.88rem; line-height:1.8;">
+          <div><span style="color:var(--blue); font-weight:700;">①</span> Draw the vertical line <span style="font-family:'Fira Mono',monospace; font-weight:700;">x = 2</span></div>
+          <div><span style="color:var(--blue); font-weight:700;">②</span> <span style="color:var(--green); font-weight:700;">&gt; means shade to the RIGHT</span></div>
+          <div style="color:var(--text-muted); font-size:0.82rem;">&lt; means shade to the left</div>
+        </div>
+      </div>
+
+      <!-- case 3 -->
+      <div style="display:grid; grid-template-columns: 140px 1fr; gap:0; border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+        <div style="background:var(--teal-light); padding:0.8rem 1rem; display:flex; align-items:center; justify-content:center; width:140px; min-width:140px;">
+          <span style="font-family:'Fira Mono',monospace; font-weight:700; color:var(--teal); font-size:0.88rem; white-space:nowrap;">x + y &gt; 3</span>
+        </div>
+        <div style="padding:0.8rem 1rem; font-size:0.88rem; line-height:1.8;">
+          <div><span style="color:var(--teal); font-weight:700;">①</span> Make y the subject → <span style="font-family:'Fira Mono',monospace; font-weight:700;">y &gt; −x + 3</span></div>
+          <div><span style="color:var(--teal); font-weight:700;">②</span> Draw the line <span style="font-family:'Fira Mono',monospace; font-weight:700;">y = −x + 3</span></div>
+          <div><span style="color:var(--teal); font-weight:700;">③</span> <span style="color:var(--green); font-weight:700;">&gt; means shade ABOVE</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  CURVES                                                        -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="curves">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#dcfce7; font-size:1.5rem;">〜</div>
+    <h2>Curves</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>Curve Shapes — Know These!</div>
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0.8rem;">
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M -52,-38 C -40,-36 -24,-16 -12,-4 C -6,2 0,4 0,4 C 0,4 6,2 12,-4 C 24,-16 40,-36 52,-38" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = kx²</div>
+      </div>
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M -52,38 C -40,36 -24,16 -12,4 C -6,-2 0,-4 0,-4 C 0,-4 6,-2 12,4 C 24,16 40,36 52,38" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = −kx²</div>
+      </div>
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M 5,-38 C 6,-28 9,-18 14,-12 C 20,-7 30,-3 52,-1" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+          <path d="M -5,38 C -6,28 -9,18 -14,12 C -20,7 -30,3 -52,1" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = k/x</div>
+      </div>
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M -5,-38 C -6,-28 -9,-18 -14,-12 C -20,-7 -30,-3 -52,-1" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+          <path d="M 5,38 C 6,28 9,18 14,12 C 20,7 30,3 52,1" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = −k/x</div>
+      </div>
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M -52,38 C -42,36 -28,22 -16,10 C -8,3 -3,0.5 0,0 C 3,-0.5 8,-3 16,-10 C 28,-22 42,-36 52,-38" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = kx³</div>
+      </div>
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M -52,-38 C -42,-36 -28,-22 -16,-10 C -8,-3 -3,-0.5 0,0 C 3,0.5 8,3 16,10 C 28,22 42,36 52,38" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = −kx³</div>
+      </div>
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M -52,35 C -44,32 -36,10 -26,-16 C -20,-28 -14,-30 -8,-22 C 0,-8 8,18 18,26 C 28,32 40,32 52,28" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = ax³+bx²+cx+d</div>
+      </div>
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M -52,-35 C -44,-32 -36,-10 -26,16 C -20,28 -14,30 -8,22 C 0,8 8,-18 18,-26 C 28,-32 40,-32 52,-28" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = −ax³+bx²+cx+d</div>
+      </div>
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M -52,-2 C -38,-1 -24,-2 -14,-6 C -8,-12 -5,-20 -3,-38" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+          <path d="M 52,-2 C 38,-1 24,-2 14,-6 C 8,-12 5,-20 3,-38" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = k/x²</div>
+      </div>
+
+      <div style="background:#f8f6f0; border-radius:10px; padding:0.6rem; text-align:center;">
+        <svg width="110" height="80" viewBox="-55 -40 110 80">
+          <line x1="-55" y1="0" x2="55" y2="0" stroke="#ccc" stroke-width="1"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke="#ccc" stroke-width="1"/>
+          <path d="M -52,2 C -38,1 -24,2 -14,6 C -8,12 -5,20 -3,38" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+          <path d="M 52,2 C 38,1 24,2 14,6 C 8,12 5,20 3,38" fill="none" stroke="#e04b30" stroke-width="2.5"/>
+        </svg>
+        <div style="font-family:'Fira Mono',monospace; font-size:0.78rem; font-weight:700; color:#e04b30;">y = −k/x²</div>
+      </div>
+
+            <!-- suitable line note -->
+      <div style="background:var(--amber-light); border-radius:10px; padding:0.8rem; font-size:0.82rem; line-height:1.7; grid-column: span 2; align-self:center;">
+        <div style="font-weight:800; color:var(--amber); margin-bottom:4px;">✦ By drawing a suitable straight line:</div>
+        <div>→ Original equation − needed equation = <strong>the line to draw</strong></div>
+        <div style="margin-top:4px; color:var(--text-muted);">✦ Use your graph to solve — split into 2 equations</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>Completing a Table & Drawing</div>
+    <div class="rule">
+      <p>✦ To complete the table: use x values and put them in the equation to get y, OR use Mode 7.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>Drawing a Suitable Straight Line on the Curve</div>
+
+    <div class="note" style="margin-bottom:0.8rem;">
+      <span class="note-icon">💡</span>
+      <span>Goal: find a line y = mx + c to draw on the same graph so intersections solve a new equation.</span>
+    </div>
+
+    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:10px; padding:1rem;">
+      <div style="font-weight:800; color:var(--green); margin-bottom:0.7rem; font-size:0.9rem;">Example — Old equation ①: x³ − 3x + 2 &nbsp;&nbsp; New equation ②: 2x³ − 3x + 4</div>
+
+      <div style="display:flex; flex-direction:column; gap:0.6rem; font-size:0.9rem;">
+
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="background:var(--green); color:white; border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:800; flex-shrink:0; margin-top:1px;">1</span>
+          <div>
+            Check if the highest power <strong>x³</strong> has the same coefficient.<br>
+            Here <strong>1 ≠ 2</strong> → divide ② by 2 to match:
+            <div style="font-family:'Fira Mono',monospace; margin-top:4px; padding:5px 10px; background:white; border-radius:6px; display:inline-block;">
+              ② ÷ 2 &nbsp;=&nbsp; x³ − <span class="vf" style="color:var(--text)"><span class="vfn">3</span><span class="vfd">2</span></span>x + 2
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="background:var(--green); color:white; border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:800; flex-shrink:0; margin-top:1px;">2</span>
+          <div>
+            Subtract <strong>old ①</strong> from <strong>new ②÷2</strong>:
+            <div style="font-family:'Fira Mono',monospace; margin-top:6px; line-height:2;">
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span style="color:var(--blue);">(x³ − <span class="vf" style="color:var(--text)"><span class="vfn">3</span><span class="vfd">2</span></span>x + 2)</span>
+                <span style="color:var(--text-muted);">−</span>
+                <span style="color:var(--coral);">(x³ − 3x + 2)</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; margin-top:4px;">
+                <span style="color:var(--text-muted);">=</span>
+                <span>−<span class="vf" style="color:var(--text)"><span class="vfn">3</span><span class="vfd">2</span></span>x − (−3x)</span>
+                <span style="color:var(--text-muted);">=</span>
+                <span>−<span class="vf" style="color:var(--text)"><span class="vfn">3</span><span class="vfd">2</span></span>x + 3x</span>
+                <span style="color:var(--text-muted);">=</span>
+                <span style="background:var(--green-light); color:var(--green); font-weight:800; padding:2px 10px; border-radius:6px;">y = <span class="vf" style="color:var(--text)"><span class="vfn">3</span><span class="vfd">2</span></span>x</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <span style="background:var(--amber); color:white; border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:800; flex-shrink:0;">3</span>
+          <div>Draw the line <span style="font-family:'Fira Mono',monospace; font-weight:700; background:var(--amber-light); padding:2px 8px; border-radius:6px; color:var(--amber);">y = <span class="vf" style="color:var(--text)"><span class="vfn">3</span><span class="vfd">2</span></span>x</span> on your graph — the x-values where it crosses the curve are the solutions.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>Finding Values of k</div>
+
+    <div class="rule">
+      <p style="font-weight:700; color:var(--green);">Question type: For which values of k does the equation have exactly 2 solutions?</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns: 1fr auto; gap:1rem; align-items:start;">
+      <div>
+        <div style="font-size:0.9rem; line-height:1.8; margin-bottom:0.7rem;">
+          e.g. x³ − 4x² + 1 = k
+          <div style="margin-top:4px; padding:6px 10px; background:var(--blue-light); border-radius:8px; font-size:0.88rem;">
+            Rewrite as <strong>y = x³ − 4x² + 1</strong> and draw the curve.<br>
+            A horizontal line <strong>y = k</strong> cuts the curve at <strong>exactly 2 points</strong> when k equals a <span style="color:var(--green); font-weight:700;">local max</span> or <span style="color:var(--coral); font-weight:700;">local min</span>.
+          </div>
+        </div>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <div style="background:var(--green-light); border-radius:8px; padding:6px 14px; font-weight:700; color:var(--green); font-size:0.9rem;">k = 1 &nbsp;→ local max</div>
+          <div style="background:var(--coral-light); border-radius:8px; padding:6px 14px; font-weight:700; color:var(--coral); font-size:0.9rem;">k = −8 → local min</div>
+        </div>
+      </div>
+      <!-- mini curve sketch -->
+      <svg width="110" height="100" viewBox="-10 -10 120 110" style="flex-shrink:0;">
+        <line x1="0" y1="90" x2="110" y2="90" stroke="#bbb" stroke-width="1"/>
+        <line x1="10" y1="0" x2="10" y2="100" stroke="#bbb" stroke-width="1"/>
+        <!-- wavy cubic curve -->
+        <path d="M 5,85 C 20,82 28,40 42,32 C 56,24 62,65 76,72 C 88,78 98,20 108,5" fill="none" stroke="var(--green)" stroke-width="2"/>
+        <!-- k=local max dashed line -->
+        <line x1="0" y1="32" x2="110" y2="32" stroke="var(--green)" stroke-width="1.2" stroke-dasharray="4,2"/>
+        <text x="112" y="35" font-size="9" fill="var(--green)" font-family="Nunito" font-weight="700">k=1</text>
+        <!-- k=local min dashed line -->
+        <line x1="0" y1="72" x2="110" y2="72" stroke="var(--coral)" stroke-width="1.2" stroke-dasharray="4,2"/>
+        <text x="112" y="75" font-size="9" fill="var(--coral)" font-family="Nunito" font-weight="700">k=−8</text>
+        <!-- dots at tangent points -->
+        <circle cx="42" cy="32" r="3.5" fill="var(--green)"/>
+        <circle cx="76" cy="72" r="3.5" fill="var(--coral)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>Gradient at a Point on a Curve</div>
+    <div style="display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center;">
+      <div>
+        <div class="rule" style="margin-bottom:0.7rem;">
+          <p>Draw a <strong>tangent line</strong> at the point → pick any 2 points on that tangent → use the gradient formula:</p>
+        </div>
+        <div style="text-align:center; font-family:'Fira Mono',monospace; font-size:1.1rem; padding:0.6rem; background:#1a1a2e; border-radius:8px; color:#93c5fd;">
+          m = <span class="vf" style="color:#93c5fd"><span class="vfn">y₂ − y₁</span><span class="vfd">x₂ − x₁</span></span>
+        </div>
+      </div>
+      <!-- tangent sketch -->
+      <svg width="110" height="105" viewBox="0 0 110 105">
+        <!-- axes -->
+        <line x1="5" y1="100" x2="108" y2="100" stroke="#bbb" stroke-width="1"/>
+        <line x1="12" y1="2" x2="12" y2="102" stroke="#bbb" stroke-width="1"/>
+
+        <!-- Parabola: peak at (55,15), arms go down on both sides -->
+        <path d="M 8,88 C 15,70 25,35 40,20 C 48,13 55,10 63,13 C 75,20 85,42 100,80"
+              fill="none" stroke="var(--blue)" stroke-width="2.2"/>
+
+        <!-- P at x=40,y=20 on the rising left side of parabola -->
+        <!-- Tangent slope at P is steep upward-right (SVG: negative dy as x increases) -->
+        <!-- slope ≈ -1.6 in SVG. Tangent: y-20 = -1.6*(x-40) → y = -1.6x+64+20 = -1.6x+84 -->
+        <!-- x=10: y=-16+84=68   x=70: y=-112+84=-28 (off top, use x=60: y=-96+84=-12 off) -->
+        <!-- x=58: y=-92.8+84=-8.8, use x=55: y=-88+84=-4 → cut at viewbox -->
+        <!-- Tangent from (10,68) to (55,4) — entirely above/separate from curve ✓ -->
+        <!-- Curve at x=10 is y=88 (FAR below tangent line which is at y=68) — wait that means -->
+        <!-- tangent is above curve at x=10 but curve comes back up at x=10 (left arm going down) -->
+        <!-- This is fine: tangent is a straight line, curve is below it everywhere except at P ✓ -->
+        <line x1="8" y1="59" x2="57" y2="-9" stroke="var(--amber)" stroke-width="2"/>
+
+        <!-- Point P -->
+        <circle cx="40" cy="20" r="4" fill="var(--amber)"/>
+        <text x="44" y="20" font-size="10" fill="var(--amber)" font-family="Nunito" font-weight="800">P</text>
+
+        <!-- tangent label - placed along tangent line, away from curve -->
+        <text x="50" y="36" font-size="9" fill="var(--amber)" font-family="Nunito" font-weight="700">tangent</text>
+
+        <!-- Two points on tangent for gradient -->
+        <circle cx="16" cy="49" r="2.5" fill="#555"/>
+        <circle cx="52" cy="-3" r="2.5" fill="#555"/>
+        <text x="0" y="60" font-size="7.5" fill="#555" font-family="Nunito">(x₁,y₁)</text>
+        <text x="38" y="18" font-size="7.5" fill="#555" font-family="Nunito">(x₂,y₂)</text>
+      </svg>
+    </div>
+  </div>
+
+
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  SETS                                                          -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sets">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#fde8e4; font-size:1.5rem;">⊆</div>
+    <h2>Sets</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--coral)"></span>Notation</div>
+    <div class="grid-2">
+      <div class="rule">
+        <p style="font-weight:700">Set notation</p>
+        <div class="math-line">A = {0, 2, 4, 6, 8}</div>
+      </div>
+      <div class="rule">
+        <p style="font-weight:700">Set builder notation</p>
+        <div class="math-line">A = {x : x > 0 & x < 10}</div>
+      </div>
+    </div>
+    <div class="rule" style="margin-top:0.6rem">
+      <p>n(A) → number of elements in A</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--coral)"></span>Solving Venn Diagrams</div>
+    <div class="note">
+      <span class="note-icon">📌</span>
+      <span><strong>Rule: Go from inside to outside</strong></span>
+    </div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--coral-light);color:var(--coral)">1</span>Always start with the <strong>middle area</strong> (the one with more intersections — intersection of 3 circles)</li>
+      <li><span class="step-num" style="background:var(--coral-light);color:var(--coral)">2</span>Go to areas with 2 intersections — don't forget to minus the value of the 3-intersection area</li>
+      <li><span class="step-num" style="background:var(--coral-light);color:var(--coral)">3</span>Go to the area for each circle alone — don't forget to minus the intersection values</li>
+    </ol>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:0.8rem;">
+
+      <!-- A ∩ B -->
+      <div class="example">
+        <div class="example-label">A ∩ B — Intersection</div>
+        <p style="font-size:0.82rem; margin-bottom:6px;">Elements in <strong>BOTH</strong> A and B</p>
+        <svg width="160" height="90" viewBox="0 0 160 90">
+          <circle cx="55" cy="45" r="34" fill="none" stroke="#7c3aed" stroke-width="2.2"/>
+          <circle cx="105" cy="45" r="34" fill="none" stroke="#0d9488" stroke-width="2.2"/>
+          <clipPath id="ci1"><circle cx="55" cy="45" r="34"/></clipPath>
+          <circle cx="105" cy="45" r="34" fill="#7c3aed" fill-opacity="0.4" clip-path="url(#ci1)"/>
+          <text x="32" y="49" font-size="15" fill="#7c3aed" font-family="Nunito" font-weight="800">A</text>
+          <text x="118" y="49" font-size="15" fill="#0d9488" font-family="Nunito" font-weight="800">B</text>
+        </svg>
+      </div>
+
+      <!-- A ∪ B -->
+      <div class="example">
+        <div class="example-label">A ∪ B — Union</div>
+        <p style="font-size:0.82rem; margin-bottom:6px;">Elements in A <strong>OR</strong> B (or both)</p>
+        <svg width="160" height="90" viewBox="0 0 160 90">
+          <circle cx="55" cy="45" r="34" fill="#7c3aed" fill-opacity="0.25" stroke="#7c3aed" stroke-width="2.2"/>
+          <circle cx="105" cy="45" r="34" fill="#0d9488" fill-opacity="0.25" stroke="#0d9488" stroke-width="2.2"/>
+          <text x="32" y="49" font-size="15" fill="#7c3aed" font-family="Nunito" font-weight="800">A</text>
+          <text x="118" y="49" font-size="15" fill="#0d9488" font-family="Nunito" font-weight="800">B</text>
+        </svg>
+      </div>
+
+      <!-- B' complement -->
+      <div class="example">
+        <div class="example-label">B′ — Complement of B</div>
+        <p style="font-size:0.82rem; margin-bottom:6px;">Everything <strong>NOT</strong> in B</p>
+        <svg width="160" height="90" viewBox="0 0 160 90">
+          <rect x="4" y="4" width="152" height="82" fill="#e04b30" fill-opacity="0.18" rx="6"/>
+          <circle cx="80" cy="45" r="32" fill="white" stroke="#0d9488" stroke-width="2.2"/>
+          <rect x="4" y="4" width="152" height="82" fill="none" stroke="#bbb" stroke-width="1.5" rx="6"/>
+          <text x="72" y="50" font-size="15" fill="#0d9488" font-family="Nunito" font-weight="800">B</text>
+          <text x="10" y="22" font-size="12" fill="#e04b30" font-family="Nunito" font-weight="700">B′</text>
+        </svg>
+      </div>
+
+      <!-- A − B difference -->
+      <div class="example">
+        <div class="example-label">A − B — Difference</div>
+        <p style="font-size:0.82rem; margin-bottom:6px;">In A but <strong>NOT</strong> in B</p>
+        <svg width="160" height="90" viewBox="0 0 160 90">
+          <circle cx="55" cy="45" r="34" fill="#7c3aed" fill-opacity="0.35" stroke="#7c3aed" stroke-width="2.2"/>
+          <circle cx="105" cy="45" r="34" fill="white" stroke="#0d9488" stroke-width="2.2"/>
+          <circle cx="55" cy="45" r="34" fill="none" stroke="#7c3aed" stroke-width="2.2"/>
+          <text x="32" y="49" font-size="15" fill="#7c3aed" font-family="Nunito" font-weight="800">A</text>
+          <text x="118" y="49" font-size="15" fill="#0d9488" font-family="Nunito" font-weight="800">B</text>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  STATISTICS                                                    -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="stats">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#dbeafe; font-size:1.5rem;">📊</div>
+    <h2>Statistics</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--blue)"></span>Measures</div>
+    <div class="important" style="margin-bottom:0.8rem;">
+      <div class="important-label">⚠️ ALWAYS DO THIS FIRST</div>
+      <p><strong>Sort all numbers in order</strong> before finding median, quartiles, or any positional measure.</p>
+    </div>
+    <table class="ftable">
+      <thead><tr><th>Measure</th><th>Definition / Formula</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Mean</strong></td><td><span class="vf" style="color:var(--text)"><span class="vfn">Sum</span><span class="vfd">Number of items</span></span> &nbsp;— always write the equation first</td></tr>
+        <tr><td><strong>Mode</strong></td><td>Most repeated value</td></tr>
+        <tr><td><strong>Range</strong></td><td>Max − Min</td></tr>
+        <tr><td><strong>Median</strong></td><td>Middle number (after sorting)</td></tr>
+        <tr><td><strong>Upper Quartile</strong></td><td>¾(N+1) → gives the <em>position</em>, find that number in sorted list</td></tr>
+        <tr><td><strong>Lower Quartile</strong></td><td>¼(N+1) → gives the <em>position</em>, find that number in sorted list</td></tr>
+        <tr><td><strong>IQR</strong></td><td>Upper Quartile − Lower Quartile</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:0.8rem; display:flex; flex-direction:column; gap:0.5rem;">
+      <div style="display:flex; align-items:center; gap:8px; background:var(--teal-light); border-radius:8px; padding:7px 12px; font-size:0.88rem;">
+        <span>📏</span><span><strong>Smaller IQR</strong> → more consistent (less spread)</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; background:var(--blue-light); border-radius:8px; padding:7px 12px; font-size:0.88rem;">
+        <span>📈</span><span><strong>Higher median</strong> → higher average</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; background:var(--amber-light); border-radius:8px; padding:7px 12px; font-size:0.88rem;">
+        <span>⚠️</span><span>The position from ¾(N+1) <strong>and</strong> ¼(N+1) is <strong>NOT</strong> the answer — it tells you <strong>which</strong> number to pick from the sorted list</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--blue)"></span>Mean from a Table</div>
+    <div class="formula-box">
+      Mean = <span class="vf" style="color:var(--text)"><span class="vfn">Σ(midpoint × freq)</span><span class="vfd">Total frequency</span></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--blue)"></span>Cumulative Frequency</div>
+    <div class="rule">
+      <p>✦ Add all the <strong>previous frequencies</strong> to complete the table.</p>
+      <p style="margin-top:0.3rem">✦ To draw cumulative frequency graph, always use the <strong>large number</strong> in the table (upper bound of each class).</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  ACCURACY                                                      -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="accuracy">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#fef3c7; font-size:1.5rem;">🎯</div>
+    <h2>Limits of Accuracy</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--amber)"></span>Upper & Lower Bounds</div>
+    <div class="grid-2">
+      <div>
+        <div class="subsection amber">Upper Bound (UB)</div>
+        <table class="ftable" style="margin-top:0.4rem">
+          <tr><td>Addition</td><td>UB(x) + UB(y)</td></tr>
+          <tr><td>Subtraction</td><td>UB(x) − LB(y)</td></tr>
+          <tr><td>Multiplication</td><td>UB(x) × UB(y)</td></tr>
+          <tr><td>Division</td><td>UB(x) / LB(y)</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="subsection teal">Lower Bound (LB)</div>
+        <table class="ftable" style="margin-top:0.4rem">
+          <tr><td>Addition</td><td>LB(x) + LB(y)</td></tr>
+          <tr><td>Subtraction</td><td>LB(x) − UB(y)</td></tr>
+          <tr><td>Multiplication</td><td>LB(x) × LB(y)</td></tr>
+          <tr><td>Division</td><td>LB(x) / UB(y)</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--amber)"></span>Finding Bounds by Rounding Type</div>
+    <table class="ftable">
+      <thead><tr><th>Rounded to</th><th>Example</th><th>UB</th><th>LB</th></tr></thead>
+      <tbody>
+        <tr><td>4 sig. figures</td><td>33.82</td><td>33.825</td><td>33.815</td></tr>
+        <tr><td>1 decimal place</td><td>33.8</td><td>33.85</td><td>33.75</td></tr>
+        <tr><td>Nearest integer</td><td>6</td><td>6.5</td><td>5.5</td></tr>
+        <tr><td>Nearest 5</td><td>15</td><td>17.5</td><td>12.5</td></tr>
+        <tr><td>Nearest 10</td><td>20</td><td>25</td><td>15</td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top:0.7rem">
+      <span class="note-icon">⚠️</span>
+      <span>For nearest 5: divide 5÷2 = 2.5, then add and subtract from the number. If units differ (e.g. grams vs kg), convert units FIRST.</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  PHYSICS                                                       -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="physics">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#ede9fe; font-size:1.5rem;">⚡</div>
+    <h2>Physics Formulas</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Key Formulas</div>
+    <div class="formula-box">
+      <div class="formula-row"><span class="formula-label">Pressure</span><span>= <span class="vf" style="color:var(--text)"><span class="vfn">Force</span><span class="vfd">Area</span></span></span></div>
+      <div class="formula-row"><span class="formula-label">Density</span><span>= <span class="vf" style="color:var(--text)"><span class="vfn">Mass</span><span class="vfd">Volume</span></span></span></div>
+      <div class="formula-row"><span class="formula-label">Speed</span><span>= <span class="vf" style="color:var(--text)"><span class="vfn">Distance</span><span class="vfd">Time</span></span></span></div>
+      <div class="formula-row"><span class="formula-label">Acceleration</span><span>= <span class="vf" style="color:var(--text)"><span class="vfn">Change in velocity</span><span class="vfd">Time</span></span></span></div>
+      <div class="formula-row"><span class="formula-label">Average speed</span><span>= <span class="vf" style="color:var(--text)"><span class="vfn">Total distance</span><span class="vfd">Total time</span></span></span></div>
+    </div>
+    <div class="important">
+      <div class="important-label">⚠️ Important</div>
+      <p>For Pressure: the area is <strong>NOT</strong> the area of the whole shape — it's the area of the <strong>face facing the ground only</strong>.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Unit Conversion: km/h to m/s</div>
+    <div class="example">
+      <div class="example-label">Convert 20 km/h to m/s</div>
+      <ol class="steps">
+        <li><span class="step-num" style="background:var(--purple-light);color:var(--purple)">1</span>Change km to m: 20 km = 20,000 m → <strong>20,000 m/h</strong></li>
+        <li>
+          <span class="step-num" style="background:var(--purple-light);color:var(--purple)">2</span>
+          <div>
+            <div style="margin-bottom:6px;">Cross multiplication:</div>
+            <div style="font-family:'Fira Mono',monospace; font-size:0.9rem; background:#f8f6f0; border-radius:10px; padding:12px 16px; display:inline-block;">
+              <div style="display:grid; grid-template-columns: auto auto auto; gap:4px 16px; align-items:center;">
+                <span style="color:var(--blue); font-weight:700;">20,000 m</span>
+                <span style="color:var(--text-muted);">→</span>
+                <span style="color:var(--coral); font-weight:700;">3600 sec (1 hour)</span>
+                <span style="color:var(--blue); font-weight:700;">X m</span>
+                <span style="color:var(--text-muted);">←</span>
+                <span style="color:var(--coral); font-weight:700;">1 sec</span>
+              </div>
+              <!-- cross arrows -->
+              <div style="color:var(--text-muted); font-size:0.82rem;">X = <span style="color:var(--blue); font-weight:700;">20,000</span> × <span style="color:var(--coral); font-weight:700;">1</span> ÷ <span style="color:var(--coral); font-weight:700;">3600</span></div>
+            </div>
+          </div>
+        </li>
+        <li><span class="step-num" style="background:var(--purple-light);color:var(--purple)">3</span>X = <span class="vf" style="color:var(--text)"><span class="vfn">20,000 × 1</span><span class="vfd">3600</span></span> = <span class="hl"><span class="vf" style="color:var(--text)"><span class="vfn">50</span><span class="vfd">9</span></span> m/s</span></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  PROBABILITY                                                   -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="probability">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#fce7f3; font-size:1.5rem;">🎲</div>
+    <h2>Probability</h2>
+  </div>
+
+  <div class="card" style="border:2px solid var(--coral); background:linear-gradient(135deg,#fff5f5,#fff);">
+    <div class="card-title"><span class="dot" style="background:var(--coral)"></span>🚨 Don't Forget — AT LEAST</div>
+    <div style="font-size:0.92rem; line-height:1.8;">
+      <p>When the question says <strong style="color:var(--coral); font-size:1rem;">"AT LEAST"</strong>, 95% of the time you use:</p>
+      <div style="text-align:center; font-family:'Fira Mono',monospace; font-size:1.2rem; padding:0.8rem; background:#1a1a2e; border-radius:10px; color:#f87171; margin:0.7rem 0; font-weight:700; letter-spacing:1px;">
+        P(at least one) = 1 − P(none)
+      </div>
+      <p style="color:var(--text-muted); font-size:0.85rem;">It's easier to find the probability it does NOT happen, then subtract from 1.</p>
+    </div>
+    <div class="example" style="margin-top:0.8rem;">
+      <div class="example-label">Example: A bag has 3 red and 7 blue balls. You pick 2. P(at least one red)?</div>
+      <div style="font-size:0.9rem; line-height:1.9; font-family:'Fira Mono',monospace; margin-top:0.4rem;">
+        <div><span style="color:var(--text-muted);">Instead of:</span> P(1 red) + P(2 red) — complicated!</div>
+        <div><span style="color:var(--green); font-weight:700;">Use:</span> 1 − P(no red) = 1 − P(both blue)</div>
+        <div style="margin-top:4px;">P(both blue) = <span class="vf" style="color:var(--text)"><span class="vfn">7</span><span class="vfd">10</span></span> × <span class="vf" style="color:var(--text)"><span class="vfn">6</span><span class="vfd">9</span></span> = <span class="vf" style="color:var(--text)"><span class="vfn">42</span><span class="vfd">90</span></span> = <span class="vf" style="color:var(--text)"><span class="vfn">7</span><span class="vfd">15</span></span></div>
+        <div>P(at least one red) = 1 − <span class="vf" style="color:var(--text)"><span class="vfn">7</span><span class="vfd">15</span></span> = <span class="hl coral" style="font-size:1rem;"><span class="vf" style="color:var(--text)"><span class="vfn">8</span><span class="vfd">15</span></span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--pink)"></span>Core Rules</div>
+    <div class="formula-box">
+      <div class="formula-row"><span class="formula-label">Total</span><span>Sum of all probabilities = 1</span></div>
+      <div class="formula-row"><span class="formula-label">AND</span><span>= × (multiply)</span></div>
+      <div class="formula-row"><span class="formula-label">OR</span><span>= + (add)</span></div>
+      <div class="formula-row"><span class="formula-label">P(event)</span><span>= <span class="vf" style="color:var(--text)"><span class="vfn">what you want</span><span class="vfd">total</span></span></span></div>
+    </div>
+    <div class="note">
+      <span class="note-icon">💡</span>
+      <span>When solving, try to say all the possibilities with your mouth first, then write what you're saying.</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--pink)"></span>Example</div>
+    <div class="example">
+      <div class="example-label">Bag has <span style="color:var(--coral); font-weight:700;">5 red</span> and <span style="color:var(--green); font-weight:700;">15 green</span> balls (total = 20). Find P(one red AND one green).</div>
+      <div class="math-line">P(red then green) <strong>OR</strong> P(green then red)</div>
+      <div class="math-line">= P(R,G) + P(G,R)</div>
+      <div class="math-line">= (<span class="vf" style="color:var(--text)"><span class="vfn">5</span><span class="vfd">20</span></span> × <span class="vf" style="color:var(--text)"><span class="vfn">15</span><span class="vfd">19</span></span>) + (<span class="vf" style="color:var(--text)"><span class="vfn">15</span><span class="vfd">20</span></span> × <span class="vf" style="color:var(--text)"><span class="vfn">5</span><span class="vfd">19</span></span>)</div>
+    </div>
+  </div>
+
+
+</div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  HISTOGRAM                                                     -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="histogram">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#dcfce7; font-size:1.5rem;">📊</div>
+    <h2>Histogram</h2>
+  </div>
+
+  <div class="important">
+    <div class="important-label">⚠️ ALWAYS do this first!</div>
+    <p>Write the rule the SECOND you know it's a histogram question: <strong>Frequency Density = <span class="vf" style="color:var(--text)"><span class="vfn">Frequency</span><span class="vfd">Class Width</span></span></strong></p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>Key Definitions</div>
+    <div class="formula-box">
+      <div class="formula-row"><span class="formula-label">Freq. Density</span><span>= <span class="vf" style="color:var(--text)"><span class="vfn">Frequency</span><span class="vfd">Class Width</span></span></span></div>
+      <div class="formula-row"><span class="formula-label">Frequency</span><span>= number of (people, apples, cars…)</span></div>
+      <div class="formula-row"><span class="formula-label">Class Width</span><span>= width of the histogram bar you will draw</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>4 Types of Histogram Questions</div>
+    <div class="subsection green">Type 1 — No bars drawn at all</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">1</span>Use the rule to get Frequency Density</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">2</span>Draw histograms</li>
+    </ol>
+    <div class="subsection green">Type 2 — Histograms drawn but no y-axis (2 cases)</div>
+    <div class="grid-2">
+      <div class="rule">
+        <p style="font-weight:700;color:var(--green)">Case 1</p>
+        <p>He gives you info about frequency of one of the bars → use rule to get freq. density, then scale y-axis accordingly.</p>
+      </div>
+      <div class="rule">
+        <p style="font-weight:700;color:var(--green)">Case 2</p>
+        <p>No info about freq. density → assume the axis. e.g. 1 big square = x and try to solve.</p>
+      </div>
+    </div>
+    <div class="subsection green">Type 3 — Full histogram with y-axis</div>
+    <div class="rule"><p>He will ask about the frequency within a range. Example: calculate the number of people older than 30.</p></div>
+    <div class="subsection green">Type 4 — Partially drawn histogram</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">1</span>Use one of the given frequencies to calculate the f.d of that bar, then scale the y-axis accordingly</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">2</span>Use the rule to get the rest of the frequencies</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">3</span>Draw missing histograms</li>
+    </ol>
+  </div>
+
+
+  <!-- ════════════════════════════════════ HISTOGRAM EXAMPLES ════════════════════════════════════ -->
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>Worked Examples — All Types</div>
+    <div class="note"><span class="note-icon">📌</span><span>Each type below shows: what kind of question it is, an example question, and the steps to solve it.</span></div>
+  </div>
+
+  <!-- ═══ TYPE 1 ═══ -->
+  <div class="subsection green">Type 1 — No bars drawn at all</div>
+  <div class="rule" style="margin-bottom:0.5rem;">
+    <p>You are given a table with frequencies. You need to <strong>calculate F.D and draw all bars yourself</strong>.</p>
+  </div>
+  <div class="card">
+    <div style="font-weight:800; color:var(--blue); font-size:0.88rem; margin-bottom:0.6rem; padding:4px 10px; background:var(--blue-light); border-radius:6px; display:inline-block;">📋 Example Question — Farms in Spain</div>
+    <p style="font-size:0.88rem; margin-bottom:0.8rem;">The table gives information about the areas of some farms in Spain. Draw a histogram for this information.</p>
+    <div style="display:flex; gap:1.5rem; flex-wrap:wrap; align-items:flex-start; margin-bottom:0.8rem;">
+      <table class="ftable" style="min-width:200px;">
+        <thead><tr><th>Area A (hectares)</th><th>Frequency</th></tr></thead>
+        <tbody>
+          <tr><td>0 &lt; A ≤ 20</td><td>40</td></tr>
+          <tr><td>20 &lt; A ≤ 50</td><td>90</td></tr>
+          <tr><td>50 &lt; A ≤ 100</td><td>140</td></tr>
+          <tr><td>100 &lt; A ≤ 300</td><td>140</td></tr>
+          <tr><td>300 &lt; A ≤ 350</td><td>40</td></tr>
+        </tbody>
+      </table>
+      <svg width="300" height="170" viewBox="0 0 300 170" style="font-family:Nunito,sans-serif; border:1px solid #ddd; border-radius:8px;">
+        <defs>
+          <pattern id="sg1" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="#eee" stroke-width="0.5"/></pattern>
+          <pattern id="bg1" width="50" height="50" patternUnits="userSpaceOnUse"><rect width="50" height="50" fill="url(#sg1)"/><path d="M 50 0 L 0 0 0 50" fill="none" stroke="#ddd" stroke-width="1"/></pattern>
+        </defs>
+        <rect x="40" y="10" width="250" height="130" fill="url(#bg1)"/>
+        <line x1="40" y1="10" x2="40" y2="142" stroke="#333" stroke-width="1.5"/>
+        <line x1="40" y1="140" x2="293" y2="140" stroke="#333" stroke-width="1.5"/>
+        <polygon points="40,8 37,14 43,14" fill="#333"/>
+        <polygon points="295,140 289,137 289,143" fill="#333"/>
+        <text x="10" y="80" font-size="7" fill="#333" transform="rotate(-90,14,80)">Freq. density</text>
+        <text x="40"  y="154" text-anchor="middle" font-size="7" fill="#333">0</text>
+        <text x="65"  y="154" text-anchor="middle" font-size="7" fill="#333">50</text>
+        <text x="90"  y="154" text-anchor="middle" font-size="7" fill="#333">100</text>
+        <text x="140" y="154" text-anchor="middle" font-size="7" fill="#333">200</text>
+        <text x="190" y="154" text-anchor="middle" font-size="7" fill="#333">300</text>
+        <text x="215" y="154" text-anchor="middle" font-size="7" fill="#333">350</text>
+        <text x="165" y="165" text-anchor="middle" font-size="8" fill="#333">Area (hectares)</text>
+      </svg>
+    </div>
+    <div style="font-weight:800; color:var(--green); font-size:0.85rem; margin-bottom:0.4rem;">📝 Steps:</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">1</span>Add a Class Width column and an F.D column to the table</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">2</span>Calculate F.D = Frequency ÷ Class Width for each row</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">3</span>Scale the y-axis using your F.D values, then draw each bar at its F.D height</li>
+    </ol>
+  </div>
+
+  <!-- ═══ TYPE 2 CASE 1 ═══ -->
+  <div class="subsection green">Type 2 — Histogram fully drawn, no y-axis scale</div>
+  <div class="rule" style="margin-bottom:0.5rem;">
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px;"><strong style="color:var(--coral);">Case 1</strong> — Enough info given → use it to find F.D scale</div>
+      <div style="flex:1; min-width:200px;"><strong style="color:var(--purple);">Case 2</strong> — Not enough info → let 1 large box = x, form equation</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:800; color:var(--coral); font-size:0.88rem; margin-bottom:0.6rem; padding:4px 10px; background:var(--coral-light); border-radius:6px; display:inline-block;">📋 Case 1 Example — Nov 2023 1H Q17</div>
+    <p style="font-size:0.88rem; margin-bottom:0.8rem;">The histogram gives information about the weights of oranges. 24 oranges weigh less than 20 grams. Medium oranges weigh between 35 and 55 grams. Find the number of medium oranges.</p>
+    <svg width="380" height="200" viewBox="0 0 380 200" style="font-family:Nunito,sans-serif; border:1px solid #ddd; border-radius:8px; display:block; margin-bottom:0.8rem;">
+      <defs>
+        <pattern id="sg2" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="#eee" stroke-width="0.5"/></pattern>
+        <pattern id="bg2" width="50" height="50" patternUnits="userSpaceOnUse"><rect width="50" height="50" fill="url(#sg2)"/><path d="M 50 0 L 0 0 0 50" fill="none" stroke="#ddd" stroke-width="1"/></pattern>
+      </defs>
+      <rect x="45" y="10" width="325" height="150" fill="url(#bg2)"/>
+      <line x1="45" y1="10" x2="45" y2="162" stroke="#333" stroke-width="1.5"/>
+      <line x1="45" y1="160" x2="373" y2="160" stroke="#333" stroke-width="1.5"/>
+      <polygon points="45,8 42,14 48,14" fill="#333"/>
+      <polygon points="375,160 369,157 369,163" fill="#333"/>
+      <text x="12" y="90" font-size="7" fill="#333" transform="rotate(-90,16,90)">Freq. density</text>
+      <text x="45"  y="174" text-anchor="middle" font-size="8" fill="#333">0</text>
+      <text x="85"  y="174" text-anchor="middle" font-size="8" fill="#333">10</text>
+      <text x="125" y="174" text-anchor="middle" font-size="8" fill="#333">20</text>
+      <text x="165" y="174" text-anchor="middle" font-size="8" fill="#333">30</text>
+      <text x="205" y="174" text-anchor="middle" font-size="8" fill="#333">40</text>
+      <text x="245" y="174" text-anchor="middle" font-size="8" fill="#333">50</text>
+      <text x="285" y="174" text-anchor="middle" font-size="8" fill="#333">60</text>
+      <text x="325" y="174" text-anchor="middle" font-size="8" fill="#333">70</text>
+      <text x="365" y="174" text-anchor="middle" font-size="8" fill="#333">80</text>
+      <text x="210" y="188" text-anchor="middle" font-size="8" fill="#333">Weight (grams)</text>
+      <rect x="45"  y="100" width="40" height="60"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="85"  y="100" width="40" height="60"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="125" y="60"  width="40" height="100" fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="165" y="80"  width="40" height="80"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="205" y="80"  width="40" height="80"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="245" y="100" width="40" height="60"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="285" y="100" width="40" height="60"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="325" y="140" width="40" height="20"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="45"  y="98"  width="80" height="64"  fill="rgba(37,99,235,0.2)"  stroke="var(--blue)"  stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="85" y="94" text-anchor="middle" font-size="8" fill="var(--blue)" font-weight="700">24 oranges</text>
+      <rect x="185" y="58" width="80" height="104" fill="rgba(255,100,0,0.15)" stroke="var(--coral)" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="225" y="54" text-anchor="middle" font-size="8" fill="var(--coral)" font-weight="700">35–55g medium</text>
+    </svg>
+    <div style="font-weight:800; color:var(--green); font-size:0.85rem; margin-bottom:0.4rem;">📝 Steps:</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">1</span>Use the given info (24 oranges &lt; 20g) to find the F.D of the 0–20g bars → F.D = Freq ÷ class width</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">2</span>Now you know the y-axis scale → read all other bar heights</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">3</span>Medium (35–55g) spans half of 30–40 bar + full 40–50 + half of 50–60</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">4</span>For each part: Frequency = F.D × class width → add them all up</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:800; color:var(--purple); font-size:0.88rem; margin-bottom:0.6rem; padding:4px 10px; background:var(--purple-light); border-radius:6px; display:inline-block;">📋 Case 2 Example — Not enough info given</div>
+    <p style="font-size:0.88rem; margin-bottom:0.8rem;">The histogram shows heights of Year 11 students. There are 160 students with height between 155 cm and 170 cm. Find the total number of students.</p>
+    <svg width="380" height="210" viewBox="0 0 380 210" style="font-family:Nunito,sans-serif; border:1px solid #ddd; border-radius:8px; display:block; margin-bottom:0.8rem;">
+      <defs>
+        <pattern id="sg3" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="#eee" stroke-width="0.5"/></pattern>
+        <pattern id="bg3" width="50" height="50" patternUnits="userSpaceOnUse"><rect width="50" height="50" fill="url(#sg3)"/><path d="M 50 0 L 0 0 0 50" fill="none" stroke="#ddd" stroke-width="1"/></pattern>
+      </defs>
+      <rect x="45" y="10" width="320" height="160" fill="url(#bg3)"/>
+      <line x1="45" y1="10" x2="45" y2="172" stroke="#333" stroke-width="1.5"/>
+      <line x1="45" y1="170" x2="368" y2="170" stroke="#333" stroke-width="1.5"/>
+      <polygon points="45,8 42,14 48,14" fill="#333"/>
+      <polygon points="370,170 364,167 364,173" fill="#333"/>
+      <text x="12" y="95" font-size="7" fill="#333" transform="rotate(-90,16,95)">Freq. density</text>
+      <text x="45"  y="184" text-anchor="middle" font-size="8" fill="#333">140</text>
+      <text x="109" y="184" text-anchor="middle" font-size="8" fill="#333">150</text>
+      <text x="173" y="184" text-anchor="middle" font-size="8" fill="#333">160</text>
+      <text x="237" y="184" text-anchor="middle" font-size="8" fill="#333">170</text>
+      <text x="301" y="184" text-anchor="middle" font-size="8" fill="#333">180</text>
+      <text x="365" y="184" text-anchor="middle" font-size="8" fill="#333">190</text>
+      <text x="205" y="198" text-anchor="middle" font-size="8" fill="#333">Height (cm)</text>
+      <rect x="45"  y="100" width="64" height="70"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="109" y="100" width="64" height="70"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="173" y="20"  width="64" height="150" fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="237" y="70"  width="64" height="100" fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="301" y="140" width="64" height="30"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <!-- 155-170 highlight -->
+      <rect x="141" y="98" width="96" height="74"  fill="rgba(124,58,237,0.2)" stroke="var(--purple)" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="189" y="94" text-anchor="middle" font-size="8" fill="var(--purple)" font-weight="700">155–170 = 160 students</text>
+      <!-- x labels on bars -->
+      <text x="77"  y="118" text-anchor="middle" font-size="8" fill="#666" font-weight="700">3x</text>
+      <text x="141" y="118" text-anchor="middle" font-size="8" fill="#666" font-weight="700">3x</text>
+      <text x="205" y="45"  text-anchor="middle" font-size="8" fill="#666" font-weight="700">6x</text>
+      <text x="269" y="88"  text-anchor="middle" font-size="8" fill="#666" font-weight="700">4x</text>
+      <text x="333" y="158" text-anchor="middle" font-size="8" fill="#666" font-weight="700">1.5x</text>
+    </svg>
+    <div style="font-weight:800; color:var(--green); font-size:0.85rem; margin-bottom:0.4rem;">📝 Steps:</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">1</span>Let 1 large square = <strong>x students</strong></li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">2</span>Count large squares in the 155–170 region (half of 150–160 bar + full 160–170 bar) → write total in terms of x</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">3</span>Set equal to 160 → solve for x</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">4</span>Count ALL large squares across every bar × x = total students</li>
+    </ol>
+  </div>
+
+  <!-- ═══ TYPE 3 ═══ -->
+  <div class="subsection green">Type 3 — Full histogram with y-axis scale</div>
+  <div class="rule" style="margin-bottom:0.5rem;">
+    <p>The histogram is fully drawn <strong>with</strong> F.D values on the y-axis. Read directly and calculate frequencies.</p>
+  </div>
+  <div class="card">
+    <div style="font-weight:800; color:var(--blue); font-size:0.88rem; margin-bottom:0.6rem; padding:4px 10px; background:var(--blue-light); border-radius:6px; display:inline-block;">📋 Example Question — Post Office Waiting Times</div>
+    <p style="font-size:0.88rem; margin-bottom:0.8rem;">The histogram shows waiting times at a Post Office. Work out an estimate for the proportion of people who waited longer than 20 minutes.</p>
+    <svg width="320" height="195" viewBox="0 0 320 195" style="font-family:Nunito,sans-serif; border:1px solid #ddd; border-radius:8px; display:block; margin-bottom:0.8rem;">
+      <defs>
+        <pattern id="sg4" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="#eee" stroke-width="0.5"/></pattern>
+        <pattern id="bg4" width="50" height="50" patternUnits="userSpaceOnUse"><rect width="50" height="50" fill="url(#sg4)"/><path d="M 50 0 L 0 0 0 50" fill="none" stroke="#ddd" stroke-width="1"/></pattern>
+      </defs>
+      <rect x="45" y="10" width="265" height="150" fill="url(#bg4)"/>
+      <line x1="45" y1="10" x2="45" y2="162" stroke="#333" stroke-width="1.5"/>
+      <line x1="45" y1="160" x2="313" y2="160" stroke="#333" stroke-width="1.5"/>
+      <polygon points="45,8 42,14 48,14" fill="#333"/>
+      <polygon points="315,160 309,157 309,163" fill="#333"/>
+      <text x="12" y="90" font-size="7" fill="#333" transform="rotate(-90,16,90)">Freq. density</text>
+      <!-- y axis with scale: 0-5, 1 unit = 30px -->
+      <text x="41" y="163" text-anchor="end" font-size="8" fill="#333">0</text>
+      <text x="41" y="133" text-anchor="end" font-size="8" fill="#333">1</text>
+      <text x="41" y="103" text-anchor="end" font-size="8" fill="#333">2</text>
+      <text x="41" y="73"  text-anchor="end" font-size="8" fill="#333">3</text>
+      <text x="41" y="43"  text-anchor="end" font-size="8" fill="#333">4</text>
+      <text x="41" y="13"  text-anchor="end" font-size="8" fill="#333">5</text>
+      <line x1="43" y1="130" x2="47" y2="130" stroke="#333" stroke-width="1"/>
+      <line x1="43" y1="100" x2="47" y2="100" stroke="#333" stroke-width="1"/>
+      <line x1="43" y1="70"  x2="47" y2="70"  stroke="#333" stroke-width="1"/>
+      <line x1="43" y1="40"  x2="47" y2="40"  stroke="#333" stroke-width="1"/>
+      <line x1="43" y1="10"  x2="47" y2="10"  stroke="#333" stroke-width="1"/>
+      <!-- x: 0,5,10,15,20,25,30 → 40px each -->
+      <text x="45"  y="174" text-anchor="middle" font-size="8" fill="#333">0</text>
+      <text x="85"  y="174" text-anchor="middle" font-size="8" fill="#333">5</text>
+      <text x="125" y="174" text-anchor="middle" font-size="8" fill="#333">10</text>
+      <text x="165" y="174" text-anchor="middle" font-size="8" fill="#333">15</text>
+      <text x="205" y="174" text-anchor="middle" font-size="8" fill="#333">20</text>
+      <text x="245" y="174" text-anchor="middle" font-size="8" fill="#333">25</text>
+      <text x="285" y="174" text-anchor="middle" font-size="8" fill="#333">30</text>
+      <text x="178" y="188" text-anchor="middle" font-size="8" fill="#333">Number of minutes</text>
+      <!-- bars: FD: 0-5→3, 5-10→4, 10-15→3, 15-20→2, 20-30→1 -->
+      <rect x="45"  y="70"  width="40" height="90"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="85"  y="40"  width="40" height="120" fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="125" y="70"  width="40" height="90"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="165" y="100" width="40" height="60"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+      <rect x="205" y="130" width="80" height="30"  fill="rgba(255,100,0,0.35)" stroke="var(--coral)" stroke-width="1.8"/>
+      <text x="245" y="127" text-anchor="middle" font-size="8" fill="var(--coral)" font-weight="700">&gt; 20 min</text>
+    </svg>
+    <div style="font-weight:800; color:var(--green); font-size:0.85rem; margin-bottom:0.4rem;">📝 Steps:</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">1</span>Read F.D for each bar directly from the y-axis</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">2</span>Calculate Frequency = F.D × Class Width for every bar</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">3</span>Add all frequencies → total</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">4</span>Proportion &gt;20 min = freq of &gt;20 bar ÷ total</li>
+    </ol>
+  </div>
+
+  <!-- ═══ TYPE 4 ═══ -->
+  <div class="subsection green">Type 4 — Partially drawn histogram</div>
+  <div class="rule" style="margin-bottom:0.5rem;">
+    <p>Some bars are drawn, some are missing. Use a <strong>known bar</strong> to scale the y-axis, then complete the rest.</p>
+  </div>
+  <div class="card">
+    <div style="font-weight:800; color:var(--blue); font-size:0.88rem; margin-bottom:0.6rem; padding:4px 10px; background:var(--blue-light); border-radius:6px; display:inline-block;">📋 Example Question — Distance to Work</div>
+    <p style="font-size:0.88rem; margin-bottom:0.8rem;">The table and histogram give information about distance travelled to work. Complete the table and histogram.</p>
+    <div style="display:flex; gap:1.5rem; flex-wrap:wrap; align-items:flex-start; margin-bottom:0.8rem;">
+      <table class="ftable" style="min-width:200px;">
+        <thead><tr><th>Distance d (km)</th><th>Frequency</th></tr></thead>
+        <tbody>
+          <tr><td>0 ≤ d &lt; 10</td><td>40</td></tr>
+          <tr><td>10 ≤ d &lt; 15</td><td style="color:#aaa; font-style:italic;">—</td></tr>
+          <tr><td>15 ≤ d &lt; 20</td><td style="color:#aaa; font-style:italic;">—</td></tr>
+          <tr><td>20 ≤ d &lt; 30</td><td style="color:#aaa; font-style:italic;">—</td></tr>
+          <tr><td>30 ≤ d &lt; 60</td><td>30</td></tr>
+        </tbody>
+      </table>
+      <svg width="280" height="180" viewBox="0 0 280 180" style="font-family:Nunito,sans-serif; border:1px solid #ddd; border-radius:8px;">
+        <defs>
+          <pattern id="sg5" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="#eee" stroke-width="0.5"/></pattern>
+          <pattern id="bg5" width="50" height="50" patternUnits="userSpaceOnUse"><rect width="50" height="50" fill="url(#sg5)"/><path d="M 50 0 L 0 0 0 50" fill="none" stroke="#ddd" stroke-width="1"/></pattern>
+        </defs>
+        <rect x="40" y="10" width="230" height="140" fill="url(#bg5)"/>
+        <line x1="40" y1="10" x2="40" y2="152" stroke="#333" stroke-width="1.5"/>
+        <line x1="40" y1="150" x2="273" y2="150" stroke="#333" stroke-width="1.5"/>
+        <polygon points="40,8 37,14 43,14" fill="#333"/>
+        <polygon points="275,150 269,147 269,153" fill="#333"/>
+        <text x="10" y="85" font-size="7" fill="#333" transform="rotate(-90,14,85)">Freq. density</text>
+        <text x="40"  y="163" text-anchor="middle" font-size="7" fill="#333">0</text>
+        <text x="80"  y="163" text-anchor="middle" font-size="7" fill="#333">10</text>
+        <text x="100" y="163" text-anchor="middle" font-size="7" fill="#333">15</text>
+        <text x="120" y="163" text-anchor="middle" font-size="7" fill="#333">20</text>
+        <text x="160" y="163" text-anchor="middle" font-size="7" fill="#333">30</text>
+        <text x="240" y="163" text-anchor="middle" font-size="7" fill="#333">60</text>
+        <text x="155" y="175" text-anchor="middle" font-size="7" fill="#333">Distance (km)</text>
+        <!-- drawn bars -->
+        <rect x="40"  y="22"  width="40" height="128" fill="#bbb" stroke="#555" stroke-width="1.5"/>
+        <rect x="80"  y="14"  width="20" height="136" fill="#bbb" stroke="#555" stroke-width="1.2"/>
+        <rect x="100" y="22"  width="20" height="128" fill="#bbb" stroke="#555" stroke-width="1.2"/>
+        <rect x="120" y="64"  width="40" height="86"  fill="#bbb" stroke="#555" stroke-width="1.2"/>
+        <!-- missing bar 30-60: shown as dashed outline -->
+        <rect x="160" y="118" width="80" height="32"  fill="rgba(255,100,0,0.1)" stroke="var(--coral)" stroke-width="1.8" stroke-dasharray="6,3"/>
+        <text x="200" y="112" text-anchor="middle" font-size="7" fill="var(--coral)" font-weight="700">Draw this bar</text>
+      </svg>
+    </div>
+    <div style="font-weight:800; color:var(--green); font-size:0.85rem; margin-bottom:0.4rem;">📝 Steps:</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">1</span>Use the known bar (0–10, freq=40) → calculate its F.D → scale the y-axis</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">2</span>Read the heights of the already-drawn bars → calculate their missing frequencies</li>
+      <li><span class="step-num" style="background:var(--green-light);color:var(--green)">3</span>Calculate F.D for the missing bar (30–60, freq=30) → draw it at the correct height</li>
+    </ol>
+  </div>
+
+v>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!--  3D TRIG                                                       -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section" id="trig3d">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#ccfbf1; font-size:1.5rem;">🧊</div>
+    <h2>3D Trigonometry</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--teal)"></span>Steps</div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">1</span>Draw the line mentioned in the question</li>
+      <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">2</span>From the upper point of this line, go <strong>down with a perpendicular line</strong></li>
+      <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">3</span>Close the triangle you were drawing</li>
+      <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">4</span>The solution is always to get the value of the <strong>line on the base</strong> and the <strong>perpendicular line</strong></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--teal)"></span>Worked Example</div>
+    <div class="example">
+      <div class="example-label">Work out the angle AH makes with plane EFGH — cuboid: 17cm × 5cm × 8cm</div>
+      <div style="display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:start;">
+        <ol class="steps">
+          <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">1</span>Draw line <strong>AH</strong></li>
+          <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">2</span>From A go <strong>down</strong> with perpendicular → line <strong>AF</strong> (height = 8 cm)</li>
+          <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">3</span>Close the triangle → base line <strong>HF</strong></li>
+          <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">4</span>HF = <span class="rt" style="color:var(--teal)"><span class="rt-sym">√</span><span class="rt-body">17² + 5²</span></span> = <span class="rt" style="color:var(--teal)"><span class="rt-sym">√</span><span class="rt-body">314</span></span></li>
+          <li><span class="step-num" style="background:var(--teal-light);color:var(--teal)">5</span>θ = tan⁻¹(<span class="vf" style="color:var(--teal)"><span class="vfn">8</span><span class="vfd"><span class="rt" style="color:var(--teal)"><span class="rt-sym">√</span><span class="rt-body">314</span></span></span></span>) = <span class="hl teal">24.8°</span></li>
+        </ol>
+        <svg width="220" height="160" viewBox="0 0 220 160" style="flex-shrink:0;">
+          <!-- CUBOID CORNERS:
+               Top:    C(60,10) D(160,10) [back]   B(30,40) A(130,40) [front]
+               Bottom: H(60,90) G(160,90) [back]   E(30,120) F(130,120) [front]
+               AF = vertical height = 8cm
+               HF = base diagonal = √(17²+5²) -->
+
+          <!-- dashed back edges (hidden) -->
+          <line x1="60" y1="10" x2="160" y2="10" stroke="#bbb" stroke-width="1" stroke-dasharray="4,2"/>
+          <line x1="60" y1="10" x2="30" y2="40" stroke="#bbb" stroke-width="1" stroke-dasharray="4,2"/>
+          <line x1="60" y1="10" x2="60" y2="90" stroke="#bbb" stroke-width="1" stroke-dasharray="4,2"/>
+          <line x1="60" y1="90" x2="160" y2="90" stroke="#bbb" stroke-width="1" stroke-dasharray="4,2"/>
+          <line x1="60" y1="90" x2="30" y2="120" stroke="#bbb" stroke-width="1" stroke-dasharray="4,2"/>
+
+          <!-- solid front face -->
+          <polygon points="30,40 130,40 130,120 30,120" fill="rgba(13,148,136,0.06)" stroke="var(--teal)" stroke-width="1.8"/>
+          <!-- solid top face -->
+          <polygon points="30,40 60,10 160,10 130,40" fill="rgba(13,148,136,0.12)" stroke="var(--teal)" stroke-width="1.8"/>
+          <!-- solid right face -->
+          <polygon points="130,40 160,10 160,90 130,120" fill="rgba(13,148,136,0.04)" stroke="var(--teal)" stroke-width="1.8"/>
+          <!-- solid bottom-right edge -->
+          <line x1="130" y1="120" x2="160" y2="90" stroke="var(--teal)" stroke-width="1.8"/>
+          <!-- solid bottom-front edge -->
+          <line x1="30" y1="120" x2="130" y2="120" stroke="var(--teal)" stroke-width="1.8"/>
+
+          <!-- Corner labels -->
+          <text x="53" y="8"   font-size="11" fill="#444" font-family="Nunito" font-weight="800">C</text>
+          <text x="163" y="8"  font-size="11" fill="#444" font-family="Nunito" font-weight="800">D</text>
+          <text x="16"  y="40" font-size="11" fill="#444" font-family="Nunito" font-weight="800">B</text>
+          <text x="133" y="38" font-size="11" fill="#444" font-family="Nunito" font-weight="800">A</text>
+          <text x="53" y="102" font-size="11" fill="#444" font-family="Nunito" font-weight="800">H</text>
+          <text x="163" y="102" font-size="11" fill="#444" font-family="Nunito" font-weight="800">G</text>
+          <text x="16"  y="132" font-size="11" fill="#444" font-family="Nunito" font-weight="800">E</text>
+          <text x="133" y="132" font-size="11" fill="#444" font-family="Nunito" font-weight="800">F</text>
+
+          <!-- AH: A(130,40) → H(60,90) in red -->
+          <line x1="130" y1="40" x2="60" y2="90" stroke="#e04b30" stroke-width="2.8"/>
+
+          <!-- AF: A(130,40) → F(130,120) in blue dashed (vertical = height) -->
+          <line x1="130" y1="40" x2="130" y2="120" stroke="var(--blue)" stroke-width="2.2" stroke-dasharray="5,3"/>
+
+          <!-- HF: H(60,90) → F(130,120) in green (base diagonal) -->
+          <line x1="60" y1="90" x2="130" y2="120" stroke="var(--green)" stroke-width="2.5"/>
+
+          <!-- θ inside triangle AHF, near vertex H -->
+          <text x="76" y="96" font-size="13" fill="#e04b30" font-family="Nunito" font-weight="800">θ</text>
+
+          <!-- Dimension labels -->
+          <!-- AF vertical edge: A(130,40) to F(130,120) — place to the right of edge -->
+          <text x="136" y="85" font-size="10" fill="var(--blue)" font-family="Nunito" font-weight="700">AF=8cm</text>
+          <!-- EF front-bottom edge: E(30,120) to F(130,120) — label below the edge -->
+          <text x="55" y="133" font-size="10" fill="#666" font-family="Nunito" font-weight="600">EF=17cm</text>
+          <!-- GF right-bottom edge: G(160,90) to F(130,120) — place outside right, widen viewBox -->
+          <text x="165" y="112" font-size="10" fill="#666" font-family="Nunito" font-weight="600">GF=5cm</text>
+
+          <!-- Legend -->
+          <line x1="2" y1="148" x2="18" y2="148" stroke="#e04b30" stroke-width="2.2"/>
+          <text x="21" y="152" font-size="9" fill="#e04b30" font-family="Nunito" font-weight="700">AH</text>
+          <line x1="46" y1="148" x2="62" y2="148" stroke="var(--blue)" stroke-width="2" stroke-dasharray="4,2"/>
+          <text x="65" y="152" font-size="9" fill="var(--blue)" font-family="Nunito" font-weight="700">AF (height)</text>
+          <line x1="122" y1="148" x2="138" y2="148" stroke="var(--green)" stroke-width="2.2"/>
+          <text x="141" y="152" font-size="9" fill="var(--green)" font-family="Nunito" font-weight="700">HF</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<div class="section" id="percentage">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#fef3c7; font-size:1.5rem;">%</div>
+    <h2>Percentage</h2>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--amber)"></span>Key Rule</div>
+    <div class="rule">
+      <p>✦ Always set up as: <strong>Old : increase or decrease : New</strong> — where Old is always <strong>100</strong></p>
+    </div>
+    <div style="display:flex; align-items:center; gap:1rem; margin:0.8rem 0; flex-wrap:wrap;">
+      <div style="background:var(--amber-light); border-radius:8px; padding:8px 16px; font-family:'Fira Mono',monospace; font-size:0.9rem; font-weight:700; color:var(--amber);">Old : change : New</div>
+      <div style="font-size:1.2rem; color:var(--text-muted);">→</div>
+      <div style="background:var(--purple-light); border-radius:8px; padding:8px 16px; font-family:'Fira Mono',monospace; font-size:0.9rem; font-weight:700; color:var(--purple);">100 : % : (100 ± %)</div>
+    </div>
+    <div style="font-size:0.88rem; color:var(--text-muted);">Always put <strong>100</strong> in the Old column. Cross multiply to find x.</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--amber)"></span>Example</div>
+    <div class="example">
+      <div class="example-label">All clothes had a 30% sale. A T-shirt costs £80 in the sale. What was the original price?</div>
+      <div style="font-family:'Fira Mono',monospace; font-size:0.9rem; margin:0.8rem 0;">
+        <div style="display:grid; grid-template-columns: auto auto auto; gap:6px 20px; align-items:center;">
+          <span style="color:var(--text-muted); font-size:0.8rem;">Old</span>
+          <span style="color:var(--text-muted); font-size:0.8rem;">decrease</span>
+          <span style="color:var(--text-muted); font-size:0.8rem;">New</span>
+          <span style="color:var(--blue); font-weight:700;">100</span>
+          <span style="color:var(--coral); font-weight:700;">30</span>
+          <span style="color:var(--green); font-weight:700;">70</span>
+          <span style="color:var(--blue); font-weight:700;">x</span>
+          <span></span>
+          <span style="color:var(--green); font-weight:700;">80</span>
+        </div>
+        <div>x = <span class="vf" style="color:var(--text)"><span class="vfn">80 × 100</span><span class="vfd">70</span></span> = <span class="hl amber">£114.29</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+
+<div class="section" id="stdform">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#ede9fe; font-size:1.5rem;">10ⁿ</div>
+    <h2>Standard Form</h2>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Standard Form Format</div>
+    <div class="formula-box">
+      <div class="formula-row"><span class="formula-label">Form</span><span>a × 10ⁿ &nbsp; where &nbsp; 1 ≤ a &lt; 10</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Adding / Subtracting in Standard Form</div>
+    <div class="rule">
+      <p>✦ Make all numbers have the <strong>same power of 10</strong>, then add/subtract the numbers in front normally.</p>
+    </div>
+    <div class="example">
+      <div class="example-label">3×10⁵ + 2×10³</div>
+      <div class="math-line">Make both ×10⁵ → 3×10⁵ + 0.02×10⁵</div>
+      <div class="math-line">Add the coefficients → (3 + 0.02) × 10⁵ = <span class="hl">3.02 × 10⁵</span></div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+
+<div class="section" id="currency">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:#dcfce7; font-size:1.5rem;">💱</div>
+    <h2>Currency Exchange</h2>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>Key Method</div>
+    <div class="rule">
+      <p>✦ Use <strong>cross multiplication</strong> to convert between currencies. Always go step by step if there's no direct rate.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--green)"></span>Example</div>
+    <div class="example">
+      <div class="example-label">Convert 50 pounds to yen &nbsp; (1 euro = 120 yen, &nbsp; 1 pound = 1.2 euros)</div>
+      <div style="font-family:'Fira Mono',monospace; font-size:0.9rem; margin:0.8rem 0;">
+        <div style="font-weight:700; color:var(--teal); margin-bottom:4px;">Step 1: pounds → euros</div>
+        <div style="display:grid; grid-template-columns: auto auto; gap:4px 20px; padding:8px; background:#f0fdf4; border-radius:8px; margin-bottom:8px;">
+          <span>1 pound = 1.2 euros</span><span style="color:var(--text-muted);"></span>
+          <span>50 pounds = <span class="hl teal">60 euros</span></span><span style="color:var(--text-muted); font-size:0.8rem;">(cross multiply)</span>
+        </div>
+        <div style="font-weight:700; color:var(--blue); margin-bottom:4px;">Step 2: euros → yen</div>
+        <div style="display:grid; grid-template-columns: auto auto; gap:4px 20px; padding:8px; background:var(--blue-light); border-radius:8px;">
+          <span>1 euro = 120 yen</span><span></span>
+          <span>60 euros = <span class="hl blue">7200 yen ✓</span></span><span style="color:var(--text-muted); font-size:0.8rem;">(cross multiply)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+</main>
+
+
+
+</body>
+</html>
