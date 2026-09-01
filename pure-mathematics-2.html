@@ -766,7 +766,7 @@ footer.doc-footer{
 </div>
 <div class="step">
 <div class="step-num">2</div>
-<div class="step-content"><div class="sk">Compare coefficients</div>Let $f(x) = (x-2)(x^2+bx+c)$. Expanding: $x^3+bx^2+cx-2x^2-2bx-2c = x^3+(b-2)x^2+(c-2b)x-2c$.<br>Comparing constants: $-2c=12 \Rightarrow c=-6$.<br>Comparing $x^2$: $b-2=-3 \Rightarrow b=-1$.</div>
+<div class="step-content"><div class="sk">Compare coefficients</div>Let $f(x) = (x-2)(x^2+bx+c)$. Expanding: $x^3+(b-2)x^2+(c-2b)x-2c$.<br>Comparing constants: $-2c=12 \Rightarrow c=-6$.<br>Comparing $x^2$: $b-2=-3 \Rightarrow b=-1$.<br>Check the $x$ coefficient: $c-2b=-6+2=-4$, as required.</div>
 </div>
 <div class="step">
 <div class="step-num">3</div>
@@ -907,18 +907,18 @@ $= 16 + 96x + 216x^2 + 216x^3 + 81x^4$
 
 <div class="unit-marker">Unit 2 &middot; Coordinate Geometry</div>
 <h2 class="topic-title" id="t3">3. Circles</h2>
-<div class="topic-meta">Equation of a circle &middot; center and radius &middot; tangents &middot; circle theorems</div>
+<div class="topic-meta">Equation of a circle &middot; centre and radius &middot; tangents &middot; circle theorems</div>
 
 <div class="box connect">
 <div class="box-title">&#8612; Builds On</div>
-<p>Finding a circle's center and radius reuses <a href="pure-mathematics-1.html#quadratics">P1 &mdash; Quadratics</a> (completing the square), and tangent problems reuse <a href="pure-mathematics-1.html#discriminant">P1 &mdash; The Discriminant</a> (setting $D=0$).</p>
+<p>Finding a circle's centre and radius reuses <a href="pure-mathematics-1.html#quadratics">P1 &mdash; Quadratics</a> (completing the square), and tangent problems reuse <a href="pure-mathematics-1.html#discriminant">P1 &mdash; The Discriminant</a> (setting $D=0$).</p>
 </div>
 
 <h3>The Equation of a Circle</h3>
 <div class="box formula">
-<div class="box-title">Formula &mdash; Circle centered at $(a,b)$</div>
+<div class="box-title">Formula &mdash; Circle centred at $(a,b)$</div>
 <p>$$(x-a)^2+(y-b)^2=r^2$$</p>
-<p>This is the set of all points a fixed distance $r$ (the radius) from the center $(a,b)$ — it comes directly from the distance formula.</p>
+<p>This is the set of all points a fixed distance $r$ (the radius) from the centre $(a,b)$ — it comes directly from the distance formula.</p>
 </div>
 
 <div class="diagram">
@@ -933,22 +933,22 @@ $= 16 + 96x + 216x^2 + 216x^3 + 81x^4$
   <line x1="30" y1="150" x2="380" y2="150" stroke="#c9c6ba" stroke-width="1"/>
   <line x1="200" y1="20" x2="200" y2="280" stroke="#c9c6ba" stroke-width="1"/>
 </svg>
-<div class="diagram-caption">Every point $(x,y)$ on the circle is a distance $r$ from the center $(a,b)$.</div>
+<div class="diagram-caption">Every point $(x,y)$ on the circle is a distance $r$ from the centre $(a,b)$.</div>
 </div>
 
 <h3>General Form of a Circle's Equation</h3>
 <div class="box formula">
 <div class="box-title">Formula &mdash; Expanded (general) form</div>
 <p>$$x^2+y^2+2gx+2fy+c=0$$</p>
-<p>has center $(-g,\,-f)$ and radius $r=\sqrt{g^2+f^2-c}$.</p>
+<p>has centre $(-g,\,-f)$ and radius $r=\sqrt{g^2+f^2-c}$.</p>
 </div>
 
-<p>This form arises from expanding $(x-a)^2+(y-b)^2=r^2$. To go from the general form back to center/radius form, <strong>complete the square</strong> on the $x$ terms and the $y$ terms separately.</p>
+<p>This form arises from expanding $(x-a)^2+(y-b)^2=r^2$. To go from the general form back to centre-radius form, <strong>complete the square</strong> on the $x$ terms and the $y$ terms separately.</p>
 
 <div class="example">
 <div class="example-header">Worked Example <span class="tag">Completing the square</span></div>
 <div class="example-question">
-<p>Find the center and radius of the circle $x^2+y^2-6x+4y-3=0$.</p>
+<p>Find the centre and radius of the circle $x^2+y^2-6x+4y-3=0$.</p>
 </div>
 <button class="solution-toggle" type="button" aria-expanded="false">
 <span class="toggle-label">Show worked solution</span>
@@ -968,7 +968,7 @@ $= 16 + 96x + 216x^2 + 216x^3 + 81x^4$
 <div class="step-num">3</div>
 <div class="step-content"><div class="sk">Rearrange to circle form</div>$(x-3)^2+(y+2)^2 = 3+9+4 = 16$</div>
 </div>
-<div class="example-answer">Center $(3,-2)$, radius $r=\sqrt{16}=4$</div>
+<div class="example-answer">Centre $(3,-2)$, radius $r=4$</div>
 </div>
 </div>
 </div>
@@ -997,7 +997,7 @@ $= 16 + 96x + 216x^2 + 216x^3 + 81x^4$
   <circle cx="185" cy="145" r="2.5" fill="#0f2545"/>
   <line x1="130" y1="110" x2="125" y2="105" stroke="#a8471f" stroke-width="2" stroke-dasharray="3,2"/>
   <path d="M 118 98 L 112 104 L 118 110" fill="none" stroke="#1c7c54" stroke-width="2" transform="rotate(45 125 105)"/>
-  <text x="95" y="200" font-family="Helvetica Neue,Arial" font-size="12" fill="#4a5568">Perpendicular from center bisects a chord</text>
+  <text x="95" y="200" font-family="Helvetica Neue,Arial" font-size="12" fill="#4a5568">Perpendicular from centre bisects a chord</text>
 </svg>
 </div>
 </div>
@@ -1005,7 +1005,7 @@ $= 16 + 96x + 216x^2 + 216x^3 + 81x^4$
 <div class="box tip">
 <div class="box-title">Tip &mdash; The three circle facts you'll use constantly</div>
 <p><strong>1.</strong> The angle subtended by a diameter at the circumference is always $90°$.<br>
-<strong>2.</strong> The perpendicular from the center to a chord bisects the chord (and vice versa).<br>
+<strong>2.</strong> The perpendicular from the centre to a chord bisects the chord (and vice versa).<br>
 <strong>3.</strong> A tangent to a circle is always perpendicular to the radius at the point of contact.</p>
 </div>
 
@@ -1022,7 +1022,7 @@ $= 16 + 96x + 216x^2 + 216x^3 + 81x^4$
 <div class="example-body">
 <div class="step">
 <div class="step-num">1</div>
-<div class="step-content"><div class="sk">Find the gradient of the radius</div>Center $(1,2)$ to $(4,6)$: gradient $=\dfrac{6-2}{4-1}=\dfrac{4}{3}$</div>
+<div class="step-content"><div class="sk">Find the gradient of the radius</div>Centre $(1,2)$ to $(4,6)$: gradient $=\dfrac{6-2}{4-1}=\dfrac{4}{3}$</div>
 </div>
 <div class="step">
 <div class="step-num">2</div>
@@ -1498,7 +1498,7 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <div class="example-body">
 <div class="step">
 <div class="step-num">1</div>
-<div class="step-content"><div class="sk">Create a one-variable model</div>Let the side lengths be $x$ and $y$. Since $2x+2y=40$, $y=20-x$. Therefore $A=x(20-x)=20x-x^2$.</div>
+<div class="step-content"><div class="sk">Create a one-variable model</div>Let the side lengths be $x$ and $y$. Since $2x+2y=40$, $y=20-x$. Therefore $A=x(20-x)=20x-x^2$, where $0&lt;x&lt;20$.</div>
 </div>
 <div class="step">
 <div class="step-num">2</div>
@@ -1715,7 +1715,42 @@ $\int_0^2 e^{x^2}dx \approx \dfrac{0.5}{2}\Big[(1.000+54.598)+2(1.284+2.718+9.48
 
 <div class="box warning">
 <div class="box-title">Common Mistake</div>
-<p>Using more strips (a smaller $h$) always improves the estimate's accuracy — but it does <em>not</em> change whether the estimate is an over- or under-estimate, since that only depends on the curve's concavity.</p>
+<p>Using more strips (a smaller $h$) generally improves the estimate's accuracy — but it does <em>not</em> change whether the estimate is an over- or under-estimate when the curve keeps the same concavity throughout the interval.</p>
+</div>
+
+<h3>Comparing Estimates and Calculating Error</h3>
+<p>If an exact value $I$ is known, the absolute error is $|T-I|$, where $T$ is the trapezium estimate. The percentage error is $\dfrac{|T-I|}{|I|}\times100\%$.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">More strips and numerical error</span></div>
+<div class="example-question">
+<p>Estimate $\displaystyle\int_0^2x^2\,dx$ using (a) 2 strips and (b) 4 strips. Compare each estimate with the exact value.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Use 2 strips</div>$h=1$ and the ordinates are $0,1,4$. Hence $T_2=\dfrac12[0+4+2(1)]=3$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Use 4 strips</div>$h=0.5$ and the ordinates are $0,0.25,1,2.25,4$. Hence $T_4=\dfrac{0.5}{2}[0+4+2(0.25+1+2.25)]=2.75$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Find the exact value</div>$I=\left[\dfrac{x^3}{3}\right]_0^2=\dfrac83$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Calculate the errors</div>$|T_2-I|=\dfrac13$ and $|T_4-I|=\dfrac1{12}$. The percentage errors are $12.5\%$ and $3.125\%$ respectively.</div>
+</div>
+<div class="example-answer">$T_2=3$, $T_4=2.75$; using 4 strips reduces the absolute error from $\frac13$ to $\frac1{12}$.</div>
+</div>
+</div>
 </div>
 
 
@@ -1835,7 +1870,19 @@ $\int_0^2 e^{x^2}dx \approx \dfrac{0.5}{2}\Big[(1.000+54.598)+2(1.284+2.718+9.48
 
 <div class="box tip">
 <div class="box-title">Tip &mdash; Where this formula comes from</div>
-<p>Pairing the first and last term, second and second-last term, and so on, each pair sums to $a+l$. There are $\frac{n}{2}$ such pairs, giving $S_n=\frac{n}{2}(a+l)$ — this is the same trick famously used by Gauss to sum $1$ to $100$.</p>
+<p>Write the sum forwards and backwards:</p>
+<p>$$\begin{aligned}
+S_n&=a+(a+d)+\cdots+[a+(n-1)d],\\
+S_n&=[a+(n-1)d]+[a+(n-2)d]+\cdots+a.
+\end{aligned}$$</p>
+<p>Adding corresponding terms gives $2S_n=n[2a+(n-1)d]$, so</p>
+<p>$$S_n=\frac n2[2a+(n-1)d]=\frac n2(a+l).$$</p>
+</div>
+
+<div class="box note">
+<div class="box-title">Sum of the First $n$ Natural Numbers</div>
+<p>For $1+2+\cdots+n$, take $a=1$, $d=1$ and last term $l=n$:</p>
+<p>$$\sum_{r=1}^{n}r=\frac n2(1+n)=\frac{n(n+1)}{2}.$$</p>
 </div>
 
 <div class="example">
@@ -1937,6 +1984,13 @@ $\int_0^2 e^{x^2}dx \approx \dfrac{0.5}{2}\Big[(1.000+54.598)+2(1.284+2.718+9.48
 <p>Both forms are equivalent — use whichever avoids a negative denominator (the first when $r<1$, the second when $r>1$).</p>
 </div>
 
+<div class="box tip">
+<div class="box-title">Proof of the Finite Geometric Sum</div>
+<p>Let $S_n=a+ar+ar^2+\cdots+ar^{n-1}$. Multiplying by $r$ gives $rS_n=ar+ar^2+\cdots+ar^n$.</p>
+<p>Subtracting, $S_n-rS_n=a-ar^n$, so $S_n(1-r)=a(1-r^n)$. Therefore</p>
+<p>$$S_n=\frac{a(1-r^n)}{1-r},\qquad r\ne1.$$</p>
+</div>
+
 <div class="example">
 <div class="example-header">Worked Example <span class="tag">Sum of a series</span></div>
 <div class="example-question">
@@ -1957,6 +2011,38 @@ $\int_0^2 e^{x^2}dx \approx \dfrac{0.5}{2}\Big[(1.000+54.598)+2(1.284+2.718+9.48
 <div class="step-content"><div class="sk">Substitute (using the $r>1$ form)</div>$S_{10}=\dfrac{3(2^{10}-1)}{2-1} = 3(1024-1)=3(1023)$</div>
 </div>
 <div class="example-answer">$S_{10}=3069$</div>
+</div>
+</div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Using logarithms to find $n$</span></div>
+<div class="example-question">
+<p>A geometric series has first term $5$ and common ratio $1.3$. Find the least number of terms whose sum exceeds $500$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Form the inequality</div>$\dfrac{5(1.3^n-1)}{1.3-1}>500$, so $1.3^n>31$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Take logarithms</div>$n\log(1.3)>\log31$. Since $\log(1.3)>0$, the inequality direction is unchanged.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Find the least integer</div>$n>\dfrac{\log31}{\log1.3}\approx13.09$, so the least possible integer is $14$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Check the boundary</div>$S_{13}\approx488.1&lt;500$ and $S_{14}\approx639.6&gt;500$.</div>
+</div>
+<div class="example-answer">The least number of terms is $14$.</div>
 </div>
 </div>
 </div>
@@ -2093,7 +2179,7 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
 
 <div class="unit-marker">Unit 7 &middot; Proof</div>
 <h2 class="topic-title" id="t12">12. Methods of Proof</h2>
-<div class="topic-meta">Proof by deduction &middot; proof by exhaustion &middot; proof by contradiction &middot; disproof by counter-example</div>
+<div class="topic-meta">Proof by deduction &middot; proof by exhaustion &middot; disproof by counter-example</div>
 
 <p>A <em class="def">mathematical proof</em> is a watertight logical argument that establishes a statement is true for <strong>every</strong> case it claims to cover — not just a few examples. P2 introduces several standard proof techniques.</p>
 
@@ -2172,50 +2258,6 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
 </div>
 </div>
 
-<h3>Proof by Contradiction</h3>
-<div class="box formula">
-<div class="box-title">Idea &mdash; Proof by Contradiction</div>
-<p><strong>1.</strong> Assume the <em>opposite</em> of the statement is true.<br>
-<strong>2.</strong> Follow logical steps from that assumption.<br>
-<strong>3.</strong> Arrive at something impossible or self-contradictory.<br>
-<strong>4.</strong> Conclude the original assumption must be false, so the statement is true.</p>
-</div>
-
-<div class="example">
-<div class="example-header">Worked Example <span class="tag">Classic proof by contradiction</span></div>
-<div class="example-question">
-<p>Prove that $\sqrt2$ is irrational.</p>
-</div>
-<button class="solution-toggle" type="button" aria-expanded="false">
-<span class="toggle-label">Show worked solution</span>
-<span class="toggle-icon">&#9662;</span>
-</button>
-<div class="example-solution">
-<div class="example-body">
-<div class="step">
-<div class="step-num">1</div>
-<div class="step-content"><div class="sk">Assume the opposite</div>Suppose $\sqrt2$ <em>is</em> rational. Then $\sqrt2=\dfrac{p}{q}$ for integers $p,q$ with no common factors (fully simplified).</div>
-</div>
-<div class="step">
-<div class="step-num">2</div>
-<div class="step-content"><div class="sk">Manipulate algebraically</div>Squaring: $2=\dfrac{p^2}{q^2} \Rightarrow p^2=2q^2$. So $p^2$ is even, which means $p$ itself must be even. Let $p=2m$.</div>
-</div>
-<div class="step">
-<div class="step-num">3</div>
-<div class="step-content"><div class="sk">Substitute and simplify</div>$(2m)^2=2q^2 \Rightarrow 4m^2=2q^2 \Rightarrow q^2=2m^2$. So $q^2$ is also even, meaning $q$ is even too.</div>
-</div>
-<div class="step">
-<div class="step-num">4</div>
-<div class="step-content"><div class="sk">Identify the contradiction</div>Both $p$ and $q$ are even, so they share a common factor of 2. This contradicts the assumption that $p$ and $q$ had no common factors.</div>
-</div>
-<div class="step">
-<div class="step-num">5</div>
-<div class="step-content"><div class="sk">Conclude</div>The assumption must be false, so $\sqrt2$ cannot be written as $\dfrac{p}{q}$ — it is irrational. $\blacksquare$</div>
-</div>
-</div>
-</div>
-</div>
-
 <h3>Disproof by Counter-Example</h3>
 <div class="box formula">
 <div class="box-title">Idea &mdash; Disproving a Statement</div>
@@ -2276,9 +2318,9 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
 
     <div class="fs-card">
       <h4>3 &middot; Circles</h4>
-      <div class="fline"><span class="flabel">Center-radius form</span>$(x-a)^2+(y-b)^2=r^2$</div>
-      <div class="fline"><span class="flabel">General form</span>$x^2+y^2+2gx+2fy+c=0$, center $(-g,-f)$, $r=\sqrt{g^2+f^2-c}$</div>
-      <div class="fline"><span class="flabel">Key facts</span>angle in semicircle $=90°$; tangent $\perp$ radius; $\perp$ bisector of chord passes through center</div>
+      <div class="fline"><span class="flabel">Centre-radius form</span>$(x-a)^2+(y-b)^2=r^2$</div>
+      <div class="fline"><span class="flabel">General form</span>$x^2+y^2+2gx+2fy+c=0$, centre $(-g,-f)$, $r=\sqrt{g^2+f^2-c}$</div>
+      <div class="fline"><span class="flabel">Key facts</span>angle in semicircle $=90°$; tangent $\perp$ radius; $\perp$ bisector of chord passes through centre</div>
     </div>
 
     <div class="fs-card">
@@ -2320,6 +2362,7 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
       <div class="fline"><span class="flabel">Formula</span>$\int_a^b y\,dx\approx\frac{h}{2}\big[(y_0+y_n)+2(y_1+\dots+y_{n-1})\big]$</div>
       <div class="fline"><span class="flabel">Strip width</span>$h=\dfrac{b-a}{n}$</div>
       <div class="fline"><span class="flabel">Bias</span>convex $\to$ over-estimate; concave $\to$ under-estimate</div>
+      <div class="fline"><span class="flabel">Error</span>absolute error $=|T-I|$</div>
     </div>
 
     <div class="fs-card">
@@ -2328,6 +2371,7 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
       <div class="fline"><span class="flabel">Behaviour</span>$u_{n+1}\gt u_n$ increasing; $u_{n+1}\lt u_n$ decreasing; $u_{n+k}=u_n$ periodic</div>
       <div class="fline"><span class="flabel">nth term</span>$u_n=a+(n-1)d$</div>
       <div class="fline"><span class="flabel">Sum</span>$S_n=\frac{n}{2}\big[2a+(n-1)d\big]=\frac{n}{2}(a+l)$</div>
+      <div class="fline"><span class="flabel">Natural numbers</span>$\sum_{r=1}^n r=\dfrac{n(n+1)}2$</div>
     </div>
 
     <div class="fs-card">
@@ -2347,7 +2391,6 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
       <h4>12 &middot; Proof</h4>
       <div class="fline"><span class="flabel">Deduction</span>general algebra $\to$ conclusion</div>
       <div class="fline"><span class="flabel">Exhaustion</span>check every finite case</div>
-      <div class="fline"><span class="flabel">Contradiction</span>assume the opposite $\to$ derive a contradiction</div>
       <div class="fline"><span class="flabel">Counter-example</span>one failing case disproves a general claim</div>
     </div>
 

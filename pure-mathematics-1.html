@@ -787,7 +787,7 @@ footer.doc-footer{
 <p>Solving simultaneous equations means finding the intersection point(s) of two graphs: two lines (linear-linear), or a line and a curve/circle (linear-nonlinear).</p>
 
 <h3>Linear &ndash; Linear</h3>
-<p>Use elimination or substitution / or a calculator's simultaneous-equation solver when only numeric coefficients are involved. (MODE 5 1)</p>
+<p>Use elimination or substitution. Show the equation you eliminate or substitute and the resulting value: these algebraic steps are the evidence for method marks.</p>
 
 <div class="example">
 <div class="example-header">Worked Example <span class="tag">Elimination</span></div>
@@ -812,6 +812,7 @@ footer.doc-footer{
 <div class="step-num">3</div>
 <div class="step-content"><div class="sk">Back-substitute</div>$3(4)+2y=8 \Rightarrow y=-2$</div>
 </div>
+<div class="example-answer">$(x,y)=(4,-2)$</div>
 </div>
 </div>
 </div>
@@ -820,7 +821,7 @@ footer.doc-footer{
 <ol>
 <li>Make $x$ or $y$ the subject in the <em>linear</em> equation (easiest when its coefficient is $+1$ or $-1$).</li>
 <li>Substitute into the nonlinear equation.</li>
-<li>Solve the resulting quadratic (calculator MODE 5 3) to get one coordinate, then substitute back for the other.</li>
+<li>Solve the resulting quadratic by factorisation, completing the square or the quadratic formula, then substitute each root back to find the matching coordinate.</li>
 </ol>
 
 <div class="box warning">
@@ -853,8 +854,9 @@ footer.doc-footer{
 </div>
 <div class="step">
 <div class="step-num">4</div>
-<div class="step-content"><div class="sk">Back-substitute</div>$y=x+1$ for each root gives the two intersection points</div>
+<div class="step-content"><div class="sk">Back-substitute</div>If $x=1+\sqrt3$, then $y=2+\sqrt3$; if $x=1-\sqrt3$, then $y=2-\sqrt3$.</div>
 </div>
+<div class="example-answer">$(1+\sqrt3, 2+\sqrt3)$ and $(1-\sqrt3, 2-\sqrt3)$</div>
 </div>
 </div>
 </div>
@@ -864,6 +866,52 @@ footer.doc-footer{
 <div class="topic-meta">Solving $ax^2+bx+c=0$, and rewriting it to reveal the turning point.</div>
 
 <p>A quadratic equation has the form $ax^2+bx+c=0$ where $a\neq0$. It can have two real roots, one repeated root, or no real roots.</p>
+
+<h3>Choosing a Method</h3>
+<table>
+<tr><th>Method</th><th>Best used when</th><th>What must be shown</th></tr>
+<tr><td>Factorisation</td><td>The factors can be found exactly and quickly</td><td>The two factors and the zero-product step</td></tr>
+<tr><td>Completing the square</td><td>The vertex or range is needed, or the expression completes neatly</td><td>The completed-square form before solving</td></tr>
+<tr><td>Quadratic formula</td><td>Factorisation is not convenient</td><td>Correct values of $a,b,c$ substituted into the formula</td></tr>
+<tr><td>Calculator solver</td><td>A question permits numerical roots</td><td>The quadratic equation being solved and suitably rounded roots</td></tr>
+</table>
+
+<div class="box warning">
+<div class="box-title">Before Solving</div>
+<p>Rearrange the equation into $ax^2+bx+c=0$. For factorisation, use the fact that if $pq=0$, then $p=0$ or $q=0$.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Factorising and reading the graph</span></div>
+<div class="example-question">
+<p>For $y=x^2-4x-5$, solve $y=0$ and state the intercepts, vertex and shape of the graph.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Factorise and solve</div>$x^2-4x-5=(x-5)(x+1)$. Hence $(x-5)(x+1)=0$, so $x=5$ or $x=-1$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Find the intercepts</div>The $x$-intercepts are $(5,0)$ and $(-1,0)$. At $x=0$, $y=-5$, so the $y$-intercept is $(0,-5)$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Find the vertex</div>$x^2-4x-5=(x-2)^2-9$, so the vertex is $(2,-9)$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">State the shape</div>The coefficient of $x^2$ is positive, so the parabola opens upwards and the vertex is a minimum.</div>
+</div>
+<div class="example-answer">Roots $-1,5$; intercepts $(-1,0),(5,0),(0,-5)$; minimum at $(2,-9)$.</div>
+</div>
+</div>
+</div>
 
 <h3>Quadratic Formula</h3>
 <div class="box formula">
@@ -902,13 +950,14 @@ footer.doc-footer{
 <div class="step-num">3</div>
 <div class="step-content"><div class="sk">Simplify</div>$2(x-2)^2-8+3 = 2(x-2)^2-5$</div>
 </div>
+<div class="example-answer">$2(x-2)^2-5$</div>
 </div>
 </div>
 </div>
 
 <div class="box connect">
 <div class="box-title">&#8614; Continues In</div>
-<p>This method returns in <a href="pure-mathematics-2.html#t3">P2 &mdash; Circles</a>, where completing the square on $x^2+y^2+2gx+2fy+c=0$ is exactly how you find a circle's center and radius.</p>
+<p>This method returns in <a href="pure-mathematics-2.html#t3">P2 &mdash; Circles</a>, where completing the square on $x^2+y^2+2gx+2fy+c=0$ is exactly how you find a circle's centre and radius.</p>
 </div>
 
 <h2 class="topic-title" id="inequalities">4. Inequalities</h2>
@@ -1146,8 +1195,9 @@ footer.doc-footer{
 </div>
 <div class="step">
 <div class="step-num">3</div>
-<div class="step-content"><div class="sk">Solve</div>$2-k = \pm2\sqrt2 \Rightarrow k = 2\mp2\sqrt2$</div>
+<div class="step-content"><div class="sk">Solve</div>$(2-k)^2=8 \Rightarrow k-2=\pm2\sqrt2$</div>
 </div>
+<div class="example-answer">$k=2\pm2\sqrt2$</div>
 </div>
 </div>
 </div>
@@ -1195,6 +1245,7 @@ footer.doc-footer{
 <div class="step-num">3</div>
 <div class="step-content"><div class="sk">Answer</div>$5x=6 \Rightarrow x=\dfrac{6}{5}$</div>
 </div>
+<div class="example-answer">$x=\dfrac65$</div>
 </div>
 </div>
 </div>
@@ -1210,8 +1261,9 @@ footer.doc-footer{
 <tr><th>Transformation on $x$</th><th>Transformation on $y$</th></tr>
 <tr><td>$f(x\pm a)$ &rarr; translation on the x-axis</td><td>$f(x)\pm a$ &rarr; translation on the y-axis</td></tr>
 <tr><td>$f(-x)$ &rarr; reflection in the y-axis</td><td>$-f(x)$ &rarr; reflection in the x-axis</td></tr>
-<tr><td>$f(ax)$ &rarr; stretch on the x-axis</td><td>$a\,f(x)$ &rarr; stretch on the y-axis</td></tr>
+<tr><td>$f(ax)$ &rarr; horizontal scale factor $1/a$</td><td>$a\,f(x)$ &rarr; vertical scale factor $a$</td></tr>
 </table>
+<p>These scale-factor statements assume $a&gt;0$; a negative multiplier also introduces the corresponding reflection.</p>
 
 <div class="box tip">
 <div class="box-title">Tip</div>
@@ -1257,6 +1309,68 @@ footer.doc-footer{
 
 <p>From any sketch, examiners expect you to read off: the intersections with each axis, and the intervals where $f(x)$ is positive or negative. The core graph shapes worth knowing cold are <strong>linear</strong>, <strong>quadratic</strong>, <strong>cubic</strong>, $\dfrac{1}{f(x)}$ and $\dfrac{1}{f(x)^2}$.</p>
 
+<h3>Polynomial Manipulation up to Degree 3</h3>
+<p>Before solving or sketching, expand brackets, collect like terms and factorise where possible. For a cubic, first take out any common factor; grouping may then reveal a common linear factor.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Factorising a cubic by grouping</span></div>
+<div class="example-question">
+<p>Factorise fully $2x^3+x^2-8x-4$, and hence solve $2x^3+x^2-8x-4=0$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Group the terms</div>$(2x^3+x^2)+(-8x-4)=x^2(2x+1)-4(2x+1)$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Take out the common factor</div>$(2x+1)(x^2-4)=(2x+1)(x-2)(x+2)$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Use the zero-product rule</div>$2x+1=0$, $x-2=0$ or $x+2=0$.</div>
+</div>
+<div class="example-answer">$(2x+1)(x-2)(x+2)$; $x=-2,-\dfrac12,2$.</div>
+</div>
+</div>
+</div>
+
+<h3>Using Graph Intersections to Solve an Equation</h3>
+<p>To solve $f(x)=g(x)$ graphically, draw $y=f(x)$ and $y=g(x)$. The $x$-coordinates of their intersection points are the solutions; their $y$-coordinates give the corresponding common values.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Intersections</span></div>
+<div class="example-question">
+<p>The graphs $y=x^2$ and $y=2x+3$ are drawn on the same axes. Find their intersections and hence solve $x^2=2x+3$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Equate the graph equations</div>$x^2=2x+3 \Rightarrow x^2-2x-3=0$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Find the $x$-coordinates</div>$(x-3)(x+1)=0$, so $x=3$ or $x=-1$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Find the common $y$-values</div>Using $y=x^2$, $y=9$ when $x=3$ and $y=1$ when $x=-1$.</div>
+</div>
+<div class="example-answer">Intersections $(-1,1)$ and $(3,9)$; solutions $x=-1,3$.</div>
+</div>
+</div>
+</div>
+
 <h3>Type 1: Linear &mdash; $y=mx+c$</h3>
 <ol>
 <li>x-intercept: set $y=0$ and solve for $x$</li>
@@ -1285,7 +1399,7 @@ footer.doc-footer{
 
 <h3>Type 2: Quadratic &mdash; $y=ax^2+bx+c$</h3>
 <ol>
-<li>x-intercept(s): set $y=0$ and solve (MODE 5 &rarr; 3). Use the discriminant to determine how many roots exist.</li>
+<li>x-intercept(s): set $y=0$ and solve. Use the discriminant to determine how many roots exist.</li>
 <li>y-intercept: set $x=0$</li>
 <li>Turning point: $x=-\dfrac{b}{2a}$, or read directly from <a href="#CTS">completed-square form</a>.</li>
 <li>Shape: $a>0$ opens upward, $a<0$ opens downward.</li>
@@ -1314,7 +1428,7 @@ footer.doc-footer{
 
 <h3>Type 3: Cubic &mdash; $y=ax^3+bx^2+cx+d$</h3>
 <ol>
-<li>x-intercept(s): set $y=0$ and solve (MODE 5 &rarr; 4, or factorise if possible).</li>
+<li>x-intercept(s): set $y=0$ and solve, factorising where possible.</li>
 <li>y-intercept: set $x=0$</li>
 <li>Overall shape depends on the sign of $a$.</li>
 </ol>
@@ -1390,7 +1504,13 @@ footer.doc-footer{
 <div class="gcell"><div class="glabel">Midpoint</div><div class="gval">$$\left(\dfrac{x_1+x_2}{2},\dfrac{y_1+y_2}{2}\right)$$</div></div>
 </div>
 
-<p>The equation of a straight line takes the form $y=mx+c$.</p>
+<p>A straight line can be written in several equivalent forms:</p>
+<table>
+<tr><th>Form</th><th>Use</th></tr>
+<tr><td>$y=mx+c$</td><td>Shows the gradient $m$ and $y$-intercept $c$ immediately.</td></tr>
+<tr><td>$y-y_1=m(x-x_1)$</td><td>Builds a line from a known point $(x_1,y_1)$ and gradient $m$.</td></tr>
+<tr><td>$ax+by+c=0$</td><td>General form; rearrange to $y=mx+c$ when the gradient is needed.</td></tr>
+</table>
 
 <div class="example">
 <div class="example-header">Worked Example <span class="tag">Equation from two points</span></div>
@@ -1412,6 +1532,34 @@ footer.doc-footer{
 <div class="step-content"><div class="sk">Substitute</div>$5 = 3(1)+c \Rightarrow c=2$</div>
 </div>
 <div class="example-answer">$y=3x+2$</div>
+</div>
+</div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Parallel line and general form</span></div>
+<div class="example-question">
+<p>Find, in the form $ax+by+c=0$, the line through $(3,-1)$ parallel to $2x-y+5=0$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find the gradient</div>$2x-y+5=0 \Rightarrow y=2x+5$, so the gradient is $2$. A parallel line also has gradient $2$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Use point-gradient form</div>$y-(-1)=2(x-3) \Rightarrow y+1=2x-6$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Convert to general form</div>$y=2x-7 \Rightarrow 2x-y-7=0$.</div>
+</div>
+<div class="example-answer">$2x-y-7=0$</div>
 </div>
 </div>
 </div>
@@ -1494,9 +1642,40 @@ footer.doc-footer{
 </div>
 <div class="step">
 <div class="step-num">2</div>
-<div class="step-content"><div class="sk">Evaluate</div>$b^2 = 49+81-77.5 \approx 52.5$</div>
+<div class="step-content"><div class="sk">Evaluate</div>$b^2 \approx 52.4267$, so $b\approx\sqrt{52.4267}$.</div>
 </div>
-<div class="example-answer">$b \approx 7.25$</div>
+<div class="example-answer">$b \approx 7.24$ (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<h3>The Ambiguous Sine-Rule Case</h3>
+<p>When two sides and a non-included angle are known, the sine rule may produce two possible angles because $\sin\theta=\sin(180°-\theta)$. Calculate the acute angle, test its supplement, and reject any option that makes the angle sum at least $180°$.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Two possible triangles</span></div>
+<div class="example-question">
+<p>In triangle $ABC$, $a=7$, $b=10$ and $A=30°$. Find the possible values of $B$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Apply the sine rule</div>$\dfrac{\sin B}{10}=\dfrac{\sin30°}{7}$, so $\sin B=\dfrac{5}{7}$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Find the principal angle</div>$B_1=\sin^{-1}\!\left(\dfrac57\right)\approx45.6°$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Test the supplement</div>$B_2=180°-45.6°=134.4°$. Since $30°+134.4°&lt;180°$, this second triangle is also possible.</div>
+</div>
+<div class="example-answer">$B\approx45.6°$ or $B\approx134.4°$.</div>
 </div>
 </div>
 </div>
@@ -1510,6 +1689,18 @@ footer.doc-footer{
 
 <h3>Trig Graphs</h3>
 <p>Know the shape, period, and key values of all three — they underpin every trig-equation and transformation question.</p>
+
+<table>
+<tr><th>Function</th><th>Period</th><th>Symmetry</th></tr>
+<tr><td>$\sin x$</td><td>$360°$ or $2\pi$</td><td>Odd: $\sin(-x)=-\sin x$; rotational symmetry about the origin.</td></tr>
+<tr><td>$\cos x$</td><td>$360°$ or $2\pi$</td><td>Even: $\cos(-x)=\cos x$; reflection symmetry in the $y$-axis.</td></tr>
+<tr><td>$\tan x$</td><td>$180°$ or $\pi$</td><td>Odd: $\tan(-x)=-\tan x$; rotational symmetry about the origin.</td></tr>
+</table>
+
+<div class="box note">
+<div class="box-title">Interpreting One Transformation</div>
+<p>For $y=\sin(2x)$, the factor $2$ acts horizontally: the graph is compressed by scale factor $\frac12$, so its period is $\frac{360°}{2}=180°$. For $y=3\cos x$, the factor $3$ acts vertically, so the amplitude is $3$ while the period remains $360°$.</p>
+</div>
 
 <div class="diagram-row">
 <div class="d-item">
@@ -1725,7 +1916,7 @@ footer.doc-footer{
 <h3>Rule</h3>
 <div class="box formula">
 <div class="box-title">Formula</div>
-<p>$$\int ax^n\,dx=\dfrac{ax^{n+1}}{n+1}+c$$</p>
+<p>$$\int ax^n\,dx=\dfrac{ax^{n+1}}{n+1}+c,\qquad n\ne-1$$</p>
 </div>
 <ol>
 <li>Add one to the power.</li>
@@ -1752,7 +1943,7 @@ footer.doc-footer{
 <div class="step-num">2</div>
 <div class="step-content"><div class="sk">Integrate each term</div>$\dfrac{2x^3}{3} - \dfrac{3x^2}{2} - \dfrac{6x^{-1}}{-1}$</div>
 </div>
-<div class="example-answer">$\dfrac{2x^3}{3} - \dfrac{3x^2}{2} + \dfrac{6}{x} + c$</div>
+<div class="example-answer">$\dfrac{2x^3}{3} - \dfrac{3x^2}{2} + \dfrac{6}{x} + c$, for $x\ne0$</div>
 </div>
 </div>
 </div>
@@ -1760,6 +1951,30 @@ footer.doc-footer{
 <div class="box tip">
 <div class="box-title">Tip</div>
 <p>A boundary condition (a point the curve passes through) lets you solve for $c$ — substitute the given $x$ and $y$ into your integrated expression once the integration itself is done.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Reconstructing a curve</span></div>
+<div class="example-question">
+<p>Given $f'(x)=3x^2-4x+1$ and that the curve $y=f(x)$ passes through $(2,5)$, find $f(x)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Integrate</div>$f(x)=\displaystyle\int(3x^2-4x+1)\,dx=x^3-2x^2+x+c$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Use the point</div>$5=2^3-2(2^2)+2+c=2+c$, so $c=3$.</div>
+</div>
+<div class="example-answer">$f(x)=x^3-2x^2+x+3$</div>
+</div>
+</div>
 </div>
 
 
@@ -1807,7 +2022,7 @@ footer.doc-footer{
       <h4>Transformations</h4>
       <div class="fline">$f(x\pm a)$: shift x &nbsp;&middot;&nbsp; $f(x)\pm a$: shift y</div>
       <div class="fline">$f(-x)$: reflect in y &nbsp;&middot;&nbsp; $-f(x)$: reflect in x</div>
-      <div class="fline">$f(ax)$: stretch x &nbsp;&middot;&nbsp; $a f(x)$: stretch y</div>
+      <div class="fline">$f(ax)$: horizontal scale factor $1/a$ &nbsp;&middot;&nbsp; $a f(x)$: vertical scale factor $a$</div>
     </div>
 
     <div class="fs-card">
@@ -1815,6 +2030,7 @@ footer.doc-footer{
       <div class="fline">$m=\frac{y_2-y_1}{x_2-x_1}$</div>
       <div class="fline">$d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$</div>
       <div class="fline">midpoint $=\left(\frac{x_1+x_2}2,\frac{y_1+y_2}2\right)$</div>
+      <div class="fline">point-gradient: $y-y_1=m(x-x_1)$</div>
       <div class="fline">perpendicular gradients: $m_1m_2=-1$</div>
     </div>
 
