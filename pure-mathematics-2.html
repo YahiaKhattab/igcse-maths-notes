@@ -1386,46 +1386,30 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 
 <div class="unit-marker">Unit 5 &middot; Calculus</div>
 <h2 class="topic-title" id="t6">6. Differentiation</h2>
-<div class="topic-meta">Derivatives of $\sin x,\cos x,e^x,\ln x$ &middot; chain, product &amp; quotient rules &middot; tangents &amp; normals &middot; stationary points</div>
+<div class="topic-meta">Stationary points &middot; maxima and minima &middot; increasing and decreasing functions &middot; optimisation</div>
 
 <div class="box connect">
 <div class="box-title">&#8612; Builds On</div>
-<p>This topic builds on <a href="pure-mathematics-1.html#differentiation">P1 &mdash; Differentiation</a>, which covers the power rule and locating stationary points.</p>
+<p>This topic applies the power rule, gradients and second derivatives from <a href="pure-mathematics-1.html#differentiation">P1 &mdash; Differentiation</a>. P2 does not introduce chain, product or quotient rules, or derivatives of trigonometric, exponential and logarithmic functions; those are P3 topics.</p>
 </div>
 
-<p>P2 extends differentiation beyond powers of $x$ to trig, exponential and log functions, and introduces the three key rules for differentiating combinations of functions.</p>
+<p>In P2, the differentiation rules remain the polynomial rules learned in P1. The new skill is using those rules to analyse a function: locate and classify stationary points, decide where a function is increasing or decreasing, and solve practical maximum or minimum problems.</p>
 
-<h3>Standard Derivatives</h3>
+<h3>Stationary Points</h3>
+<p>A <em class="def">stationary point</em> occurs where the gradient is zero, so solve $\dfrac{dy}{dx}=0$. Then find the corresponding $y$-coordinate and classify the point.</p>
+
 <div class="box formula">
-<div class="box-title">Formula &mdash; Standard Derivatives</div>
-<table style="box-shadow:none;margin:6px 0 0 0;">
-<tr><th>$f(x)$</th><th>$f'(x)$</th></tr>
-<tr><td>$x^n$</td><td>$nx^{n-1}$</td></tr>
-<tr><td>$\sin x$</td><td>$\cos x$</td></tr>
-<tr><td>$\cos x$</td><td>$-\sin x$</td></tr>
-<tr><td>$e^x$</td><td>$e^x$</td></tr>
-<tr><td>$\ln x$</td><td>$\dfrac{1}{x}$</td></tr>
-</table>
-</div>
-
-<div class="box note">
-<div class="box-title">Note &mdash; Radians required</div>
-<p>The derivatives of $\sin x$ and $\cos x$ shown above are only valid when $x$ is measured in <strong>radians</strong>. This is one of the key reasons P2 works in radians throughout the calculus topics.</p>
-</div>
-
-<h3>The Chain Rule</h3>
-<div class="box formula">
-<div class="box-title">Formula &mdash; Chain Rule</div>
-<p>For a composite function $y=f(g(x))$:
-$$\frac{dy}{dx}=f'(g(x))\cdot g'(x)$$
-Equivalently, if $y$ is a function of $u$, and $u$ is a function of $x$:
-$$\frac{dy}{dx}=\frac{dy}{du}\times\frac{du}{dx}$$</p>
+<div class="box-title">Second Derivative Test</div>
+<p>At a stationary point $x=a$:</p>
+<p>If $\dfrac{d^2y}{dx^2}\big|_{x=a}>0$, the point is a <strong>local minimum</strong>.</p>
+<p>If $\dfrac{d^2y}{dx^2}\big|_{x=a}&lt;0$, the point is a <strong>local maximum</strong>.</p>
+<p>If $\dfrac{d^2y}{dx^2}\big|_{x=a}=0$, the test is inconclusive; inspect the sign of $\dfrac{dy}{dx}$ on either side.</p>
 </div>
 
 <div class="example">
-<div class="example-header">Worked Example <span class="tag">Chain rule</span></div>
+<div class="example-header">Worked Example <span class="tag">Stationary points and intervals</span></div>
 <div class="example-question">
-<p>Differentiate $y=\sin(3x^2+1)$.</p>
+<p>For $y=x^3-6x^2+9x+2$, find and classify the stationary points. Hence state the intervals on which the function is increasing.</p>
 </div>
 <button class="solution-toggle" type="button" aria-expanded="false">
 <span class="toggle-label">Show worked solution</span>
@@ -1435,64 +1419,43 @@ $$\frac{dy}{dx}=\frac{dy}{du}\times\frac{du}{dx}$$</p>
 <div class="example-body">
 <div class="step">
 <div class="step-num">1</div>
-<div class="step-content"><div class="sk">Let $u=3x^2+1$</div>Then $y=\sin u$, with $\dfrac{du}{dx}=6x$ and $\dfrac{dy}{du}=\cos u$</div>
+<div class="step-content"><div class="sk">Differentiate and set the gradient to zero</div>$\dfrac{dy}{dx}=3x^2-12x+9=3(x-1)(x-3)=0$, so $x=1$ or $x=3$.</div>
 </div>
 <div class="step">
 <div class="step-num">2</div>
-<div class="step-content"><div class="sk">Multiply</div>$\dfrac{dy}{dx}=\cos u \times 6x = 6x\cos(3x^2+1)$</div>
-</div>
-<div class="example-answer">$\dfrac{dy}{dx}=6x\cos(3x^2+1)$</div>
-</div>
-</div>
-</div>
-
-<h3>The Product Rule</h3>
-<div class="box formula">
-<div class="box-title">Formula &mdash; Product Rule</div>
-<p>For $y=uv$ where $u$ and $v$ are both functions of $x$:
-$$\frac{dy}{dx}=u\frac{dv}{dx}+v\frac{du}{dx}$$</p>
-</div>
-
-<div class="example">
-<div class="example-header">Worked Example <span class="tag">Product rule</span></div>
-<div class="example-question">
-<p>Differentiate $y=x^2e^x$.</p>
-</div>
-<button class="solution-toggle" type="button" aria-expanded="false">
-<span class="toggle-label">Show worked solution</span>
-<span class="toggle-icon">&#9662;</span>
-</button>
-<div class="example-solution">
-<div class="example-body">
-<div class="step">
-<div class="step-num">1</div>
-<div class="step-content"><div class="sk">Identify $u$ and $v$</div>$u=x^2 \Rightarrow \dfrac{du}{dx}=2x$; \quad $v=e^x \Rightarrow \dfrac{dv}{dx}=e^x$</div>
+<div class="step-content"><div class="sk">Find the coordinates</div>$y(1)=6$ and $y(3)=2$, so the stationary points are $(1,6)$ and $(3,2)$.</div>
 </div>
 <div class="step">
-<div class="step-num">2</div>
-<div class="step-content"><div class="sk">Apply the formula</div>$\dfrac{dy}{dx}=x^2 e^x + e^x(2x) = xe^x(x+2)$</div>
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Use the second derivative</div>$\dfrac{d^2y}{dx^2}=6x-12$. At $x=1$ it is $-6$, so $(1,6)$ is a local maximum. At $x=3$ it is $6$, so $(3,2)$ is a local minimum.</div>
 </div>
-<div class="example-answer">$\dfrac{dy}{dx}=xe^x(x+2)$</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Use the sign of the derivative</div>$3(x-1)(x-3)>0$ outside the roots, so the function is increasing for $x&lt;1$ and $x&gt;3$.</div>
+</div>
+<div class="example-answer">Maximum at $(1,6)$; minimum at $(3,2)$; increasing for $x&lt;1$ and $x&gt;3$.</div>
 </div>
 </div>
 </div>
 
-<h3>The Quotient Rule</h3>
+<h3>Increasing and Decreasing Functions</h3>
 <div class="box formula">
-<div class="box-title">Formula &mdash; Quotient Rule</div>
-<p>For $y=\dfrac{u}{v}$:
-$$\frac{dy}{dx}=\frac{v\dfrac{du}{dx}-u\dfrac{dv}{dx}}{v^2}$$</p>
+<div class="box-title">Gradient Sign Test</div>
+<p>If $\dfrac{dy}{dx}>0$ throughout an interval, the function is <strong>increasing</strong> there.</p>
+<p>If $\dfrac{dy}{dx}&lt;0$ throughout an interval, the function is <strong>decreasing</strong> there.</p>
+<p>Use the roots of $\dfrac{dy}{dx}=0$ to split the number line into intervals, then test or factorise the derivative to determine its sign.</p>
 </div>
 
 <div class="box tip">
-<div class="box-title">Tip &mdash; Remembering the order</div>
-<p>Say it out loud: "bottom times derivative of top, minus top times derivative of bottom, all over bottom squared." Getting the subtraction the right way round is the single biggest source of errors in this rule.</p>
+<div class="box-title">Exam Language</div>
+<p>When asked to <em>show</em> that a function is increasing, a graph alone is not sufficient. Differentiate and demonstrate that $\dfrac{dy}{dx}>0$ over the required interval.</p>
 </div>
 
+<h3>Practical Maximum and Minimum Problems</h3>
 <div class="example">
-<div class="example-header">Worked Example <span class="tag">Quotient rule</span></div>
+<div class="example-header">Worked Example <span class="tag">Optimisation</span></div>
 <div class="example-question">
-<p>Differentiate $y=\dfrac{\ln x}{x^2}$.</p>
+<p>A rectangle has perimeter $40$ cm. Find the dimensions that give the greatest possible area.</p>
 </div>
 <button class="solution-toggle" type="button" aria-expanded="false">
 <span class="toggle-label">Show worked solution</span>
@@ -1502,112 +1465,45 @@ $$\frac{dy}{dx}=\frac{v\dfrac{du}{dx}-u\dfrac{dv}{dx}}{v^2}$$</p>
 <div class="example-body">
 <div class="step">
 <div class="step-num">1</div>
-<div class="step-content"><div class="sk">Identify $u$ and $v$</div>$u=\ln x \Rightarrow \dfrac{du}{dx}=\dfrac1x$; \quad $v=x^2 \Rightarrow \dfrac{dv}{dx}=2x$</div>
+<div class="step-content"><div class="sk">Create a one-variable model</div>Let the side lengths be $x$ and $y$. Since $2x+2y=40$, $y=20-x$. Therefore $A=x(20-x)=20x-x^2$.</div>
 </div>
 <div class="step">
 <div class="step-num">2</div>
-<div class="step-content"><div class="sk">Apply the formula</div>$\dfrac{dy}{dx}=\dfrac{x^2\cdot\frac1x - \ln x \cdot 2x}{x^4}=\dfrac{x-2x\ln x}{x^4}=\dfrac{1-2\ln x}{x^3}$</div>
+<div class="step-content"><div class="sk">Find the stationary value</div>$\dfrac{dA}{dx}=20-2x=0$, so $x=10$ and $y=10$.</div>
 </div>
-<div class="example-answer">$\dfrac{dy}{dx}=\dfrac{1-2\ln x}{x^3}$</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Confirm it is a maximum</div>$\dfrac{d^2A}{dx^2}=-2&lt;0$, so the stationary value is a maximum. The maximum area is $10\times10=100$ cm$^2$.</div>
+</div>
+<div class="example-answer">The rectangle must be $10$ cm by $10$ cm; maximum area $=100$ cm$^2$.</div>
 </div>
 </div>
-</div>
-
-<h3>Tangents &amp; Normals</h3>
-<div class="diagram">
-<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
-  <path d="M 40,220 C 100,220 130,60 220,60 C 280,60 320,120 370,50" fill="none" stroke="#1d5bbf" stroke-width="2.5"/>
-  <circle cx="220" cy="60" r="3.5" fill="#0f2545"/>
-  <line x1="120" y1="130" x2="320" y2="10" stroke="#a8471f" stroke-width="2"/>
-  <text x="322" y="12" font-family="Georgia,serif" font-size="13" fill="#a8471f">tangent</text>
-  <line x1="170" y1="10" x2="270" y2="180" stroke="#1c7c54" stroke-width="2" stroke-dasharray="4,3"/>
-  <text x="250" y="185" font-family="Georgia,serif" font-size="13" fill="#1c7c54">normal</text>
-</svg>
-<div class="diagram-caption">The tangent touches the curve with the same gradient; the normal is perpendicular to the tangent at that point.</div>
-</div>
-
-<div class="box formula">
-<div class="box-title">Formula &mdash; Tangent &amp; Normal</div>
-<p>At the point $(x_1,y_1)$ where the gradient is $m=f'(x_1)$:</p>
-<p><strong>Tangent</strong> (gradient $m$): $\quad y-y_1=m(x-x_1)$</p>
-<p><strong>Normal</strong> (gradient $-\dfrac1m$, perpendicular): $\quad y-y_1=-\dfrac{1}{m}(x-x_1)$</p>
-</div>
-
-<h3>Stationary Points</h3>
-<p>A stationary point occurs where $\dfrac{dy}{dx}=0$. To classify it, use the second derivative:</p>
-
-<div class="box formula">
-<div class="box-title">Formula &mdash; Second Derivative Test</div>
-<p>If $\dfrac{d^2y}{dx^2}>0$ at a stationary point $\Rightarrow$ <strong>local minimum</strong>.</p>
-<p>If $\dfrac{d^2y}{dx^2}<0$ at a stationary point $\Rightarrow$ <strong>local maximum</strong>.</p>
-<p>If $\dfrac{d^2y}{dx^2}=0$, the test is inconclusive — check the gradient either side instead (possible point of inflection).</p>
-</div>
-
-<div class="box warning">
-<div class="box-title">Common Mistake</div>
-<p>Don't forget the chain rule when differentiating something like $e^{2x}$ or $\sin(4x)$ — the "extra factor" from differentiating the inside function is easy to drop under exam pressure.</p>
 </div>
 
 
 <h2 class="topic-title" id="t7">7. Integration</h2>
-<div class="topic-meta">Standard integrals &middot; definite integrals &middot; area under a curve &middot; integration by recognition</div>
+<div class="topic-meta">Definite integrals &middot; area under a curve &middot; area between two curves</div>
 
 <div class="box connect">
 <div class="box-title">&#8612; Builds On</div>
 <p>This topic builds on <a href="pure-mathematics-1.html#integration">P1 &mdash; Integration</a>, which covers the reverse power rule for polynomials.</p>
 </div>
 
-<p>Integration is the reverse process of differentiation. P2 introduces integrals of $\sin x$, $\cos x$, $e^x$ and $\dfrac1x$, alongside definite integrals for finding areas.</p>
+<p>P2 uses the polynomial integration rules from P1 to evaluate definite integrals and calculate areas. Integrals involving trigonometric, exponential or logarithmic functions are P3 material and are not required here.</p>
 
-<h3>Standard Integrals</h3>
+<h3>Polynomial Integration Recap</h3>
 <div class="box formula">
-<div class="box-title">Formula &mdash; Standard Integrals (+ constant $c$)</div>
+<div class="box-title">P1 Rule Used in P2</div>
 <table style="box-shadow:none;margin:6px 0 0 0;">
 <tr><th>$f(x)$</th><th>$\int f(x)\,dx$</th></tr>
 <tr><td>$x^n\ (n\ne-1)$</td><td>$\dfrac{x^{n+1}}{n+1}+c$</td></tr>
-<tr><td>$\dfrac1x$</td><td>$\ln|x|+c$</td></tr>
-<tr><td>$e^x$</td><td>$e^x+c$</td></tr>
-<tr><td>$\sin x$</td><td>$-\cos x+c$</td></tr>
-<tr><td>$\cos x$</td><td>$\sin x+c$</td></tr>
 </table>
+<p>Apply the rule term by term after expanding brackets or simplifying the expression where necessary.</p>
 </div>
 
 <div class="box warning">
 <div class="box-title">Common Mistake</div>
 <p>Never forget the constant of integration $+c$ for an <strong>indefinite</strong> integral — it disappears only in a <em>definite</em> integral, where the two limits cause it to cancel.</p>
-</div>
-
-<h3>Integrating Linear Substitutions "by Recognition"</h3>
-<p>When the inside of a function is linear ($ax+b$), you can integrate directly by recognising the reverse chain rule, dividing by the coefficient of $x$.</p>
-
-<div class="box formula">
-<div class="box-title">Formula &mdash; Linear Compositions</div>
-<p>$$\int e^{ax+b}\,dx=\frac{1}{a}e^{ax+b}+c \qquad \int \sin(ax+b)\,dx=-\frac{1}{a}\cos(ax+b)+c$$
-$$\int \cos(ax+b)\,dx=\frac{1}{a}\sin(ax+b)+c \qquad \int \frac{1}{ax+b}\,dx=\frac1a\ln|ax+b|+c$$</p>
-</div>
-
-<div class="example">
-<div class="example-header">Worked Example <span class="tag">Integration by recognition</span></div>
-<div class="example-question">
-<p>Find $\displaystyle\int (2x-1)^{-1} - 3\cos(2x)\; dx$.</p>
-</div>
-<button class="solution-toggle" type="button" aria-expanded="false">
-<span class="toggle-label">Show worked solution</span>
-<span class="toggle-icon">&#9662;</span>
-</button>
-<div class="example-solution">
-<div class="example-body">
-<div class="step">
-<div class="step-num">1</div>
-<div class="step-content"><div class="sk">Integrate term by term</div>$\displaystyle\int \frac{1}{2x-1}\,dx = \frac12\ln|2x-1|$</div>
-</div>
-<div class="step">
-<div class="step-num">2</div>
-<div class="step-content"><div class="sk">Integrate the second term</div>$\displaystyle\int 3\cos(2x)\,dx = 3\times\frac12\sin(2x)=\frac32\sin(2x)$</div>
-</div>
-<div class="example-answer">$\dfrac12\ln|2x-1| - \dfrac32\sin(2x) + c$</div>
-</div>
-</div>
 </div>
 
 <h3>Definite Integrals &amp; Area</h3>
@@ -1634,7 +1530,7 @@ where $F(x)$ is any antiderivative of $f(x)$.</p>
 <div class="example">
 <div class="example-header">Worked Example <span class="tag">Definite integral / area</span></div>
 <div class="example-question">
-<p>Find the area between the curve $y=\sin x$, the $x$-axis, and the lines $x=0$ and $x=\pi$.</p>
+<p>Find the area between the curve $y=6x-x^2$, the $x$-axis, and the lines $x=0$ and $x=6$.</p>
 </div>
 <button class="solution-toggle" type="button" aria-expanded="false">
 <span class="toggle-label">Show worked solution</span>
@@ -1644,13 +1540,49 @@ where $F(x)$ is any antiderivative of $f(x)$.</p>
 <div class="example-body">
 <div class="step">
 <div class="step-num">1</div>
-<div class="step-content"><div class="sk">Set up the integral</div>$A=\displaystyle\int_0^\pi \sin x\, dx = \Big[-\cos x\Big]_0^\pi$</div>
+<div class="step-content"><div class="sk">Set up and integrate</div>$A=\displaystyle\int_0^6 (6x-x^2)\,dx=\left[3x^2-\dfrac{x^3}{3}\right]_0^6$.</div>
 </div>
 <div class="step">
 <div class="step-num">2</div>
-<div class="step-content"><div class="sk">Substitute the limits</div>$=(-\cos\pi) - (-\cos 0) = -(-1) - (-1) = 1+1=2$</div>
+<div class="step-content"><div class="sk">Substitute the limits</div>$A=\left(3(6)^2-\dfrac{6^3}{3}\right)-0=108-72=36$.</div>
 </div>
-<div class="example-answer">Area $=2$ square units</div>
+<div class="example-answer">Area $=36$ square units</div>
+</div>
+</div>
+</div>
+
+<h3>Area Between Two Curves</h3>
+<div class="box formula">
+<div class="box-title">Upper Curve Minus Lower Curve</div>
+<p>If $y=f(x)$ is above $y=g(x)$ between $x=a$ and $x=b$, then</p>
+<p>$$A=\int_a^b \big(f(x)-g(x)\big)\,dx.$$</p>
+<p>When the curves exchange positions, split the integral at their intersection.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Area between curves</span></div>
+<div class="example-question">
+<p>Find the finite area enclosed by $y=4x$ and $y=x^2$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find the intersections</div>$4x=x^2 \Rightarrow x(x-4)=0$, so the curves meet at $x=0$ and $x=4$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Identify the upper curve</div>For $0&lt;x&lt;4$, $4x&gt;x^2$, so subtract $x^2$ from $4x$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Integrate the difference</div>$A=\displaystyle\int_0^4(4x-x^2)\,dx=\left[2x^2-\dfrac{x^3}{3}\right]_0^4=32-\dfrac{64}{3}=\dfrac{32}{3}$.</div>
+</div>
+<div class="example-answer">Area $=\dfrac{32}{3}$ square units</div>
 </div>
 </div>
 </div>
@@ -1947,7 +1879,7 @@ $\int_0^2 e^{x^2}dx \approx \dfrac{0.5}{2}\Big[(1.000+54.598)+2(1.284+2.718+9.48
 
 <div class="box warning">
 <div class="box-title">Common Mistake</div>
-<p>$S_\infty$ only exists when $-1<r<1$. If $|r|\ge1$, the series diverges (grows without bound, or oscillates) and has no sum to infinity — always state the condition on $r$ when using this formula.</p>
+<p>$S_\infty$ only exists when $-1&lt;r&lt;1$. If $|r|\ge1$, the series diverges (grows without bound, or oscillates) and has no sum to infinity — always state the condition on $r$ when using this formula.</p>
 </div>
 
 <div class="example">
@@ -2261,18 +2193,17 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
 
     <div class="fs-card">
       <h4>6 &middot; Differentiation</h4>
-      <div class="fline"><span class="flabel">Standard derivatives</span>$x^n\!\to\! nx^{n-1}$; $\sin x\!\to\!\cos x$; $\cos x\!\to\!-\sin x$; $e^x\!\to\! e^x$; $\ln x\!\to\!\frac1x$</div>
-      <div class="fline"><span class="flabel">Chain rule</span>$\dfrac{dy}{dx}=\dfrac{dy}{du}\times\dfrac{du}{dx}$</div>
-      <div class="fline"><span class="flabel">Product rule</span>$\dfrac{dy}{dx}=u\dfrac{dv}{dx}+v\dfrac{du}{dx}$</div>
-      <div class="fline"><span class="flabel">Quotient rule</span>$\dfrac{dy}{dx}=\dfrac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2}$</div>
-      <div class="fline"><span class="flabel">Stationary points</span>$\frac{d^2y}{dx^2}>0$ min; $<0$ max</div>
+      <div class="fline"><span class="flabel">P1 rule</span>$x^n\!\to\! nx^{n-1}$; differentiate polynomial terms separately</div>
+      <div class="fline"><span class="flabel">Stationary point</span>$\dfrac{dy}{dx}=0$</div>
+      <div class="fline"><span class="flabel">Stationary points</span>$\frac{d^2y}{dx^2}>0$ min; $&lt;0$ max</div>
+      <div class="fline"><span class="flabel">Intervals</span>$\dfrac{dy}{dx}>0$ increasing; $\dfrac{dy}{dx}&lt;0$ decreasing</div>
     </div>
 
     <div class="fs-card">
       <h4>7 &middot; Integration</h4>
-      <div class="fline"><span class="flabel">Standard integrals</span>$x^n\!\to\!\frac{x^{n+1}}{n+1}$; $\frac1x\!\to\!\ln|x|$; $e^x\!\to\! e^x$; $\sin x\!\to\!-\cos x$; $\cos x\!\to\!\sin x$ (each $+c$)</div>
-      <div class="fline"><span class="flabel">Linear inside</span>$\int e^{ax+b}dx=\frac1a e^{ax+b}+c$</div>
+      <div class="fline"><span class="flabel">P1 rule</span>$\int x^n dx=\dfrac{x^{n+1}}{n+1}+c$, $n\ne-1$</div>
       <div class="fline"><span class="flabel">Definite integral</span>$\int_a^b f(x)dx=F(b)-F(a)$</div>
+      <div class="fline"><span class="flabel">Between curves</span>$A=\int_a^b(\text{upper}-\text{lower})\,dx$</div>
     </div>
 
     <div class="fs-card">
