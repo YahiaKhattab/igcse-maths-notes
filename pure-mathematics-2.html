@@ -613,7 +613,7 @@ footer.doc-footer{
 
     <div class="nav-unit">
       <div class="nav-unit-title">Unit 4 &middot; Trigonometry</div>
-      <a class="nav-link" href="#t5"><span class="num">05</span>Radians, Graphs &amp; Identities</a>
+      <a class="nav-link" href="#t5"><span class="num">05</span>Trig Identities &amp; Equations</a>
     </div>
 
     <div class="nav-unit">
@@ -625,7 +625,7 @@ footer.doc-footer{
 
     <div class="nav-unit">
       <div class="nav-unit-title">Unit 6 &middot; Sequences &amp; Series</div>
-      <a class="nav-link" href="#t9"><span class="num">09</span>Arithmetic Sequences</a>
+      <a class="nav-link" href="#t9"><span class="num">09</span>Sequences &amp; Arithmetic Series</a>
       <a class="nav-link" href="#t10"><span class="num">10</span>Geometric Sequences</a>
       <a class="nav-link" href="#t11"><span class="num">11</span>Sigma Notation</a>
     </div>
@@ -1045,38 +1045,71 @@ $= 16 + 96x + 216x^2 + 216x^3 + 81x^4$
 
 <div class="unit-marker">Unit 3 &middot; Exponentials &amp; Logarithms</div>
 <h2 class="topic-title" id="t4">4. Exponentials &amp; Logarithms</h2>
-<div class="topic-meta">The constant $e$ &middot; natural logarithms &middot; laws of logs &middot; solving equations &middot; growth &amp; decay</div>
+<div class="topic-meta">General graphs $y=a^x$ &middot; growth and decay &middot; logarithm laws &middot; solving $a^x=b$</div>
 
-<h3>The Exponential Function</h3>
-<p>The number $e \approx 2.71828\ldots$ is a special mathematical constant (like $\pi$) that arises naturally in growth and decay processes. The function $y=e^x$ is called <em class="def">the</em> exponential function because it is its own derivative — more on that in the Differentiation topic.</p>
+<h3>The General Exponential Function</h3>
+<p>An <em class="def">exponential function</em> has the variable in the power:</p>
 
 <div class="box formula">
-<div class="box-title">Definition &mdash; Natural Logarithm</div>
-<p>$$\ln x = \log_e x$$</p>
-<p>$\ln x$ and $e^x$ are inverse functions: $\ln(e^x)=x$ and $e^{\ln x}=x$ for $x>0$.</p>
+<div class="box-title">General Form and Conditions</div>
+<p>$$y=a^x, \qquad a\gt0, \quad a\ne1.$$</p>
+<p>The restriction $a\gt0$ keeps the function real for every real $x$. The value $a=1$ is excluded because $1^x=1$ is constant rather than exponential growth or decay.</p>
 </div>
 
 <div class="diagram">
-<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg">
-  <line x1="40" y1="260" x2="440" y2="260" stroke="#c9c6ba" stroke-width="1.5"/>
-  <line x1="40" y1="260" x2="40" y2="20" stroke="#c9c6ba" stroke-width="1.5"/>
-  <text x="430" y="278" font-family="Georgia,serif" font-size="13" fill="#4a5568">x</text>
-  <text x="24" y="26" font-family="Georgia,serif" font-size="13" fill="#4a5568">y</text>
-  <!-- y = e^x -->
-  <path d="M 60,260 C 130,255 190,235 240,190 C 290,140 320,90 350,30" fill="none" stroke="#1d5bbf" stroke-width="2.5"/>
-  <text x="340" y="45" font-family="Georgia,serif" font-size="14" fill="#1d5bbf">y = eˣ</text>
-  <!-- y = ln x -->
-  <path d="M 55,285 C 90,260 130,240 170,225 C 240,205 320,180 420,155" fill="none" stroke="#a8471f" stroke-width="2.5"/>
-  <text x="360" y="150" font-family="Georgia,serif" font-size="14" fill="#a8471f">y = ln x</text>
-  <!-- y = x -->
-  <line x1="45" y1="255" x2="255" y2="45" stroke="#c9c6ba" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="255" y="40" font-family="Georgia,serif" font-size="12" fill="#8a8677">y = x</text>
-  <circle cx="200" cy="260" r="2.5" fill="#0f2545"/>
-  <text x="195" y="278" font-family="Georgia,serif" font-size="12" fill="#0f2545">1</text>
-  <circle cx="40" cy="220" r="2.5" fill="#0f2545"/>
-  <text x="14" y="224" font-family="Georgia,serif" font-size="12" fill="#0f2545">1</text>
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="General exponential growth and decay curves both passing through zero comma one">
+  <line x1="35" y1="250" x2="475" y2="250" stroke="#c9c6ba" stroke-width="1.5"/>
+  <line x1="250" y1="270" x2="250" y2="20" stroke="#c9c6ba" stroke-width="1.5"/>
+  <path d="M50,249 C150,248 205,243 250,235 C315,224 370,150 450,15" fill="none" stroke="#1d5bbf" stroke-width="2.7"/>
+  <path d="M50,15 C130,150 185,224 250,235 C295,243 350,248 450,249" fill="none" stroke="#a8471f" stroke-width="2.7"/>
+  <circle cx="250" cy="235" r="4" fill="#0f2545"/>
+  <text x="258" y="232" font-family="Georgia,serif" font-size="12" fill="#0f2545">(0, 1)</text>
+  <text x="382" y="70" font-family="Georgia,serif" font-size="14" fill="#1d5bbf">a &gt; 1</text>
+  <text x="62" y="70" font-family="Georgia,serif" font-size="14" fill="#a8471f">0 &lt; a &lt; 1</text>
+  <text x="462" y="269" font-family="Georgia,serif" font-size="13" fill="#4a5568">x</text>
+  <text x="234" y="25" font-family="Georgia,serif" font-size="13" fill="#4a5568">y</text>
+  <text x="390" y="245" font-family="Helvetica Neue,Arial" font-size="11" fill="#8a8677">asymptote y = 0</text>
 </svg>
-<div class="diagram-caption">$y=e^x$ and $y=\ln x$ are reflections of each other in the line $y=x$, since they are inverse functions.</div>
+<div class="diagram-caption">Every valid $y=a^x$ graph passes through $(0,1)$ and approaches, but never reaches, the $x$-axis.</div>
+</div>
+
+<table>
+<tr><th>Base</th><th>Behaviour</th><th>Shared graph facts</th></tr>
+<tr><td>$a\gt1$</td><td>Increasing: exponential growth</td><td rowspan="2">Domain: all real $x$<br>Range: $y\gt0$<br>$y$-intercept: $(0,1)$<br>Horizontal asymptote: $y=0$</td></tr>
+<tr><td>$0\lt a\lt1$</td><td>Decreasing: exponential decay</td></tr>
+</table>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Reading an exponential graph</span></div>
+<div class="example-question">
+<p>For $y=3^x$, state the $y$-intercept, horizontal asymptote, range and whether the function is increasing or decreasing.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Use $x=0$</div>$3^0=1$, so the graph crosses the $y$-axis at $(0,1)$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Use the base</div>Since $3\gt1$, the function is increasing. Its outputs are always positive and approach $0$ as $x$ becomes very negative.</div>
+</div>
+<div class="example-answer">$y$-intercept $(0,1)$; asymptote $y=0$; range $y\gt0$; increasing.</div>
+</div>
+</div>
+</div>
+
+<h3>Logarithms and the Natural Base</h3>
+<p>A logarithm reverses an exponential: $a^x=b$ means $x=\log_a b$. The special base $e\approx2.71828$ gives the natural logarithm.</p>
+
+<div class="box formula">
+<div class="box-title">Inverse Relationships</div>
+<p>$$\log_a(a^x)=x, \qquad a^{\log_a x}=x, \qquad \ln x=\log_e x.$$</p>
+<p>In logarithms, the base must satisfy $a\gt0$, $a\ne1$, and the argument must be positive.</p>
 </div>
 
 <h3>Laws of Logarithms</h3>
@@ -1121,14 +1154,14 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <h3>Solving Exponential &amp; Log Equations</h3>
 <div class="box tip">
 <div class="box-title">Tip &mdash; Two standard approaches</div>
-<p><strong>Exponential equation</strong> (unknown in the power): take $\ln$ of both sides.<br>
+<p><strong>Exponential equation</strong> (unknown in the power): take logarithms of both sides using any consistent base.<br>
 <strong>Log equation</strong> (unknown inside a log): combine into a single log, then raise $e$ (or the relevant base) to both sides.</p>
 </div>
 
 <div class="example">
 <div class="example-header">Worked Example <span class="tag">Exponential equation</span></div>
 <div class="example-question">
-<p>Solve $e^{2x-1}=15$, giving your answer to 3 significant figures.</p>
+<p>Solve $3^{2x-1}=20$, giving your answer to 3 significant figures.</p>
 </div>
 <button class="solution-toggle" type="button" aria-expanded="false">
 <span class="toggle-label">Show worked solution</span>
@@ -1138,13 +1171,13 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <div class="example-body">
 <div class="step">
 <div class="step-num">1</div>
-<div class="step-content"><div class="sk">Take $\ln$ of both sides</div>$\ln\left(e^{2x-1}\right)=\ln 15 \Rightarrow 2x-1=\ln 15$</div>
+<div class="step-content"><div class="sk">Take logs of both sides</div>$\log\left(3^{2x-1}\right)=\log20 \Rightarrow (2x-1)\log3=\log20$.</div>
 </div>
 <div class="step">
 <div class="step-num">2</div>
-<div class="step-content"><div class="sk">Solve for $x$</div>$2x = 1+\ln 15 = 3.708\ldots \Rightarrow x = 1.854\ldots$</div>
+<div class="step-content"><div class="sk">Solve for $x$</div>$2x-1=\dfrac{\log20}{\log3} \Rightarrow x=\dfrac{1+\frac{\log20}{\log3}}{2}=1.863\ldots$.</div>
 </div>
-<div class="example-answer">$x = 1.85$ (3 s.f.)</div>
+<div class="example-answer">$x = 1.86$ (3 s.f.)</div>
 </div>
 </div>
 </div>
@@ -1172,7 +1205,7 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <div class="step-num">3</div>
 <div class="step-content"><div class="sk">Solve for $x$</div>$x+3=e^2x \Rightarrow 3 = x(e^2-1) \Rightarrow x=\dfrac{3}{e^2-1}$</div>
 </div>
-<div class="example-answer">$x \approx 0.474$</div>
+<div class="example-answer">$x \approx 0.470$ (3 s.f.)</div>
 </div>
 </div>
 </div>
@@ -1183,16 +1216,16 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 </div>
 
 <h3>Exponential Growth &amp; Decay</h3>
-<p>Models of the form $y=Ae^{kt}$ describe quantities that grow ($k>0$) or decay ($k>0$ with a negative exponent, or $k<0$) at a rate proportional to their current size — population growth, radioactive decay, cooling, and compound-interest-style problems all take this form. $A$ is the value when $t=0$.</p>
+<p>A model of the form $y=Aa^t$ has initial value $A$ because $a^0=1$. It represents growth when $a\gt1$ and decay when $0\lt a\lt1$. Models written as $Ae^{kt}$ are the same general idea with base $e$: $k\gt0$ gives growth and $k\lt0$ gives decay.</p>
 
 
 <div class="unit-marker">Unit 4 &middot; Trigonometry</div>
-<h2 class="topic-title" id="t5">5. Radians, Graphs &amp; Identities</h2>
-<div class="topic-meta">Radian measure &middot; arc length &amp; sector area &middot; sine &amp; cosine rules &middot; graphs &amp; identities &middot; solving equations</div>
+<h2 class="topic-title" id="t5">5. Trigonometric Identities &amp; Equations</h2>
+<div class="topic-meta">P1 recap: radians, rules and graphs &middot; P2 content: identities and equations over stated intervals</div>
 
 <div class="box connect">
 <div class="box-title">&#8612; Builds On</div>
-<p>This topic continues directly from <a href="pure-mathematics-1.html#trig">P1 &mdash; Trigonometry</a>, which covers the sine rule, cosine rule, and right-angle triangles in degrees.</p>
+<p><a href="pure-mathematics-1.html#trig">P1 &mdash; Trigonometry</a> supplies the radian measure, arc and sector formulae, sine and cosine rules, and base trigonometric graphs assumed in P2. The new P2 work is applying two identities and solving simple trigonometric equations over a stated interval.</p>
 </div>
 
 <h3>Radians</h3>
@@ -1209,7 +1242,7 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 
 <div class="box tip">
 <div class="box-title">Tip &mdash; Why radians?</div>
-<p>Radians make calculus with trig functions work cleanly (e.g. $\frac{d}{dx}(\sin x)=\cos x$ is only true when $x$ is in radians), and they make the arc length and sector area formulas below beautifully simple. From P2 onward, angles are usually given in radians unless stated otherwise.</p>
+<p>Radians make the arc length and sector area formulae especially simple. They also make later calculus with trigonometric functions work cleanly: for example, $\frac{d}{dx}(\sin x)=\cos x$ is valid when $x$ is measured in radians, a fact studied in P3. In P2 questions, always follow the angle unit and interval stated.</p>
 </div>
 
 <h3>Arc Length &amp; Sector Area</h3>
@@ -1390,7 +1423,7 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 
 <div class="box connect">
 <div class="box-title">&#8612; Builds On</div>
-<p>This topic applies the power rule, gradients and second derivatives from <a href="pure-mathematics-1.html#differentiation">P1 &mdash; Differentiation</a>. P2 does not introduce chain, product or quotient rules, or derivatives of trigonometric, exponential and logarithmic functions; those are P3 topics.</p>
+<p>This topic applies the power rule and gradient skills from <a href="pure-mathematics-1.html#differentiation">P1 &mdash; Differentiation</a>, then uses second derivatives to classify stationary points. P2 does not introduce chain, product or quotient rules, or derivatives of trigonometric, exponential and logarithmic functions; those are P3 topics.</p>
 </div>
 
 <p>In P2, the differentiation rules remain the polynomial rules learned in P1. The new skill is using those rules to analyse a function: locate and classify stationary points, decide where a function is increasing or decreasing, and solve practical maximum or minimum problems.</p>
@@ -1687,8 +1720,82 @@ $\int_0^2 e^{x^2}dx \approx \dfrac{0.5}{2}\Big[(1.000+54.598)+2(1.284+2.718+9.48
 
 
 <div class="unit-marker">Unit 6 &middot; Sequences &amp; Series</div>
-<h2 class="topic-title" id="t9">9. Arithmetic Sequences</h2>
-<div class="topic-meta">nth term &middot; common difference &middot; sum of an arithmetic series</div>
+<h2 class="topic-title" id="t9">9. Sequences &amp; Arithmetic Series</h2>
+<div class="topic-meta">nth-term and recurrence definitions &middot; increasing, decreasing and periodic sequences &middot; arithmetic series</div>
+
+<h3>Describing a Sequence</h3>
+<p>A <em class="def">sequence</em> is an ordered list of terms $u_1,u_2,u_3,\ldots$. P2 uses two main descriptions:</p>
+
+<table>
+<tr><th>Description</th><th>What it gives</th><th>Example</th></tr>
+<tr><td>nth-term formula</td><td>Finds a term directly from its position $n$</td><td>$u_n=3n+1$</td></tr>
+<tr><td>Recurrence relation</td><td>Uses one or more earlier terms; an initial value must also be given</td><td>$u_1=3$, $u_{n+1}=2u_n-1$</td></tr>
+</table>
+
+<div class="box warning">
+<div class="box-title">A Recurrence Needs a Starting Value</div>
+<p>The rule $u_{n+1}=f(u_n)$ alone does not define one unique sequence. Always look for the given first term, such as $u_1=3$.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Using a recurrence relation</span></div>
+<div class="example-question">
+<p>A sequence is defined by $u_1=3$ and $u_{n+1}=2u_n-1$. Find $u_2,u_3,u_4$ and $u_5$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Substitute the previous term</div>$u_2=2(3)-1=5$, then $u_3=2(5)-1=9$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Continue in order</div>$u_4=2(9)-1=17$ and $u_5=2(17)-1=33$.</div>
+</div>
+<div class="example-answer">The first five terms are $3,5,9,17,33$.</div>
+</div>
+</div>
+</div>
+
+<h3>Increasing, Decreasing and Periodic Sequences</h3>
+<table>
+<tr><th>Type</th><th>Test</th><th>Example</th></tr>
+<tr><td>Increasing</td><td>$u_{n+1}\gt u_n$ for every relevant $n$</td><td>$2,5,8,11,\ldots$</td></tr>
+<tr><td>Decreasing</td><td>$u_{n+1}\lt u_n$ for every relevant $n$</td><td>$10,7,4,1,\ldots$</td></tr>
+<tr><td>Periodic</td><td>$u_{n+k}=u_n$ for a fixed positive integer $k$</td><td>$2,4,2,4,\ldots$ has period $2$</td></tr>
+</table>
+
+<p>The smallest positive value of $k$ that repeats the sequence is called its <em class="def">period</em>. A sequence that changes direction is not increasing or decreasing throughout, even if some consecutive terms rise or fall.</p>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Recognising periodic behaviour</span></div>
+<div class="example-question">
+<p>A sequence is defined by $u_1=2$ and $u_{n+1}=6-u_n$. Write the first six terms and describe the sequence.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Generate the terms</div>$u_2=6-2=4$, $u_3=6-4=2$, and the same two values then repeat.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Classify the sequence</div>The first six terms are $2,4,2,4,2,4$. Since $u_{n+2}=u_n$, the sequence is periodic with period $2$.</div>
+</div>
+<div class="example-answer">$2,4,2,4,2,4$; periodic with period $2$.</div>
+</div>
+</div>
+</div>
+
+<h3>Arithmetic Sequences</h3>
 
 <p>An <em class="def">arithmetic sequence</em> is one where each term is found by adding a fixed amount — the <em class="def">common difference</em>, $d$ — to the previous term. For example: $3,\,7,\,11,\,15,\,\ldots$ has first term $a=3$ and common difference $d=4$.</p>
 
@@ -2176,9 +2283,11 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
 
     <div class="fs-card">
       <h4>4 &middot; Exponentials &amp; Logs</h4>
+      <div class="fline"><span class="flabel">General graph</span>$y=a^x$, $a\gt0$, $a\ne1$; passes through $(0,1)$; asymptote $y=0$</div>
+      <div class="fline"><span class="flabel">Behaviour</span>$a\gt1$ growth; $0\lt a\lt1$ decay; range $y\gt0$</div>
       <div class="fline"><span class="flabel">Log laws</span>$\log x+\log y=\log(xy)$; $\log x-\log y=\log\frac{x}{y}$; $\log(x^n)=n\log x$</div>
       <div class="fline"><span class="flabel">Change of base</span>$\log_a x=\dfrac{\log_b x}{\log_b a}$</div>
-      <div class="fline"><span class="flabel">Inverses</span>$\ln(e^x)=x$; $e^{\ln x}=x$</div>
+      <div class="fline"><span class="flabel">Solve</span>$a^x=b \Rightarrow x=\dfrac{\log b}{\log a}$</div>
     </div>
 
     <div class="fs-card">
@@ -2214,7 +2323,9 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
     </div>
 
     <div class="fs-card">
-      <h4>9 &middot; Arithmetic Sequences</h4>
+      <h4>9 &middot; Sequences / Arithmetic</h4>
+      <div class="fline"><span class="flabel">Recurrence</span>give an initial term and a rule such as $u_{n+1}=f(u_n)$</div>
+      <div class="fline"><span class="flabel">Behaviour</span>$u_{n+1}\gt u_n$ increasing; $u_{n+1}\lt u_n$ decreasing; $u_{n+k}=u_n$ periodic</div>
       <div class="fline"><span class="flabel">nth term</span>$u_n=a+(n-1)d$</div>
       <div class="fline"><span class="flabel">Sum</span>$S_n=\frac{n}{2}\big[2a+(n-1)d\big]=\frac{n}{2}(a+l)$</div>
     </div>
