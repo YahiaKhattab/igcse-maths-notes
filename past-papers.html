@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pearson Edexcel IAL P1 and P2 question papers and matching mark schemes, organised by year and session.">
+  <title>P1 &amp; P2 Past Papers · Maths Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0b1730;--paper:#f3eee1;--card:#fffdf8;--ink:#20283b;--muted:#5b6478;--line:#d9cfbb;--accent:#93451c;--soft:#f7e7d8;--gold:#d4a244;--display:'Space Grotesk',sans-serif;--mono:'IBM Plex Mono',monospace}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 var(--display)}a{color:var(--accent);text-underline-offset:4px}button,select{font:inherit}a,button,select{touch-action:manipulation}:focus-visible{outline:3px solid var(--gold);outline-offset:4px}[hidden]{display:none!important}.skip{position:absolute;top:-80px;left:20px;z-index:10;padding:12px;background:white}.skip:focus{top:12px}
+    .masthead{background:var(--navy);color:white}.topbar,.heading,main,footer{width:min(1120px,calc(100% - 40px));margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;border-bottom:1px solid #ffffff26}.brand{font-weight:700;color:white;text-decoration:none}.topbar nav{display:flex;gap:20px;flex-wrap:wrap}.topbar nav a{color:#c5d0e4;font-size:.875rem}.heading{padding:32px 0 38px}.eyebrow{font:.875rem var(--mono);color:var(--gold);margin:0 0 10px}h1{font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.045em;line-height:1.1;margin:0}.heading p:last-child{color:#c5d0e4;margin:14px 0 0;max-width:65ch}
+    main{padding:28px 0 52px}.toolbar{display:flex;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}.units{display:flex;gap:6px;padding:5px;background:#e5dece;border-radius:12px;margin-right:auto}.units button{border:0;border-radius:8px;background:transparent;cursor:pointer;padding:11px 20px;color:var(--muted);font-weight:600}.units button[aria-pressed=true]{background:var(--navy);color:white}.field{display:grid;gap:5px;font-size:.875rem;color:var(--muted)}select{border:1px solid var(--line);border-radius:8px;padding:10px 32px 10px 12px;background:var(--card);color:var(--ink);min-height:46px}.reset{background:none;border:0;color:var(--accent);text-decoration:underline;text-underline-offset:4px;padding:12px;cursor:pointer}
+    .results-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}.results-heading h2{font-size:1.4rem;margin:0;letter-spacing:-.025em}.meta{font:.875rem/1.5 var(--mono);color:var(--muted)}.year{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 18px;overflow:hidden}.year-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:15px 22px;background:#ebe4d4;border-bottom:1px solid var(--line)}.year-heading h3{margin:0;font-size:1.4rem}.year-heading span{font-size:.875rem;color:var(--muted)}.paper-row{display:grid;grid-template-columns:minmax(180px,1fr) minmax(170px,.8fr) auto;align-items:center;gap:20px;padding:20px 22px}.paper-row+.paper-row{border-top:1px solid var(--line)}.session{font-weight:600}.code{display:block;font:.875rem/1.5 var(--mono);color:var(--muted);margin-top:3px}.status{font-size:.875rem;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:8px}.actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 14px;border:1px solid var(--line);border-radius:8px;font-size:.875rem;font-weight:600;text-decoration:none}.actions a.qp{background:var(--navy);border-color:var(--navy);color:white}.actions a.ms{background:var(--soft);border-color:#e1bf9f;color:var(--accent)}.actions a:hover{box-shadow:0 3px 8px #0b17301a}.row-note{grid-column:1/-1;margin:-10px 0 0;color:var(--muted);font-size:.875rem;max-width:90ch}.empty{padding:32px;border:1px dashed var(--line);border-radius:12px}.guidance{margin-top:28px;border-top:1px solid var(--line);padding-top:20px}.guidance summary{cursor:pointer;font-weight:600;min-height:44px}.guidance p,.guidance li{max-width:90ch;color:var(--muted)}.guidance li+li{margin-top:10px}.footnote{font-size:.875rem;color:var(--muted)}footer{border-top:1px solid var(--line);padding:22px 0 32px;font-size:.875rem;color:var(--muted)}
+    @media(max-width:700px){.topbar,.heading,main,footer{width:calc(100% - 28px)}.topbar{align-items:flex-start;flex-direction:column;gap:10px;padding:16px 0}.topbar nav{gap:16px}.heading{padding:25px 0 28px}.toolbar{gap:12px}.units{width:100%;margin:0}.units button{flex:1;padding-inline:10px}.field{flex:1;min-width:120px}select{width:100%}.reset{padding-inline:0}.paper-row{grid-template-columns:1fr auto;gap:12px;padding:18px 16px}.status{text-align:right}.actions{grid-column:1/-1}.actions a{flex:1}.row-note{margin:0}.year-heading{padding-inline:16px}.results-heading{gap:6px}}
+    @media print{.toolbar,.topbar nav,.skip{display:none}.masthead{background:white;color:black}.heading p:last-child,.eyebrow{color:black}.year{break-inside:avoid}.actions a{color:black!important;background:white!important}.guidance{display:none}}
+  </style>
+  <script src="past-papers-data.js" defer></script>
+  <script src="past-papers.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#archive">Skip to papers</a>
+  <header class="masthead">
+    <div class="topbar"><a class="brand" href="index.html">Maths Notes</a><nav aria-label="Main navigation"><a href="index.html#ial-track">All courses</a><a href="pure-mathematics-1.html">P1 notes</a><a href="pure-mathematics-2.html">P2 notes</a></nav></div>
+    <div class="heading"><p class="eyebrow">INTERNATIONAL A LEVEL · 2018 SPECIFICATION</p><h1>Past papers. Paired up.</h1><p>P1 and P2 question papers with their matching mark schemes. Official Pearson links, organised by session.</p></div>
+  </header>
+  <main id="archive">
+    <div class="toolbar" id="filters" hidden>
+      <div class="units" role="group" aria-label="Choose a unit"><button type="button" data-unit="P1" aria-pressed="true">P1 · WMA11</button><button type="button" data-unit="P2" aria-pressed="false">P2 · WMA12</button></div>
+      <label class="field" for="year">Year<select id="year"><option value="all">All years</option></select></label>
+      <label class="field" for="session">Session<select id="session"><option value="all">All sessions</option><option value="January">January</option><option value="June">May / June</option><option value="October">October</option><option value="Specimen">Specimen</option></select></label>
+      <label class="field" for="variant">Paper version<select id="variant"><option value="standard">Standard · 01</option><option value="regional">Regional · 01R / 01A</option><option value="all">All versions</option></select></label>
+      <button class="reset" type="button" id="reset">Reset filters</button>
+    </div>
+    <div class="results-heading"><h2 id="results-title">Question papers &amp; mark schemes</h2><span class="meta" id="result-count" role="status" aria-live="polite"></span></div>
+    <div id="results"><p>Browse <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.coursematerials.html">Pearson’s official course materials</a> if the archive does not load.</p></div>
+    <noscript><p>Enable JavaScript to filter the archive, or use the Pearson link above.</p></noscript>
+    <details class="guidance"><summary>Egypt, paper versions &amp; missing sessions</summary>
+      <ul>
+        <li><strong>The right course:</strong> British Council Egypt lists P1 as WMA11 and P2 as WMA12. This archive defaults to standard /01 papers. Regional /01R and /01A papers are kept separate for extra practice; the public Egypt list does not identify regional suffix allocations. Your centre’s entry information is the final check. <a href="https://www.britishcouncil.org.eg/sites/default/files/pearson_edexcel-eg-ial-price-list-oct-nov-26.pdf" target="_blank" rel="noopener noreferrer">British Council Egypt unit list ↗</a></li>
+        <li><strong>2018 specimen:</strong> Pearson supplies the question papers and mark schemes together in one sample-assessment booklet. The buttons jump to the relevant PDF pages; some PDF viewers may open at the beginning instead.</li>
+        <li><strong>January 2019:</strong> P1 had started, but P2’s first assessment was June 2019. There is no January 2019 P2 paper. <a href="https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Specification-and-Sample-Assessment/international-a-level-maths-spec.pdf#page=13" target="_blank" rel="noopener noreferrer">Pearson specification ↗</a></li>
+        <li><strong>2020:</strong> The summer exams were cancelled. Pearson reused summer material in October, so a summer date on an October 2020 paper is expected. <a href="https://qualifications.pearson.com/en/support/support-topics/exams/past-papers.html" target="_blank" rel="noopener noreferrer">Pearson’s explanation ↗</a></li>
+        <li><strong>Summer 2021:</strong> These are the assessment materials Pearson lists under June 2021, from the alternative-assessment period, not a normal summer exam sitting. The archive uses the final mark schemes, not the provisional versions. <a href="https://qualifications.pearson.com/content/dam/pdf/Support/private-candidates/DD02683-customer-facing-doc-international-private-candidates_1.pdf" target="_blank" rel="noopener noreferrer">Pearson’s 2021 guidance ↗</a></li>
+        <li><strong>Recent papers:</strong> Pearson currently restricts October 2025 and January/June 2026 materials to registered centres. Their entries link to the official catalogue. October 2026 has not yet taken place as of this archive’s review date.</li>
+      </ul>
+    </details>
+    <p class="footnote">Links open in a new tab. Exam materials are hosted by Pearson, not this site. <span id="checked-date"></span></p>
+  </main>
+  <footer>Independent revision portal · Question papers and mark schemes © Pearson Education Ltd.</footer>
+</body>
+</html>

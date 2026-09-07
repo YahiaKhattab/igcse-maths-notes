@@ -53,7 +53,9 @@
     .paper-card h4{color:var(--navy);font:700 1.32rem/1.2 var(--display);letter-spacing:-.015em;margin:0}.paper-card p{color:var(--ink-soft);font-size:.88rem;line-height:1.55;margin:9px 0 18px}
     .paper-footer{align-items:center;border-top:1px dashed var(--line-soft);display:flex;font:.68rem var(--mono);gap:12px;justify-content:space-between;margin-top:auto;padding-top:13px}.paper-footer .open{font-weight:600}.igcse .paper-footer .open{color:var(--igcse-dark)}.ial .paper-footer .open{color:var(--ial-dark)}.planned .paper-footer .open{color:var(--planned)}
     .portal-note{border-left:4px solid var(--gold);color:var(--ink-soft);font-size:.88rem;margin:34px 0 0;padding:5px 0 5px 15px}footer{background:var(--navy);color:#97a7c2;font:.7rem var(--mono);padding:26px 20px;text-align:center}
+    .archive-link{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--navy);color:var(--white);padding:20px 22px;border-radius:14px;text-decoration:none;margin-bottom:28px;font-family:var(--display)}.archive-link strong{display:block;font-size:1.1rem}.archive-link small{display:block;color:#c5d0e4;font-size:.875rem;margin-top:4px}.archive-link:hover{background:#182b4c}.archive-link>span:last-child{font-size:.875rem;flex-shrink:0}.track-nav{flex-wrap:wrap}
     @media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:28px}.availability{max-width:380px}.qualification-header{grid-template-columns:1fr;gap:18px}.structure-note{max-width:none}}
+    @media(max-width:480px){.archive-link{align-items:flex-start;flex-direction:column;gap:12px}}
     @media(max-width:640px){.topbar,.hero-inner,main{width:min(100% - 28px,1120px)}.topbar{align-items:flex-start;flex-direction:column;padding-block:16px}.brand small{display:block;margin:2px 0 0}.track-nav{width:100%}.track-nav a{flex:1;text-align:center}.hero-inner{padding-block:42px 46px}.portal-intro,.paper-grid{grid-template-columns:1fr}.qualification-header,.qualification-body{padding-inline:20px}.paper-card{min-height:0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
@@ -62,7 +64,7 @@
   <header class="masthead">
     <div class="topbar">
       <div class="brand">Maths Notes <small>Pearson Edexcel International</small></div>
-      <nav class="track-nav" aria-label="Qualification tracks"><a href="#igcse-track">4MA1 track</a><a href="#ial-track">IAL track</a></nav>
+      <nav class="track-nav" aria-label="Qualification tracks"><a href="#igcse-track">4MA1 track</a><a href="#ial-track">IAL track</a><a href="past-papers.html">Past papers</a></nav>
     </div>
     <div class="hero-inner">
       <div>
@@ -72,7 +74,7 @@
       </div>
       <div class="availability" aria-label="Portal availability">
         <div class="availability-item"><strong>4</strong><span>Notes available</span></div>
-        <div class="availability-item"><strong>6</strong><span>Planned next</span></div>
+        <div class="availability-item"><strong>4</strong><span>Planned next</span></div>
       </div>
     </div>
   </header>
@@ -88,15 +90,17 @@
         <div><p class="qualification-code">Track 01 · Qualification code 4MA1</p><h2 id="igcse-heading">International GCSE Mathematics A</h2></div>
       </header>
       <div class="qualification-body">
+        <!-- Foundation placeholders retained for possible future use.
         <div class="group">
-          <!-- <div class="group-heading"><h3>Foundation tier</h3><span>Grades 1–5 · Notes planned</span></div>
+          <div class="group-heading"><h3>Foundation tier</h3><span>Grades 1–5 · Notes planned</span></div>
           <div class="paper-grid">
             <article class="paper-card planned" data-qualification="4MA1" data-tier="foundation" data-status="planned"><div class="paper-content"><div class="paper-topline"><span class="paper-code">4MA1 · 1F</span><span class="status planned">Planned</span></div><h4>Paper 1F</h4><p>Foundation-tier Paper 1 notes will appear here when they are ready.</p><div class="paper-footer"><span>2 hours · 100 marks</span><span class="open">Coming later</span></div></div></article>
             <article class="paper-card planned" data-qualification="4MA1" data-tier="foundation" data-status="planned"><div class="paper-content"><div class="paper-topline"><span class="paper-code">4MA1 · 2F</span><span class="status planned">Planned</span></div><h4>Paper 2F</h4><p>Foundation-tier Paper 2 notes will appear here when they are ready.</p><div class="paper-footer"><span>2 hours · 100 marks</span><span class="open">Coming later</span></div></div></article>
           </div>
-        </div> -->
+        </div>
+        -->
         <div class="group">
-          <div class="group-heading"><h3>Higher tier</h3><span>Grade 10 · Notes available</span></div>
+          <div class="group-heading"><h3>Higher tier</h3><span>Notes available</span></div>
           <div class="paper-grid">
             <a class="paper-card" href="Final revision 1H notes.html" data-qualification="4MA1" data-tier="higher" data-status="available"><div class="paper-content"><div class="paper-topline"><span class="paper-code">4MA1 · 1H</span><span class="status ready">Available</span></div><h4>Paper 1H</h4><p>Higher-tier Paper 1 revision across number, algebra, geometry and statistics.</p><div class="paper-footer"><span>2 hours · 100 marks</span><span class="open">Open notes →</span></div></div></a>
             <a class="paper-card" href="Final_revision_2H_notes -1.html" data-qualification="4MA1" data-tier="higher" data-status="available"><div class="paper-content"><div class="paper-topline"><span class="paper-code">4MA1 · 2H</span><span class="status ready">Available</span></div><h4>Paper 2H</h4><p>Higher-tier Paper 2 revision across number, algebra, geometry and statistics.</p><div class="paper-footer"><span>2 hours · 100 marks</span><span class="open">Open notes →</span></div></div></a>
@@ -111,6 +115,7 @@
       </header>
       <div class="qualification-body">
         <div class="group">
+          <a class="archive-link" href="past-papers.html"><span><strong>P1 &amp; P2 past papers</strong><small>Question papers and matching mark schemes · Official Pearson links</small></span><span>Browse archive →</span></a>
           <div class="group-heading"><h3>Pure mathematics</h3><span>P1 and P2 available</span></div>
           <div class="paper-grid">
             <a class="paper-card" href="pure-mathematics-1.html" data-qualification="IAL-2018" data-unit="WMA11" data-status="available"><div class="paper-content"><div class="paper-topline"><span class="paper-code">WMA11 · P1</span><span class="status ready">Available</span></div><h4>Pure Mathematics 1</h4><p>Algebra and functions, coordinate geometry, trigonometry, differentiation and integration.</p><div class="paper-footer"><span>1 h 30 min · 75 marks</span><span class="open">Open notes →</span></div></div></a>

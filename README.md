@@ -1,58 +1,52 @@
-# Edexcel IAL Mathematics — Notes
+# Edexcel International Mathematics — Revision Portal
 
-Self-contained HTML study notes for the Edexcel International A Level (IAL)
-Mathematics course. Each file is a single standalone page (HTML, CSS and JS
-all inline) — no build step, no dependencies to install.
+A combined study portal for **International GCSE Mathematics A (4MA1), Higher tier**, and **International AS/A Level Mathematics (2018 specification)**. Built with plain HTML, CSS and JavaScript and hosted on **Vercel**.
 
-## Structure
+## Available resources
 
-```
-.
-├── index.html                 # Landing page — links to every module
-├── pure-mathematics-1.html    # WMA11 · P1
-├── pure-mathematics-2.html    # WMA12 · P2
-├──     # 1H
-├──     # 2H
-├── netlify.toml                # Deployment config (optional but included)
-└── README.md
-```
+| Track | Paper / unit | Notes file |
+| --- | --- | --- |
+| International GCSE Mathematics A · Higher | 1H | `Final revision 1H notes.html` |
+| International GCSE Mathematics A · Higher | 2H | `Final_revision_2H_notes -1.html` |
+| International AS/A Level Mathematics | P1 · WMA11 | `pure-mathematics-1.html` |
+| International AS/A Level Mathematics | P2 · WMA12 | `pure-mathematics-2.html` |
 
-As more modules are finished (P3, P4, S1, M1, …), drop the new file in the
-same folder and add a card for it in `index.html` — same pattern as the
-existing two.
+Open `index.html` to choose a track. P3, P4, S1 and M1 notes are planned, not yet available.
 
-Every notes page has a small pill in the top-right corner ("← Index · P1 ·
-P2 · …") so you can jump straight between modules without going back through
-the landing page.
+Foundation papers are **not currently offered**. Their portal placeholders are intentionally commented out and retained for possible future use.
 
-## Running it locally
+## P1 and P2 past papers
 
-No build step needed — just open the file:
+Open `past-papers.html` from the portal or the P1/P2 notes. The archive groups question papers and matching mark schemes by unit, year and session, starting with the sample assessment materials for the 2018 specification.
 
-```bash
-open index.html          # macOS
-xdg-open index.html      # Linux
-start index.html         # Windows
-```
+Links point to Pearson's official website; the repository does not host copies of exam papers. Recent or otherwise unavailable materials are labelled separately from verified public PDF links. Always check the paper code and variant against your centre's entry information.
 
-Or serve it (avoids any local file:// quirks with fonts/KaTeX):
+The reviewed links are stored in `past-papers-data.js`, with filtering in `past-papers.js`. See [the link audit](docs/past-paper-link-audit.md) for coverage, source checks, known PDF identifier inconsistencies and maintenance instructions. With Node.js installed, run `node scripts/test-past-papers.cjs` for the archive's functional checks; Node is not needed to serve the site.
+
+## Run locally
+
+No package installation or build step is required. Open `index.html` directly, or run this command from the repository folder if Python is installed:
 
 ```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
 ```
 
-## Adding a new module later
+Then visit [localhost:8000](http://localhost:8000). An internet connection is needed for Pearson PDFs and externally loaded resources such as fonts and KaTeX.
 
-1. Build the new notes file (e.g. `pure-mathematics-3.html`), matching the
-   pattern of the existing two — own visual identity is fine, it doesn't
-   need to match P1/P2 exactly.
-2. Add the `doc-switcher` pill (copy it from P1 or P2, add a new `<a>` for
-   the new file) to every existing notes page, and add one to the new page
-   too, so all pages link to each other.
-3. In `index.html`, move that module's card from "planned" styling to a
-   real link (`<a class="card" href="...">`) and update the stamp from
-   `Planned` to `Complete`, plus bump the `Modules complete` stat in the
-   hero.
-4. `git add . && git commit -m "Add P3 notes" && git push` — Netlify
-   redeploys automatically.
+## Deployment
+
+The site is hosted on **Vercel**, not Netlify. Keep the HTML pages and their supporting files together at the site root. Use the existing Vercel project's Git integration and deployment settings; check its dashboard after publishing changes.
+
+The existing `netlify.toml` is a legacy file, not the active deployment configuration.
+
+## Maintaining the portal
+
+- Keep IGCSE papers and IAL units in their separate tracks, with the correct qualification and paper codes.
+- Add a new notes file only when it is ready, then link it from `index.html` and update the visible availability count.
+- Keep unfinished cards non-clickable. Do not enable Foundation placeholders unless that scope is deliberately added.
+- For archive updates, verify both PDF covers: unit, session, year and variant must match. Do not infer a working link from a filename pattern or bypass Pearson's access restrictions.
+- Check navigation and mobile layout before publishing. Stage only files intended for the update.
+
+## Credits and corrections
+
+These are independent, personal revision notes, not official Pearson teaching materials or a replacement for the specification. Exam papers and mark schemes remain Pearson's materials. If you find an error, open an issue with the page, section or paper/session and the proposed correction.
