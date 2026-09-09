@@ -592,7 +592,7 @@ footer.doc-footer{
     <div class="sidebar-header">
       <div class="kicker">Edexcel International A Level</div>
       <h1>Pure Mathematics 2</h1>
-      <div class="sub">Complete Study Notes &middot; 12 Topics</div>
+      <div class="sub">AS Revision Notes &middot; 12 Topics</div>
       <button id="toggleAllBtn" class="toggle-all-btn" type="button">Expand All Examples</button>
     </div>
 
@@ -646,7 +646,7 @@ footer.doc-footer{
     <div class="cover">
       <div class="kicker">Edexcel International A Level &middot; WMA12</div>
       <h1>Pure Mathematics 2</h1>
-      <div class="tagline">Complete notes covering all 12 topics, built for exam-ready understanding.</div>
+      <div class="tagline">Revision notes for WMA12, with P1 prerequisites, P2 methods and worked examples.</div>
       <div class="cover-grid">
         <div class="cover-card"><div class="label">Syllabus</div><div class="val">Edexcel IAL Pure 2</div></div>
         <div class="cover-card"><div class="label">Coverage</div><div class="val">12 topics &middot; 7 units</div></div>
@@ -1104,12 +1104,12 @@ $= 16 + 96x + 216x^2 + 216x^3 + 81x^4$
 </div>
 </div>
 
-<h3>Logarithms and the Natural Base</h3>
-<p>A logarithm reverses an exponential: $a^x=b$ means $x=\log_a b$. The special base $e\approx2.71828$ gives the natural logarithm.</p>
+<h3>Logarithms as Inverse Operations</h3>
+<p>A logarithm tells you the power needed to obtain a number: $a^x=b$ means $x=\log_a b$. For example, $2^3=8$ means $\log_2 8=3$. In these notes, $\log x$ without a written base means $\log_{10}x$.</p>
 
 <div class="box formula">
 <div class="box-title">Inverse Relationships</div>
-<p>$$\log_a(a^x)=x, \qquad a^{\log_a x}=x, \qquad \ln x=\log_e x.$$</p>
+<p>$$\log_a(a^x)=x, \qquad a^{\log_a x}=x.$$</p>
 <p>In logarithms, the base must satisfy $a\gt0$, $a\ne1$, and the argument must be positive.</p>
 </div>
 
@@ -1126,12 +1126,13 @@ $$\log_a a = 1 \qquad \log_a 1 = 0$$</p>
 <div class="box-title">Note &mdash; Change of Base</div>
 <p>$$\log_a x = \frac{\log_b x}{\log_b a}$$
 Use this to evaluate logs on a calculator in a base it doesn't directly support, or to compare logs with different bases.</p>
+<p>Here $a,b\gt0$, $a,b\ne1$ and $x\gt0$. For example, $\log_2 7=\dfrac{\log 7}{\log 2}$.</p>
 </div>
 
 <div class="example">
 <div class="example-header">Worked Example <span class="tag">Simplifying logs</span></div>
 <div class="example-question">
-<p>Write $2\ln 5 - \ln 10$ as a single logarithm.</p>
+<p>Write $2\log_3 5 - \log_3 10$ as a single logarithm.</p>
 </div>
 <button class="solution-toggle" type="button" aria-expanded="false">
 <span class="toggle-label">Show worked solution</span>
@@ -1141,13 +1142,13 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <div class="example-body">
 <div class="step">
 <div class="step-num">1</div>
-<div class="step-content"><div class="sk">Apply the power law</div>$2\ln 5 = \ln(5^2)=\ln 25$</div>
+<div class="step-content"><div class="sk">Apply the power law</div>$2\log_3 5 = \log_3(5^2)=\log_3 25$</div>
 </div>
 <div class="step">
 <div class="step-num">2</div>
-<div class="step-content"><div class="sk">Apply the subtraction law</div>$\ln 25 - \ln 10 = \ln\left(\dfrac{25}{10}\right) = \ln 2.5$</div>
+<div class="step-content"><div class="sk">Apply the subtraction law</div>$\log_3 25 - \log_3 10 = \log_3\left(\dfrac{25}{10}\right) = \log_3\left(\dfrac52\right)$</div>
 </div>
-<div class="example-answer">$\ln 2.5$</div>
+<div class="example-answer">$\log_3\left(\dfrac52\right)$</div>
 </div>
 </div>
 </div>
@@ -1156,7 +1157,7 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <div class="box tip">
 <div class="box-title">Tip &mdash; Two standard approaches</div>
 <p><strong>Exponential equation</strong> (unknown in the power): take logarithms of both sides using any consistent base.<br>
-<strong>Log equation</strong> (unknown inside a log): combine into a single log, then raise $e$ (or the relevant base) to both sides.</p>
+<strong>Log equation</strong> (unknown inside a log): check the arguments are positive, combine into a single log, then rewrite in exponential form: $\log_a u=v$ means $u=a^v$.</p>
 </div>
 
 <div class="example">
@@ -1186,7 +1187,7 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <div class="example">
 <div class="example-header">Worked Example <span class="tag">Logarithmic equation</span></div>
 <div class="example-question">
-<p>Solve $\ln(x+3) - \ln x = 2$, $x>0$.</p>
+<p>Solve $\log_2(x+3) - \log_2 x = 2$, $x>0$.</p>
 </div>
 <button class="solution-toggle" type="button" aria-expanded="false">
 <span class="toggle-label">Show worked solution</span>
@@ -1196,28 +1197,28 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <div class="example-body">
 <div class="step">
 <div class="step-num">1</div>
-<div class="step-content"><div class="sk">Combine into a single log</div>$\ln\left(\dfrac{x+3}{x}\right)=2$</div>
+<div class="step-content"><div class="sk">Combine into a single log</div>$\log_2\left(\dfrac{x+3}{x}\right)=2$</div>
 </div>
 <div class="step">
 <div class="step-num">2</div>
-<div class="step-content"><div class="sk">Remove the log by raising $e$ to both sides</div>$\dfrac{x+3}{x}=e^2$</div>
+<div class="step-content"><div class="sk">Rewrite in exponential form</div>$\dfrac{x+3}{x}=2^2=4$</div>
 </div>
 <div class="step">
 <div class="step-num">3</div>
-<div class="step-content"><div class="sk">Solve for $x$</div>$x+3=e^2x \Rightarrow 3 = x(e^2-1) \Rightarrow x=\dfrac{3}{e^2-1}$</div>
+<div class="step-content"><div class="sk">Solve and check</div>$x+3=4x \Rightarrow 3=3x \Rightarrow x=1$. Both arguments are positive, and $\log_2 4-\log_2 1=2-0=2$.</div>
 </div>
-<div class="example-answer">$x \approx 0.470$ (3 s.f.)</div>
+<div class="example-answer">$x=1$</div>
 </div>
 </div>
 </div>
 
 <div class="box warning">
 <div class="box-title">Common Mistake</div>
-<p>Always check log solutions are valid — you cannot take the log of a negative number or zero. If solving a quadratic in $\ln x$ or $e^x$ produces two roots, one may need to be rejected.</p>
+<p>Check each logarithm's argument in the original equation: every argument must be positive. A positive quotient after combining two logs does not, by itself, guarantee that both original arguments were positive.</p>
 </div>
 
-<h3>Exponential Growth &amp; Decay</h3>
-<p>A model of the form $y=Aa^t$ has initial value $A$ because $a^0=1$. It represents growth when $a\gt1$ and decay when $0\lt a\lt1$. Models written as $Ae^{kt}$ are the same general idea with base $e$: $k\gt0$ gives growth and $k\lt0$ gives decay.</p>
+<h3>Connecting Powers to Geometric Sequences</h3>
+<p>At consecutive integer values of $x$, the values of $a^x$ are multiplied by the same positive factor $a$. For example, $3^0,3^1,3^2,3^3$ give $1,3,9,27$. This links the exponential graph to the <a href="#t10">geometric sequences</a> studied in P2.</p>
 
 
 <div class="unit-marker">Unit 4 &middot; Trigonometry</div>
@@ -1243,7 +1244,7 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 
 <div class="box tip">
 <div class="box-title">Tip &mdash; Why radians?</div>
-<p>Radians make the arc length and sector area formulae especially simple. They also make later calculus with trigonometric functions work cleanly: for example, $\frac{d}{dx}(\sin x)=\cos x$ is valid when $x$ is measured in radians, a fact studied in P3. In P2 questions, always follow the angle unit and interval stated.</p>
+<p>Radians give $\theta=s/r$, so the arc length formula is $s=r\theta$. Use radians in the sector and segment formulae below. When solving a trigonometric equation, match your calculator mode to the stated angle unit and interval.</p>
 </div>
 
 <h3>Arc Length &amp; Sector Area</h3>
@@ -1427,7 +1428,7 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <p>This topic applies the power rule and gradient skills from <a href="pure-mathematics-1.html#differentiation">P1 &mdash; Differentiation</a>, then uses second derivatives to classify stationary points. P2 does not introduce chain, product or quotient rules, or derivatives of trigonometric, exponential and logarithmic functions; those are P3 topics.</p>
 </div>
 
-<p>In P2, the differentiation rules remain the polynomial rules learned in P1. The new skill is using those rules to analyse a function: locate and classify stationary points, decide where a function is increasing or decreasing, and solve practical maximum or minimum problems.</p>
+<p>In P2, differentiation uses the P1 power rule for rational powers of $x$, including roots and reciprocal powers, and their sums, differences and constant multiples. The new skill is using those rules to analyse a function: locate and classify stationary points, decide where a function is increasing or decreasing, and solve practical maximum or minimum problems.</p>
 
 <h3>Stationary Points</h3>
 <p>A <em class="def">stationary point</em> occurs where the gradient is zero, so solve $\dfrac{dy}{dx}=0$. Then find the corresponding $y$-coordinate and classify the point.</p>
@@ -1520,12 +1521,12 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 
 <div class="box connect">
 <div class="box-title">&#8612; Builds On</div>
-<p>This topic builds on <a href="pure-mathematics-1.html#integration">P1 &mdash; Integration</a>, which covers the reverse power rule for polynomials.</p>
+<p>This topic builds on <a href="pure-mathematics-1.html#integration">P1 &mdash; Integration</a>, which covers the reverse power rule, including rational powers other than $x^{-1}$.</p>
 </div>
 
-<p>P2 uses the polynomial integration rules from P1 to evaluate definite integrals and calculate areas. Integrals involving trigonometric, exponential or logarithmic functions are P3 material and are not required here.</p>
+<p>P2 applies the P1 reverse power rule to definite integrals and areas. Rewrite roots and reciprocal powers as $x^n$, with $n\ne-1$, and integrate term by term. Exact integration of trigonometric, exponential and logarithmic functions is outside P1/P2; numerical estimates using the trapezium rule are a separate method.</p>
 
-<h3>Polynomial Integration Recap</h3>
+<h3>Power-Rule Integration Recap</h3>
 <div class="box formula">
 <div class="box-title">P1 Rule Used in P2</div>
 <table style="box-shadow:none;margin:6px 0 0 0;">
@@ -1671,7 +1672,11 @@ where $F(x)$ is any antiderivative of $f(x)$.</p>
 <div class="example">
 <div class="example-header">Worked Example <span class="tag">Applying the trapezium rule</span></div>
 <div class="example-question">
-<p>Use the trapezium rule with 4 strips to estimate $\displaystyle\int_0^2 e^{x^2}\,dx$, using the table of values below.</p>
+<p>Use the trapezium rule with 4 strips to estimate $\displaystyle\int_0^2 2^{x^2}\,dx$. Use the following ordinates, rounded to 3 decimal places.</p>
+<table>
+<tr><th>$x$</th><td>0</td><td>0.5</td><td>1</td><td>1.5</td><td>2</td></tr>
+<tr><th>$y=2^{x^2}$</th><td>1.000</td><td>1.189</td><td>2.000</td><td>4.757</td><td>16.000</td></tr>
+</table>
 </div>
 <button class="solution-toggle" type="button" aria-expanded="false">
 <span class="toggle-label">Show worked solution</span>
@@ -1679,10 +1684,6 @@ where $F(x)$ is any antiderivative of $f(x)$.</p>
 </button>
 <div class="example-solution">
 <div class="example-body">
-<table>
-<tr><th>$x$</th><td>0</td><td>0.5</td><td>1</td><td>1.5</td><td>2</td></tr>
-<tr><th>$y=e^{x^2}$</th><td>1.000</td><td>1.284</td><td>2.718</td><td>9.488</td><td>54.598</td></tr>
-</table>
 <div class="step">
 <div class="step-num">1</div>
 <div class="step-content"><div class="sk">Find the strip width</div>$h=\dfrac{2-0}{4}=0.5$</div>
@@ -1690,14 +1691,14 @@ where $F(x)$ is any antiderivative of $f(x)$.</p>
 <div class="step">
 <div class="step-num">2</div>
 <div class="step-content"><div class="sk">Substitute into the formula</div>
-$\int_0^2 e^{x^2}dx \approx \dfrac{0.5}{2}\Big[(1.000+54.598)+2(1.284+2.718+9.488)\Big]$
+$\int_0^2 2^{x^2}dx \approx \dfrac{0.5}{2}\Big[(1.000+16.000)+2(1.189+2.000+4.757)\Big]$
 </div>
 </div>
 <div class="step">
 <div class="step-num">3</div>
-<div class="step-content"><div class="sk">Evaluate</div>$=0.25\big[55.598 + 2(13.490)\big]=0.25(55.598+26.980)=0.25(82.578)=20.6$</div>
+<div class="step-content"><div class="sk">Evaluate</div>$=0.25\big[17.000+2(7.946)\big]=0.25(32.892)=8.223\approx8.22$.</div>
 </div>
-<div class="example-answer">$\displaystyle\int_0^2 e^{x^2}\,dx \approx 20.6$ (3 s.f.)</div>
+<div class="example-answer">$\displaystyle\int_0^2 2^{x^2}\,dx \approx 8.22$ (3 s.f.)</div>
 </div>
 </div>
 </div>
@@ -2345,7 +2346,7 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
 
     <div class="fs-card">
       <h4>6 &middot; Differentiation</h4>
-      <div class="fline"><span class="flabel">P1 rule</span>$x^n\!\to\! nx^{n-1}$; differentiate polynomial terms separately</div>
+      <div class="fline"><span class="flabel">P1 rule</span>$x^n\!\to\! nx^{n-1}$; rational powers, including roots and reciprocal powers, term by term</div>
       <div class="fline"><span class="flabel">Stationary point</span>$\dfrac{dy}{dx}=0$</div>
       <div class="fline"><span class="flabel">Stationary points</span>$\frac{d^2y}{dx^2}>0$ min; $&lt;0$ max</div>
       <div class="fline"><span class="flabel">Intervals</span>$\dfrac{dy}{dx}>0$ increasing; $\dfrac{dy}{dx}&lt;0$ decreasing</div>

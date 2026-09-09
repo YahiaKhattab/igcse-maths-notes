@@ -59,7 +59,7 @@
       (session.value === 'all' || p.session === session.value) &&
       (variant.value === 'all' || (variant.value === 'regional' ? p.variant !== '01' : p.variant === '01')));
     const paired = selected.filter(p => p.qp && p.ms).length;
-    document.getElementById('result-count').textContent = `${selected.length} entries · ${paired} public QP/MS pairs`;
+    document.getElementById('result-count').textContent = `${selected.length} entries · ${paired} QP/MS pairs`;
     const fragment = document.createDocumentFragment();
     let activeYear;
     let section;
@@ -88,8 +88,8 @@
         actions.append(officialLink(data.catalogue, 'Check Pearson ↗', '', `${label} official catalogue`));
       }
       row.append(name, element('span', 'status', {
-        public: 'Public PDFs', specimen: 'Combined Pearson booklet',
-        assessment: '2021 assessment material', restricted: 'Centre login required',
+        public: 'PDF links', specimen: 'Combined Pearson booklet',
+        assessment: '2021 assessment material', restricted: 'Coming soon',
         cancelled: 'Exams cancelled', 'not-offered': 'Not offered',
         upcoming: 'Not yet sat', unverified: 'Public link not verified'
       }[paper.status]), actions);
@@ -107,7 +107,7 @@
     year.value = 'all'; session.value = 'all'; variant.value = 'standard'; update();
   });
   window.addEventListener('popstate', () => { readLocation(); render(); });
-  document.getElementById('checked-date').textContent = `Last checked: ${data.checkedLabel}.`;
+  // document.getElementById('checked-date').textContent = `Last checked: ${data.checkedLabel}.`;
   readLocation();
   render();
   document.getElementById('filters').hidden = false;

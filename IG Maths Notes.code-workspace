@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "IG Maths Notes",
+			"path": "."
+		},
+		{
+			"name": "scripts",
+			"path": "../notes update/scripts"
+		},
+		{
+			"name": "docs",
+			"path": "../notes update/docs"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "IG Maths Notes"
+	}
+}

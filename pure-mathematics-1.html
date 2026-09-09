@@ -646,7 +646,7 @@ footer.doc-footer{
     <div class="sidebar-header">
       <div class="kicker">Edexcel International A Level</div>
       <h1>Pure Mathematics 1</h1>
-      <div class="sub">Complete Study Notes &middot; 12 Topics</div>
+      <div class="sub">AS Revision Notes &middot; 12 Topics</div>
       <button id="toggleAllBtn" class="toggle-all-btn" type="button">Expand All Examples</button>
     </div>
 
@@ -1308,7 +1308,7 @@ footer.doc-footer{
 <h2 class="topic-title" id="sketching">8. Sketching Functions</h2>
 <div class="topic-meta">Linear, quadratic, cubic and reciprocal curves: the same four questions, answered every time.</div>
 
-<p>From any sketch, examiners expect you to read off: the intersections with each axis, and the intervals where $f(x)$ is positive or negative. The core graph shapes worth knowing cold are <strong>linear</strong>, <strong>quadratic</strong>, <strong>cubic</strong>, $\dfrac{1}{f(x)}$ and $\dfrac{1}{f(x)^2}$.</p>
+<p>From a sketch, identify the intersections with each axis and the intervals where $f(x)$ is positive or negative. The core algebraic graph shapes for P1 are linear, quadratic, simple cubic and reciprocal curves $y=\dfrac{k}{x}$ and $y=\dfrac{k}{x^2}$, with $x\ne0$. Their single transformations are covered in <a href="#transformations">Transformations of Curves</a>.</p>
 
 <h3>Polynomial Manipulation up to Degree 3</h3>
 <p>Before solving or sketching, expand brackets, collect like terms and factorise where possible. For a cubic, first take out any common factor; grouping may then reveal a common linear factor.</p>
@@ -1458,12 +1458,13 @@ footer.doc-footer{
 <p>A cubic curve can have one, two (one repeated), or three real x-intercepts.</p>
 </div>
 
-<h3>Type 4: Reciprocal &mdash; $\dfrac1{f(x)}$ and $\dfrac1{f(x)^2}$</h3>
+<h3>Type 4: Reciprocal &mdash; $y=\dfrac{k}{x}$ and $y=\dfrac{k}{x^2}$</h3>
+<p>For these reciprocal curves, take $k\ne0$ and $x\ne0$.</p>
 <ol>
-<li>x-intercept: set $y=0$ (often none / check whether the numerator can ever be zero)</li>
-<li>y-intercept: set $x=0$</li>
-<li>Find the vertical and horizontal <strong>asymptotes</strong></li>
-<li>Use the asymptotes to fix the shape, then sketch</li>
+<li>No $x$-intercept: the numerator $k$ is non-zero.</li>
+<li>No $y$-intercept: the function is undefined at $x=0$.</li>
+<li>Vertical asymptote $x=0$; horizontal asymptote $y=0$.</li>
+<li>For $k&gt;0$, $k/x$ has branches in quadrants I and III, while $k/x^2$ is positive on both sides of the $y$-axis. For $k&lt;0$, reflect the corresponding positive-$k$ graph in the $x$-axis.</li>
 </ol>
 
 <div class="diagram-row">
@@ -1474,7 +1475,7 @@ footer.doc-footer{
 <path d="M95,10 C100,45 115,60 165,63" stroke="#c9862c" stroke-width="2.2" fill="none"/>
 <path d="M85,120 C80,85 65,70 15,67" stroke="#c9862c" stroke-width="2.2" fill="none"/>
 </svg>
-<figcaption>$\frac1{f(x)}$: two branches</figcaption>
+<figcaption>$y=\frac1x$: quadrants I and III</figcaption>
 </div>
 <div class="d-item">
 <svg viewBox="0 0 180 130" width="180" height="130">
@@ -1483,13 +1484,13 @@ footer.doc-footer{
 <path d="M15,63 C45,62 70,55 82,18" stroke="#c9862c" stroke-width="2.2" fill="none"/>
 <path d="M98,18 C110,55 135,62 165,63" stroke="#c9862c" stroke-width="2.2" fill="none"/>
 </svg>
-<figcaption>$\frac{1}{f(x)^2}$: two positive branches</figcaption>
+<figcaption>$y=\frac1{x^2}$: two positive branches</figcaption>
 </div>
 </div>
 
 <div class="box note">
 <div class="box-title">Note</div>
-<p><strong>Remember:</strong> Every zero of <em>f(x)</em> becomes a vertical asymptote of $\frac{1}{f(x)}$ and $\frac{1}{f(x)^2}$.</p>
+<p><strong>Single transformation:</strong> replacing $x$ by $x-h$ shifts either graph horizontally by $h$. For $y=\dfrac{k}{x-h}$ or $y=\dfrac{k}{(x-h)^2}$, the vertical asymptote becomes $x=h$ and the horizontal asymptote remains $y=0$.</p>
 </div>
 
 
@@ -1738,7 +1739,7 @@ footer.doc-footer{
 
 <div class="box connect">
 <div class="box-title">&#8614; Continues In</div>
-<p><a href="pure-mathematics-2.html#t6">P2 &mdash; Differentiation</a> applies these polynomial differentiation rules to stationary points, increasing and decreasing intervals, and practical maximum or minimum problems. Chain, product and quotient rules, together with trigonometric, exponential and logarithmic derivatives, belong to P3.</p>
+<p><a href="pure-mathematics-2.html#t6">P2 &mdash; Differentiation</a> applies this power rule, including rational powers, to stationary points, increasing and decreasing intervals, and practical maximum or minimum problems. Chain, product and quotient rules, together with trigonometric, exponential and logarithmic derivatives, belong to P3.</p>
 </div>
 
 <p>Differentiation produces a <em class="def">gradient function</em>. If $y=f(x)$, then $f'(x)$ or $\dfrac{dy}{dx}$ gives both the gradient of the tangent and the instantaneous rate of change at a particular value of $x$.</p>
@@ -1895,7 +1896,7 @@ footer.doc-footer{
 
 <div class="box connect">
 <div class="box-title">&#8614; Continues In</div>
-<p><a href="pure-mathematics-2.html#t7">P2 &mdash; Integration</a> applies the polynomial integration rules from P1 to definite integrals and areas under or between curves. Integrals involving trigonometric, exponential and logarithmic functions belong to P3.</p>
+<p><a href="pure-mathematics-2.html#t7">P2 &mdash; Integration</a> applies the P1 reverse power rule to definite integrals and areas under or between curves. Rational powers are included, but $x^{-1}$ is excluded. Exact integration of trigonometric, exponential and logarithmic functions is outside P1/P2.</p>
 </div>
 
 <div class="diagram">
@@ -1922,7 +1923,7 @@ footer.doc-footer{
 <ol>
 <li>Add one to the power.</li>
 <li>Divide by the new power.</li>
-<li>Add the constant of integration, $c$ — unless the question gives limits (definite integral) or a boundary condition to solve for it.</li>
+<li>Add the constant of integration, $c$. If a point on the curve is given, use it to determine $c$. P2 introduces definite integrals, where constants cancel when subtracting the endpoint values.</li>
 </ol>
 
 <div class="example">
@@ -2064,7 +2065,7 @@ footer.doc-footer{
 
     <div class="fs-card">
       <h4>Integration</h4>
-      <div class="fline">$\int ax^n\,dx=\frac{ax^{n+1}}{n+1}+c$</div>
+      <div class="fline">$\int ax^n\,dx=\frac{ax^{n+1}}{n+1}+c$, $n\ne-1$</div>
       <div class="fline">use a boundary point to solve for $c$</div>
     </div>
 
