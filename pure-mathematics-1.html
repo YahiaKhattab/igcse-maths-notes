@@ -22,10 +22,10 @@
   <a href="past-papers.html?unit=P1">Past papers</a>
 </nav>
 
-<div class="topbar">
+<header class="topbar">
   <button id="menuBtn" aria-label="Open menu">&#9776;</button>
   <div class="tbtitle">Pure Mathematics 1 Notes</div>
-</div>
+</header>
 <div class="overlay" id="overlay"></div>
 
 <div class="layout">
@@ -917,7 +917,7 @@
 
 <p>Given any two points, you can always compute the gradient, the distance between them, and their midpoint.</p>
 
-<div class="grid-cells">
+<div class="grid-cells grid-cells--wide">
 <div class="gcell"><div class="glabel">Gradient</div><div class="gval">$$m=\dfrac{y_2-y_1}{x_2-x_1}$$</div></div>
 <div class="gcell"><div class="glabel">Distance</div><div class="gval">$$d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$$</div></div>
 <div class="gcell"><div class="glabel">Midpoint</div><div class="gval">$$\left(\dfrac{x_1+x_2}{2},\dfrac{y_1+y_2}{2}\right)$$</div></div>
@@ -1037,7 +1037,7 @@
 </div>
 
 <h3>Non-Right-Angle Triangles</h3>
-<div class="grid-cells">
+<div class="grid-cells grid-cells--wide">
 <div class="gcell"><div class="glabel">Sine rule</div><div class="gval">$$\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}$$side: need 2 angles + 1 side &middot; angle: need 2 sides + 1 angle</div></div>
 <div class="gcell"><div class="glabel">Cosine rule &mdash; side</div><div class="gval">$$b^2=a^2+c^2-2ac\cos B$$needs 2 sides + the included angle</div></div>
 <div class="gcell"><div class="glabel">Cosine rule &mdash; angle</div><div class="gval">$$A=\cos^{-1}\!\left(\dfrac{b^2+c^2-a^2}{2bc}\right)$$needs all 3 sides</div></div>
@@ -1408,45 +1408,45 @@
   <div class="fs-grid">
 
     <div class="fs-card">
-      <h4>Surds</h4>
+      <h3 class="fs-title">Surds</h3>
       <div class="fline">$\sqrt a\sqrt b=\sqrt{ab}$</div>
       <div class="fline">$\frac{1}{\sqrt a\pm\sqrt b}$: multiply by the conjugate $\sqrt a\mp\sqrt b$</div>
     </div>
 
     <div class="fs-card">
-      <h4>Quadratics</h4>
+      <h3 class="fs-title">Quadratics</h3>
       <div class="fline">$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$</div>
       <div class="fline">$a\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a}+c$</div>
     </div>
 
     <div class="fs-card">
-      <h4>Inequalities</h4>
+      <h3 class="fs-title">Inequalities</h3>
       <div class="fline">quadratic: find roots, then use a sketch or sign test</div>
       <div class="fline">$\lt,\gt$: dotted boundary &middot; $\leq,\geq$: solid boundary</div>
       <div class="fline">curve vs line: solve intersections, then compare which graph is above</div>
     </div>
 
     <div class="fs-card">
-      <h4>Discriminant</h4>
+      <h3 class="fs-title">Discriminant</h3>
       <div class="fline">$D=b^2-4ac$</div>
       <div class="fline">$D=0$ tangent &middot; $D>0$ two meets &middot; $D<0$ no meet</div>
     </div>
 
     <div class="fs-card">
-      <h4>Indices</h4>
+      <h3 class="fs-title">Indices</h3>
       <div class="fline">$a^m a^n=a^{m+n}$, &nbsp;$a^m\div a^n=a^{m-n}$</div>
       <div class="fline">$a^{-m}=\frac1{a^m}$, &nbsp;$a^{\frac mn}=\sqrt[n]{a^m}$</div>
     </div>
 
     <div class="fs-card">
-      <h4>Transformations</h4>
+      <h3 class="fs-title">Transformations</h3>
       <div class="fline">$f(x+a)$: left $a$ &nbsp;&middot;&nbsp; $f(x)+a$: up $a$</div>
       <div class="fline">$f(-x)$: reflect in y &nbsp;&middot;&nbsp; $-f(x)$: reflect in x</div>
       <div class="fline">$f(ax)$: horizontal scale factor $1/a$ &nbsp;&middot;&nbsp; $a f(x)$: vertical scale factor $a$</div>
     </div>
 
     <div class="fs-card">
-      <h4>Lines</h4>
+      <h3 class="fs-title">Lines</h3>
       <div class="fline">$m=\frac{y_2-y_1}{x_2-x_1}$</div>
       <div class="fline">$d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$</div>
       <div class="fline">midpoint $=\left(\frac{x_1+x_2}2,\frac{y_1+y_2}2\right)$</div>
@@ -1455,26 +1455,26 @@
     </div>
 
     <div class="fs-card">
-      <h4>Right-Angle Trig</h4>
+      <h3 class="fs-title">Right-Angle Trig</h3>
       <div class="fline">$c^2=a^2+b^2$</div>
       <div class="fline">$\sin=\frac{opp}{hyp}$, $\cos=\frac{adj}{hyp}$, $\tan=\frac{opp}{adj}$</div>
     </div>
 
     <div class="fs-card">
-      <h4>Non-Right-Angle Trig</h4>
+      <h3 class="fs-title">Non-Right-Angle Trig</h3>
       <div class="fline">$\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}$</div>
       <div class="fline">$a^2=b^2+c^2-2bc\cos A$</div>
       <div class="fline">Area $=\frac12 ab\sin C$</div>
     </div>
 
     <div class="fs-card">
-      <h4>Radians</h4>
+      <h3 class="fs-title">Radians</h3>
       <div class="fline">$\pi$ rad $=180°$</div>
       <div class="fline">sector area $=\frac12\theta r^2$, arc $=\theta r$</div>
     </div>
 
     <div class="fs-card">
-      <h4>Differentiation</h4>
+      <h3 class="fs-title">Differentiation</h3>
       <div class="fline">$y=ax^n \Rightarrow \frac{dy}{dx}=anx^{n-1}$</div>
       <div class="fline">second derivative: differentiate $\frac{dy}{dx}$ again</div>
       <div class="fline">tangent gradient $=f'(x_1)$; normal gradient $=-1/f'(x_1)$ when $f'(x_1)\ne0$</div>
@@ -1482,7 +1482,7 @@
     </div>
 
     <div class="fs-card">
-      <h4>Integration</h4>
+      <h3 class="fs-title">Integration</h3>
       <div class="fline">$\int ax^n\,dx=\frac{ax^{n+1}}{n+1}+c$, $n\ne-1$</div>
       <div class="fline">use a boundary point to solve for $c$</div>
     </div>

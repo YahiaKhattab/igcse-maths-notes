@@ -22,10 +22,10 @@
   <a href="past-papers.html?unit=P2">Past papers</a>
 </nav>
 
-<div class="topbar">
+<header class="topbar">
   <button id="menuBtn" aria-label="Open menu">&#9776;</button>
   <div class="tbtitle">Pure Mathematics 2 Notes</div>
-</div>
+</header>
 <div class="overlay" id="overlay"></div>
 
 <div class="layout">
@@ -858,6 +858,135 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 </div>
 </div>
 
+<div class="box tip">
+<div class="box-title">Tip &mdash; Change the Interval First</div>
+<p>For an equation in $\sin(ax+b)$, $\cos(ax+b)$ or $\tan(ax+b)$, let $u=ax+b$ and transform the interval for $x$ into an interval for $u$ <strong>before</strong> solving. Find every value of $u$ in the new interval, then convert back to $x$.</p>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Transformed argument</span></div>
+<div class="example-question">
+<p>Solve $\sin(x-20°)=0.6$ for $0°\le x&lt;360°$, giving your answers to 1 decimal place.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Change the interval</div>Let $u=x-20°$. Since $0°\le x&lt;360°$, we have $-20°\le u&lt;340°$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Principal value</div>$u=\sin^{-1}(0.6)=36.869\ldots°$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Second solution</div>$\sin$ is positive in the first and second quadrants, so $u=180°-36.869\ldots°=143.130\ldots°$. No other values of $u$ in $-20°\le u&lt;340°$ satisfy the equation.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Convert back</div>$x=u+20°$, giving $x=56.869\ldots°$ or $x=163.130\ldots°$.</div>
+</div>
+<div class="example-answer">$x=56.9°$ or $x=163.1°$ (1 d.p.)</div>
+</div>
+</div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Multiple angle</span></div>
+<div class="example-question">
+<p>Solve $\tan 2x=\sqrt3$ for $0°\le x&lt;360°$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Change the interval</div>Let $u=2x$. Since $0°\le x&lt;360°$, we have $0°\le u&lt;720°$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Principal value</div>$u=\tan^{-1}(\sqrt3)=60°$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">All solutions for u</div>$\tan$ has period $180°$, so $u=60°,\ 240°,\ 420°,\ 600°$ in $0°\le u&lt;720°$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Convert back</div>$x=\tfrac{u}{2}$</div>
+</div>
+<div class="example-answer">$x=30°,\ 120°,\ 210°,\ 300°$</div>
+</div>
+</div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Using the tan identity</span></div>
+<div class="example-question">
+<p>Solve $3\sin x=2\cos x$ for $0°\le x&lt;360°$, giving your answers to 1 decimal place.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Check before dividing</div>If $\cos x=0$, then $\sin x=\pm1$ and the equation would read $\pm3=0$, which is impossible. So $\cos x\ne0$ and we may divide by $\cos x$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Form tan</div>$\dfrac{\sin x}{\cos x}=\dfrac23$, so $\tan x=\dfrac23$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Solve</div>$x=\tan^{-1}\!\left(\dfrac23\right)=33.690\ldots°$, and adding the period, $x=33.690\ldots°+180°=213.690\ldots°$.</div>
+</div>
+<div class="example-answer">$x=33.7°$ or $x=213.7°$ (1 d.p.)</div>
+</div>
+</div>
+</div>
+
+<div class="example">
+<div class="example-header">Worked Example <span class="tag">Quadratic using sin² + cos² = 1</span></div>
+<div class="example-question">
+<p>Solve $2\cos^2x+3\sin x=3$ for $0°\le x&lt;360°$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Use the identity</div>$\cos^2x=1-\sin^2x$, so $2(1-\sin^2x)+3\sin x=3$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Rearrange</div>$2\sin^2x-3\sin x+1=0$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Factorise</div>$(2\sin x-1)(\sin x-1)=0$, so $\sin x=\tfrac12$ or $\sin x=1$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Solve each</div>$\sin x=\tfrac12 \Rightarrow x=30°,\ 150°$. $\sin x=1 \Rightarrow x=90°$.</div>
+</div>
+<div class="example-answer">$x=30°,\ 90°,\ 150°$</div>
+</div>
+</div>
+</div>
+
 <div class="box warning">
 <div class="box-title">Common Mistake</div>
 <p>Make sure your calculator is in the correct mode (radians vs. degrees) to match the question, and always check whether all found solutions actually lie within the given interval before writing your final answer.</p>
@@ -975,7 +1104,7 @@ Use this to evaluate logs on a calculator in a base it doesn't directly support,
 <div class="box formula">
 <div class="box-title">P1 Rule Used in P2</div>
 <table style="box-shadow:none;margin:6px 0 0 0;">
-<tr><th>$f(x)$</th><th>$\int f(x)\,dx$</th></tr>
+<tr><th>$f(x)$<span class="sr-only">f(x)</span></th><th>$\int f(x)\,dx$<span class="sr-only">integral of f(x) dx</span></th></tr>
 <tr><td>$x^n\ (n\ne-1)$</td><td>$\dfrac{x^{n+1}}{n+1}+c$</td></tr>
 </table>
 <p>Apply the rule term by term after expanding brackets or simplifying the expression where necessary.</p>
@@ -1119,8 +1248,8 @@ where $F(x)$ is any antiderivative of $f(x)$.</p>
 <div class="example-question">
 <p>Use the trapezium rule with 4 strips to estimate $\displaystyle\int_0^2 2^{x^2}\,dx$. Use the following ordinates, rounded to 3 decimal places.</p>
 <table>
-<tr><th>$x$</th><td>0</td><td>0.5</td><td>1</td><td>1.5</td><td>2</td></tr>
-<tr><th>$y=2^{x^2}$</th><td>1.000</td><td>1.189</td><td>2.000</td><td>4.757</td><td>16.000</td></tr>
+<tr><th>$x$<span class="sr-only">x</span></th><td>0</td><td>0.5</td><td>1</td><td>1.5</td><td>2</td></tr>
+<tr><th>$y=2^{x^2}$<span class="sr-only">y = 2 to the power x squared</span></th><td>1.000</td><td>1.189</td><td>2.000</td><td>4.757</td><td>16.000</td></tr>
 </table>
 </div>
 <button class="solution-toggle" type="button" aria-expanded="false">
@@ -1751,27 +1880,27 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
   <div class="fs-grid">
 
     <div class="fs-card">
-      <h4>1 &middot; Factor / Remainder Theorem</h4>
+      <h3 class="fs-title">1 &middot; Factor / Remainder Theorem</h3>
       <div class="fline"><span class="flabel">Factor theorem</span>$f(a)=0 \Leftrightarrow (x-a)$ is a factor</div>
       <div class="fline"><span class="flabel">General factor</span>$f\left(\frac{a}{b}\right)=0 \Leftrightarrow (bx-a)$ is a factor</div>
       <div class="fline"><span class="flabel">Remainder theorem</span>remainder on dividing by $(x-a)$ is $f(a)$</div>
     </div>
 
     <div class="fs-card">
-      <h4>2 &middot; Binomial Expansion</h4>
+      <h3 class="fs-title">2 &middot; Binomial Expansion</h3>
       <div class="fline"><span class="flabel">Coefficient</span>$\binom{n}{r}=\dfrac{n!}{r!(n-r)!}$</div>
       <div class="fline"><span class="flabel">Expansion</span>$(a+b)^n=\sum\limits_{r=0}^{n}\binom{n}{r}a^{n-r}b^r$</div>
     </div>
 
     <div class="fs-card">
-      <h4>3 &middot; Circles</h4>
+      <h3 class="fs-title">3 &middot; Circles</h3>
       <div class="fline"><span class="flabel">Centre-radius form</span>$(x-a)^2+(y-b)^2=r^2$</div>
       <div class="fline"><span class="flabel">General form</span>$x^2+y^2+2gx+2fy+c=0$, centre $(-g,-f)$, $r=\sqrt{g^2+f^2-c}$</div>
       <div class="fline"><span class="flabel">Key facts</span>angle in semicircle $=90°$; tangent $\perp$ radius; $\perp$ bisector of chord passes through centre</div>
     </div>
 
     <div class="fs-card">
-      <h4>4 &middot; Exponentials &amp; Logs</h4>
+      <h3 class="fs-title">4 &middot; Exponentials &amp; Logs</h3>
       <div class="fline"><span class="flabel">General graph</span>$y=a^x$, $a\gt0$, $a\ne1$; passes through $(0,1)$; asymptote $y=0$</div>
       <div class="fline"><span class="flabel">Behaviour</span>$a\gt1$ growth; $0\lt a\lt1$ decay; range $y\gt0$</div>
       <div class="fline"><span class="flabel">Log laws</span>$\log x+\log y=\log(xy)$; $\log x-\log y=\log\frac{x}{y}$; $\log(x^n)=n\log x$</div>
@@ -1780,17 +1909,18 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
     </div>
 
     <div class="fs-card">
-      <h4>5 &middot; Trigonometry</h4>
+      <h3 class="fs-title">5 &middot; Trigonometry</h3>
       <div class="fline"><span class="flabel">Radians</span>$\pi$ rad $=180°$</div>
       <div class="fline"><span class="flabel">Sector</span>$s=r\theta$; $A=\frac12 r^2\theta$; segment $=\frac12r^2(\theta-\sin\theta)$</div>
       <div class="fline"><span class="flabel">Sine rule</span>$\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}$</div>
       <div class="fline"><span class="flabel">Cosine rule</span>$a^2=b^2+c^2-2bc\cos A$</div>
       <div class="fline"><span class="flabel">Area</span>$A=\frac12ab\sin C$</div>
       <div class="fline"><span class="flabel">Identities</span>$\tan\theta=\dfrac{\sin\theta}{\cos\theta}$; $\sin^2\theta+\cos^2\theta=1$</div>
+      <div class="fline"><span class="flabel">Equations</span>for $\sin(ax+b)=k$, transform the interval first; use $\sin^2\theta+\cos^2\theta=1$ for quadratics</div>
     </div>
 
     <div class="fs-card">
-      <h4>6 &middot; Differentiation</h4>
+      <h3 class="fs-title">6 &middot; Differentiation</h3>
       <div class="fline"><span class="flabel">P1 rule</span>$x^n\!\to\! nx^{n-1}$; rational powers, including roots and reciprocal powers, term by term</div>
       <div class="fline"><span class="flabel">Stationary point</span>$\dfrac{dy}{dx}=0$</div>
       <div class="fline"><span class="flabel">Stationary points</span>$\frac{d^2y}{dx^2}>0$ min; $&lt;0$ max</div>
@@ -1798,14 +1928,14 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
     </div>
 
     <div class="fs-card">
-      <h4>7 &middot; Integration</h4>
+      <h3 class="fs-title">7 &middot; Integration</h3>
       <div class="fline"><span class="flabel">P1 rule</span>$\int x^n dx=\dfrac{x^{n+1}}{n+1}+c$, $n\ne-1$</div>
       <div class="fline"><span class="flabel">Definite integral</span>$\int_a^b f(x)dx=F(b)-F(a)$</div>
       <div class="fline"><span class="flabel">Between curves</span>$A=\int_a^b(\text{upper}-\text{lower})\,dx$</div>
     </div>
 
     <div class="fs-card">
-      <h4>8 &middot; Trapezium Rule</h4>
+      <h3 class="fs-title">8 &middot; Trapezium Rule</h3>
       <div class="fline"><span class="flabel">Formula</span>$\int_a^b y\,dx\approx\frac{h}{2}\big[(y_0+y_n)+2(y_1+\dots+y_{n-1})\big]$</div>
       <div class="fline"><span class="flabel">Strip width</span>$h=\dfrac{b-a}{n}$</div>
       <div class="fline"><span class="flabel">Bias</span>convex $\to$ over-estimate; concave $\to$ under-estimate</div>
@@ -1813,7 +1943,7 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
     </div>
 
     <div class="fs-card">
-      <h4>9 &middot; Sequences / Arithmetic</h4>
+      <h3 class="fs-title">9 &middot; Sequences / Arithmetic</h3>
       <div class="fline"><span class="flabel">Recurrence</span>give an initial term and a rule such as $u_{n+1}=f(u_n)$</div>
       <div class="fline"><span class="flabel">Behaviour</span>$u_{n+1}\gt u_n$ increasing; $u_{n+1}\lt u_n$ decreasing; $u_{n+k}=u_n$ periodic</div>
       <div class="fline"><span class="flabel">nth term</span>$u_n=a+(n-1)d$</div>
@@ -1822,20 +1952,20 @@ This lets you break a complicated sum into simpler arithmetic/geometric pieces.<
     </div>
 
     <div class="fs-card">
-      <h4>10 &middot; Geometric Sequences</h4>
+      <h3 class="fs-title">10 &middot; Geometric Sequences</h3>
       <div class="fline"><span class="flabel">nth term</span>$u_n=ar^{n-1}$</div>
       <div class="fline"><span class="flabel">Sum</span>$S_n=\dfrac{a(1-r^n)}{1-r}=\dfrac{a(r^n-1)}{r-1}$</div>
       <div class="fline"><span class="flabel">Sum to infinity</span>$S_\infty=\dfrac{a}{1-r}$, valid for $|r|<1$</div>
     </div>
 
     <div class="fs-card">
-      <h4>11 &middot; Sigma Notation</h4>
+      <h3 class="fs-title">11 &middot; Sigma Notation</h3>
       <div class="fline"><span class="flabel">Definition</span>$\sum\limits_{r=1}^n u_r=u_1+u_2+\dots+u_n$</div>
       <div class="fline"><span class="flabel">Linearity</span>$\sum(au_r+bv_r)=a\sum u_r+b\sum v_r$</div>
     </div>
 
     <div class="fs-card">
-      <h4>12 &middot; Proof</h4>
+      <h3 class="fs-title">12 &middot; Proof</h3>
       <div class="fline"><span class="flabel">Deduction</span>general algebra $\to$ conclusion</div>
       <div class="fline"><span class="flabel">Exhaustion</span>prove each of a finite set of cases that cover every possibility</div>
       <div class="fline"><span class="flabel">Counter-example</span>one failing case disproves a general claim</div>
