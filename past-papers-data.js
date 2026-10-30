@@ -1,8 +1,12 @@
 /* Reviewed official Pearson links. See docs/past-paper-link-audit.md before updating. */
 window.PAST_PAPERS = {
-  "checked": "2026-09-07",
-  "checkedLabel": "7 September 2026",
+  "checked": "2026-10-26",
+  "checkedLabel": "26 October 2026",
   "catalogue": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.coursematerials.html#filterQuery=category:Pearson-UK:Category%2FExam-materials",
+  "units": [
+    { "id": "P1", "code": "WMA11", "name": "Pure Mathematics 1", "notes": "pure-mathematics-1.html" },
+    { "id": "P2", "code": "WMA12", "name": "Pure Mathematics 2", "notes": "pure-mathematics-2.html" }
+  ],
   "papers": [
     {
       "unit": "P1",
@@ -555,13 +559,14 @@ window.PAST_PAPERS = {
       "year": 2021,
       "session": "January",
       "variant": "01",
-      "status": "public",
+      "status": "ms-unavailable",
       "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WMA12_01_que_20210304.pdf",
-      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WMA12_01_msc_20210304.pdf",
+      "msBroken": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WMA12_01_msc_20210304.pdf",
       "evidence": {
         "qp": "WMA12/01; question paper P66388A",
         "ms": "WMA12; January 2021; cover and first-question content checked"
-      }
+      },
+      "note": "Pearson's mark-scheme link for this paper currently opens a \"Page not found\" page (checked 26 October 2026). The question paper works; use Check Pearson to see whether the mark scheme has been restored."
     },
     {
       "unit": "P1",
@@ -584,14 +589,14 @@ window.PAST_PAPERS = {
       "year": 2020,
       "session": "October",
       "variant": "01",
-      "status": "public",
+      "status": "ms-unavailable",
       "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WMA12_01_que_20201022.pdf",
-      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WMA12_01_msc_20210113.pdf",
+      "msBroken": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WMA12_01_msc_20210113.pdf",
       "evidence": {
         "qp": "WMA12/01; question paper P62722A",
         "ms": "WMA12; October 2020; cover and first-question content checked"
       },
-      "note": "Pearson reused the cancelled summer paper for this sitting; the question paper carries a summer date."
+      "note": "Pearson reused the cancelled summer paper for this sitting; the question paper carries a summer date. Pearson's mark-scheme link for this paper currently opens a \"Page not found\" page (checked 26 October 2026). The question paper works; use Check Pearson to see whether the mark scheme has been restored."
     },
     {
       "unit": "P1",
