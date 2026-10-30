@@ -67,7 +67,7 @@ body{
   font-weight:700;
   margin-bottom:6px;
 }
-.sidebar-header h1{
+.sidebar-header .sidebar-title{
   font-size:21px;
   margin:0 0 4px 0;
   font-weight:700;
@@ -176,7 +176,7 @@ body{
   font-size:10.5px;
   letter-spacing:1.5px;
   text-transform:uppercase;
-  color:var(--accent);
+  color:var(--accent-2);
   font-weight:700;
   margin-bottom:6px;
 }
@@ -611,4 +611,44 @@ footer.doc-footer{
   border-top:1px solid var(--line);
   max-width:840px;
   margin:0 auto;
+}
+
+/* ---------- Additions: engineering pass 1 ---------- */
+/* Long display formulas and wide tables scroll inside their own box on small screens. */
+.katex-display{overflow-x:auto;overflow-y:hidden;max-width:100%;}
+@media (max-width:700px){
+  /* position:relative keeps KaTeX's hidden MathML inside the scroll box */
+  .main table{display:block;overflow-x:auto;max-width:100%;position:relative;}
+  /* the rows still fill the full width when they fit (all notes tables have a single implicit tbody) */
+  .main table > tbody{display:table;width:100%;}
+}
+@media (max-width:360px){
+  .doc-switcher a{padding:7px 10px;}
+}
+
+/* Keyboard focus: blue on light surfaces, amber on the navy sidebar, top bar and switcher. */
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}
+.sidebar a:focus-visible,.sidebar button:focus-visible,
+.topbar button:focus-visible,.doc-switcher a:focus-visible{outline-color:var(--accent);}
+.doc-switcher a:focus-visible{outline-offset:1px;}
+/* the example card clips overflow, so draw these rings inside the element */
+.solution-toggle:focus-visible{outline-offset:-3px;}
+.katex-display[tabindex]:focus-visible,.main table[tabindex]:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;}
+
+/* Shown by assets/notes.js when KaTeX fails to load. */
+.math-notice{
+  max-width:744px;
+  margin:76px auto 0 auto; /* clears the fixed .doc-switcher pill */
+  padding:12px 16px;
+  background:var(--red-light);
+  border:1px solid #efc9c3;
+  border-left:4px solid var(--red);
+  border-radius:var(--radius);
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  font-size:14.5px;
+  line-height:1.5;
+  color:var(--ink);
+}
+@media (max-width:900px){
+  .math-notice{margin:16px 20px 0 20px;}
 }
