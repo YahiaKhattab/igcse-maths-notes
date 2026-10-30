@@ -1,8 +1,12 @@
 /* Reviewed official Pearson links. See docs/past-paper-link-audit.md before updating. */
 window.PAST_PAPERS = {
-  "checked": "2026-09-07",
-  "checkedLabel": "7 September 2026",
+  "checked": "2026-10-26",
+  "checkedLabel": "26 October 2026",
   "catalogue": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.coursematerials.html#filterQuery=category:Pearson-UK:Category%2FExam-materials",
+  "units": [
+    { "id": "P1", "code": "WMA11", "name": "Pure Mathematics 1", "notes": "pure-mathematics-1.html" },
+    { "id": "P2", "code": "WMA12", "name": "Pure Mathematics 2", "notes": "pure-mathematics-2.html" }
+  ],
   "papers": [
     {
       "unit": "P1",
