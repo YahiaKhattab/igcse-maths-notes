@@ -1,0 +1,6 @@
+# Maintenance files: kept in the repository, not served by the site.
+scripts/
+docs/
+CLAUDE.md
+README.md
+*.code-workspace

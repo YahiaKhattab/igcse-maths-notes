@@ -19,9 +19,18 @@ Foundation papers are **not currently offered**. Their portal placeholders are i
 
 Open `past-papers.html` from the portal or the P1/P2 notes. The archive groups question papers and matching mark schemes by unit, year and session, starting with the sample assessment materials for the 2018 specification.
 
-Links point to Pearson's official website; the repository does not host copies of exam papers. Recent or otherwise unavailable materials are labelled separately from verified public PDF links. Always check the paper code and variant against your centre's entry information.
+Links point to Pearson's official website; the repository does not host copies of exam papers. Recent or otherwise unavailable materials are labelled separately from verified public PDF links: sessions Pearson restricts to registered centres are marked **Centres only**, and papers whose official mark-scheme link is broken are marked **Mark scheme offline at Pearson** (the question paper is still linked). Always check the paper code and variant against your centre's entry information.
 
-The reviewed links are stored in `past-papers-data.js`, with filtering in `past-papers.js`. See [the link audit](docs/past-paper-link-audit.md) for coverage, source checks, known PDF identifier inconsistencies and maintenance instructions. With Node.js installed, run `node scripts/test-past-papers.cjs` for the archive's functional checks; Node is not needed to serve the site.
+The reviewed links and the list of units are stored in `past-papers-data.js`, with filtering in `past-papers.js`. See [the link audit](docs/past-paper-link-audit.md) for coverage, source checks, known PDF identifier inconsistencies and maintenance instructions.
+
+With Node.js 18 or later installed, check the archive data before publishing:
+
+```bash
+node scripts/test-past-papers.cjs          # offline checks: schema, statuses, duplicates, filenames, dates
+node scripts/test-past-papers.cjs --live   # also asks Pearson whether every link still works
+```
+
+The script has no dependencies, and Node is not needed to serve the site.
 
 ## Run locally
 
@@ -35,16 +44,21 @@ Then visit [localhost:8000](http://localhost:8000). An internet connection is ne
 
 ## Deployment
 
-The site is hosted on **Vercel**, not Netlify. Keep the HTML pages and their supporting files together at the site root. Use the existing Vercel project's Git integration and deployment settings; check its dashboard after publishing changes.
+The site is hosted on **Vercel**, deployed by the project's Git integration from the repository root with no build step. Keep the HTML pages and their supporting files (including `assets/`) together at the site root, and check the Vercel dashboard after publishing changes.
 
-The existing `netlify.toml` is a legacy file, not the active deployment configuration.
+- `vercel.json` sets the security headers (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`).
+- `.vercelignore` keeps maintenance files (`scripts/`, `docs/`, `README.md`, `CLAUDE.md`, the workspace file) out of the deployed site.
+
+The old Netlify configuration has been removed.
 
 ## Maintaining the portal
 
 - Keep IGCSE papers and IAL units in their separate tracks, with the correct qualification and paper codes.
 - Add a new notes file only when it is ready, then link it from `index.html` and update the visible availability count.
+- The IAL notes pages share their styles and behaviour: `assets/notes.css` and `assets/notes.js`. Change those files rather than adding inline styles or scripts to a single page.
+- Archive units come from the `units` list in `past-papers-data.js`. Adding a unit there (with its entries) adds its button and filters; no change to `past-papers.js` is needed.
 - Keep unfinished cards non-clickable. Do not enable Foundation placeholders unless that scope is deliberately added.
-- For archive updates, verify both PDF covers: unit, session, year and variant must match. Do not infer a working link from a filename pattern or bypass Pearson's access restrictions.
+- For archive updates, verify both PDF covers: unit, session, year and variant must match. Do not infer a working link from a filename pattern or bypass Pearson's access restrictions. Run the archive checks and update the checked date.
 - Check navigation and mobile layout before publishing. Stage only files intended for the update.
 
 ## Credits and corrections
