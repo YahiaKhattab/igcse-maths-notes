@@ -46,7 +46,50 @@ This records how the links in `past-papers-data.js` were checked, what was found
 - **P1 October 2021 mark scheme** (`WMA11_01_rms_20220113.pdf`) now answers 302 to `https://qualifications.pearson.com/en/campaigns/404.html`. It worked on 26 October.
 - Both `msBroken` URLs above now answer 200 with `Content-Type: application/pdf` and a `Last-Modified` date of 29 October 2026, so Pearson appears to have restored them.
 
-The data has not been changed for either finding. Before restoring the two P2 mark schemes, open their covers and re-confirm the pairing, because the files were replaced. Then move `msBroken` back to `ms`, set the status to `public` and remove the "Page not found" sentence from `note`. If the P1 October 2021 link stays broken, handle it the same way as the P2 entries were handled (`ms-unavailable` and `msBroken`).
+Both findings were followed up the same day; see the re-check below.
+
+## Re-check of 30 October 2026
+
+### What changed since 26 October
+
+| Entry | 26 October | 30 October | Archive now |
+| --- | --- | --- | --- |
+| P2 January 2021 mark scheme (`WMA12_01_msc_20210304.pdf`) | Redirected to "Page not found" | 200, `application/pdf`, 558,246 bytes, `Last-Modified` 29 Oct 2026 | Restored: `public`, URL back in `ms` |
+| P2 October 2020 mark scheme (`WMA12_01_msc_20210113.pdf`) | Redirected to "Page not found" | 200, `application/pdf`, 560,034 bytes, `Last-Modified` 29 Oct 2026 | Restored: `public`, URL back in `ms` |
+| P1 October 2021 mark scheme (`WMA11_01_rms_20220113.pdf`) | Worked | Depends on the client (see below) | Unchanged: `public` |
+
+### Cover evidence
+
+Each PDF was downloaded to a temporary folder outside the repository and its text extracted. Nothing was committed.
+
+- **P2 January 2021 mark scheme:** "Mark Scheme (Results) January 2021, Pearson Edexcel International Advanced Level in Pure Mathematics P2, Paper WMA12/01", Publications Code **WMA12_01_2101_MS**. Its Q1 is f(x) = x⁴ + ax³ − 3x² + bx + 5: (a) f(−1) = 4 gives a + b = −1 (2 marks); (b) f(2) = −23 gives a = −5, b = 4 (4 marks). This is the same as Q1 of the question paper `WMA12_01_que_20210304.pdf`: (a) (2), (b) (4).
+- **P2 October 2020 mark scheme:** "Mark Scheme (Results) October 2020, Pearson Edexcel IAL Mathematics (WMA12), Pure Mathematics P2", Publications Code **WMA12_01_2010_MS**. Its Q1 is (a) the first four terms of (2 − x/4)¹⁰, 1024 − 1280x + 720x² − 240x³ (4 marks), and (b) the constant term of (3 − 1/x)²(2 − x/4)¹⁰ (3 marks). This is the same as Q1 of the question paper `WMA12_01_que_20201022.pdf`: (a) (4), (b) (3).
+- **P1 October 2021 mark scheme:** "Mark Scheme (Results) October 2021, Pearson Edexcel International A Level in Pure Mathematics P1 (WMA11) Paper 01", Question Paper Log Number **P66645A**, Publications Code **WMA11_01_2110_MS**. Its Q1 is ∫(12x³ + 1/(6√x) − 3/(2x⁴)) dx = 3x⁴ + ⅓x^½ + ½x⁻³ + c (5 marks). This is the same as Q1 of the question paper `WMA11_01_que_20211008.pdf` (P66645A, 5 marks).
+
+### P1 October 2021 mark scheme
+
+Pearson's course-materials catalogue (Exam materials → October 2021) lists exactly one "Mark scheme - Unit 1 (WMA11) - October 2021", at the same URL the archive uses (682.7 KB). The catalogue offers no alternative URL.
+
+Requests to that URL, made with each tool's default request headers:
+
+| Time (UTC) | Client | Result |
+| --- | --- | --- |
+| 30 Oct, first `--live` run | Node `fetch`, HEAD | 302 → `/en/campaigns/404.html` |
+| 19:49 | curl, HEAD | 200, `application/pdf` |
+| 19:53 | curl, HEAD | 200, `application/pdf` |
+| 19:53 | Node `fetch`, HEAD | 302 → `/en/campaigns/404.html` |
+| 19:55 | Node `fetch`, HEAD (`--live`) | 302 → `/en/campaigns/404.html` |
+| 19:56 | curl, HEAD | 200, `application/pdf` |
+| 19:56 | Node `fetch`, HEAD | 302 → `/en/campaigns/404.html` |
+| 19:57 | curl, GET | 200, `application/pdf`, 699,121 bytes (682.7 KB, matching the catalogue) |
+
+The file is not missing: a plain GET returns the correct PDF (699,121 bytes, the cover above). Pearson's site answers differently depending on the client, which is most likely a stale cached redirect. The entry therefore stays `public`. Requests were not altered to probe this further.
+
+### Final link count
+
+- 83 unique PDF URLs (`qp` and `ms`; the four specimen links share one booklet). There are no `msBroken` URLs left.
+- 82 answer 200 to `--live`. The P1 October 2021 mark scheme answers 302 to Node's `fetch` only, as described above.
+- Because `--live` does not pass cleanly, `checked` stays at 26 October 2026. Update it once `--live` reports every link as OK.
 
 ## Maintaining the archive
 

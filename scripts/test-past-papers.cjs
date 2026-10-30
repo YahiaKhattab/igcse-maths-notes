@@ -168,6 +168,7 @@ if (!live) process.exit(0);
 
   const problems = [];
   const known = [];
+  const candidates = [];
   let ok = 0;
   for (const [url, info] of targets) {
     let res;
@@ -187,7 +188,8 @@ if (!live) process.exit(0);
     const result = `${res.status}${location ? ` → ${location}` : ''}`;
     const file = url.split('/').pop();
     if (info.field === 'msBroken') {
-      known.push(`${file}: ${result}${res.status === 200 ? '  (now answers 200: check whether Pearson has restored it)' : ''}`);
+      if (res.status === 200) candidates.push(`${file}: ${result}  [${info.entries.join('; ')}]`);
+      else known.push(`${file}: ${result}`);
     } else if (res.status === 200) {
       ok++;
     } else {
@@ -200,6 +202,10 @@ if (!live) process.exit(0);
   if (known.length) {
     console.log(`Known broken (msBroken, reported only):`);
     known.forEach(k => console.log(`  - ${k}`));
+  }
+  if (candidates.length) {
+    console.log(`Candidate for restore — verify covers (msBroken now resolves; information only):`);
+    candidates.forEach(c => console.log(`  - ${c}`));
   }
   if (problems.length) {
     console.log(`FAIL: ${problems.length} link${problems.length === 1 ? '' : 's'} did not answer 200`);
