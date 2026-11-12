@@ -1,6 +1,6 @@
 # Past-paper link audit
 
-This records how the links in `past-papers-data.js` were checked, what was found, and how to keep the archive accurate. The archive covers Pearson Edexcel International A Level Mathematics (2018 specification), units P1 (WMA11) and P2 (WMA12).
+This records how the links in `past-papers-data.js` were checked, what was found, and how to keep the archive accurate. The archive covers Pearson Edexcel International A Level Mathematics (2018 specification), units P1 (WMA11), P2 (WMA12) and S1 (WST01).
 
 ## Check of 26 October 2026
 
@@ -90,6 +90,76 @@ The file is not missing: a plain GET returns the correct PDF (699,121 bytes, the
 - 83 unique PDF URLs (`qp` and `ms`; the four specimen links share one booklet). There are no `msBroken` URLs left.
 - 82 answer 200 to `--live`. The P1 October 2021 mark scheme answers 302 to Node's `fetch` only, as described above.
 - Because `--live` does not pass cleanly, `checked` stays at 26 October 2026. Update it once `--live` reports every link as OK.
+
+## WST01 (S1) audit of 13 November 2026
+
+### Method
+
+- **Catalogue:** Pearson's course-materials page for IAL Mathematics (2018) was opened in a browser (headless Chrome), with Exam materials selected and every series expanded. All **1006** items loaded, matching the page's own count "Exam materials (1006)". The 2018 catalogue lists 23 series, from January 2019 to October 2026, and has no June 2020 series.
+- **URLs:** every WST01 question paper and mark scheme URL was taken verbatim from that listing; none was built from a filename pattern. Each was requested with curl (HEAD, then GET) using its default headers.
+- **Covers and pairing:** each PDF was saved to a temporary folder outside the repository and its text extracted. Nothing was committed. For each pair the following were compared:
+  - unit code and variant;
+  - series;
+  - the question paper's P-number against the mark scheme's question-paper log number;
+  - Question 1 (content and marks).
+
+### Sessions found and added (25 entries, 18 QP/MS pairs)
+
+| Series | Variant | Status | Question paper | Mark scheme | QP P-number | MS publication code (as printed) | MS log | Q1 matched |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| October 2025 | 01 | public | `wst01-01-que-20251018.pdf` | `wst01-01-rms-20260122.pdf` | P84842A | WST01_01_2510_MS | P84842A | yes: horses, height and weight of 8 horses (12 marks) |
+| October 2025 | 01A | public | `wst01-01a-que-20251018.pdf` | `wst01-01a-rms-20260122.pdf` | P87446A | WST01_01A_2510_MS | P87446A | yes: age and blood volume, 8 patients (12) |
+| June 2025 | 01 | public | `wst01-01-que-20250521.pdf` | `wst01-01-rms-20250814.pdf` | P76176A | WST01_01_2506_MS | P76176A | yes: F(3.5) = 0.85 (9) |
+| January 2025 | 01 | public | `wst01-01-que-20250109.pdf` | `wst01-01-rms-20250306.pdf` | P76199A | WST01_01_2501_MS | P76199A | yes: two 4-sided dice, E(B) = 4 (15) |
+| October 2024 | 01 | public | `wst01-01-que-20241018.pdf` | `wst01-01-rms-20250116.pdf` | P76183A | WST01_01_2410_MS | P76183A | yes: film running times, stem and leaf (10) |
+| June 2024 | 01 | public | `wst01-01-que-20240522.pdf` | `wst01-01-rms-20240815.pdf` | P75720RA | WST01_01_2406_MS | P75720RA | yes: Birch and Maple growth, Q1 = 39, Q3 = 57 (13) |
+| January 2024 | 01 | public | `wst01-01-que-20240111.pdf` | `wst01-01-rms-20240307.pdf` | P74320A | WST01_01_rms_20240307 | P74320A | yes: histogram of 408 plants (8) |
+| October 2023 | 01 | public | `wst01-01-que-20231013.pdf` | `wst01-01-rms-20240118.pdf` | P74325A | WST01_01_rms_20240118 | 74325 | yes: Sally's game (11) |
+| June 2023 | 01 | public | `wst01-01-que-20230512.pdf` | `wst01-01-rms-20230817.pdf` | P72904A | WST01_01_2306_MS | 72904 | yes: histogram, 274 people (8) |
+| January 2023 | 01 | public | `wst01-01-que-20230119.pdf` | `wst01-01-rms-20230302.pdf` | P72072A | WST01_01_MS_2301 | P72072A | yes: histogram, 100 swimmers (10) |
+| October 2022 | 01 | public | `wst01-01-que-20221014.pdf` | `wst01-01-rms-20230112.pdf` | P72154A | WST01_01_2210_MS | P72154A | yes: 120 tulips, area = k × frequency (11) |
+| June 2022 | 01 | public | `wst01-01-que-20220526.pdf` | `wst01-01-rms-20220818.pdf` | P71200A | WST01_01_2206_MS | P71200A | yes: Seafield contractor hours (11) |
+| January 2022 | 01 | public | `WST01_01_que_20220113.pdf` | `WST01_01_rms_20220303.pdf` | P66652A | WST01_01_2201_MS | P66652A | yes: 120 shoes, P(C′) = 103/120 (11) |
+| October 2021 | 01 | public | `WST01_01_que_20211012.pdf` | `wst01-01-rms-20220113.pdf` | P71284A | WST01_01_2110_MS | P71284A | yes: Venn, P(B) = 0.5 (7) |
+| June 2021 | 01 | assessment | `WST01_01_que_20210427.pdf` | `WST01_01_rms_20210604.pdf` | P63150A | WST01_01_2106_MS | P63150A | yes: 7 red, 3 blue, 2 yellow counters (5) |
+| January 2021 | 01 | public | `WST01_01_que_20210304.pdf` | `WST01_01_msc_20210304.pdf` | P65795A | WST01_01_2101_MS | not printed | yes: Venn, 0.4 (5) |
+| October 2020 | 01 | public | `wst01-01-que-20201023.pdf` | `wst01-01-msc-20210113.pdf` | P65761A | WST01_01_2010_MS | not printed | yes: P(X = x) = (8 − x)/k, k = 25, E(X) = 41/25 (5) |
+| June 2020 | 01 | cancelled | none | none | | | | |
+| 2018 specimen | 01 | specimen | `International-A-Level-Maths-SAMs1.pdf#page=439` | same booklet `#page=467` | WST01/01 cover | "Statistics S1 Mark scheme" | | yes: sunflower seeds, Sww = 292; (a)–(d) worth 3, 2, 1, 4 marks on both |
+| January, June 2026 | 01, 01A | restricted | listed, answers 401 | listed, answers 401 | | | | |
+| October 2026 | 01, 01A | restricted | listed, answers 401 | not listed yet | | | | |
+
+Every pair agrees on unit (WST01), variant and series on both covers. Wherever the mark scheme prints a question-paper log number, it matches the question paper's P-number.
+
+### Special cases
+
+- **October 2020:** the question paper is dated Thursday 4 June 2020. Pearson reused the cancelled summer paper, as it did for P1 and P2. The entry carries the same note as P1/P2.
+- **June 2020:** the 2018 catalogue has no June 2020 series, and the October 2020 paper is the reused summer paper, so June 2020 is `cancelled`.
+- **June 2021:** listed under June 2021 with a provisional mark scheme (`WST01_01_msc_20210517.pdf`) and a final one. The entry uses the final mark scheme and the `assessment` status, with the P1/P2 note.
+- **January 2021:** the cover date (Wednesday 13 January 2021) matches the series; nothing unusual.
+- **Duplicate listings:** the catalogue lists some files twice with different case. In each case the upper-case copy answered 302 to `/en/campaigns/404.html` and the lower-case copy answered 200, so the archive uses the lower-case copy:
+  - October 2020 question paper and mark scheme (`WST01_01_que_20201023.pdf`, `WST01_01_msc_20210113.pdf`);
+  - October 2021 mark scheme (`WST01_01_rms_20220113.pdf`).
+- **Publication codes:** January 2024 and October 2023 print their filename stem as the code. January 2023 prints `WST01_01_MS_2301`. These are recorded as printed.
+- **Regional papers:** S1 /01A papers are listed from October 2025 onwards. No S1 /01R papers are listed.
+
+### Statuses used
+
+- `public` (16) and `assessment` (1, June 2021): the files answer 200 with `application/pdf`, and the covers and Q1 match.
+- `restricted` (6):
+  - January and June 2026: the question paper and mark scheme are listed, but both URLs answer 401 (authentication required).
+  - October 2026: only the question paper is listed (01 and 01A). It answers 401, and the note says no mark scheme is listed yet.
+- `cancelled` (1, June 2020) and `specimen` (1).
+
+### Not added
+
+- **June 2019, October 2019 and January 2020:** S1's first 2018-specification assessment was June 2019, but the 2018 catalogue lists no WST01 question paper or mark scheme for these series. It lists only a "Modified papers - wst0" zip, which is not a QP/MS. Without a catalogue URL, no entry was added.
+- **2013-specification sessions:** these are excluded by scope, but **their number could not be established**. Pearson's 2013 qualification page (`…/edexcel-international-advanced-levels/mathematics.html`) now redirects to the general IAL listing, which links only to Mathematics (2018), and no 2013 course-materials page exists. A web search still finds WST01 files in Pearson's 2013 folder (for example June 2014, January 2018 and October 2018 question papers, and a January 2020 examiner report). Those files were not opened or counted.
+
+### Live check and P1/P2 observation
+
+- `node scripts/test-past-papers.cjs --live` (12 November 2026, 23:43 UTC; 13 November local time): **117 of 117** unique `qp`/`ms` URLs answered 200, so `checked` moved to 13 November 2026. This includes the P1 October 2021 mark scheme, which no longer redirects for Node's `fetch`.
+- **P1 and P2 October 2025 are now public.** Their catalogue rows carry a date of 4 November 2026, and all eight question-paper and mark-scheme URLs (01 and 01A) answer 200 with `application/pdf`. The P1/P2 entries still say "Centres only" because this audit was limited to WST01. They need a follow-up that opens the covers before switching them to `public`.
 
 ## Maintaining the archive
 
