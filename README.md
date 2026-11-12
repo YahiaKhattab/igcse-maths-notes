@@ -18,7 +18,7 @@ Foundation papers are **not currently offered**. Their portal placeholders are i
 
 ## P1, P2 and S1 past papers
 
-Open `past-papers.html` from the portal or any IAL notes page. The archive covers P1 (WMA11), P2 (WMA12) and S1 (WST01). It groups question papers and matching mark schemes by unit, year and session, starting with the sample assessment materials for the 2018 specification. Pearson's 2018-specification catalogue lists S1 papers from October 2020 onwards, so the S1 view has no 2019 papers apart from the specimen.
+Open `past-papers.html` from the portal or any IAL notes page. The archive covers P1 (WMA11), P2 (WMA12) and S1 (WST01). It groups question papers and matching mark schemes by unit, year and session, starting with the sample assessment materials for the 2018 specification. Pearson's 2018-specification catalogue lists S1 papers from October 2020 onwards; the June 2019 and January 2020 S1 papers come from Pearson's past-papers search, which files them in its 2013 folder, and the October 2019 S1 question paper is for registered centres only.
 
 Links point to Pearson's official website; the repository does not host copies of exam papers. Recent or otherwise unavailable materials are labelled separately from verified public PDF links: sessions Pearson restricts to registered centres are marked **Centres only**, and papers whose official mark-scheme link is broken are marked **Mark scheme offline at Pearson** (the question paper is still linked). Always check the paper code and variant against your centre's entry information.
 

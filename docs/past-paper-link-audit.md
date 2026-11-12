@@ -161,6 +161,55 @@ Every pair agrees on unit (WST01), variant and series on both covers. Wherever t
 - `node scripts/test-past-papers.cjs --live` (12 November 2026, 23:43 UTC; 13 November local time): **117 of 117** unique `qp`/`ms` URLs answered 200, so `checked` moved to 13 November 2026. This includes the P1 October 2021 mark scheme, which no longer redirects for Node's `fetch`.
 - **P1 and P2 October 2025 are now public.** Their catalogue rows carry a date of 4 November 2026, and all eight question-paper and mark-scheme URLs (01 and 01A) answer 200 with `application/pdf`. The P1/P2 entries still say "Centres only" because this audit was limited to WST01. They need a follow-up that opens the covers before switching them to `public`.
 
+## Archive sync of 13 November 2026 (later the same day)
+
+### Method
+
+- **2018 catalogue:** re-read in headless Chrome with every series expanded. It still lists 1006 items, matching its own count.
+- **Pearson's past-papers search:** `/en/support/support-topics/exams/past-papers.html`, filtered to International Advanced Level, Mathematics, Live, `ial-maths`, read in the same way for June 2019, October 2019 and January 2020. This page still lists those S1 papers, which the 2018 catalogue does not.
+- **URLs and covers:** every URL below was copied from one of those two listings and requested with curl (HEAD, then GET). The PDFs were saved outside the repository, and their covers and Question 1 compared as in the WST01 audit.
+
+### P1/P2 October 2025: restricted → public
+
+The catalogue rows are dated 4 November 2026, and every file answers 200 with `application/pdf`.
+
+| Entry | Question paper | Mark scheme | QP P-number | MS publication code (as printed) | MS log | Q1 |
+| --- | --- | --- | --- | --- | --- | --- |
+| P1 01 | `wma11-01-que-20251010.pdf` | `wma11-01-rms-20260122.pdf` | P78848A | WMA11_01_2510_MS | P78848A | curve C: (a) dy/dx (3), (b) tangent at P (3); 6 marks on both |
+| P1 01A | `wma11-01a-que-20251010.pdf` | `wma11-01a-rms-20260122.pdf` | P87431A | WMA11_01A_2510_MS | P87431A | triangles LMN and PQR: (a) QR (2), (b) x = −3 + 6√2 (5); 7 marks on both |
+| P2 01 | `wma12-01-que-20251016.pdf` | `wma12-01-rms-20260122.pdf` | P81269A | WMA12_01_2510_MS | P81269A | arithmetic series: (a) 18th term (2), (b) sum of 100 terms = −7050 (2); 4 marks on both |
+| P2 01A | `wma12-01a-que-20251016.pdf` | `wma12-01a-rms-20260122.pdf` | P87434A | `unit_paper_2510_MS` (an unfilled Pearson placeholder) | P87434A | sequence with k: (a) (2), (b) k = 4 or 10 (3); 5 marks on both |
+
+The question papers are dated Thursday 9 October 2025 (P1) and Wednesday 15 October 2025 (P2). Each mark scheme cover reads "Mark Scheme (Results) October 2025" with the matching unit and variant. All four pairs became `public` with `evidence`, and the restricted note was removed.
+
+### P1/P2 October 2026: added as restricted
+
+The catalogue lists 01 and 01A question papers for both units: `wma11-01-que-20261010.pdf`, `wma11-01a-que-20261010.pdf`, `wma12-01-que-20261016.pdf` and `wma12-01a-que-20261016.pdf`. Each has a `?<number>` query string and answers 401. No mark schemes are listed yet. The four entries use the S1 October 2026 note.
+
+### S1 June 2019, October 2019 and January 2020
+
+| Series | Question paper | Mark scheme | Result |
+| --- | --- | --- | --- |
+| June 2019 | `…/Mathematics/2013/Exam%20materials/WST01_01_que_20190613.pdf`: WST01/01, Wednesday 12 June 2019, P56169A | `…/2013/Exam%20materials/WST01_01_rms_20190815.pdf`: "Mark Scheme (Results) Summer 2019 … Statistics S1 (WST01/01)", WST01_01_1906_MS, no log printed | **public**. Q1 is the heights of 40 children (Σx = 58, Σx² = 84.829), parts 3, 2 and 4 (9 marks) on both |
+| October 2019 | `…/content/dam/secure/silver/…/2013/exam-materials/ial-wst01-01-oct19.pdf?…` answers **401** (registered-centre area). No public copy was found | `…/2013/Exam%20materials/WST01_01_msc_20191023.pdf` answers 200: "Mark Scheme (Final) October 2019 … Statistics S1 (WST01/01)", WST01_01_1910_MS | **restricted**. The question paper cover cannot be read, so the pair cannot be checked and the mark scheme is not linked |
+| January 2020 | `…/2013/Exam%20materials/WST01_01_que_20200305.pdf`: WST01/01, Monday 20 January 2020, P60578A | `…/2013/Exam%20materials/WST01_01_rms_20200305.pdf`: "Mark Scheme (Results) January 2020 … Statistics S1 (WST01) Paper 01", `WST01_01_2001_MS*` (asterisk as printed), no log printed | **public**. Q1: X takes −2, −1, 1, 3, 4, mean 1, F(1) = 0.63; find a, b, c (5). The mark scheme gives a = 0.22, b = 0.26, c = 0.22, [5] |
+
+The full prefix of the 2013-folder URLs is `https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2013/Exam%20materials/`.
+
+- **Specification marking:** none of these covers mentions the 2013 or 2018 specification. They read "International Advanced Subsidiary/Advanced Level, Mathematics, Statistics S1".
+- **Note:** both public entries carry "Pearson files this paper under its 2013 folder; it was sat in the 2018-specification series."
+- **Excluded:** the past-papers search also lists the UK GCE paper 6683 "Statistics S1" for June 2019. That is a different qualification and was not used.
+
+### Counts after this sync
+
+| Unit | Default view | All versions |
+| --- | --- | --- |
+| P1 | 25 entries · 21 pairs (was 24 · 20) | 31 · 24 (was 29 · 22) |
+| P2 | 25 · 20 (was 24 · 19) | 31 · 23 (was 29 · 21) |
+| S1 | 24 · 19 (was 21 · 17) | 28 · 20 (was 25 · 18) |
+
+`node scripts/test-past-papers.cjs --live`: **129 of 129** unique URLs answered 200. `checked` stays at 13 November 2026.
+
 ## Maintaining the archive
 
 1. **Open both covers before adding a pair.** The unit code, session, year and variant must match on the question paper and the mark scheme. If the log numbers differ, compare the first question.
