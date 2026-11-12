@@ -8,7 +8,7 @@ Project context for working on this repository.
 - Deployed by Vercel's Git integration from the repository root to https://igcse-maths-notes.vercel.app/.
 - There are two separate tracks, and they must stay separate (codes, headings, cards and navigation):
   - **International GCSE Mathematics A (4MA1), Higher**: `Final revision 1H notes.html`, `Final_revision_2H_notes -1.html`.
-  - **International A Level Mathematics (2018 spec)**: P1 (WMA11), P2 (WMA12), S1 (WST01) and the past-paper archive. The archive covers P1 and P2 only: **the S1 archive entries are pending**.
+  - **International A Level Mathematics (2018 spec)**: P1 (WMA11), P2 (WMA12), S1 (WST01) and the past-paper archive, which covers all three units.
 - The IGCSE pages (1H and 2H) and the IGCSE section of `index.html` belong to a co-author. They are **out of scope unless a task explicitly says otherwise**: do not open, edit, rename or reformat them.
 
 ## File map
@@ -22,7 +22,7 @@ Project context for working on this repository.
   - Topic IDs: P1 uses semantic IDs (`#surds`, `#trig`, `#integration`, …), P2 uses `#t1`–`#t12`, and S1 uses semantic IDs (`#models`, `#location-spread`, `#coding`, `#representations`, `#probability`, `#correlation-regression`, `#discrete-random-variables`, `#normal-distribution`, `#formula-sheet`). Cross-page links depend on them, so **never rename them**.
   - Each page has one `<h1>` (the cover), a `<main class="main" id="main">`, and a `.doc-switcher` pill (Index · P1 · P2 · S1 · Past papers). The five links fit at 320 px; measure again before adding a sixth.
   - S1 only:
-    - Its "Past papers" link has no `?unit=` until the archive has WST01 entries.
+    - Its "Past papers" link opens the S1 view (`past-papers.html?unit=S1`).
     - The 26 worked examples are numbered and carry `id="ex-1"` … `id="ex-26"`. The "S1 additions" section at the end of `notes.css` relies on those IDs to scope one rule to S1 (extra space around stacked inline fractions), and also styles the stem-and-leaf table (`table.stem-leaf`).
     - Every diagram is an inline SVG computed from the worked example's data, with `role="img"` and an `aria-label` that states the values.
 - Archive:
@@ -37,6 +37,12 @@ Project context for working on this repository.
       - `restricted` ("Centres only"), `cancelled`, `not-offered`, `upcoming`: no `qp` or `ms`.
       - `unverified`: shows a link to Pearson's catalogue.
     - `msBroken` keeps a dead official mark-scheme URL so it can be restored later.
+    - Entries are ordered by year (newest first), then session (October, June, January, Specimen), then variant (01, 01A, 01R), then unit (P1, P2, S1).
+  - Pearson's catalogue (`catalogue` in the data file):
+    - It is drawn by JavaScript, so read it in a browser: choose Exam materials, then EXPAND ALL. The page's own total ("Exam materials (N)") tells you whether every item loaded.
+    - It sometimes lists the same file twice with different case (`WST01_01_…` and `wst01-01-…`), and one copy may redirect to `/en/campaigns/404.html`. Use a listed copy that returns the PDF.
+    - Restricted files are still listed, often with a `?<number>` query string, but the file URL answers 401. Mark those `restricted`; do not try to get past the login.
+    - The 2013-specification catalogue has been withdrawn. S1 papers before October 2020 are not in the 2018 catalogue and are not in the archive.
 - `vercel.json`: the security headers. `.vercelignore`: keeps `scripts/`, `docs/`, `README.md`, `CLAUDE.md` and `*.code-workspace` out of the deployed site.
 - `scripts/test-past-papers.cjs`: archive data checks (Node 18+, no dependencies; `--live` sends a HEAD request to every Pearson URL).
 - `docs/past-paper-link-audit.md`: dated link-audit records and the maintenance procedure.
