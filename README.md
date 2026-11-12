@@ -10,8 +10,9 @@ A combined study portal for **International GCSE Mathematics A (4MA1), Higher ti
 | International GCSE Mathematics A · Higher | 2H | `Final_revision_2H_notes -1.html` |
 | International AS/A Level Mathematics | P1 · WMA11 | `pure-mathematics-1.html` |
 | International AS/A Level Mathematics | P2 · WMA12 | `pure-mathematics-2.html` |
+| International AS/A Level Mathematics | S1 · WST01 | `statistics-1.html` |
 
-Open `index.html` to choose a track. P3, P4, S1 and M1 notes are planned, not yet available.
+Open `index.html` to choose a track. P3, P4 and M1 notes are planned, not yet available.
 
 Foundation papers are **not currently offered**. Their portal placeholders are intentionally commented out and retained for possible future use.
 

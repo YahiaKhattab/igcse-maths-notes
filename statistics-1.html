@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Revision notes for Pearson Edexcel International A Level Statistics 1 (WST01): methods, formulas and worked examples for every topic.">
+<title>Statistics 1 — Edexcel International A Level Notes</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="assets/notes.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/notes.js"></script>
+
+</head>
+<body>
+
+<nav class="doc-switcher" aria-label="Switch notes">
+  <a href="index.html">&larr; Index</a>
+  <a href="pure-mathematics-1.html">P1</a>
+  <a href="pure-mathematics-2.html">P2</a>
+  <a href="statistics-1.html" class="current">S1</a>
+  <a href="past-papers.html">Past papers</a>
+</nav>
+
+<header class="topbar">
+  <button id="menuBtn" aria-label="Open menu">&#9776;</button>
+  <div class="tbtitle">Statistics 1 Notes</div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="kicker">Edexcel International A Level</div>
+      <p class="sidebar-title">Statistics 1</p>
+      <div class="sub">AS Revision Notes &middot; 8 Topics</div>
+      <button id="toggleAllBtn" class="toggle-all-btn" type="button">Expand All Examples</button>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit A &middot; Data</div>
+      <a class="nav-link" href="#models"><span class="num">01</span>Mathematical Models</a>
+      <a class="nav-link" href="#location-spread"><span class="num">02</span>Measures of Location &amp; Spread</a>
+      <a class="nav-link" href="#coding"><span class="num">03</span>Coding</a>
+      <a class="nav-link" href="#representations"><span class="num">04</span>Representations of Data</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit B &middot; Probability</div>
+      <a class="nav-link" href="#probability"><span class="num">05</span>Probability</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit C &middot; Correlation &amp; Regression</div>
+      <a class="nav-link" href="#correlation-regression"><span class="num">06</span>Correlation &amp; Regression</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit D &middot; Distributions</div>
+      <a class="nav-link" href="#discrete-random-variables"><span class="num">07</span>Discrete Random Variables</a>
+      <a class="nav-link" href="#normal-distribution"><span class="num">08</span>The Normal Distribution</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Reference</div>
+      <a class="nav-link" href="#formula-sheet"><span class="num">&#9733;</span>Formula Sheet</a>
+    </div>
+  </nav>
+
+  <main class="main" id="main">
+    <div class="cover">
+      <div class="kicker">Edexcel International A Level &middot; WST01</div>
+      <h1>Statistics 1</h1>
+      <div class="tagline">A working reference for every method in the S1 syllabus: summarising data, probability, regression and distributions, with worked examples organised the way you'll actually need them in the exam room.</div>
+      <div class="cover-grid">
+        <div class="cover-card"><div class="label">Coverage</div><div class="val">8 topics &middot; 4 units</div></div>
+        <div class="cover-card"><div class="label">Includes</div><div class="val">+ Formula Sheet</div></div>
+        <div class="cover-card"><div class="label">Exam</div><div class="val">1 h 30 min &middot; 75 marks</div></div>
+      </div>
+    </div>
+
+    <div class="content" id="contentroot">
+<div class="unit-marker first">Unit A &middot; Data</div>
+<h2 class="topic-title" id="models">1. Mathematical Models</h2>
+<div class="topic-meta">What a statistical model is, why we build one, and how it is tested and improved.</div>
+
+<p>A <em class="def">mathematical model</em> is a simplified description of a real-world situation, written in mathematical terms. In statistics a model is usually a probability distribution or an equation linking two variables.</p>
+
+<div class="box formula">
+<div class="box-title">Key Facts &mdash; The Models in S1</div>
+<p><strong>Discrete uniform distribution:</strong> $P(X=x)=\dfrac1n$ for $x=1,2,\dots,n$, for outcomes that are equally likely (<a href="#discrete-random-variables">Topic 7</a>).</p>
+<p><strong>Normal distribution:</strong> $X\sim N(\mu,\sigma^2)$, for continuous measurements that cluster symmetrically about a mean (<a href="#normal-distribution">Topic 8</a>).</p>
+<p><strong>Regression line:</strong> $y=a+bx$, for two variables with a linear relationship (<a href="#correlation-regression">Topic 6</a>).</p>
+</div>
+
+<h3>Why Use a Model?</h3>
+<ul>
+<li>It <strong>simplifies</strong> a complicated real situation so that it can be analysed.</li>
+<li>It is <strong>quicker and cheaper</strong> than collecting data from the whole real situation.</li>
+<li>It lets you make <strong>predictions</strong> about what is likely to happen.</li>
+<li>It improves <strong>understanding</strong>: you can see how changing one quantity affects another.</li>
+</ul>
+
+<h3>Limitations</h3>
+<ul>
+<li>A model simplifies, so it does <strong>not include every feature</strong> of the real situation.</li>
+<li>It may work only <strong>under certain conditions</strong>, or over a limited range of values.</li>
+<li>Its predictions are only as good as the <strong>assumptions</strong> it is built on.</li>
+</ul>
+
+<h3>The Modelling Cycle</h3>
+<p>A model is not written once and trusted for ever. It is tested against real data and improved.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 360 170" width="360" height="170" role="img" aria-label="The modelling cycle as a loop of six stages: 1 observe a real-world problem, 2 devise a mathematical model, 3 predict using the model, 4 collect experimental data, 5 compare the data with the predictions, 6 refine the model, which leads back to stage 2">
+<defs><marker id="s1-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c9862c"/></marker></defs>
+<rect x="8" y="14" width="104" height="44" rx="8" fill="#e8f0fd" stroke="#1d5bbf" stroke-width="1.4"/>
+<text x="60" y="33" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">1 Observe</text>
+<text x="60" y="48" font-family="Helvetica Neue,Arial" font-size="9.5" fill="#1c2430" text-anchor="middle">a real-world problem</text>
+<rect x="128" y="14" width="104" height="44" rx="8" fill="#e8f0fd" stroke="#1d5bbf" stroke-width="1.4"/>
+<text x="180" y="33" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">2 Devise</text>
+<text x="180" y="48" font-family="Helvetica Neue,Arial" font-size="9.5" fill="#1c2430" text-anchor="middle">a mathematical model</text>
+<rect x="248" y="14" width="104" height="44" rx="8" fill="#e8f0fd" stroke="#1d5bbf" stroke-width="1.4"/>
+<text x="300" y="33" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">3 Predict</text>
+<text x="300" y="48" font-family="Helvetica Neue,Arial" font-size="9.5" fill="#1c2430" text-anchor="middle">using the model</text>
+<rect x="248" y="112" width="104" height="44" rx="8" fill="#e8f0fd" stroke="#1d5bbf" stroke-width="1.4"/>
+<text x="300" y="131" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">4 Collect</text>
+<text x="300" y="146" font-family="Helvetica Neue,Arial" font-size="9.5" fill="#1c2430" text-anchor="middle">experimental data</text>
+<rect x="128" y="112" width="104" height="44" rx="8" fill="#e8f0fd" stroke="#1d5bbf" stroke-width="1.4"/>
+<text x="180" y="131" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">5 Compare</text>
+<text x="180" y="146" font-family="Helvetica Neue,Arial" font-size="9.5" fill="#1c2430" text-anchor="middle">data with predictions</text>
+<rect x="8" y="112" width="104" height="44" rx="8" fill="#e8f0fd" stroke="#1d5bbf" stroke-width="1.4"/>
+<text x="60" y="131" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">6 Refine</text>
+<text x="60" y="146" font-family="Helvetica Neue,Arial" font-size="9.5" fill="#1c2430" text-anchor="middle">the model</text>
+<path d="M112,36 L125,36" fill="none" stroke="#c9862c" stroke-width="1.6" marker-end="url(#s1-arrow)"/>
+<path d="M232,36 L245,36" fill="none" stroke="#c9862c" stroke-width="1.6" marker-end="url(#s1-arrow)"/>
+<path d="M300,58 L300,109" fill="none" stroke="#c9862c" stroke-width="1.6" marker-end="url(#s1-arrow)"/>
+<path d="M248,134 L235,134" fill="none" stroke="#c9862c" stroke-width="1.6" marker-end="url(#s1-arrow)"/>
+<path d="M128,134 L115,134" fill="none" stroke="#c9862c" stroke-width="1.6" marker-end="url(#s1-arrow)"/>
+<path d="M60,112 L60,85 L180,85 L180,61" fill="none" stroke="#c9862c" stroke-width="1.6" marker-end="url(#s1-arrow)"/>
+</svg>
+<div class="diagram-caption">Stages 2 to 6 repeat until the model describes the data well enough.</div>
+</div>
+
+<ol>
+<li><strong>Observe</strong> a real-world problem.</li>
+<li><strong>Devise</strong> a mathematical model, stating the assumptions it makes.</li>
+<li><strong>Predict</strong>: use the model to predict what should happen.</li>
+<li><strong>Collect</strong> experimental data from the real situation.</li>
+<li><strong>Compare</strong> the data with the predictions. Statistical tests can judge how well they agree (the tests themselves are not part of S1).</li>
+<li><strong>Refine</strong> the model if the agreement is poor, then predict and compare again.</li>
+</ol>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Answer modelling questions <strong>in context</strong>. "It is quicker" is vague; "it is quicker and cheaper than timing every customer in the shop" names the situation, so it answers the question that was asked.</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Treating a model's prediction as exact. A model gives an estimate, and it can even allow impossible values: a Normal model for heights gives a tiny probability to negative heights. Write "the model predicts" or "an estimate is", not "the value will be".</p>
+</div>
+
+
+<h2 class="topic-title" id="location-spread">2. Measures of Location &amp; Spread</h2>
+<div class="topic-meta">One number for the centre, one for the spread, and the exact rules S1 uses to find them.</div>
+
+<h3>Types of Data</h3>
+<table>
+<tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
+<tr><td>Qualitative</td><td>Described in words, not numbers.</td><td>Colour of a car</td></tr>
+<tr><td>Quantitative</td><td>Numerical values.</td><td>Mass of a parcel</td></tr>
+<tr><td>Discrete</td><td>Quantitative data that can take only certain values, usually counts.</td><td>Number of goals</td></tr>
+<tr><td>Continuous</td><td>Quantitative data that can take any value in a range, usually measurements.</td><td>Time to run a race</td></tr>
+</table>
+
+<p>Large data sets are often <em class="def">grouped</em> into classes. For a class, the <strong>class boundaries</strong> are the smallest and largest values that could belong to it, the <strong>class width</strong> is the difference between the boundaries, and the <strong>midpoint</strong> is their mean.</p>
+
+<h3>Measures of Location</h3>
+<div class="box formula">
+<div class="box-title">Formula &mdash; Mean</div>
+<p><strong>Learn this</strong> (not in the formulae booklet):</p>
+<p>$$\bar x =\dfrac{\sum x}{n} \qquad \text{or} \qquad \bar x =\dfrac{\sum fx}{\sum f}$$</p>
+<p>For grouped data, use each class <strong>midpoint</strong> as $x$. The result is then an estimate, because the individual values are unknown.</p>
+</div>
+
+<ul>
+<li>The <strong>mode</strong> (or modal class) is the value (or class) that occurs most often.</li>
+<li>The <strong>median</strong>, $Q_2$, is the middle value when the data are in order.</li>
+<li>The mean uses every value, so extreme values pull it. The median is not affected by extreme values.</li>
+</ul>
+
+<h3>Quartiles of Discrete Data</h3>
+<p>The lower quartile $Q_1$, the median $Q_2$ and the upper quartile $Q_3$ split the ordered data into four equal parts.</p>
+
+<div class="box formula">
+<div class="box-title">Rule &mdash; Quartiles of a List of $n$ Values</div>
+<p><strong>Learn this</strong> (not in the formulae booklet). Put the data in order, then work out</p>
+<p>$$\dfrac n4\ \text{ for }Q_1, \qquad \dfrac n2\ \text{ for }Q_2, \qquad \dfrac{3n}4\ \text{ for }Q_3.$$</p>
+<p><strong>Whole number:</strong> take the mean of that value and the next one.</p>
+<p><strong>Not a whole number:</strong> round up, and take that value.</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Using an $\frac{n+1}{4}$ rule. You may have found quartiles at IGCSE from the positions $\frac{n+1}{4}$, $\frac{n+1}{2}$ and $\frac{3(n+1)}{4}$. S1 uses $\frac n4$, $\frac n2$ and $\frac{3n}{4}$ with the rule above, and the two methods can give different answers.</p>
+</div>
+
+<div class="example" id="ex-1">
+<div class="example-header">Worked Example 1 <span class="tag">Quartiles of a list</span></div>
+<div class="example-question">
+<p>The numbers of emails a manager received on 12 working days were, in order:</p>
+<p>3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 20, 24</p>
+<p>(a) Find the median, the quartiles and the interquartile range.</p>
+<p>(b) Two more days, with 26 and 31 emails, are added. Find the new median, quartiles and interquartile range.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Lower quartile</div>$\dfrac n4=\dfrac{12}{4}=3$ is a whole number, so $Q_1$ is the mean of the 3rd and 4th values: $Q_1=\dfrac{6+8}{2}=7$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Median</div>$\dfrac n2=\dfrac{12}{2}=6$ is a whole number, so take the mean of the 6th and 7th values: $Q_2=\dfrac{11+12}{2}=11.5$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(a) Upper quartile</div>$\dfrac{3n}4=\dfrac{3(12)}{4}=9$, so take the mean of the 9th and 10th values: $Q_3=\dfrac{15+17}{2}=16$. The interquartile range is $16-7=9$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) New list</div>Now $n=14$: 3, 5, 6, 8, 9, 11, 12, 14, 15, 17, 20, 24, 26, 31.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(b) Lower quartile</div>$\dfrac{14}{4}=3.5$ is not a whole number, so round up to the 4th value: $Q_1=8$.</div>
+</div>
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-content"><div class="sk">(b) Median</div>$\dfrac{14}{2}=7$ is a whole number, so take the mean of the 7th and 8th values: $Q_2=\dfrac{12+14}{2}=13$.</div>
+</div>
+<div class="step">
+<div class="step-num">7</div>
+<div class="step-content"><div class="sk">(b) Upper quartile</div>$\dfrac{3(14)}{4}=10.5$ is not a whole number, so round up to the 11th value: $Q_3=20$. The interquartile range is $20-8=12$.</div>
+</div>
+<div class="example-answer">(a) $Q_1=7$, $Q_2=11.5$, $Q_3=16$, IQR $=9$ &nbsp;&middot;&nbsp; (b) $Q_1=8$, $Q_2=13$, $Q_3=20$, IQR $=12$</div>
+</div>
+</div>
+</div>
+
+<h3>Grouped Data: Interpolation</h3>
+<p>In a grouped table the individual values are lost, so quartiles are estimated by <em class="def">interpolation</em>: assume the values are spread evenly through the class.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Interpolation</div>
+<p><strong>Learn this</strong> (not in the formulae booklet):</p>
+<p>$$Q =L+\dfrac{k-F}{f}\times w$$</p>
+<p>$k$ is the position: $\frac n4$, $\frac n2$ or $\frac{3n}4$ for the quartiles, and $\frac{p}{100}\times n$ for the $p$th percentile. Do not round $k$.</p>
+<p>$L$ is the lower class boundary of the class containing position $k$, $F$ is the cumulative frequency before that class, $f$ is the frequency of the class and $w$ is its width.</p>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Class Boundaries</div>
+<p>When there are gaps between classes, such as 10&ndash;14 and 15&ndash;19 for times measured to the nearest minute, the boundaries are half-way across each gap: 9.5, 14.5, 19.5. When the classes are written as $10\leq t\lt15$, the boundaries are the stated values, 10 and 15.</p>
+</div>
+
+<div class="example" id="ex-2">
+<div class="example-header">Worked Example 2 <span class="tag">Interpolation with class boundaries</span></div>
+<div class="example-question">
+<p>The times, to the nearest minute, that 80 students took to finish a puzzle are summarised below.</p>
+<table>
+<tr><th>Time (minutes)</th><th>Frequency</th></tr>
+<tr><td>10&ndash;14</td><td>10</td></tr>
+<tr><td>15&ndash;19</td><td>16</td></tr>
+<tr><td>20&ndash;24</td><td>24</td></tr>
+<tr><td>25&ndash;29</td><td>20</td></tr>
+<tr><td>30&ndash;39</td><td>10</td></tr>
+</table>
+<p>Use interpolation to estimate (a) the median, (b) the interquartile range, (c) the 10th to 90th interpercentile range.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Boundaries and cumulative frequency</div>The times are rounded to the nearest minute, so the class 10&ndash;14 really covers 9.5 to 14.5.
+<table>
+<tr><th>Time</th><th>Class boundaries</th><th>Frequency</th><th>Cumulative frequency</th></tr>
+<tr><td>10&ndash;14</td><td>9.5 to 14.5</td><td>10</td><td>10</td></tr>
+<tr><td>15&ndash;19</td><td>14.5 to 19.5</td><td>16</td><td>26</td></tr>
+<tr><td>20&ndash;24</td><td>19.5 to 24.5</td><td>24</td><td>50</td></tr>
+<tr><td>25&ndash;29</td><td>24.5 to 29.5</td><td>20</td><td>70</td></tr>
+<tr><td>30&ndash;39</td><td>29.5 to 39.5</td><td>10</td><td>80</td></tr>
+</table></div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Median</div>The position is $\dfrac{80}{2}=40$, which lies in the class 19.5 to 24.5 (cumulative frequency 26 before it). $Q_2=19.5+\dfrac{40-26}{24}\times5=22.416\ldots$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Lower quartile</div>The position is $\dfrac{80}{4}=20$, in the class 14.5 to 19.5. $Q_1=14.5+\dfrac{20-10}{16}\times5=17.625$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Upper quartile</div>The position is $\dfrac{3(80)}{4}=60$, in the class 24.5 to 29.5. $Q_3=24.5+\dfrac{60-50}{20}\times5=27$. So the interquartile range is $27-17.625=9.375$.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Percentiles</div>$P_{10}$ is at position $\dfrac{10}{100}\times80=8$, in the first class: $P_{10}=9.5+\dfrac{8-0}{10}\times5=13.5$. $P_{90}$ is at position $\dfrac{90}{100}\times80=72$, in the last class, which has width 10: $P_{90}=29.5+\dfrac{72-70}{10}\times10=31.5$. The range is $31.5-13.5=18$.</div>
+</div>
+<div class="example-answer">(a) $22.4$ minutes &nbsp;&middot;&nbsp; (b) $9.38$ minutes &nbsp;&middot;&nbsp; (c) $18$ minutes</div>
+</div>
+</div>
+</div>
+
+<h3>Measures of Spread</h3>
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Range</div><div class="gval">largest value $-$ smallest value</div></div>
+<div class="gcell"><div class="glabel">Interquartile range</div><div class="gval">$\text{IQR}=Q_3-Q_1$</div></div>
+<div class="gcell"><div class="glabel">Interpercentile range</div><div class="gval">for example $P_{90}-P_{10}$</div></div>
+</div>
+
+<p>The <em class="def">variance</em> measures how far the values are from the mean, on average, and uses every value. The <em class="def">standard deviation</em> is its square root, so it has the same units as the data.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Variance and Standard Deviation</div>
+<p><strong>Learn this</strong> (the booklet does not give the variance of a data set):</p>
+<p>$$\sigma^2 =\dfrac{\sum(x-\bar x)^2}{n} =\dfrac{\sum x^2}{n}-\left(\dfrac{\sum x}{n}\right)^2$$</p>
+<p>$$\sigma^2 =\dfrac{\sum fx^2}{\sum f}-\left(\dfrac{\sum fx}{\sum f}\right)^2 \qquad \sigma =\sqrt{\text{variance}}$$</p>
+<p><strong>In the formulae booklet</strong> (under Correlation and regression):</p>
+<p>$$S_{xx} =\sum(x-\bar x)^2 =\sum x^2-\dfrac{(\sum x)^2}{n}, \qquad \text{so} \quad \sigma^2 =\dfrac{S_{xx}}{n}$$</p>
+</div>
+
+<p>In words: the variance is "the mean of the squares minus the square of the mean". For the values 4, 7, 7, 10, 12 the mean is $8$ and $\sum x^2=358$, so $\sigma^2=\dfrac{358}{5}-8^2=7.6$.</p>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Dividing by $n-1$. In S1 the variance has divisor $n$. Many calculators show two standard deviations: use $\sigma_x$, not $s_x$. Also keep $\sum x^2$ (square, then add) separate from $(\sum x)^2$ (add, then square).</p>
+</div>
+
+<div class="example" id="ex-3">
+<div class="example-header">Worked Example 3 <span class="tag">Mean and standard deviation from a table</span></div>
+<div class="example-question">
+<p>The table shows the number of goals a hockey team scored in each of 40 matches.</p>
+<table>
+<tr><th scope="row">Goals, $x$</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><th scope="row">Frequency, $f$</th><td>5</td><td>9</td><td>12</td><td>8</td><td>4</td><td>2</td></tr>
+</table>
+<p>Find the mean and the standard deviation of the number of goals.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Add columns for fx and fx²</div>Multiply each $x$ by its frequency, then multiply by $x$ again.
+<table>
+<tr><th>$x$<span class="sr-only">x</span></th><th>$f$<span class="sr-only">f</span></th><th>$fx$<span class="sr-only">f x</span></th><th>$fx^2$<span class="sr-only">f x squared</span></th></tr>
+<tr><td>0</td><td>5</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>9</td><td>9</td><td>9</td></tr>
+<tr><td>2</td><td>12</td><td>24</td><td>48</td></tr>
+<tr><td>3</td><td>8</td><td>24</td><td>72</td></tr>
+<tr><td>4</td><td>4</td><td>16</td><td>64</td></tr>
+<tr><td>5</td><td>2</td><td>10</td><td>50</td></tr>
+<tr><td><strong>Total</strong></td><td>40</td><td>83</td><td>243</td></tr>
+</table></div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Mean</div>$\bar x=\dfrac{\sum fx}{\sum f}=\dfrac{83}{40}=2.075$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Variance</div>$\sigma^2=\dfrac{243}{40}-2.075^2=6.075-4.305625=1.769375$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Standard deviation</div>$\sigma=\sqrt{1.769375}=1.3301\ldots$</div>
+</div>
+<div class="example-answer">Mean $=2.075$ goals &nbsp;&middot;&nbsp; standard deviation $=1.33$ goals (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<div class="example" id="ex-4">
+<div class="example-header">Worked Example 4 <span class="tag">Summary statistics and $S_{xx}$</span></div>
+<div class="example-question">
+<p>The lengths, $x$ cm, of 25 fish are summarised by $\sum x=430$ and $\sum x^2=7621$. Find the mean, $S_{xx}$, the variance and the standard deviation of the lengths.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Mean</div>$\bar x=\dfrac{430}{25}=17.2$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Find Sxx</div>$S_{xx}=\sum x^2-\dfrac{(\sum x)^2}{n}=7621-\dfrac{430^2}{25}=7621-7396=225$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Variance and standard deviation</div>$\sigma^2=\dfrac{S_{xx}}{n}=\dfrac{225}{25}=9$, so $\sigma=\sqrt{9}=3$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Check with the other form</div>$\dfrac{\sum x^2}{n}-\bar x^2=\dfrac{7621}{25}-17.2^2=304.84-295.84=9$, as before.</div>
+</div>
+<div class="example-answer">Mean $=17.2$ cm &nbsp;&middot;&nbsp; $S_{xx}=225$ &nbsp;&middot;&nbsp; variance $=9$ cm² &nbsp;&middot;&nbsp; standard deviation $=3$ cm</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Exam Technique &mdash; Tables and Accuracy</div>
+<p>The front cover of the WST01 paper sets the accuracy rules. In short: quote values from the statistical tables in full; if you use a calculator instead of the tables, give the value to the same degree of accuracy; and give inexact answers to three significant figures unless the question says otherwise. Show enough working to make your method clear, because answers without working may not gain full credit.</p>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Keep the unrounded value in your calculator and round only at the end. In the example above, $\sigma=1.3301\ldots$ is found from the exact variance, then rounded to $1.33$.</p>
+</div>
+
+
+<h2 class="topic-title" id="coding">3. Coding</h2>
+<div class="topic-meta">Making awkward numbers simple before you calculate, then undoing the code correctly.</div>
+
+<p><em class="def">Coding</em> replaces each data value $x$ by a simpler value $y$, using a linear rule. You calculate with the easy $y$ values, then convert the answers back.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Coding $y=\dfrac{x-a}{b}$</div>
+<p><strong>Learn this</strong> (not in the formulae booklet). For $b\gt0$:</p>
+<p>$$\bar y =\dfrac{\bar x-a}{b} \qquad \sigma_y =\dfrac{\sigma_x}{b}$$</p>
+<p><strong>Decoding:</strong></p>
+<p>$$\bar x =b\,\bar y+a \qquad \sigma_x =b\,\sigma_y$$</p>
+</div>
+
+<table>
+<tr><th>What is done to every value</th><th>Mean</th><th>Standard deviation</th></tr>
+<tr><td>Add or subtract a constant</td><td>The same constant is added or subtracted.</td><td>Unchanged.</td></tr>
+<tr><td>Multiply or divide by a positive constant</td><td>Multiplied or divided by the constant.</td><td>Multiplied or divided by the constant.</td></tr>
+</table>
+
+<p>Adding a constant slides every value along by the same amount, so the centre moves but the spread does not. Multiplying stretches the data, so both the centre and the spread change.</p>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>To decode, rearrange the code to make $x$ the subject, such as $x=by+a$. The mean follows the whole rule. The standard deviation uses only the multiplier $b$, and the variance uses $b^2$.</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Adding $a$ back to the standard deviation when decoding. A shift does not change how spread out the data are, so $\sigma_x=b\,\sigma_y$ with nothing added.</p>
+</div>
+
+<div class="example" id="ex-5">
+<div class="example-header">Worked Example 5 <span class="tag">Decoding a mean and standard deviation</span></div>
+<div class="example-question">
+<p>The masses, $x$ grams, of a sample of letters are coded using $y=\dfrac{x-50}{4}$. The coded values have mean $3.6$ and standard deviation $1.25$. Find the mean and the standard deviation of the masses.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Rearrange the code</div>$y=\dfrac{x-50}{4}\Rightarrow x=4y+50$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Mean</div>The mean follows the whole rule: $\bar x=4(3.6)+50=64.4$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Standard deviation</div>Only the multiplier matters: $\sigma_x=4(1.25)=5$</div>
+</div>
+<div class="example-answer">Mean $=64.4$ g &nbsp;&middot;&nbsp; standard deviation $=5$ g</div>
+</div>
+</div>
+</div>
+
+<div class="example" id="ex-6">
+<div class="example-header">Worked Example 6 <span class="tag">Coding with summary statistics</span></div>
+<div class="example-question">
+<p>The heights, $x$ cm, of 20 young trees are coded using $y=\dfrac{x-120}{5}$. The coded data give $\sum y=46$ and $\sum y^2=134.6$. Find the mean and the standard deviation of the heights.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Mean of y</div>$\bar y=\dfrac{46}{20}=2.3$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Standard deviation of y</div>$\sigma_y^2=\dfrac{134.6}{20}-2.3^2=6.73-5.29=1.44$, so $\sigma_y=\sqrt{1.44}=1.2$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Decode the mean</div>$x=5y+120$, so $\bar x=5(2.3)+120=131.5$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Decode the standard deviation</div>$\sigma_x=5(1.2)=6$ (so the variance of the heights is $6^2=36$).</div>
+</div>
+<div class="example-answer">Mean $=131.5$ cm &nbsp;&middot;&nbsp; standard deviation $=6$ cm</div>
+</div>
+</div>
+</div>
+
+<div class="box connect">
+<div class="box-title">&#8614; Used Again In</div>
+<p><a href="#correlation-regression">Topic 6 &mdash; Correlation &amp; Regression</a> uses coding on two variables at once, where a regression line found from coded data has to be decoded.</p>
+</div>
+
+
+<h2 class="topic-title" id="representations">4. Representations of Data</h2>
+<div class="topic-meta">Histograms, box plots and stem-and-leaf diagrams, and how to read shape, outliers and comparisons from them.</div>
+
+<h3>Histograms</h3>
+<p>A histogram displays grouped continuous data. There are no gaps between the bars, and the <strong>area</strong> of each bar is proportional to the frequency of its class. That is what allows the classes to have different widths.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Frequency Density</div>
+<p><strong>Learn this</strong> (not in the formulae booklet):</p>
+<p>$$\text{frequency density} =\dfrac{\text{frequency}}{\text{class width}}$$</p>
+<p>$$\text{area of bar} =k\times\text{frequency}$$</p>
+<p>When the height is the frequency density, $k=1$ and the area equals the frequency. Class widths come from the class <strong>boundaries</strong>.</p>
+</div>
+
+<div class="example" id="ex-7">
+<div class="example-header">Worked Example 7 <span class="tag">Drawing a histogram</span></div>
+<div class="example-question">
+<p>The lengths, to the nearest millimetre, of 100 leaves are shown in the table. Draw a histogram to represent the data.</p>
+<table>
+<tr><th>Length (mm)</th><th>Frequency</th></tr>
+<tr><td>20&ndash;29</td><td>12</td></tr>
+<tr><td>30&ndash;34</td><td>18</td></tr>
+<tr><td>35&ndash;39</td><td>26</td></tr>
+<tr><td>40&ndash;49</td><td>30</td></tr>
+<tr><td>50&ndash;69</td><td>14</td></tr>
+</table>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find the class boundaries</div>The lengths are rounded to the nearest millimetre, so the gaps close at the half-way points: 19.5, 29.5, 34.5, 39.5, 49.5 and 69.5.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Widths and frequency densities</div>Divide each frequency by its class width.
+<table>
+<tr><th>Length</th><th>Class boundaries</th><th>Width</th><th>Frequency</th><th>Frequency density</th></tr>
+<tr><td>20&ndash;29</td><td>19.5 to 29.5</td><td>10</td><td>12</td><td>1.2</td></tr>
+<tr><td>30&ndash;34</td><td>29.5 to 34.5</td><td>5</td><td>18</td><td>3.6</td></tr>
+<tr><td>35&ndash;39</td><td>34.5 to 39.5</td><td>5</td><td>26</td><td>5.2</td></tr>
+<tr><td>40&ndash;49</td><td>39.5 to 49.5</td><td>10</td><td>30</td><td>3.0</td></tr>
+<tr><td>50&ndash;69</td><td>49.5 to 69.5</td><td>20</td><td>14</td><td>0.7</td></tr>
+</table></div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Draw the bars</div>Draw each bar between its two class boundaries, with height equal to its frequency density. Label the vertical axis "Frequency density". The finished histogram is shown below.</div>
+</div>
+<div class="example-answer">Bars from 19.5 to 69.5 with heights 1.2, 3.6, 5.2, 3.0 and 0.7</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 440 290" width="440" height="290" role="img" aria-label="Histogram of leaf lengths with five bars of unequal width. Class boundaries 19.5, 29.5, 34.5, 39.5, 49.5 and 69.5 millimetres; frequency densities 1.2, 3.6, 5.2, 3.0 and 0.7; the bar areas give frequencies 12, 18, 26, 30 and 14">
+<rect class="s1-bar" x="87" y="196.8" width="60" height="43.2" fill="#1d5bbf" fill-opacity="0.16" stroke="#1d5bbf" stroke-width="1.6"/>
+<text x="117" y="214.8" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">12</text>
+<rect class="s1-bar" x="147" y="110.4" width="30" height="129.6" fill="#1d5bbf" fill-opacity="0.16" stroke="#1d5bbf" stroke-width="1.6"/>
+<text x="162" y="128.4" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">18</text>
+<rect class="s1-bar" x="177" y="52.8" width="30" height="187.2" fill="#1d5bbf" fill-opacity="0.16" stroke="#1d5bbf" stroke-width="1.6"/>
+<text x="192" y="70.8" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">26</text>
+<rect class="s1-bar" x="207" y="132" width="60" height="108" fill="#1d5bbf" fill-opacity="0.16" stroke="#1d5bbf" stroke-width="1.6"/>
+<text x="237" y="150" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">30</text>
+<rect class="s1-bar" x="267" y="214.8" width="120" height="25.2" fill="#1d5bbf" fill-opacity="0.16" stroke="#1d5bbf" stroke-width="1.6"/>
+<text x="327" y="230.8" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">14</text>
+<line x1="60" y1="240" x2="426" y2="240" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="60" y1="240" x2="60" y2="18" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="55" y1="240" x2="60" y2="240" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="244" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">0</text>
+<line x1="55" y1="204" x2="60" y2="204" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="208" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">1</text>
+<line x1="55" y1="168" x2="60" y2="168" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="172" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">2</text>
+<line x1="55" y1="132" x2="60" y2="132" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="136" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">3</text>
+<line x1="55" y1="96" x2="60" y2="96" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="100" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">4</text>
+<line x1="55" y1="60" x2="60" y2="60" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="64" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">5</text>
+<line x1="55" y1="24" x2="60" y2="24" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="28" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">6</text>
+<line x1="87" y1="240" x2="87" y2="245" stroke="#6b7280" stroke-width="1.2"/>
+<text x="87" y="258" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">19.5</text>
+<line x1="147" y1="240" x2="147" y2="245" stroke="#6b7280" stroke-width="1.2"/>
+<text x="147" y="258" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">29.5</text>
+<line x1="177" y1="240" x2="177" y2="245" stroke="#6b7280" stroke-width="1.2"/>
+<text x="177" y="258" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">34.5</text>
+<line x1="207" y1="240" x2="207" y2="245" stroke="#6b7280" stroke-width="1.2"/>
+<text x="207" y="258" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">39.5</text>
+<line x1="267" y1="240" x2="267" y2="245" stroke="#6b7280" stroke-width="1.2"/>
+<text x="267" y="258" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">49.5</text>
+<line x1="387" y1="240" x2="387" y2="245" stroke="#6b7280" stroke-width="1.2"/>
+<text x="387" y="258" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">69.5</text>
+<text x="243" y="280" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430" text-anchor="middle">Length (mm)</text>
+<text x="18" y="130" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430" text-anchor="middle" transform="rotate(-90 18 130)">Frequency density</text>
+</svg>
+<div class="diagram-caption">Worked Example 7. The number inside each bar is its area, which is the class frequency.</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Plotting frequency as the height when the class widths are unequal, or drawing a bar from 20 to 29 and leaving gaps. Use the frequency density for the height and the class boundaries (19.5 to 29.5) for the edges.</p>
+</div>
+
+<div class="example" id="ex-8">
+<div class="example-header">Worked Example 8 <span class="tag">Working backwards from a histogram</span></div>
+<div class="example-question">
+<p>A histogram shows the times, $t$ minutes, that customers spent in a shop. The bar for $10\leq t\lt15$ is 2 cm wide and 6 cm high, and represents 24 customers.</p>
+<p>(a) The bar for $15\leq t\lt25$ is 4 cm wide and 3.5 cm high. Find the number of customers in this class.</p>
+<p>(b) The class $25\leq t\lt40$ contains 18 customers. Find the width and the height of its bar.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find what 1 cm² represents</div>The known bar has area $2\times6=12$ cm² for 24 customers, so 1 cm² represents $\dfrac{24}{12}=2$ customers.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Use the area</div>Area $=4\times3.5=14$ cm², so the frequency is $14\times2=28$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Width</div>A class of width 5 minutes is drawn 2 cm wide, so a class of width 15 minutes is 6 cm wide.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Height</div>18 customers need an area of $\dfrac{18}{2}=9$ cm², so the height is $\dfrac{9}{6}=1.5$ cm.</div>
+</div>
+<div class="example-answer">(a) 28 customers &nbsp;&middot;&nbsp; (b) 6 cm wide and 1.5 cm high</div>
+</div>
+</div>
+</div>
+
+<h3>Outliers</h3>
+<p>An <em class="def">outlier</em> is an extreme value that lies well outside the overall pattern of the data. The rule for deciding what counts as an outlier is always given in the question.</p>
+
+<div class="box formula">
+<div class="box-title">Rule &mdash; A Common Outlier Test</div>
+<p><strong>Given in the question</strong> (not in the formulae booklet). A value $x$ is an outlier if</p>
+<p>$$x\lt Q_1-k(Q_3-Q_1) \qquad \text{or} \qquad x\gt Q_3+k(Q_3-Q_1)$$</p>
+<p>The value of $k$ is stated in the question. It is often $1.5$.</p>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Use the rule exactly as the question states it. Do not assume $k=1.5$, and do not assume the rule is based on the quartiles.</p>
+</div>
+
+<h3>Box Plots</h3>
+<p>A box plot shows the quartiles, the extremes and any outliers on a single scale.</p>
+<ul>
+<li>The <strong>box</strong> runs from $Q_1$ to $Q_3$, with a line across it at the median $Q_2$.</li>
+<li>Each <strong>outlier</strong> is marked with a cross.</li>
+<li>Each <strong>whisker</strong> ends at the most extreme value that is not an outlier.</li>
+<li>Always draw the box plot against a labelled scale.</li>
+</ul>
+
+<div class="example" id="ex-9">
+<div class="example-header">Worked Example 9 <span class="tag">Outliers and a box plot</span></div>
+<div class="example-question">
+<p>The numbers of visitors to a small museum on 20 days were, in order:</p>
+<p>9, 21, 24, 28, 31, 33, 34, 36, 37, 38, 38, 40, 41, 43, 44, 44, 47, 55, 58, 69</p>
+<p>An outlier is a value greater than $Q_3+1.5(Q_3-Q_1)$ or less than $Q_1-1.5(Q_3-Q_1)$.</p>
+<p>(a) Find the quartiles. (b) Show that there are exactly two outliers. (c) Draw a box plot for the data.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Quartiles</div>$n=20$, so $\dfrac n4=5$, $\dfrac n2=10$ and $\dfrac{3n}4=15$ are all whole numbers. $Q_1=\dfrac{31+33}{2}=32$, $Q_2=\dfrac{38+38}{2}=38$ and $Q_3=\dfrac{44+44}{2}=44$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Outlier limits</div>$Q_3-Q_1=44-32=12$ and $1.5\times12=18$. The lower limit is $32-18=14$ and the upper limit is $44+18=62$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Test the extremes</div>$9$ is less than 14 and $69$ is greater than 62, so both are outliers. Every other value lies between 14 and 62.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Box plot</div>Draw the box from 32 to 44 with the median at 38. The whiskers end at $21$ and $58$, the smallest and largest values that are not outliers. Mark 9 and 69 with crosses.</div>
+</div>
+<div class="example-answer">$Q_1=32$, $Q_2=38$, $Q_3=44$ &nbsp;&middot;&nbsp; outliers: 9 and 69</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 460 138" width="460" height="138" role="img" aria-label="Box plot on a scale from 0 to 80 visitors per day: box from 32 to 44 with the median at 38, whiskers ending at 21 and 58, and outliers marked with crosses at 9 and 69">
+<line x1="135" y1="50" x2="190" y2="50" stroke="#1d5bbf" stroke-width="1.8" class="s1-whisker"/>
+<line x1="250" y1="50" x2="320" y2="50" stroke="#1d5bbf" stroke-width="1.8" class="s1-whisker"/>
+<line x1="135" y1="39" x2="135" y2="61" stroke="#1d5bbf" stroke-width="1.8" class="s1-cap"/>
+<line x1="320" y1="39" x2="320" y2="61" stroke="#1d5bbf" stroke-width="1.8" class="s1-cap"/>
+<rect class="s1-box" x="190" y="28" width="60" height="44" fill="#e8f0fd" stroke="#1d5bbf" stroke-width="1.8"/>
+<line x1="220" y1="28" x2="220" y2="72" stroke="#1d5bbf" stroke-width="2.4" class="s1-median"/>
+<path class="s1-outlier" d="M70,45 L80,55 M70,55 L80,45" stroke="#a8321f" stroke-width="2" fill="none"/>
+<path class="s1-outlier" d="M370,45 L380,55 M370,55 L380,45" stroke="#a8321f" stroke-width="2" fill="none"/>
+<line x1="30" y1="96" x2="430" y2="96" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="30" y1="96" x2="30" y2="101" stroke="#6b7280" stroke-width="1.2"/>
+<text x="30" y="113" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">0</text>
+<line x1="80" y1="96" x2="80" y2="101" stroke="#6b7280" stroke-width="1.2"/>
+<text x="80" y="113" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">10</text>
+<line x1="130" y1="96" x2="130" y2="101" stroke="#6b7280" stroke-width="1.2"/>
+<text x="130" y="113" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">20</text>
+<line x1="180" y1="96" x2="180" y2="101" stroke="#6b7280" stroke-width="1.2"/>
+<text x="180" y="113" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">30</text>
+<line x1="230" y1="96" x2="230" y2="101" stroke="#6b7280" stroke-width="1.2"/>
+<text x="230" y="113" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">40</text>
+<line x1="280" y1="96" x2="280" y2="101" stroke="#6b7280" stroke-width="1.2"/>
+<text x="280" y="113" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">50</text>
+<line x1="330" y1="96" x2="330" y2="101" stroke="#6b7280" stroke-width="1.2"/>
+<text x="330" y="113" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">60</text>
+<line x1="380" y1="96" x2="380" y2="101" stroke="#6b7280" stroke-width="1.2"/>
+<text x="380" y="113" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">70</text>
+<line x1="430" y1="96" x2="430" y2="101" stroke="#6b7280" stroke-width="1.2"/>
+<text x="430" y="113" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">80</text>
+<text x="230" y="131" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430" text-anchor="middle">Visitors per day</text>
+<text x="190" y="19" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#0f2545" text-anchor="middle">Q&#8321;</text>
+<text x="220" y="19" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#0f2545" text-anchor="middle">Q&#8322;</text>
+<text x="250" y="19" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#0f2545" text-anchor="middle">Q&#8323;</text>
+</svg>
+<div class="diagram-caption">Worked Example 9. The whiskers stop at 21 and 58; the outliers 9 and 69 are shown as crosses.</div>
+</div>
+
+<h3>Stem-and-Leaf Diagrams</h3>
+<p>A stem-and-leaf diagram keeps every data value while showing the shape of the distribution.</p>
+<ul>
+<li>Each value is split into a <strong>stem</strong> (for example the tens digit) and a <strong>leaf</strong> (the units digit).</li>
+<li>The leaves are written <strong>in order</strong>, one digit each, and the diagram needs a <strong>key</strong>.</li>
+<li>A <strong>back-to-back</strong> diagram shows two data sets on one stem. The leaves of both sets get larger as they move away from the stem.</li>
+<li>Because the data are in order, the median and quartiles can be counted straight from the diagram.</li>
+</ul>
+
+<h3>Skewness</h3>
+<p><em class="def">Skewness</em> describes the shape of a distribution: whether it is symmetrical or has a longer tail on one side.</p>
+
+<div class="diagram-row">
+<figure class="d-item">
+<svg viewBox="0 0 200 108" width="200" height="108" role="img" aria-label="Positively skewed distribution: the peak is on the left and a long tail stretches to the right">
+<polygon points="14,92 14,92 16.2,90.5 18.3,86.6 20.5,81.2 22.6,74.8 24.8,68 26.9,61.1 29.1,54.5 31.2,48.2 33.3,42.5 35.5,37.4 37.7,32.9 39.8,29.2 41.9,26.1 44.1,23.7 46.3,21.9 48.4,20.8 50.6,20.1 52.7,20 54.9,20.3 57,21 59.1,22.1 61.3,23.4 63.5,25 65.6,26.8 67.8,28.8 69.9,30.9 72.1,33.2 74.2,35.4 76.4,37.8 78.5,40.2 80.6,42.5 82.8,44.9 85,47.2 87.1,49.5 89.3,51.8 91.4,54 93.6,56.1 95.7,58.2 97.9,60.2 100,62.1 102.1,63.9 104.3,65.7 106.5,67.3 108.6,68.9 110.8,70.4 112.9,71.9 115,73.2 117.2,74.5 119.4,75.7 121.5,76.8 123.7,77.9 125.8,78.9 128,79.8 130.1,80.7 132.3,81.5 134.4,82.3 136.5,83 138.7,83.7 140.9,84.3 143,84.9 145.2,85.4 147.3,86 149.5,86.4 151.6,86.9 153.8,87.3 155.9,87.6 158,88 160.2,88.3 162.4,88.6 164.5,88.9 166.7,89.1 168.8,89.4 171,89.6 173.1,89.8 175.3,89.9 177.4,90.1 179.5,90.3 181.7,90.4 183.9,90.5 186,90.7 186,92" fill="#1d5bbf" fill-opacity="0.12"/>
+<polyline class="s1-curve" points="14,92 16.2,90.5 18.3,86.6 20.5,81.2 22.6,74.8 24.8,68 26.9,61.1 29.1,54.5 31.2,48.2 33.3,42.5 35.5,37.4 37.7,32.9 39.8,29.2 41.9,26.1 44.1,23.7 46.3,21.9 48.4,20.8 50.6,20.1 52.7,20 54.9,20.3 57,21 59.1,22.1 61.3,23.4 63.5,25 65.6,26.8 67.8,28.8 69.9,30.9 72.1,33.2 74.2,35.4 76.4,37.8 78.5,40.2 80.6,42.5 82.8,44.9 85,47.2 87.1,49.5 89.3,51.8 91.4,54 93.6,56.1 95.7,58.2 97.9,60.2 100,62.1 102.1,63.9 104.3,65.7 106.5,67.3 108.6,68.9 110.8,70.4 112.9,71.9 115,73.2 117.2,74.5 119.4,75.7 121.5,76.8 123.7,77.9 125.8,78.9 128,79.8 130.1,80.7 132.3,81.5 134.4,82.3 136.5,83 138.7,83.7 140.9,84.3 143,84.9 145.2,85.4 147.3,86 149.5,86.4 151.6,86.9 153.8,87.3 155.9,87.6 158,88 160.2,88.3 162.4,88.6 164.5,88.9 166.7,89.1 168.8,89.4 171,89.6 173.1,89.8 175.3,89.9 177.4,90.1 179.5,90.3 181.7,90.4 183.9,90.5 186,90.7" fill="none" stroke="#1d5bbf" stroke-width="2.2"/>
+<line x1="8" y1="92" x2="192" y2="92" stroke="#c9c6ba" stroke-width="1.2"/>
+</svg>
+<figcaption>positive skew: long tail to the right</figcaption>
+</figure>
+<figure class="d-item">
+<svg viewBox="0 0 200 108" width="200" height="108" role="img" aria-label="Symmetrical distribution: a single central peak with matching tails on both sides">
+<polygon points="14,92 14,91.6 16.2,91.4 18.3,91.3 20.5,91.1 22.6,90.9 24.8,90.6 26.9,90.2 29.1,89.8 31.2,89.3 33.3,88.7 35.5,88 37.7,87.1 39.8,86.1 42,85 44.1,83.7 46.3,82.3 48.4,80.6 50.6,78.8 52.7,76.7 54.9,74.4 57,72 59.2,69.3 61.3,66.5 63.5,63.4 65.6,60.3 67.8,57 69.9,53.5 72.1,50.1 74.2,46.6 76.4,43.1 78.5,39.7 80.6,36.4 82.8,33.3 85,30.4 87.1,27.8 89.2,25.5 91.4,23.6 93.6,22 95.7,20.9 97.9,20.2 100,20 102.1,20.2 104.3,20.9 106.5,22 108.6,23.6 110.8,25.5 112.9,27.8 115.1,30.4 117.2,33.3 119.4,36.4 121.5,39.7 123.7,43.1 125.8,46.6 128,50.1 130.1,53.5 132.3,57 134.4,60.3 136.6,63.4 138.7,66.5 140.9,69.3 143,72 145.2,74.4 147.3,76.7 149.5,78.8 151.6,80.6 153.8,82.3 155.9,83.7 158.1,85 160.2,86.1 162.4,87.1 164.5,88 166.7,88.7 168.8,89.3 171,89.8 173.1,90.2 175.3,90.6 177.4,90.9 179.6,91.1 181.7,91.3 183.9,91.4 186,91.6 186,92" fill="#1d5bbf" fill-opacity="0.12"/>
+<polyline class="s1-curve" points="14,91.6 16.2,91.4 18.3,91.3 20.5,91.1 22.6,90.9 24.8,90.6 26.9,90.2 29.1,89.8 31.2,89.3 33.3,88.7 35.5,88 37.7,87.1 39.8,86.1 42,85 44.1,83.7 46.3,82.3 48.4,80.6 50.6,78.8 52.7,76.7 54.9,74.4 57,72 59.2,69.3 61.3,66.5 63.5,63.4 65.6,60.3 67.8,57 69.9,53.5 72.1,50.1 74.2,46.6 76.4,43.1 78.5,39.7 80.6,36.4 82.8,33.3 85,30.4 87.1,27.8 89.2,25.5 91.4,23.6 93.6,22 95.7,20.9 97.9,20.2 100,20 102.1,20.2 104.3,20.9 106.5,22 108.6,23.6 110.8,25.5 112.9,27.8 115.1,30.4 117.2,33.3 119.4,36.4 121.5,39.7 123.7,43.1 125.8,46.6 128,50.1 130.1,53.5 132.3,57 134.4,60.3 136.6,63.4 138.7,66.5 140.9,69.3 143,72 145.2,74.4 147.3,76.7 149.5,78.8 151.6,80.6 153.8,82.3 155.9,83.7 158.1,85 160.2,86.1 162.4,87.1 164.5,88 166.7,88.7 168.8,89.3 171,89.8 173.1,90.2 175.3,90.6 177.4,90.9 179.6,91.1 181.7,91.3 183.9,91.4 186,91.6" fill="none" stroke="#1d5bbf" stroke-width="2.2"/>
+<line x1="8" y1="92" x2="192" y2="92" stroke="#c9c6ba" stroke-width="1.2"/>
+</svg>
+<figcaption>symmetrical: no skew</figcaption>
+</figure>
+<figure class="d-item">
+<svg viewBox="0 0 200 108" width="200" height="108" role="img" aria-label="Negatively skewed distribution: the peak is on the right and a long tail stretches to the left">
+<polygon points="14,92 14,90.7 16.2,90.5 18.3,90.4 20.5,90.3 22.6,90.1 24.8,89.9 26.9,89.8 29.1,89.6 31.2,89.4 33.3,89.1 35.5,88.9 37.7,88.6 39.8,88.3 41.9,88 44.1,87.6 46.3,87.3 48.4,86.9 50.6,86.4 52.7,86 54.9,85.4 57,84.9 59.1,84.3 61.3,83.7 63.5,83 65.6,82.3 67.8,81.5 69.9,80.7 72.1,79.8 74.2,78.9 76.4,77.9 78.5,76.8 80.6,75.7 82.8,74.5 85,73.2 87.1,71.9 89.3,70.4 91.4,68.9 93.6,67.3 95.7,65.7 97.9,63.9 100,62.1 102.1,60.2 104.3,58.2 106.5,56.1 108.6,54 110.8,51.8 112.9,49.5 115,47.2 117.2,44.9 119.4,42.5 121.5,40.2 123.7,37.8 125.8,35.4 128,33.2 130.1,30.9 132.3,28.8 134.4,26.8 136.5,25 138.7,23.4 140.9,22.1 143,21 145.2,20.3 147.3,20 149.5,20.1 151.6,20.8 153.8,21.9 155.9,23.7 158,26.1 160.2,29.2 162.4,32.9 164.5,37.4 166.7,42.5 168.8,48.2 171,54.5 173.1,61.1 175.3,68 177.4,74.8 179.5,81.2 181.7,86.6 183.9,90.5 186,92 186,92" fill="#1d5bbf" fill-opacity="0.12"/>
+<polyline class="s1-curve" points="14,90.7 16.2,90.5 18.3,90.4 20.5,90.3 22.6,90.1 24.8,89.9 26.9,89.8 29.1,89.6 31.2,89.4 33.3,89.1 35.5,88.9 37.7,88.6 39.8,88.3 41.9,88 44.1,87.6 46.3,87.3 48.4,86.9 50.6,86.4 52.7,86 54.9,85.4 57,84.9 59.1,84.3 61.3,83.7 63.5,83 65.6,82.3 67.8,81.5 69.9,80.7 72.1,79.8 74.2,78.9 76.4,77.9 78.5,76.8 80.6,75.7 82.8,74.5 85,73.2 87.1,71.9 89.3,70.4 91.4,68.9 93.6,67.3 95.7,65.7 97.9,63.9 100,62.1 102.1,60.2 104.3,58.2 106.5,56.1 108.6,54 110.8,51.8 112.9,49.5 115,47.2 117.2,44.9 119.4,42.5 121.5,40.2 123.7,37.8 125.8,35.4 128,33.2 130.1,30.9 132.3,28.8 134.4,26.8 136.5,25 138.7,23.4 140.9,22.1 143,21 145.2,20.3 147.3,20 149.5,20.1 151.6,20.8 153.8,21.9 155.9,23.7 158,26.1 160.2,29.2 162.4,32.9 164.5,37.4 166.7,42.5 168.8,48.2 171,54.5 173.1,61.1 175.3,68 177.4,74.8 179.5,81.2 181.7,86.6 183.9,90.5 186,92" fill="none" stroke="#1d5bbf" stroke-width="2.2"/>
+<line x1="8" y1="92" x2="192" y2="92" stroke="#c9c6ba" stroke-width="1.2"/>
+</svg>
+<figcaption>negative skew: long tail to the left</figcaption>
+</figure>
+</div>
+
+<table>
+<tr><th>Evidence</th><th>Positive skew</th><th>Symmetrical</th><th>Negative skew</th></tr>
+<tr><td>Quartiles</td><td>$Q_3-Q_2\gt Q_2-Q_1$</td><td>$Q_3-Q_2=Q_2-Q_1$</td><td>$Q_3-Q_2\lt Q_2-Q_1$</td></tr>
+<tr><td>Averages</td><td>mode $\lt$ median $\lt$ mean</td><td>mode $=$ median $=$ mean</td><td>mean $\lt$ median $\lt$ mode</td></tr>
+<tr><td>$\dfrac{3(\text{mean}-\text{median})}{\text{standard deviation}}$</td><td>positive</td><td>zero</td><td>negative</td></tr>
+</table>
+
+<div class="box note">
+<div class="box-title">Note</div>
+<p>The specification asks for skewness but names no formula for it, and none is in the formulae booklet. The quartile and mean&ndash;median comparisons can always be used. The measure in the last row of the table is a common extra one: its sign gives the direction of the skew, and a larger size means a stronger skew.</p>
+</div>
+
+<div class="example" id="ex-10">
+<div class="example-header">Worked Example 10 <span class="tag">Describing skewness</span></div>
+<div class="example-question">
+<p>The waiting times, in minutes, at a clinic have $Q_1=18$, $Q_2=22$, $Q_3=31$, mean $25.4$ and standard deviation $8.5$.</p>
+<p>(a) Use the quartiles to describe the skewness. (b) Use the mean and median to describe the skewness. (c) Evaluate $\dfrac{3(\text{mean}-\text{median})}{\text{standard deviation}}$ and comment.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Quartiles</div>$Q_2-Q_1=22-18=4$ and $Q_3-Q_2=31-22=9$. Since $Q_3-Q_2\gt Q_2-Q_1$, the upper half is more stretched out: positive skew.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Mean and median</div>mean $-$ median $=25.4-22=3.4\gt0$. The mean is greater than the median: positive skew.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Evaluate the measure</div>$\dfrac{3(25.4-22)}{8.5}=1.2$, which is positive: positive skew.</div>
+</div>
+<div class="example-answer">All three methods show positive skew: most waits are short, with a tail of long waits.</div>
+</div>
+</div>
+</div>
+
+<h3>Comparing Distributions</h3>
+<p>To compare two data sets, compare <strong>one measure of location</strong> and <strong>one measure of spread</strong>, and say what each comparison means <strong>in context</strong>.</p>
+<ul>
+<li>Use the median with the interquartile range, or the mean with the standard deviation. Do not mix the pairs.</li>
+<li>The median and interquartile range are the better choice when there are outliers or the data are skewed.</li>
+</ul>
+
+<div class="example" id="ex-11">
+<div class="example-header">Worked Example 11 <span class="tag">Comparing two groups</span></div>
+<div class="example-question">
+<p>The back-to-back stem-and-leaf diagram shows the marks, out of 70, scored in a test by the 15 students in Class A and the 15 students in Class B. Compare the marks of the two classes.</p>
+<table class="stem-leaf">
+<caption>Key: 1 | 3 | 6 means 31 in Class A and 36 in Class B</caption>
+<tr><th>Class A</th><th>Stem</th><th>Class B</th></tr>
+<tr><td class="leaf-left">7 3</td><td class="stem">2</td><td></td></tr>
+<tr><td class="leaf-left">8 5 4 1</td><td class="stem">3</td><td>1 6 9</td></tr>
+<tr><td class="leaf-left">7 5 2 2 0</td><td class="stem">4</td><td>2 4 5 7 8 9</td></tr>
+<tr><td class="leaf-left">6 3 1</td><td class="stem">5</td><td>0 2 3 5</td></tr>
+<tr><td class="leaf-left">2</td><td class="stem">6</td><td>1 4</td></tr>
+</table>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Positions</div>Each class has $n=15$, so $\dfrac n4=3.75$, $\dfrac n2=7.5$ and $\dfrac{3n}4=11.25$. None is a whole number, so round up: use the 4th, 8th and 12th values.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Class A</div>Counting from the smallest value (23): $Q_1=34$, median $=42$, $Q_3=51$. The interquartile range is $51-34=17$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Class B</div>Counting from the smallest value (31): $Q_1=42$, median $=48$, $Q_3=53$. The interquartile range is $53-42=11$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Compare location</div>Class B has the higher median (48 against 42), so Class B's marks were higher on average.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">Compare spread</div>Class B has the smaller interquartile range (11 against 17), so Class B's marks were less spread out: they were more consistent.</div>
+</div>
+<div class="example-answer">Class B scored higher on average (median 48 against 42) and more consistently (IQR 11 against 17).</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>The specification says that drawing these diagrams is not the main focus of exam questions. Expect to read values from a diagram, complete one, or use it to compare distributions, so practise the interpretation as much as the drawing.</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Listing statistics without comparing them. "Median A is 42, median B is 48" is not a comparison. Say which is larger and what that means for the marks, the times or whatever the data measure.</p>
+</div>
+
+
+<div class="unit-marker">Unit B &middot; Probability</div>
+<h2 class="topic-title" id="probability">5. Probability</h2>
+<div class="topic-meta">Venn diagrams, tree diagrams and the laws that connect "or", "and" and "given".</div>
+
+<h3>Vocabulary and Notation</h3>
+<ul>
+<li>An <em class="def">experiment</em> is a repeatable process that produces outcomes.</li>
+<li>The <em class="def">sample space</em> is the set of all possible outcomes.</li>
+<li>An <em class="def">event</em> is a set of one or more outcomes. Its probability is between 0 and 1.</li>
+<li>When the outcomes are equally likely, $P(A)=\dfrac{\text{number of outcomes in }A}{\text{total number of outcomes}}$.</li>
+</ul>
+
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Intersection $A\cap B$</div><div class="gval">$A$ <strong>and</strong> $B$ both happen</div></div>
+<div class="gcell"><div class="glabel">Union $A\cup B$</div><div class="gval">$A$ <strong>or</strong> $B$, or both, happen</div></div>
+<div class="gcell"><div class="glabel">Complement $A'$</div><div class="gval">$A$ does <strong>not</strong> happen</div></div>
+<div class="gcell"><div class="glabel">Conditional $P(A\mid B)$</div><div class="gval">probability of $A$ <strong>given</strong> that $B$ has happened</div></div>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Probability Laws</div>
+<p><strong>In the formulae booklet:</strong></p>
+<p>$$P(A\cup B) =P(A)+P(B)-P(A\cap B)$$</p>
+<p>$$P(A\cap B) =P(A)\,P(B\mid A)$$</p>
+<p>$$P(A\mid B) =\dfrac{P(B\mid A)\,P(A)} {P(B\mid A)\,P(A) + P(B\mid A')\,P(A')}$$</p>
+<p><strong>Learn this</strong> (not in the booklet):</p>
+<p>$$P(A') =1-P(A) \qquad  \qquad P(A\mid B) =\dfrac{P(A\cap B)}{P(B)}$$</p>
+<p>The last formula is the booklet's multiplication law rearranged, with the letters swapped.</p>
+</div>
+
+<h3>Venn Diagrams</h3>
+<p>A Venn diagram shows events as overlapping regions inside a rectangle that represents the whole sample space. The numbers in all the regions add up to 1 (for probabilities) or to the total frequency.</p>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Fill a Venn diagram from the middle outwards. Start with the intersection, then subtract it to get the "only" regions, and find the region outside the circles last.</p>
+</div>
+
+<div class="example" id="ex-12">
+<div class="example-header">Worked Example 12 <span class="tag">Two-event Venn diagram</span></div>
+<div class="example-question">
+<p>Events $A$ and $B$ have $P(A)=0.5$, $P(B)=0.4$ and $P(A\cap B)=0.15$.</p>
+<p>(a) Draw a Venn diagram. Find (b) $P(A\cup B)$, (c) the probability that neither event happens, (d) $P(A\mid B)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Fill the diagram</div>Put $0.15$ in the overlap. Then $A$ only is $0.5-0.15=0.35$ and $B$ only is $0.4-0.15=0.25$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Union</div>$P(A\cup B)=0.5+0.4-0.15=0.75$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Neither</div>$P(A'\cap B')=1-0.75=0.25$, which goes outside both circles.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(d) Conditional</div>$P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0.15}{0.4}=0.375$</div>
+</div>
+<div class="example-answer">(b) $0.75$ &nbsp;&middot;&nbsp; (c) $0.25$ &nbsp;&middot;&nbsp; (d) $0.375$</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 300 180" width="300" height="180" role="img" aria-label="Venn diagram of events A and B inside a rectangle. A only 0.35, A and B 0.15, B only 0.25, outside both circles 0.25">
+<rect x="6" y="6" width="288" height="168" rx="4" fill="#ffffff" stroke="#0f2545" stroke-width="1.5"/>
+<circle cx="118" cy="92" r="62" fill="#1d5bbf" fill-opacity="0.12" stroke="#1d5bbf" stroke-width="1.8"/>
+<circle cx="182" cy="92" r="62" fill="#c9862c" fill-opacity="0.14" stroke="#c9862c" stroke-width="1.8"/>
+<text x="64" y="32" font-family="Georgia,serif" font-size="15" fill="#1d5bbf" text-anchor="middle" font-weight="700" font-style="italic">A</text>
+<text x="236" y="32" font-family="Georgia,serif" font-size="15" fill="#8a5a17" text-anchor="middle" font-weight="700" font-style="italic">B</text>
+<text x="86" y="96" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.35</text>
+<text x="150" y="96" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.15</text>
+<text x="214" y="96" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.25</text>
+<text x="266" y="162" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.25</text>
+</svg>
+<div class="diagram-caption">Worked Example 12. The four regions add up to 1.</div>
+</div>
+
+<h3>Mutually Exclusive and Independent Events</h3>
+<div class="grid-cells grid-cells--wide">
+<div class="gcell"><div class="glabel">Mutually exclusive</div><div class="gval">The events cannot both happen. $$P(A\cap B) =0$$ so $P(A\cup B)=P(A)+P(B)$. The circles do not overlap.</div></div>
+<div class="gcell"><div class="glabel">Independent</div><div class="gval">One event happening does not change the probability of the other. $$P(A\cap B) =P(A)\,P(B)$$ Equivalently $P(A\mid B)=P(A)$ and $P(B\mid A)=P(B)$.</div></div>
+</div>
+<p>The independence results must be learnt: they are not in the formulae booklet.</p>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Mixing up "mutually exclusive" and "independent". They are different ideas. If two events with non-zero probabilities are mutually exclusive, then knowing one has happened makes the other impossible, so they are certainly not independent.</p>
+</div>
+
+<div class="example" id="ex-13">
+<div class="example-header">Worked Example 13 <span class="tag">Testing for independence</span></div>
+<div class="example-question">
+<p>Events $C$ and $D$ have $P(C)=0.6$, $P(D)=0.35$ and $P(C\cup D)=0.74$. Determine whether $C$ and $D$ are independent.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find the intersection</div>Rearranging the addition law, $P(C\cap D)=P(C)+P(D)-P(C\cup D)=0.6+0.35-0.74=0.21$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Find the product</div>$P(C)\times P(D)=0.6\times0.35=0.21$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Compare</div>$P(C\cap D)=P(C)\,P(D)$, so the events are independent. (They are not mutually exclusive, because $P(C\cap D)\neq0$.)</div>
+</div>
+<div class="example-answer">$P(C\cap D)=0.21=P(C)\,P(D)$, so $C$ and $D$ are independent.</div>
+</div>
+</div>
+</div>
+
+<h3>Three Events</h3>
+<p>With three events the diagram has eight regions. The method is the same: every region is one probability, and they add up to 1. The Venn diagram below is used in Worked Example 14.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 320 250" width="320" height="250" role="img" aria-label="Venn diagram of three overlapping events A, B and C. A only 0.20; B only p; C only 0.12; A and B but not C 0.10; A and C but not B 0.05; B and C but not A q; all three 0.03; outside all three circles 0.18">
+<rect x="6" y="6" width="308" height="238" rx="4" fill="#ffffff" stroke="#0f2545" stroke-width="1.5"/>
+<circle cx="124" cy="96" r="64" fill="#1d5bbf" fill-opacity="0.10" stroke="#1d5bbf" stroke-width="1.8"/>
+<circle cx="196" cy="96" r="64" fill="#c9862c" fill-opacity="0.12" stroke="#c9862c" stroke-width="1.8"/>
+<circle cx="160" cy="158" r="64" fill="#1c7c54" fill-opacity="0.10" stroke="#1c7c54" stroke-width="1.8"/>
+<text x="62" y="34" font-family="Georgia,serif" font-size="15" fill="#1d5bbf" text-anchor="middle" font-weight="700" font-style="italic">A</text>
+<text x="258" y="34" font-family="Georgia,serif" font-size="15" fill="#8a5a17" text-anchor="middle" font-weight="700" font-style="italic">B</text>
+<text x="232" y="218" font-family="Georgia,serif" font-size="15" fill="#1c7c54" text-anchor="middle" font-weight="700" font-style="italic">C</text>
+<text x="90" y="80" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.20</text>
+<text x="230" y="80" font-family="Georgia,serif" font-size="14" fill="#a8321f" text-anchor="middle" font-weight="700" font-style="italic">p</text>
+<text x="160" y="200" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.12</text>
+<text x="160" y="72" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.10</text>
+<text x="120" y="146" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.05</text>
+<text x="200" y="146" font-family="Georgia,serif" font-size="14" fill="#a8321f" text-anchor="middle" font-weight="700" font-style="italic">q</text>
+<text x="160" y="120" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.03</text>
+<text x="280" y="232" font-family="Helvetica Neue,Arial" font-size="13" fill="#1c2430" text-anchor="middle">0.18</text>
+</svg>
+<div class="diagram-caption">Worked Example 14. $p$ and $q$ are unknown probabilities.</div>
+</div>
+
+<div class="example" id="ex-14">
+<div class="example-header">Worked Example 14 <span class="tag">Three events with unknowns</span></div>
+<div class="example-question">
+<p>The Venn diagram above shows the probabilities for events $A$, $B$ and $C$, where $p$ and $q$ are probabilities. Given that $P(C)=0.3$, find (a) $q$, (b) $p$, (c) $P(A\mid B)$. (d) Determine whether $A$ and $B$ are independent.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Use P(C)</div>The four regions inside $C$ add up to $0.3$, so $q=0.3-0.12-0.05-0.03=0.10$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Use the total</div>All eight regions add up to 1. The seven known regions (including $q$) add up to $0.20+0.10+0.05+0.03+0.12+0.10+0.18=0.78$, so $p=1-0.78=0.22$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Conditional probability</div>$P(B)=0.22+0.10+0.03+0.10=0.45$ and $P(A\cap B)=0.10+0.03=0.13$, so $P(A\mid B)=\dfrac{0.13}{0.45}=0.2888\ldots$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(d) Independence</div>$P(A)=0.20+0.10+0.05+0.03=0.38$, so $P(A)\,P(B)=0.38\times0.45=0.171$. This is not equal to $P(A\cap B)=0.13$, so $A$ and $B$ are not independent.</div>
+</div>
+<div class="example-answer">(a) $q=0.10$ &nbsp;&middot;&nbsp; (b) $p=0.22$ &nbsp;&middot;&nbsp; (c) $0.289$ (3 s.f.) &nbsp;&middot;&nbsp; (d) not independent</div>
+</div>
+</div>
+</div>
+
+<h3>Tree Diagrams</h3>
+<p>A tree diagram sets out an experiment that happens in stages.</p>
+<ul>
+<li><strong>Multiply</strong> along the branches to get the probability of a route.</li>
+<li><strong>Add</strong> the probabilities of different routes that give the same event.</li>
+<li>The branches at each point add up to 1.</li>
+<li>Second-stage branches are <strong>conditional</strong> probabilities. <strong>Without replacement</strong>, the numbers change after the first pick; <strong>with replacement</strong>, they stay the same.</li>
+</ul>
+
+<div class="example" id="ex-15">
+<div class="example-header">Worked Example 15 <span class="tag">Tree diagram without replacement</span></div>
+<div class="example-question">
+<p>A bag contains 5 red counters and 3 blue counters. Two counters are taken at random, one after the other, without replacement.</p>
+<p>Find the probability that (a) both counters are the same colour, (b) the second counter is blue. (c) Given that the second counter is blue, find the probability that the first counter was red.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Second-stage branches</div>After a red, 7 counters remain (4 red, 3 blue): the branches are $\dfrac47$ and $\dfrac37$. After a blue, 5 red and 2 blue remain: the branches are $\dfrac57$ and $\dfrac27$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Multiply along each route</div>$P(RR)=\dfrac58\times\dfrac47=\dfrac{20}{56}$, &nbsp; $P(RB)=\dfrac58\times\dfrac37=\dfrac{15}{56}$, &nbsp; $P(BR)=\dfrac38\times\dfrac57=\dfrac{15}{56}$, &nbsp; $P(BB)=\dfrac38\times\dfrac27=\dfrac{6}{56}$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(a) Same colour</div>$P(RR)+P(BB)=\dfrac{20}{56}+\dfrac{6}{56}=\dfrac{26}{56}=\dfrac{13}{28}$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Second is blue</div>$P(RB)+P(BB)=\dfrac{15}{56}+\dfrac{6}{56}=\dfrac{21}{56}=\dfrac{3}{8}$</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Reverse the condition</div>$P(\text{first red}\mid\text{second blue})=\dfrac{P(RB)}{P(\text{second blue})}=\dfrac{15}{56}\div\dfrac{21}{56}=\dfrac{15}{21}=\dfrac{5}{7}$</div>
+</div>
+<div class="example-answer">(a) $\dfrac{13}{28}$ &nbsp;&middot;&nbsp; (b) $\dfrac{3}{8}$ &nbsp;&middot;&nbsp; (c) $\dfrac{5}{7}$</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 460 230" width="460" height="230" role="img" aria-label="Tree diagram for taking two counters without replacement from 5 red and 3 blue. First counter: red 5/8, blue 3/8. After red: red 4/7, blue 3/7. After blue: red 5/7, blue 2/7. Outcomes: red red 20/56, red blue 15/56, blue red 15/56, blue blue 6/56">
+<text x="88" y="14" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">1st counter</text>
+<text x="232" y="14" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">2nd counter</text>
+<text x="372" y="14" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">Outcome</text>
+<line x1="26" y1="122" x2="150" y2="62" stroke="#a8321f" stroke-width="1.8"/>
+<line x1="26" y1="122" x2="150" y2="182" stroke="#1d5bbf" stroke-width="1.8"/>
+<text x="78" y="80" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#1c2430" text-anchor="middle">5/8</text>
+<text x="78" y="172" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#1c2430" text-anchor="middle">3/8</text>
+<text x="162" y="66.5" font-family="Helvetica Neue,Arial" font-size="13.5" fill="#a8321f" text-anchor="middle" font-weight="700">R</text>
+<text x="162" y="186.5" font-family="Helvetica Neue,Arial" font-size="13.5" fill="#1d5bbf" text-anchor="middle" font-weight="700">B</text>
+<line x1="174" y1="62" x2="296" y2="32" stroke="#a8321f" stroke-width="1.8"/>
+<text x="235" y="40" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#1c2430" text-anchor="middle">4/7</text>
+<text x="308" y="36.5" font-family="Helvetica Neue,Arial" font-size="13.5" fill="#a8321f" text-anchor="middle" font-weight="700">R</text>
+<text x="326" y="36.5" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430">RR: 5/8 &#215; 4/7 = 20/56</text>
+<line x1="174" y1="62" x2="296" y2="92" stroke="#1d5bbf" stroke-width="1.8"/>
+<text x="235" y="94" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#1c2430" text-anchor="middle">3/7</text>
+<text x="308" y="96.5" font-family="Helvetica Neue,Arial" font-size="13.5" fill="#1d5bbf" text-anchor="middle" font-weight="700">B</text>
+<text x="326" y="96.5" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430">RB: 5/8 &#215; 3/7 = 15/56</text>
+<line x1="174" y1="182" x2="296" y2="152" stroke="#a8321f" stroke-width="1.8"/>
+<text x="235" y="160" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#1c2430" text-anchor="middle">5/7</text>
+<text x="308" y="156.5" font-family="Helvetica Neue,Arial" font-size="13.5" fill="#a8321f" text-anchor="middle" font-weight="700">R</text>
+<text x="326" y="156.5" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430">BR: 3/8 &#215; 5/7 = 15/56</text>
+<line x1="174" y1="182" x2="296" y2="212" stroke="#1d5bbf" stroke-width="1.8"/>
+<text x="235" y="214" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#1c2430" text-anchor="middle">2/7</text>
+<text x="308" y="216.5" font-family="Helvetica Neue,Arial" font-size="13.5" fill="#1d5bbf" text-anchor="middle" font-weight="700">B</text>
+<text x="326" y="216.5" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430">BB: 3/8 &#215; 2/7 = 6/56</text>
+</svg>
+<div class="diagram-caption">Worked Example 15. The four outcome probabilities add up to 1.</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Reverse Conditionals</div>
+<p>For "given the second, find the first", divide the probability of the one route you want by the total probability of every route that satisfies the condition. This is exactly what the third booklet formula does: its denominator is the sum of the two routes into $B$.</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Assuming $P(A\mid B)$ and $P(B\mid A)$ are the same. They have the same numerator, $P(A\cap B)$, but different denominators. Also, without replacement, remember that the total drops by one for the second pick.</p>
+</div>
+
+
+<div class="unit-marker">Unit C &middot; Correlation &amp; Regression</div>
+<h2 class="topic-title" id="correlation-regression">6. Correlation &amp; Regression</h2>
+<div class="topic-meta">Measuring how strongly two variables move together, and fitting the best straight line through the data.</div>
+
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p><a href="pure-mathematics-1.html#lines">P1 &mdash; Lines</a> covers the straight line $y=mx+c$. A regression line $y=a+bx$ is the same idea with the letters rearranged: $b$ is the gradient and $a$ is the $y$-intercept.</p>
+</div>
+
+<h3>Scatter Diagrams and Correlation</h3>
+<p><em class="def">Bivariate data</em> are pairs of values $(x,y)$, one pair for each item. A scatter diagram plots each pair as a point. <em class="def">Correlation</em> describes the linear relationship between the two variables.</p>
+
+<div class="diagram-row">
+<figure class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130" role="img" aria-label="Scatter diagram with strong positive correlation: the points rise from bottom left to top right, close to a straight line">
+<line x1="22" y1="112" x2="170" y2="112" stroke="#c9c6ba" stroke-width="1.2"/>
+<line x1="22" y1="112" x2="22" y2="10" stroke="#c9c6ba" stroke-width="1.2"/>
+<circle cx="36.4" cy="97.3" r="3.2" fill="#0f2545"/>
+<circle cx="50.8" cy="90.4" r="3.2" fill="#0f2545"/>
+<circle cx="58" cy="78.7" r="3.2" fill="#0f2545"/>
+<circle cx="72.4" cy="81.6" r="3.2" fill="#0f2545"/>
+<circle cx="79.6" cy="66.9" r="3.2" fill="#0f2545"/>
+<circle cx="94" cy="64" r="3.2" fill="#0f2545"/>
+<circle cx="101.2" cy="51.2" r="3.2" fill="#0f2545"/>
+<circle cx="115.6" cy="53.2" r="3.2" fill="#0f2545"/>
+<circle cx="122.8" cy="37.5" r="3.2" fill="#0f2545"/>
+<circle cx="137.2" cy="34.6" r="3.2" fill="#0f2545"/>
+<circle cx="144.4" cy="22.8" r="3.2" fill="#0f2545"/>
+<circle cx="151.6" cy="27.7" r="3.2" fill="#0f2545"/>
+</svg>
+<figcaption>positive correlation: as $x$ increases, $y$ tends to increase</figcaption>
+</figure>
+<figure class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130" role="img" aria-label="Scatter diagram with strong negative correlation: the points fall from top left to bottom right, close to a straight line">
+<line x1="22" y1="112" x2="170" y2="112" stroke="#c9c6ba" stroke-width="1.2"/>
+<line x1="22" y1="112" x2="22" y2="10" stroke="#c9c6ba" stroke-width="1.2"/>
+<circle cx="36.4" cy="28.7" r="3.2" fill="#0f2545"/>
+<circle cx="50.8" cy="35.6" r="3.2" fill="#0f2545"/>
+<circle cx="58" cy="47.3" r="3.2" fill="#0f2545"/>
+<circle cx="72.4" cy="44.4" r="3.2" fill="#0f2545"/>
+<circle cx="79.6" cy="59.1" r="3.2" fill="#0f2545"/>
+<circle cx="94" cy="62" r="3.2" fill="#0f2545"/>
+<circle cx="101.2" cy="74.8" r="3.2" fill="#0f2545"/>
+<circle cx="115.6" cy="72.8" r="3.2" fill="#0f2545"/>
+<circle cx="122.8" cy="88.5" r="3.2" fill="#0f2545"/>
+<circle cx="137.2" cy="91.4" r="3.2" fill="#0f2545"/>
+<circle cx="144.4" cy="103.2" r="3.2" fill="#0f2545"/>
+<circle cx="151.6" cy="98.3" r="3.2" fill="#0f2545"/>
+</svg>
+<figcaption>negative correlation: as $x$ increases, $y$ tends to decrease</figcaption>
+</figure>
+<figure class="d-item">
+<svg viewBox="0 0 180 130" width="180" height="130" role="img" aria-label="Scatter diagram with no correlation: the points are scattered with no linear pattern">
+<line x1="22" y1="112" x2="170" y2="112" stroke="#c9c6ba" stroke-width="1.2"/>
+<line x1="22" y1="112" x2="22" y2="10" stroke="#c9c6ba" stroke-width="1.2"/>
+<circle cx="36.4" cy="63" r="3.2" fill="#0f2545"/>
+<circle cx="50.8" cy="33.6" r="3.2" fill="#0f2545"/>
+<circle cx="58" cy="87.5" r="3.2" fill="#0f2545"/>
+<circle cx="72.4" cy="48.3" r="3.2" fill="#0f2545"/>
+<circle cx="79.6" cy="97.3" r="3.2" fill="#0f2545"/>
+<circle cx="94" cy="23.8" r="3.2" fill="#0f2545"/>
+<circle cx="101.2" cy="67.9" r="3.2" fill="#0f2545"/>
+<circle cx="115.6" cy="38.5" r="3.2" fill="#0f2545"/>
+<circle cx="122.8" cy="92.4" r="3.2" fill="#0f2545"/>
+<circle cx="137.2" cy="58.1" r="3.2" fill="#0f2545"/>
+<circle cx="144.4" cy="28.7" r="3.2" fill="#0f2545"/>
+<circle cx="151.6" cy="82.6" r="3.2" fill="#0f2545"/>
+</svg>
+<figcaption>no correlation: no linear pattern</figcaption>
+</figure>
+</div>
+
+<h3>The Product Moment Correlation Coefficient</h3>
+<p>The <em class="def">product moment correlation coefficient</em> (PMCC), $r$, measures the strength of the <strong>linear</strong> correlation on a scale from $-1$ to $1$.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Summary Statistics and $r$</div>
+<p><strong>In the formulae booklet:</strong></p>
+<p>$$S_{xx} =\sum x^2-\dfrac{(\sum x)^2}{n} \qquad S_{yy} =\sum y^2-\dfrac{(\sum y)^2}{n}$$</p>
+<p>$$S_{xy} =\sum xy-\dfrac{\sum x\sum y}{n}$$</p>
+<p>$$r =\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$$</p>
+</div>
+
+<table>
+<tr><th>Value of $r$</th><th>Meaning</th></tr>
+<tr><td>$r=1$</td><td>Perfect positive linear correlation: every point lies on a line with positive gradient.</td></tr>
+<tr><td>$r$ close to $1$</td><td>Strong positive linear correlation.</td></tr>
+<tr><td>$r$ close to $0$</td><td>Little or no linear correlation.</td></tr>
+<tr><td>$r$ close to $-1$</td><td>Strong negative linear correlation.</td></tr>
+<tr><td>$r=-1$</td><td>Perfect negative linear correlation: every point lies on a line with negative gradient.</td></tr>
+</table>
+
+<p><strong>Limitations.</strong> Correlation does not prove causation: two variables can rise together because of a third factor, or by coincidence. Also, $r$ only measures <em>linear</em> association, so two variables can have $r$ close to 0 and still be related by a curve.</p>
+
+<div class="example" id="ex-16">
+<div class="example-header">Worked Example 16 <span class="tag">Calculating and interpreting $r$</span></div>
+<div class="example-question">
+<p>A caf&eacute; records the midday temperature, $x$ &deg;C, and the number of cold drinks sold, $y$, on 8 days.</p>
+<table>
+<tr><th scope="row">$x$<span class="sr-only">x</span></th><td>14</td><td>16</td><td>19</td><td>21</td><td>23</td><td>25</td><td>28</td><td>30</td></tr>
+<tr><th scope="row">$y$<span class="sr-only">y</span></th><td>31</td><td>38</td><td>42</td><td>50</td><td>53</td><td>62</td><td>66</td><td>74</td></tr>
+</table>
+<p>$\sum x=176$, &nbsp;$\sum y=416$, &nbsp;$\sum x^2=4092$, &nbsp;$\sum y^2=23154$, &nbsp;$\sum xy=9727$</p>
+<p>(a) Find $S_{xx}$, $S_{yy}$ and $S_{xy}$. (b) Calculate the product moment correlation coefficient. (c) Interpret your value.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Sxx</div>$S_{xx}=4092-\dfrac{176^2}{8}=4092-3872=220$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Syy</div>$S_{yy}=23154-\dfrac{416^2}{8}=23154-21632=1522$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(a) Sxy</div>$S_{xy}=9727-\dfrac{176\times416}{8}=9727-9152=575$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Correlation coefficient</div>$r=\dfrac{575}{\sqrt{220\times1522}}=0.9936\ldots$</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Interpret in context</div>$r$ is close to 1, so there is strong positive correlation: on warmer days the caf&eacute; tends to sell more cold drinks.</div>
+</div>
+<div class="example-answer">$S_{xx}=220$, $S_{yy}=1522$, $S_{xy}=575$ &nbsp;&middot;&nbsp; $r=0.994$ (3 s.f.), strong positive correlation</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Interpret $r$ with both variables named: "as the temperature increases, the number of cold drinks sold tends to increase". A statement such as "strong positive correlation" on its own describes the number, not the situation.</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Using $\sum x^2$ where $S_{xx}$ is needed, or forgetting to divide by $n$. Check your answer: $S_{xx}$ and $S_{yy}$ can never be negative, and $r$ must lie between $-1$ and $1$. Anything else means an arithmetic slip.</p>
+</div>
+
+<h3>The Regression Line of $y$ on $x$</h3>
+<p>The <em class="def">least squares regression line</em> is the straight line that fits the data best: it makes the sum of the squares of the vertical distances from the points to the line as small as possible.</p>
+<ul>
+<li>The <strong>explanatory</strong> (independent) variable, $x$, is the one that is set or that changes first.</li>
+<li>The <strong>response</strong> (dependent) variable, $y$, is the one that is measured as a result.</li>
+</ul>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Regression Line</div>
+<p><strong>In the formulae booklet:</strong></p>
+<p>$$y =a+bx \qquad \text{where} \qquad b =\dfrac{S_{xy}}{S_{xx}} \quad \text{and} \quad a =\bar y-b\bar x$$</p>
+<p>The line always passes through the mean point $(\bar x,\bar y)$.</p>
+</div>
+
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Interpreting $b$</div><div class="gval">The change in $y$ for each increase of 1 unit in $x$.</div></div>
+<div class="gcell"><div class="glabel">Interpreting $a$</div><div class="gval">The value of $y$ when $x=0$. It only has meaning if $x=0$ is sensible and close to the data.</div></div>
+<div class="gcell"><div class="glabel">Interpolation</div><div class="gval">Estimating inside the range of the $x$ data. Usually reliable.</div></div>
+<div class="gcell"><div class="glabel">Extrapolation</div><div class="gval">Estimating outside the range of the $x$ data. Unreliable: the pattern may not continue.</div></div>
+</div>
+
+<div class="example" id="ex-17">
+<div class="example-header">Worked Example 17 <span class="tag">Regression line, estimate and reliability</span></div>
+<div class="example-question">
+<p>Use the caf&eacute; data from Worked Example 16, where $S_{xx}=220$ and $S_{xy}=575$.</p>
+<p>(a) Find the equation of the regression line of $y$ on $x$. (b) Interpret the value of $b$. (c) Estimate the number of cold drinks sold when the temperature is 24 &deg;C. (d) Comment on the reliability of using the line to estimate sales at 38 &deg;C.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Gradient</div>$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{575}{220}=2.6136\ldots$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Intercept</div>$\bar x=\dfrac{176}{8}=22$ and $\bar y=\dfrac{416}{8}=52$, so $a=\bar y-b\bar x=52-2.6136\ldots\times22=52-57.5=-5.5$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(a) Equation</div>$y=-5.5+2.61x$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Interpret b</div>Each rise of 1 &deg;C in the midday temperature is associated with about 2.6 more cold drinks sold.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Estimate</div>$y=-5.5+2.6136\ldots\times24=57.22\ldots$, so about 57 cold drinks. This is interpolation, because 24 lies inside the data range of $14$ to $30$, so the estimate is reliable.</div>
+</div>
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-content"><div class="sk">(d) Reliability</div>38 &deg;C is outside the range of the data ($14$ to $30$). This is extrapolation, so the estimate would be unreliable: the linear pattern may not continue at higher temperatures.</div>
+</div>
+<div class="example-answer">(a) $y=-5.5+2.61x$ &nbsp;&middot;&nbsp; (c) $57.2$, about 57 drinks &nbsp;&middot;&nbsp; (d) unreliable, extrapolation</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 460 304" width="460" height="304" role="img" aria-label="Scatter diagram of cold drinks sold against temperature for 8 days, with points at (14, 31), (16, 38), (19, 42), (21, 50), (23, 53), (25, 62), (28, 66), (30, 74). The points lie close to a rising straight line, the regression line y = −5.5 + 2.61x, which passes through the mean point (22, 52)">
+<line x1="60" y1="260" x2="446" y2="260" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="60" y1="260" x2="60" y2="14" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="60" y1="260" x2="60" y2="265" stroke="#6b7280" stroke-width="1.2"/>
+<text x="60" y="278" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">12</text>
+<line x1="136" y1="260" x2="136" y2="265" stroke="#6b7280" stroke-width="1.2"/>
+<text x="136" y="278" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">16</text>
+<line x1="212" y1="260" x2="212" y2="265" stroke="#6b7280" stroke-width="1.2"/>
+<text x="212" y="278" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">20</text>
+<line x1="288" y1="260" x2="288" y2="265" stroke="#6b7280" stroke-width="1.2"/>
+<text x="288" y="278" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">24</text>
+<line x1="364" y1="260" x2="364" y2="265" stroke="#6b7280" stroke-width="1.2"/>
+<text x="364" y="278" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">28</text>
+<line x1="440" y1="260" x2="440" y2="265" stroke="#6b7280" stroke-width="1.2"/>
+<text x="440" y="278" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">32</text>
+<line x1="55" y1="260" x2="60" y2="260" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="264" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">20</text>
+<line x1="55" y1="220" x2="60" y2="220" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="224" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">30</text>
+<line x1="55" y1="180" x2="60" y2="180" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="184" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">40</text>
+<line x1="55" y1="140" x2="60" y2="140" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="144" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">50</text>
+<line x1="55" y1="100" x2="60" y2="100" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="104" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">60</text>
+<line x1="55" y1="60" x2="60" y2="60" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="64" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">70</text>
+<line x1="55" y1="20" x2="60" y2="20" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="24" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">80</text>
+<line class="s1-regline" x1="79" y1="226.09" x2="421" y2="37.91" stroke="#a8321f" stroke-width="2"/>
+<circle class="s1-pt" cx="98" cy="216" r="4" fill="#0f2545"/>
+<circle class="s1-pt" cx="136" cy="188" r="4" fill="#0f2545"/>
+<circle class="s1-pt" cx="193" cy="172" r="4" fill="#0f2545"/>
+<circle class="s1-pt" cx="231" cy="140" r="4" fill="#0f2545"/>
+<circle class="s1-pt" cx="269" cy="128" r="4" fill="#0f2545"/>
+<circle class="s1-pt" cx="307" cy="92" r="4" fill="#0f2545"/>
+<circle class="s1-pt" cx="364" cy="76" r="4" fill="#0f2545"/>
+<circle class="s1-pt" cx="402" cy="44" r="4" fill="#0f2545"/>
+<circle class="s1-mean" cx="250" cy="132" r="6.5" fill="none" stroke="#c9862c" stroke-width="2"/>
+<text x="262" y="148" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#8a5a17">mean point (22, 52)</text>
+<text x="329.8" y="48" font-family="Georgia,serif" font-size="12.5" fill="#a8321f" text-anchor="end" font-style="italic">y = &#8722;5.5 + 2.61x</text>
+<text x="253" y="296" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430" text-anchor="middle">Temperature, x (&#176;C)</text>
+<text x="18" y="137" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430" text-anchor="middle" transform="rotate(-90 18 137)">Cold drinks sold, y</text>
+</svg>
+<div class="diagram-caption">Worked Examples 16 and 17. The regression line passes through the mean point $(22,52)$.</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Rounding $b$ before finding $a$, which makes $a$ inaccurate: keep $b=2.6136\ldots$ in the calculator. Also, the regression line of $y$ on $x$ is for estimating $y$ from a given $x$. Do not use it backwards to estimate $x$ from $y$.</p>
+</div>
+
+<h3>Coding, Correlation and Regression</h3>
+<ul>
+<li><strong>Correlation:</strong> $r$ is not changed by linear coding of either variable. The one exception is a code that multiplies by a negative number, which reverses the sign of $r$.</li>
+<li><strong>Regression:</strong> a line found from coded data links the coded variables. To get the line for the original variables, substitute the codes and rearrange.</li>
+</ul>
+
+<div class="example" id="ex-18">
+<div class="example-header">Worked Example 18 <span class="tag">Regression with coded data</span></div>
+<div class="example-question">
+<p>A chemist records the temperature, $t$ &deg;C, and the yield, $h$ grams, of a reaction. The data are coded using $x=t-20$ and $y=\dfrac{h}{10}$. For the coded data, $S_{xx}=82$, $S_{xy}=123$, $\bar x=4$ and $\bar y=9.2$.</p>
+<p>(a) Find the regression line of $y$ on $x$. (b) Hence find the regression line of $h$ on $t$. (c) Estimate the yield at 26 &deg;C.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Coded line</div>$b=\dfrac{123}{82}=1.5$ and $a=9.2-1.5(4)=3.2$, so $y=3.2+1.5x$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Substitute the codes</div>Replace $y$ by $\dfrac{h}{10}$ and $x$ by $t-20$: $\dfrac{h}{10}=3.2+1.5(t-20)$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Rearrange</div>Multiply by 10: $h=32+15(t-20)=32+15t-300$, so $h=-268+15t$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Estimate</div>$h=15(26)-268=122$</div>
+</div>
+<div class="example-answer">(a) $y=3.2+1.5x$ &nbsp;&middot;&nbsp; (b) $h=-268+15t$ &nbsp;&middot;&nbsp; (c) $122$ grams</div>
+</div>
+</div>
+</div>
+
+
+<div class="unit-marker">Unit D &middot; Distributions</div>
+<h2 class="topic-title" id="discrete-random-variables">7. Discrete Random Variables</h2>
+<div class="topic-meta">Variables whose values come with probabilities: tables, expectations, and the simplest model of all.</div>
+
+<p>A <em class="def">random variable</em> $X$ is a variable whose value depends on the outcome of an experiment. It is <em class="def">discrete</em> if it can take only certain separate values. The capital letter $X$ is the variable, and the small letter $x$ is a value it can take.</p>
+
+<h3>Probability Distributions</h3>
+<p>A <em class="def">probability distribution</em> lists every value of $X$ with its probability, as a table or as a <em class="def">probability function</em> $p(x)=P(X=x)$. The probabilities always add up to 1.</p>
+
+<h3>Expectation and Variance</h3>
+<p>The <em class="def">expected value</em> $E(X)$ is the mean of $X$: the long-run average if the experiment is repeated many times. $\text{Var}(X)$ measures the spread of $X$ about that mean.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Discrete Random Variables</div>
+<p><strong>In the formulae booklet:</strong></p>
+<p>$$E(X) =\mu =\sum x\,P(X =x)$$</p>
+<p>$$\text{Var}(X) =\sigma^2 =\sum x^2\,P(X =x)-\mu^2$$</p>
+<p>$$E(g(X)) =\sum g(x)\,P(X =x)$$</p>
+<p><strong>Learn this</strong> (not in the booklet):</p>
+<p>$$\sum P(X =x) =1 \qquad  \qquad F(x_0) =P(X\leq x_0)$$</p>
+<p>$$E(aX+b) =aE(X)+b \qquad  \qquad \text{Var}(aX+b) =a^2\,\text{Var}(X)$$</p>
+</div>
+
+<p>Taking $g(X)=X^2$ in the third booklet formula gives $E(X^2)=\sum x^2\,P(X=x)$, so the variance is usually written $\text{Var}(X)=E(X^2)-[E(X)]^2$.</p>
+
+<div class="example" id="ex-19">
+<div class="example-header">Worked Example 19 <span class="tag">Finding $k$, $E(X)$ and $\text{Var}(X)$</span></div>
+<div class="example-question">
+<p>The discrete random variable $X$ has the probability distribution shown.</p>
+<table>
+<tr><th scope="row">$x$<span class="sr-only">x</span></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+<tr><th scope="row">$P(X=x)$<span class="sr-only">Probability that X equals x</span></th><td>$0.15$</td><td>$k$</td><td>$0.3$</td><td>$2k$</td><td>$0.1$</td></tr>
+</table>
+<p>Find (a) the value of $k$, (b) $E(X)$, (c) $\text{Var}(X)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Probabilities add up to 1</div>$0.15+k+0.3+2k+0.1=1\Rightarrow0.55+3k=1\Rightarrow3k=0.45$, so $k=0.15$. That makes $P(X=1)=0.15$ and $P(X=3)=0.3$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Expectation</div>$E(X)=0(0.15)+1(0.15)+2(0.3)+3(0.3)+4(0.1)=2.05$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Find E(X²)</div>$E(X^2)=0^2(0.15)+1^2(0.15)+2^2(0.3)+3^2(0.3)+4^2(0.1)=5.65$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Variance</div>$\text{Var}(X)=E(X^2)-[E(X)]^2=5.65-2.05^2=5.65-4.2025=1.4475$</div>
+</div>
+<div class="example-answer">(a) $k=0.15$ &nbsp;&middot;&nbsp; (b) $E(X)=2.05$ &nbsp;&middot;&nbsp; (c) $\text{Var}(X)=1.45$ (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Stopping at $E(X^2)$ and calling it the variance, or squaring the wrong thing. $E(X^2)$ squares the values first and then averages. $[E(X)]^2$ averages first and then squares. The variance is the first minus the second.</p>
+</div>
+
+<h3>The Cumulative Distribution Function</h3>
+<p>The <em class="def">cumulative distribution function</em> $F(x)=P(X\leq x)$ is a running total of the probabilities.</p>
+<ul>
+<li>$F$ at the largest value of $X$ is always 1.</li>
+<li>To recover a single probability, subtract: $P(X=x)=F(x)-F(\text{previous value})$.</li>
+<li>$P(X\gt x)=1-F(x)$.</li>
+</ul>
+
+<div class="example" id="ex-20">
+<div class="example-header">Worked Example 20 <span class="tag">Using $F(x)$</span></div>
+<div class="example-question">
+<p>The discrete random variable $X$ has probability function $P(X=x)=\dfrac{x^2}{30}$ for $x=1,2,3,4$.</p>
+<p>(a) Find the cumulative distribution function of $X$. (b) Find $P(X\leq2)$ and $P(X\gt2)$.</p>
+<p>The discrete random variable $Y$ has cumulative distribution function $F(y)=\dfrac{y^2+c}{20}$ for $y=1,2,3,4$.</p>
+<p>(c) Find the value of $c$. (d) Find $P(Y=3)$ and $P(Y\gt1)$. (e) Find the probability distribution of $Y$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Running totals</div>The probabilities are $\dfrac{1}{30}$, $\dfrac{4}{30}$, $\dfrac{9}{30}$, $\dfrac{16}{30}$; the numerators add up to 30. Adding as you go: $F(1)=\dfrac{1}{30}$, $F(2)=\dfrac{5}{30}$, $F(3)=\dfrac{14}{30}$, $F(4)=1$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Read from F</div>$P(X\leq2)=F(2)=\dfrac{5}{30}=\dfrac{1}{6}$ and $P(X\gt2)=1-F(2)=\dfrac{5}{6}$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Use F(4) = 1</div>4 is the largest value of $Y$, so $F(4)=1$: $\dfrac{16+c}{20}=1\Rightarrow16+c=20\Rightarrow c=4$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(d) Tabulate F(y)</div>$F(y)=\dfrac{y^2+4}{20}$ gives
+<table>
+<tr><th scope="row">$y$<span class="sr-only">y</span></th><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+<tr><th scope="row">$F(y)$<span class="sr-only">F of y</span></th><td>0.25</td><td>0.4</td><td>0.65</td><td>1</td></tr>
+</table></div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(d) Subtract</div>$P(Y=3)=F(3)-F(2)=0.65-0.4=0.25$ and $P(Y\gt1)=1-F(1)=1-0.25=0.75$</div>
+</div>
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-content"><div class="sk">(e) Distribution of Y</div>$P(Y=1)=F(1)=0.25$, &nbsp;$P(Y=2)=0.4-0.25=0.15$, &nbsp;$P(Y=3)=0.25$, &nbsp;$P(Y=4)=1-0.65=0.35$</div>
+</div>
+<div class="example-answer">(b) $\dfrac{1}{6}$ and $\dfrac{5}{6}$ &nbsp;&middot;&nbsp; (c) $c=4$ &nbsp;&middot;&nbsp; (d) $0.25$ and $0.75$ &nbsp;&middot;&nbsp; (e) probabilities $0.25$, $0.15$, $0.25$, $0.35$</div>
+</div>
+</div>
+</div>
+
+<h3>Linear Functions of $X$</h3>
+<p>If every value of $X$ is multiplied by $a$ and then has $b$ added, the mean follows the same rule. The variance ignores the shift $b$ and is multiplied by $a^2$. These are the coding rules from <a href="#coding">Topic 3</a>, applied to a random variable.</p>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>The variance can never be negative, and squaring $a$ removes any minus sign: $\text{Var}(3-2X)=(-2)^2\,\text{Var}(X)=4\,\text{Var}(X)$.</p>
+</div>
+
+<div class="example" id="ex-21">
+<div class="example-header">Worked Example 21 <span class="tag">$E(aX+b)$ and $\text{Var}(aX+b)$</span></div>
+<div class="example-question">
+<p>The random variable $X$ has $E(X)=4$ and $\text{Var}(X)=2.25$.</p>
+<p>(a) Find $E(3X-5)$ and $\text{Var}(3X-5)$. (b) The random variable $Y=aX+b$, where $a\gt0$, has $E(Y)=20$ and $\text{Var}(Y)=9$. Find $a$ and $b$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Expectation</div>$E(3X-5)=3E(X)-5=3(4)-5=7$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Variance</div>$\text{Var}(3X-5)=3^2\,\text{Var}(X)=9(2.25)=20.25$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Start with the variance</div>It contains only $a$: $a^2(2.25)=9\Rightarrow a^2=4$. Since $a\gt0$, $a=2$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Then the expectation</div>$aE(X)+b=20\Rightarrow2(4)+b=20$, so $b=12$.</div>
+</div>
+<div class="example-answer">(a) $E(3X-5)=7$, $\text{Var}(3X-5)=20.25$ &nbsp;&middot;&nbsp; (b) $a=2$, $b=12$</div>
+</div>
+</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Writing $\text{Var}(aX+b)=a\,\text{Var}(X)+b$. The $b$ disappears, because a shift does not change the spread, and $a$ must be squared.</p>
+</div>
+
+<h3>The Discrete Uniform Distribution</h3>
+<p>A random variable has a <em class="def">discrete uniform distribution</em> when all of its values are equally likely. It is the natural model for a fair dice, a fair spinner or a random digit.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Discrete Uniform on $1,2,\dots,n$</div>
+<p><strong>Learn this</strong> (not in the formulae booklet):</p>
+<p>$$P(X =x) =\dfrac1n \qquad E(X) =\dfrac{n+1}{2} \qquad \text{Var}(X) =\dfrac{n^2-1}{12}$$</p>
+<p>These two results need the values to be exactly $1,2,\dots,n$. For any other set of equally likely values, find $E(X)$ and $\text{Var}(X)$ from the definitions.</p>
+</div>
+
+<div class="example" id="ex-22">
+<div class="example-header">Worked Example 22 <span class="tag">A discrete uniform model</span></div>
+<div class="example-question">
+<p>A fair spinner has 8 equal sections numbered 1 to 8. The random variable $X$ is the number the spinner lands on.</p>
+<p>(a) Write down the distribution of $X$. (b) Find $E(X)$ and $\text{Var}(X)$. (c) Find $P(X\gt5)$. (d) Give one reason why this model might not suit a real spinner.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Model</div>The 8 numbers are equally likely, so $X$ has a discrete uniform distribution with $P(X=x)=\dfrac18$ for $x=1,2,\dots,8$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Mean</div>$E(X)=\dfrac{n+1}{2}=\dfrac{8+1}{2}=4.5$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Variance</div>$\text{Var}(X)=\dfrac{n^2-1}{12}=\dfrac{8^2-1}{12}=\dfrac{63}{12}=5.25$ (so the standard deviation is $\sqrt{5.25}=2.2912\ldots$, or $2.29$ to 3 s.f.)</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Count the values</div>$X\gt5$ means 6, 7 or 8, which is three of the eight values: $P(X\gt5)=\dfrac38$</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(d) Criticise the model</div>A real spinner may be biased, for example if it is not perfectly balanced, so the sections would not be exactly equally likely.</div>
+</div>
+<div class="example-answer">(b) $E(X)=4.5$, $\text{Var}(X)=5.25$ &nbsp;&middot;&nbsp; (c) $\dfrac38$</div>
+</div>
+</div>
+</div>
+
+
+<h2 class="topic-title" id="normal-distribution">8. The Normal Distribution</h2>
+<div class="topic-meta">The bell curve, the two tables in the booklet, and working backwards from a probability.</div>
+
+<p>The Normal distribution is a model for a <strong>continuous</strong> random variable, such as a height, a mass or a time. $X\sim N(\mu,\sigma^2)$ means that $X$ is Normal with mean $\mu$ and variance $\sigma^2$, so its standard deviation is $\sigma$.</p>
+
+<h3>Shape and Properties</h3>
+<ul>
+<li>The curve is bell-shaped and <strong>symmetrical about the mean</strong> $\mu$, so mean $=$ median $=$ mode.</li>
+<li>Probability is <strong>area under the curve</strong>, and the total area is 1.</li>
+<li>The curve never touches the horizontal axis, but the area far from the mean is tiny: about $68\%$ of values lie within one standard deviation of the mean, $95\%$ within two and $99.7\%$ within three.</li>
+<li>$P(X=a)=0$ for any single value $a$, so $P(X\lt a)$ and $P(X\leq a)$ are equal.</li>
+</ul>
+
+<h3>Standardising and the Table of $\Phi(z)$</h3>
+<p>Every Normal distribution can be converted to the <em class="def">standard Normal</em> $Z\sim N(0,1)$. The booklet tabulates $\Phi(z)=P(Z\lt z)$.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Standardising</div>
+<p><strong>Learn this</strong> (not in the formulae booklet):</p>
+<p>$$Z =\dfrac{X-\mu}{\sigma} \qquad \text{so} \qquad P(X\lt a) =\Phi\!\left(\dfrac{a-\mu}{\sigma}\right)$$</p>
+<p>$$P(Z\gt z) =1-\Phi(z) \qquad \Phi(-z) =1-\Phi(z) \qquad P(a\lt Z\lt b) =\Phi(b)-\Phi(a)$$</p>
+<p><strong>In the formulae booklet:</strong> the table of $\Phi(z)$ and the table of percentage points.</p>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 360 168" width="360" height="168" role="img" aria-label="Standard normal curve, symmetrical about 0. The tail to the left of minus z and the tail to the right of z are shaded and have equal areas, so Φ(−z) = 1 − Φ(z)">
+<polygon class="s1-shade" points="20,132 20,131.76 21.71,131.73 23.43,131.69 25.14,131.65 26.86,131.6 28.57,131.54 30.29,131.48 32,131.42 33.71,131.34 35.43,131.26 37.14,131.17 38.86,131.06 40.57,130.95 42.29,130.82 44,130.68 45.71,130.53 47.43,130.36 49.14,130.17 50.86,129.97 52.57,129.74 54.29,129.49 56,129.22 57.71,128.93 59.43,128.61 61.14,128.25 62.86,127.87 64.57,127.46 66.29,127.01 68,126.53 69.71,126.01 71.43,125.45 73.14,124.84 74.86,124.19 76.57,123.49 78.29,122.74 80,121.95 81.71,121.09 83.43,120.19 85.14,119.22 86.86,118.2 88.57,117.11 90.29,115.96 92,114.75 93.71,113.47 95.43,112.13 97.14,110.72 98.86,109.24 100.57,107.69 102.29,106.07 104,104.38 105.71,102.62 107.43,100.8 109.14,98.91 110.86,96.95 112.57,94.94 114.29,92.85 116,90.72 117.71,88.52 119.43,86.27 121.14,83.98 122.86,81.64 122.86,132" fill="#1d5bbf" fill-opacity="0.22"/>
+<polygon class="s1-shade" points="237.14,132 237.14,81.64 238.86,83.98 240.57,86.27 242.29,88.52 244,90.72 245.71,92.85 247.43,94.94 249.14,96.95 250.86,98.91 252.57,100.8 254.29,102.62 256,104.38 257.71,106.07 259.43,107.69 261.14,109.24 262.86,110.72 264.57,112.13 266.29,113.47 268,114.75 269.71,115.96 271.43,117.11 273.14,118.2 274.86,119.22 276.57,120.19 278.29,121.09 280,121.95 281.71,122.74 283.43,123.49 285.14,124.19 286.86,124.84 288.57,125.45 290.29,126.01 292,126.53 293.71,127.01 295.43,127.46 297.14,127.87 298.86,128.25 300.57,128.61 302.29,128.93 304,129.22 305.71,129.49 307.43,129.74 309.14,129.97 310.86,130.17 312.57,130.36 314.29,130.53 316,130.68 317.71,130.82 319.43,130.95 321.14,131.06 322.86,131.17 324.57,131.26 326.29,131.34 328,131.42 329.71,131.48 331.43,131.54 333.14,131.6 334.86,131.65 336.57,131.69 338.29,131.73 340,131.76 340,132" fill="#1d5bbf" fill-opacity="0.22"/>
+<polyline class="s1-curve" points="20,131.76 22.7,131.71 25.3,131.64 28,131.56 30.7,131.47 33.3,131.36 36,131.23 38.7,131.08 41.3,130.89 44,130.68 46.7,130.44 49.3,130.15 52,129.82 54.7,129.43 57.3,128.99 60,128.49 62.7,127.92 65.3,127.27 68,126.53 70.7,125.7 73.3,124.77 76,123.73 78.7,122.57 81.3,121.29 84,119.87 86.7,118.32 89.3,116.61 92,114.75 94.7,112.74 97.3,110.56 100,108.21 102.7,105.7 105.3,103.02 108,100.18 110.7,97.17 113.3,94.02 116,90.72 118.7,87.28 121.3,83.72 124,80.06 126.7,76.3 129.3,72.48 132,68.61 134.7,64.73 137.3,60.84 140,56.99 142.7,53.19 145.3,49.49 148,45.9 150.7,42.47 153.3,39.21 156,36.16 158.7,33.35 161.3,30.8 164,28.54 166.7,26.58 169.3,24.95 172,23.67 174.7,22.75 177.3,22.19 180,22 182.7,22.19 185.3,22.75 188,23.67 190.7,24.95 193.3,26.58 196,28.54 198.7,30.8 201.3,33.35 204,36.16 206.7,39.21 209.3,42.47 212,45.9 214.7,49.49 217.3,53.19 220,56.99 222.7,60.84 225.3,64.73 228,68.61 230.7,72.48 233.3,76.3 236,80.06 238.7,83.72 241.3,87.28 244,90.72 246.7,94.02 249.3,97.17 252,100.18 254.7,103.02 257.3,105.7 260,108.21 262.7,110.56 265.3,112.74 268,114.75 270.7,116.61 273.3,118.32 276,119.87 278.7,121.29 281.3,122.57 284,123.73 286.7,124.77 289.3,125.7 292,126.53 294.7,127.27 297.3,127.92 300,128.49 302.7,128.99 305.3,129.43 308,129.82 310.7,130.15 313.3,130.44 316,130.68 318.7,130.89 321.3,131.08 324,131.23 326.7,131.36 329.3,131.47 332,131.56 334.7,131.64 337.3,131.71 340,131.76" fill="none" stroke="#1d5bbf" stroke-width="2.2"/>
+<line x1="12" y1="132" x2="348" y2="132" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="122.9" y1="132" x2="122.9" y2="137" stroke="#6b7280" stroke-width="1.2"/>
+<text x="122.9" y="150" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">&#8722;z</text>
+<line x1="180" y1="132" x2="180" y2="137" stroke="#6b7280" stroke-width="1.2"/>
+<text x="180" y="150" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">0</text>
+<line x1="237.1" y1="132" x2="237.1" y2="137" stroke="#6b7280" stroke-width="1.2"/>
+<text x="237.1" y="150" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">z</text>
+<text x="68" y="96" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">&#934;(&#8722;z)</text>
+<text x="294.3" y="96" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">1 &#8722; &#934;(z)</text>
+</svg>
+<div class="diagram-caption">The curve is symmetrical, so the two shaded tails have equal areas: $\Phi(-z)=1-\Phi(z)$.</div>
+</div>
+
+<p>For example, the table gives $\Phi(1.25)=0.8944$. So $P(Z\gt1.25)=1-0.8944=0.1056$ and, by symmetry, $\Phi(-1.25)=0.1056$ as well.</p>
+
+<div class="box tip">
+<div class="box-title">Tip &mdash; Using the Table</div>
+<p>The table lists $z$ to 2 decimal places, so round your $z$ value to 2 decimal places before looking it up. The specification says interpolation is not necessary. Above $z=2.00$ the table lists $z$ in larger steps, so use the closest listed value or a calculator. Always sketch the curve and shade the area you want: it shows at once whether the answer should be more or less than $0.5$.</p>
+</div>
+
+<div class="example" id="ex-23">
+<div class="example-header">Worked Example 23 <span class="tag">Finding probabilities</span></div>
+<div class="example-question">
+<p>The heights of the sunflowers in a field, $X$ cm, are modelled by $X\sim N(170,6^2)$. Find (a) $P(X\lt178)$, (b) $P(X\gt181)$, (c) $P(165\lt X\lt178)$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Standardise</div>$z=\dfrac{178-170}{6}=1.333\ldots\approx1.33$, so $P(X\lt178)=\Phi(1.33)=0.9082$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Upper tail</div>$z=\dfrac{181-170}{6}=1.833\ldots\approx1.83$, so $P(X\gt181)=1-\Phi(1.83)=1-0.9664=0.0336$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Lower limit</div>$z=\dfrac{165-170}{6}=-0.833\ldots\approx-0.83$, and $\Phi(-0.83)=1-\Phi(0.83)=1-0.7967=0.2033$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Subtract</div>$P(165\lt X\lt178)=\Phi(1.33)-\Phi(-0.83)=0.9082-0.2033=0.7049$</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">Calculator values</div>A calculator works with the unrounded $z$ values and gives $0.9088$, $0.0334$ and $0.7065$. These differ slightly from the table answers because the table method rounds $z$ to 2 decimal places.</div>
+</div>
+<div class="example-answer">From tables: (a) $0.9082$ &nbsp;&middot;&nbsp; (b) $0.0336$ &nbsp;&middot;&nbsp; (c) $0.7049$</div>
+</div>
+</div>
+</div>
+
+<div class="diagram-row">
+<figure class="d-item">
+<svg viewBox="0 0 260 150" width="260" height="150" role="img" aria-label="Normal curve with mean 170 and standard deviation 6. The area to the left of 178 is shaded; from tables it is 0.9082">
+<polygon class="s1-shade" points="20,116 20,115.44 22.6,115.29 25.19,115.1 27.79,114.87 30.39,114.59 32.99,114.25 35.58,113.84 38.18,113.35 40.78,112.76 43.37,112.07 45.97,111.26 48.57,110.32 51.17,109.22 53.76,107.96 56.36,106.52 58.96,104.89 61.56,103.05 64.15,100.99 66.75,98.7 69.35,96.18 71.94,93.42 74.54,90.42 77.14,87.18 79.74,83.73 82.33,80.06 84.93,76.2 87.53,72.18 90.12,68.03 92.72,63.79 95.32,59.49 97.92,55.19 100.51,50.93 103.11,46.78 105.71,42.77 108.31,38.97 110.9,35.44 113.5,32.23 116.1,29.38 118.69,26.95 121.29,24.97 123.89,23.47 126.49,22.49 129.08,22.03 131.68,22.11 134.28,22.73 136.87,23.86 139.47,25.5 142.07,27.62 144.67,30.18 147.26,33.14 149.86,36.45 152.46,40.07 155.06,43.93 157.65,47.98 160.25,52.18 162.85,56.45 165.44,60.76 168.04,65.05 170.64,69.27 173.24,73.38 175.83,77.36 175.83,116" fill="#1d5bbf" fill-opacity="0.22"/>
+<polyline class="s1-curve" points="20,115.44 21.8,115.33 23.7,115.21 25.5,115.07 27.3,114.91 29.2,114.73 31,114.51 32.8,114.27 34.7,113.99 36.5,113.67 38.3,113.31 40.2,112.91 42,112.45 43.8,111.94 45.7,111.36 47.5,110.72 49.3,110.01 51.2,109.22 53,108.35 54.8,107.39 56.7,106.34 58.5,105.19 60.3,103.94 62.2,102.59 64,101.12 65.8,99.54 67.7,97.84 69.5,96.02 71.3,94.09 73.2,92.04 75,89.86 76.8,87.58 78.7,85.18 80.5,82.67 82.3,80.06 84.2,77.36 86,74.57 87.8,71.7 89.7,68.77 91.5,65.8 93.3,62.78 95.2,59.75 97,56.71 98.8,53.68 100.7,50.69 102.5,47.74 104.3,44.87 106.2,42.08 108,39.41 109.8,36.86 111.7,34.46 113.5,32.23 115.3,30.18 117.2,28.33 119,26.69 120.8,25.28 122.7,24.11 124.5,23.2 126.3,22.53 128.2,22.13 130,22 131.8,22.13 133.7,22.53 135.5,23.2 137.3,24.11 139.2,25.28 141,26.69 142.8,28.33 144.7,30.18 146.5,32.23 148.3,34.46 150.2,36.86 152,39.41 153.8,42.08 155.7,44.87 157.5,47.74 159.3,50.69 161.2,53.68 163,56.71 164.8,59.75 166.7,62.78 168.5,65.8 170.3,68.77 172.2,71.7 174,74.57 175.8,77.36 177.7,80.06 179.5,82.67 181.3,85.18 183.2,87.58 185,89.86 186.8,92.04 188.7,94.09 190.5,96.02 192.3,97.84 194.2,99.54 196,101.12 197.8,102.59 199.7,103.94 201.5,105.19 203.3,106.34 205.2,107.39 207,108.35 208.8,109.22 210.7,110.01 212.5,110.72 214.3,111.36 216.2,111.94 218,112.45 219.8,112.91 221.7,113.31 223.5,113.67 225.3,113.99 227.2,114.27 229,114.51 230.8,114.73 232.7,114.91 234.5,115.07 236.3,115.21 238.2,115.33 240,115.44" fill="none" stroke="#1d5bbf" stroke-width="2.2"/>
+<line x1="12" y1="116" x2="248" y2="116" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="130" y1="116" x2="130" y2="121" stroke="#6b7280" stroke-width="1.2"/>
+<text x="130" y="134" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">170</text>
+<line x1="175.8" y1="116" x2="175.8" y2="121" stroke="#6b7280" stroke-width="1.2"/>
+<text x="175.8" y="134" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">178</text>
+<text x="121.4" y="92" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">0.9082</text>
+</svg>
+<figcaption>Worked Example 23(a): $P(X\lt178)$</figcaption>
+</figure>
+<figure class="d-item">
+<svg viewBox="0 0 260 150" width="260" height="150" role="img" aria-label="Normal curve with mean 170 and standard deviation 6. The area between 165 and 178 is shaded; from tables it is 0.7049">
+<polygon class="s1-shade" points="101.35,116 101.35,49.58 102.6,47.59 103.84,45.64 105.08,43.72 106.32,41.86 107.56,40.04 108.8,38.28 110.04,36.58 111.28,34.95 112.53,33.39 113.77,31.92 115.01,30.53 116.25,29.23 117.49,28.02 118.73,26.92 119.97,25.91 121.22,25.02 122.46,24.24 123.7,23.57 124.94,23.01 126.18,22.58 127.42,22.26 128.66,22.07 129.9,22 131.15,22.05 132.39,22.23 133.63,22.52 134.87,22.94 136.11,23.47 137.35,24.13 138.59,24.89 139.84,25.77 141.08,26.76 142.32,27.85 143.56,29.04 144.8,30.32 146.04,31.7 147.28,33.16 148.52,34.7 149.77,36.32 151.01,38.01 152.25,39.76 153.49,41.57 154.73,43.43 155.97,45.34 157.21,47.29 158.45,49.27 159.7,51.28 160.94,53.3 162.18,55.35 163.42,57.4 164.66,59.46 165.9,61.52 167.14,63.57 168.39,65.61 169.63,67.63 170.87,69.63 172.11,71.61 173.35,73.56 174.59,75.48 175.83,77.36 175.83,116" fill="#1d5bbf" fill-opacity="0.22"/>
+<polyline class="s1-curve" points="20,115.44 21.8,115.33 23.7,115.21 25.5,115.07 27.3,114.91 29.2,114.73 31,114.51 32.8,114.27 34.7,113.99 36.5,113.67 38.3,113.31 40.2,112.91 42,112.45 43.8,111.94 45.7,111.36 47.5,110.72 49.3,110.01 51.2,109.22 53,108.35 54.8,107.39 56.7,106.34 58.5,105.19 60.3,103.94 62.2,102.59 64,101.12 65.8,99.54 67.7,97.84 69.5,96.02 71.3,94.09 73.2,92.04 75,89.86 76.8,87.58 78.7,85.18 80.5,82.67 82.3,80.06 84.2,77.36 86,74.57 87.8,71.7 89.7,68.77 91.5,65.8 93.3,62.78 95.2,59.75 97,56.71 98.8,53.68 100.7,50.69 102.5,47.74 104.3,44.87 106.2,42.08 108,39.41 109.8,36.86 111.7,34.46 113.5,32.23 115.3,30.18 117.2,28.33 119,26.69 120.8,25.28 122.7,24.11 124.5,23.2 126.3,22.53 128.2,22.13 130,22 131.8,22.13 133.7,22.53 135.5,23.2 137.3,24.11 139.2,25.28 141,26.69 142.8,28.33 144.7,30.18 146.5,32.23 148.3,34.46 150.2,36.86 152,39.41 153.8,42.08 155.7,44.87 157.5,47.74 159.3,50.69 161.2,53.68 163,56.71 164.8,59.75 166.7,62.78 168.5,65.8 170.3,68.77 172.2,71.7 174,74.57 175.8,77.36 177.7,80.06 179.5,82.67 181.3,85.18 183.2,87.58 185,89.86 186.8,92.04 188.7,94.09 190.5,96.02 192.3,97.84 194.2,99.54 196,101.12 197.8,102.59 199.7,103.94 201.5,105.19 203.3,106.34 205.2,107.39 207,108.35 208.8,109.22 210.7,110.01 212.5,110.72 214.3,111.36 216.2,111.94 218,112.45 219.8,112.91 221.7,113.31 223.5,113.67 225.3,113.99 227.2,114.27 229,114.51 230.8,114.73 232.7,114.91 234.5,115.07 236.3,115.21 238.2,115.33 240,115.44" fill="none" stroke="#1d5bbf" stroke-width="2.2"/>
+<line x1="12" y1="116" x2="248" y2="116" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="101.4" y1="116" x2="101.4" y2="121" stroke="#6b7280" stroke-width="1.2"/>
+<text x="101.4" y="134" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">165</text>
+<line x1="130" y1="116" x2="130" y2="121" stroke="#6b7280" stroke-width="1.2"/>
+<text x="130" y="134" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">170</text>
+<line x1="175.8" y1="116" x2="175.8" y2="121" stroke="#6b7280" stroke-width="1.2"/>
+<text x="175.8" y="134" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">178</text>
+<text x="138.6" y="92" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">0.7049</text>
+</svg>
+<figcaption>Worked Example 23(c): $P(165\lt X\lt178)$</figcaption>
+</figure>
+</div>
+
+<h3>Working Backwards: Percentage Points</h3>
+<p>When the probability is given and the value is wanted, use the table of <strong>percentage points</strong>. It gives the value $z$ that $Z$ exceeds with probability $p$, so $P(Z\gt z)=p$.</p>
+
+<table>
+<tr><th scope="row">$p$<span class="sr-only">p</span></th><td>0.10</td><td>0.05</td><td>0.025</td><td>0.01</td><td>0.005</td></tr>
+<tr><th scope="row">$z$<span class="sr-only">z</span></th><td>1.2816</td><td>1.6449</td><td>1.9600</td><td>2.3263</td><td>2.5758</td></tr>
+</table>
+
+<ul>
+<li>For an <strong>upper</strong> tail, $P(Z\gt z)=p$, use $z$ from the table.</li>
+<li>For a <strong>lower</strong> tail, $P(Z\lt z)=p$ with $p\lt0.5$, the value is negative: use $-z$.</li>
+<li>If $p$ is not in the percentage points table, use the main table in reverse: find the probability in the body of the table and read off $z$. For example, $\Phi(z)=0.8849$ gives $z=1.20$.</li>
+</ul>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Quote percentage points in full, as the front cover of the paper asks: write $1.6449$, not $1.64$ or $1.645$.</p>
+</div>
+
+<div class="example" id="ex-24">
+<div class="example-header">Worked Example 24 <span class="tag">Finding a value from a probability</span></div>
+<div class="example-question">
+<p>The lifetimes of a brand of battery, $X$ hours, are modelled by $X\sim N(48,5^2)$.</p>
+<p>(a) The longest-lasting 5% of batteries last more than $x$ hours. Find $x$. (b) The shortest-lived 10% of batteries last less than $w$ hours. Find $w$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Find z</div>$P(X\gt x)=0.05$ is an upper tail, so the percentage points table gives $z=1.6449$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Un-standardise</div>$\dfrac{x-48}{5}=1.6449\Rightarrow x=48+1.6449\times5=56.2245$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Find z</div>$P(X\lt w)=0.10$ is a lower tail, so $z=-1.2816$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Un-standardise</div>$\dfrac{w-48}{5}=-1.2816\Rightarrow w=48-1.2816\times5=41.592$</div>
+</div>
+<div class="example-answer">(a) $x=56.2$ hours &nbsp;&middot;&nbsp; (b) $w=41.6$ hours (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 300 160" width="300" height="160" role="img" aria-label="Normal curve with mean 48 and standard deviation 5. The upper tail to the right of x is shaded and has area 5%, leaving 95% to the left of x">
+<polygon class="s1-shade" points="216.82,124 216.82,97.63 217.88,98.74 218.93,99.82 219.98,100.87 221.04,101.89 222.09,102.87 223.14,103.83 224.19,104.76 225.25,105.65 226.3,106.52 227.35,107.35 228.41,108.16 229.46,108.94 230.51,109.69 231.57,110.41 232.62,111.1 233.67,111.77 234.72,112.41 235.78,113.02 236.83,113.61 237.88,114.17 238.94,114.71 239.99,115.23 241.04,115.72 242.09,116.19 243.15,116.64 244.2,117.06 245.25,117.47 246.31,117.86 247.36,118.23 248.41,118.58 249.46,118.91 250.52,119.22 251.57,119.52 252.62,119.8 253.68,120.07 254.73,120.32 255.78,120.56 256.84,120.79 257.89,121 258.94,121.2 259.99,121.39 261.05,121.57 262.1,121.73 263.15,121.89 264.21,122.04 265.26,122.18 266.31,122.31 267.36,122.43 268.42,122.54 269.47,122.65 270.52,122.75 271.58,122.84 272.63,122.93 273.68,123.01 274.74,123.08 275.79,123.16 276.84,123.22 277.89,123.28 278.95,123.34 280,123.39 280,124" fill="#1d5bbf" fill-opacity="0.22"/>
+<polyline class="s1-curve" points="20,123.39 22.2,123.28 24.3,123.15 26.5,123 28.7,122.82 30.8,122.62 33,122.39 35.2,122.12 37.3,121.82 39.5,121.48 41.7,121.09 43.8,120.65 46,120.15 48.2,119.59 50.3,118.97 52.5,118.27 54.7,117.5 56.8,116.65 59,115.7 61.2,114.66 63.3,113.52 65.5,112.27 67.7,110.92 69.8,109.44 72,107.85 74.2,106.14 76.3,104.29 78.5,102.32 80.7,100.23 82.8,98 85,95.64 87.2,93.16 89.3,90.55 91.5,87.83 93.7,85 95.8,82.07 98,79.04 100.2,75.93 102.3,72.76 104.5,69.52 106.7,66.25 108.8,62.96 111,59.66 113.2,56.38 115.3,53.13 117.5,49.93 119.7,46.81 121.8,43.79 124,40.89 126.2,38.13 128.3,35.52 130.5,33.1 132.7,30.87 134.8,28.87 137,27.09 139.2,25.56 141.3,24.29 143.5,23.3 145.7,22.58 147.8,22.14 150,22 152.2,22.14 154.3,22.58 156.5,23.3 158.7,24.29 160.8,25.56 163,27.09 165.2,28.87 167.3,30.87 169.5,33.1 171.7,35.52 173.8,38.13 176,40.89 178.2,43.79 180.3,46.81 182.5,49.93 184.7,53.13 186.8,56.38 189,59.66 191.2,62.96 193.3,66.25 195.5,69.52 197.7,72.76 199.8,75.93 202,79.04 204.2,82.07 206.3,85 208.5,87.83 210.7,90.55 212.8,93.16 215,95.64 217.2,98 219.3,100.23 221.5,102.32 223.7,104.29 225.8,106.14 228,107.85 230.2,109.44 232.3,110.92 234.5,112.27 236.7,113.52 238.8,114.66 241,115.7 243.2,116.65 245.3,117.5 247.5,118.27 249.7,118.97 251.8,119.59 254,120.15 256.2,120.65 258.3,121.09 260.5,121.48 262.7,121.82 264.8,122.12 267,122.39 269.2,122.62 271.3,122.82 273.5,123 275.7,123.15 277.8,123.28 280,123.39" fill="none" stroke="#1d5bbf" stroke-width="2.2"/>
+<line x1="12" y1="124" x2="288" y2="124" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="150" y1="124" x2="150" y2="129" stroke="#6b7280" stroke-width="1.2"/>
+<text x="150" y="142" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">48</text>
+<line x1="216.8" y1="124" x2="216.8" y2="129" stroke="#6b7280" stroke-width="1.2"/>
+<text x="216.8" y="142" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#1c2430" text-anchor="middle">x</text>
+<text x="259.1" y="92" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="middle" font-weight="700">5%</text>
+<text x="150" y="80" font-family="Helvetica Neue,Arial" font-size="12" fill="#4a5568" text-anchor="middle" font-weight="400">95%</text>
+</svg>
+<div class="diagram-caption">Worked Example 24(a). The top 5% lies to the right of $x=56.2$.</div>
+</div>
+
+<h3>Finding $\mu$ or $\sigma$</h3>
+<p>If $\mu$ or $\sigma$ is unknown, turn each given probability into a $z$ value and write $\dfrac{x-\mu}{\sigma}=z$. One unknown needs one equation. Two unknowns need two probabilities and give simultaneous equations.</p>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Losing the sign of $z$. A value with less than half the distribution below it is <em>below</em> the mean, so its $z$ value is negative: $P(X\lt a)=0.01$ gives $z=-2.3263$, not $+2.3263$. Also check which number is which in $N(\mu,\sigma^2)$: $N(50,16)$ has $\sigma=4$, not 16.</p>
+</div>
+
+<div class="example" id="ex-25">
+<div class="example-header">Worked Example 25 <span class="tag">Finding $\mu$</span></div>
+<div class="example-question">
+<p>The volume of juice in a carton, $X$ ml, is modelled by $X\sim N(\mu,3^2)$. Only 1% of cartons contain less than 250 ml. Find $\mu$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Find z</div>$P(X\lt250)=0.01$ is a lower tail. The table gives $2.3263$ for $p=0.01$, so $z=-2.3263$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Form the equation</div>$\dfrac{250-\mu}{3}=-2.3263$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Solve</div>$\mu=250+2.3263\times3=250+6.9789=256.9789$</div>
+</div>
+<div class="example-answer">$\mu=257$ ml (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<div class="example" id="ex-26">
+<div class="example-header">Worked Example 26 <span class="tag">Finding $\mu$ and $\sigma$</span></div>
+<div class="example-question">
+<p>The time for a journey, $X$ minutes, is modelled by $X\sim N(\mu,\sigma^2)$. 10% of journeys take less than 30 minutes and 5% take more than 55 minutes. Find $\mu$ and $\sigma$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Lower tail</div>$P(X\lt30)=0.10$ gives $z=-1.2816$: $\dfrac{30-\mu}{\sigma}=-1.2816\Rightarrow30-\mu=-1.2816\sigma$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Upper tail</div>$P(X\gt55)=0.05$ gives $z=1.6449$: $\dfrac{55-\mu}{\sigma}=1.6449\Rightarrow55-\mu=1.6449\sigma$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Subtract the equations</div>$(55-\mu)-(30-\mu)=1.6449\sigma+1.2816\sigma\Rightarrow25=2.9265\sigma$, so $\sigma=8.5426\ldots$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Back-substitute</div>$\mu=30+1.2816\sigma=30+10.948\ldots=40.948\ldots$</div>
+</div>
+<div class="example-answer">$\mu=40.9$ minutes &nbsp;&middot;&nbsp; $\sigma=8.54$ minutes (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+
+<div class="formula-sheet" id="formula-sheet">
+  <div class="unit-marker first">Quick Recall</div>
+  <h2 class="topic-title">Formula Sheet</h2>
+  <div class="topic-meta">Everything above, compressed to one scan for the night before the exam. "Booklet" means it is in the formulae booklet; "Learn" means it is not.</div>
+
+  <div class="fs-grid">
+
+    <div class="fs-card">
+      <h3 class="fs-title">Mathematical Models</h3>
+      <div class="fline"><span class="flabel">Learn</span>cycle: observe &rarr; devise &rarr; predict &rarr; collect &rarr; compare &rarr; refine</div>
+      <div class="fline"><span class="flabel">Learn</span>a model simplifies reality: quick and cheap, but not exact</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Location &amp; Spread</h3>
+      <div class="fline"><span class="flabel">Learn</span>$\bar x=\frac{\sum x}{n}$ or $\frac{\sum fx}{\sum f}$</div>
+      <div class="fline"><span class="flabel">Learn</span>quartiles of a list: $\frac n4$, $\frac n2$, $\frac{3n}4$; whole &rarr; mean with next value, otherwise round up</div>
+      <div class="fline"><span class="flabel">Learn</span>interpolation: $L+\frac{k-F}{f}\times w$</div>
+      <div class="fline"><span class="flabel">Learn</span>$\sigma^2=\frac{\sum x^2}{n}-\bar x^2=\frac{S_{xx}}{n}$, &nbsp;IQR $=Q_3-Q_1$</div>
+      <div class="fline"><span class="flabel">Booklet</span>$S_{xx}=\sum x^2-\frac{(\sum x)^2}{n}$</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Coding</h3>
+      <div class="fline"><span class="flabel">Learn</span>$y=\frac{x-a}{b}$: &nbsp;$\bar x=b\bar y+a$, &nbsp;$\sigma_x=b\sigma_y$</div>
+      <div class="fline"><span class="flabel">Learn</span>adding a constant does not change the standard deviation</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Representations</h3>
+      <div class="fline"><span class="flabel">Learn</span>frequency density $=\frac{\text{frequency}}{\text{class width}}$; area $\propto$ frequency</div>
+      <div class="fline"><span class="flabel">Given in the question</span>outliers: beyond $Q_1-k(Q_3-Q_1)$ or $Q_3+k(Q_3-Q_1)$</div>
+      <div class="fline"><span class="flabel">Learn</span>positive skew: $Q_3-Q_2\gt Q_2-Q_1$, mean $\gt$ median</div>
+      <div class="fline"><span class="flabel">Learn</span>compare: one location + one spread, in context</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Probability</h3>
+      <div class="fline"><span class="flabel">Booklet</span>$P(A\cup B)=P(A)+P(B)-P(A\cap B)$</div>
+      <div class="fline"><span class="flabel">Booklet</span>$P(A\cap B)=P(A)P(B\mid A)$</div>
+      <div class="fline"><span class="flabel">Learn</span>$P(A')=1-P(A)$, &nbsp;$P(A\mid B)=\frac{P(A\cap B)}{P(B)}$</div>
+      <div class="fline"><span class="flabel">Learn</span>independent: $P(A\cap B)=P(A)P(B)$</div>
+      <div class="fline"><span class="flabel">Learn</span>mutually exclusive: $P(A\cap B)=0$</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Correlation &amp; Regression</h3>
+      <div class="fline"><span class="flabel">Booklet</span>$S_{xy}=\sum xy-\frac{\sum x\sum y}{n}$</div>
+      <div class="fline"><span class="flabel">Booklet</span>$r=\frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$</div>
+      <div class="fline"><span class="flabel">Booklet</span>$y=a+bx$, &nbsp;$b=\frac{S_{xy}}{S_{xx}}$, &nbsp;$a=\bar y-b\bar x$</div>
+      <div class="fline"><span class="flabel">Learn</span>$-1\leq r\leq1$; coding does not change $r$; extrapolation is unreliable</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Discrete Random Variables</h3>
+      <div class="fline"><span class="flabel">Booklet</span>$E(X)=\sum xP(X=x)$</div>
+      <div class="fline"><span class="flabel">Booklet</span>$\text{Var}(X)=\sum x^2P(X=x)-\mu^2$</div>
+      <div class="fline"><span class="flabel">Learn</span>$\sum P(X=x)=1$, &nbsp;$F(x)=P(X\leq x)$</div>
+      <div class="fline"><span class="flabel">Learn</span>$E(aX+b)=aE(X)+b$, &nbsp;$\text{Var}(aX+b)=a^2\text{Var}(X)$</div>
+      <div class="fline"><span class="flabel">Learn</span>uniform on $1,\dots,n$: $E(X)=\frac{n+1}{2}$, $\text{Var}(X)=\frac{n^2-1}{12}$</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Normal Distribution</h3>
+      <div class="fline"><span class="flabel">Learn</span>$Z=\frac{X-\mu}{\sigma}$</div>
+      <div class="fline"><span class="flabel">Learn</span>$\Phi(-z)=1-\Phi(z)$, &nbsp;$P(Z\gt z)=1-\Phi(z)$</div>
+      <div class="fline"><span class="flabel">Booklet</span>table of $\Phi(z)$: round $z$ to 2 d.p.</div>
+      <div class="fline"><span class="flabel">Booklet</span>percentage points: $1.2816$ (10%), $1.6449$ (5%), $1.9600$ (2.5%), $2.3263$ (1%), $2.5758$ (0.5%)</div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="doc-footer">
+  Compiled reference notes &middot; not a substitute for the full syllabus &middot; check the current Edexcel International A Level Mathematics specification (Statistics 1, WST01) for exact requirements
+</footer>
+
+  </main>
+</div>
+
+</body>
+</html>
