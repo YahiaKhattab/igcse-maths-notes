@@ -1209,21 +1209,21 @@ where $F(x)$ is any antiderivative of $f(x)$.</p>
 <p>Some functions can't be integrated using standard techniques (or an exact integral simply isn't needed). The <em class="def">trapezium rule</em> approximates the area under a curve by splitting it into equal-width strips and treating each strip as a trapezium rather than a true curved region.</p>
 
 <div class="diagram">
-<svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Area under a curve split into four vertical strips of equal width h; each strip is treated as a trapezium whose parallel sides are the y-values y0 to y4">
+<svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Area under a dashed concave curve split into four vertical strips of equal width h. The ordinates y0 to y4 end on the curve, and each strip is a trapezium whose straight top joins the tops of two neighbouring ordinates, so the curve bulges slightly above every trapezium">
   <line x1="30" y1="190" x2="400" y2="190" stroke="#c9c6ba" stroke-width="1.2"/>
-  <path d="M 40,180 C 90,50 300,30 390,150" fill="none" stroke="#c9c6ba" stroke-width="1.5" stroke-dasharray="3,3"/>
   <g stroke="#1d5bbf" stroke-width="1.8" fill="#e8f0fd">
-    <polygon points="40,190 40,180 128,86 128,190"/>
-    <polygon points="128,190 128,86 216,46 216,190"/>
-    <polygon points="216,190 216,46 304,58 304,190"/>
-    <polygon points="304,190 304,58 392,150 392,190"/>
+    <polygon points="40,190 40,180 128,81 128,190"/>
+    <polygon points="128,190 128,81 216,44 216,190"/>
+    <polygon points="216,190 216,44 304,69 304,190"/>
+    <polygon points="304,190 304,69 392,156 392,190"/>
   </g>
+  <polyline points="40,180 44.4,173.58 48.8,167.31 53.2,161.2 57.6,155.24 62,149.44 66.4,143.79 70.8,138.3 75.2,132.96 79.6,127.78 84,122.75 88.4,117.88 92.8,113.16 97.2,108.6 101.6,104.19 106,99.94 110.4,95.84 114.8,91.9 119.2,88.11 123.6,84.48 128,81 132.4,77.68 136.8,74.51 141.2,71.5 145.6,68.64 150,65.94 154.4,63.39 158.8,61 163.2,58.76 167.6,56.68 172,54.75 176.4,52.98 180.8,51.36 185.2,49.9 189.6,48.59 194,47.44 198.4,46.44 202.8,45.6 207.2,44.91 211.6,44.38 216,44 220.4,43.78 224.8,43.71 229.2,43.8 233.6,44.04 238,44.44 242.4,44.99 246.8,45.7 251.2,46.56 255.6,47.58 260,48.75 264.4,50.08 268.8,51.56 273.2,53.2 277.6,54.99 282,56.94 286.4,59.04 290.8,61.3 295.2,63.71 299.6,66.28 304,69 308.4,71.88 312.8,74.91 317.2,78.1 321.6,81.44 326,84.94 330.4,88.59 334.8,92.4 339.2,96.36 343.6,100.48 348,104.75 352.4,109.18 356.8,113.76 361.2,118.5 365.6,123.39 370,128.44 374.4,133.64 378.8,139 383.2,144.51 387.6,150.18 392,156" fill="none" stroke="#c9c6ba" stroke-width="1.5" stroke-dasharray="3,3"/>
   <g stroke="#0f2545" stroke-width="1.3">
     <line x1="40" y1="190" x2="40" y2="180"/>
-    <line x1="128" y1="190" x2="128" y2="86"/>
-    <line x1="216" y1="190" x2="216" y2="46"/>
-    <line x1="304" y1="190" x2="304" y2="58"/>
-    <line x1="392" y1="190" x2="392" y2="150"/>
+    <line x1="128" y1="190" x2="128" y2="81"/>
+    <line x1="216" y1="190" x2="216" y2="44"/>
+    <line x1="304" y1="190" x2="304" y2="69"/>
+    <line x1="392" y1="190" x2="392" y2="156"/>
   </g>
   <g font-family="Georgia,serif" font-style="italic" font-size="12" fill="#0f2545" text-anchor="middle">
     <text x="40" y="205">y₀</text><text x="128" y="205">y₁</text><text x="216" y="205">y₂</text><text x="304" y="205">y₃</text><text x="392" y="205">y₄</text>
