@@ -42,7 +42,7 @@ Project context for working on this repository.
     - It is drawn by JavaScript, so read it in a browser: choose Exam materials, then EXPAND ALL. The page's own total ("Exam materials (N)") tells you whether every item loaded.
     - It sometimes lists the same file twice with different case (`WST01_01_…` and `wst01-01-…`), and one copy may redirect to `/en/campaigns/404.html`. Use a listed copy that returns the PDF.
     - Restricted files are still listed, often with a `?<number>` query string, but the file URL answers 401. Mark those `restricted`; do not try to get past the login.
-    - The 2013-specification catalogue has been withdrawn. S1 papers before October 2020 are not in the 2018 catalogue and are not in the archive.
+    - The 2013-specification catalogue has been withdrawn. S1's June 2019, October 2019 and January 2020 papers are not in the 2018 catalogue. Pearson's past-papers search (`/en/support/support-topics/exams/past-papers.html`, filtered to IAL Mathematics and the exam series) lists them in the `/Mathematics/2013/Exam materials/` folder. These are the only 2013-folder URLs allowed in the archive: they are 2018-specification sittings, and each entry carries the note "Pearson files this paper under its 2013 folder; it was sat in the 2018-specification series." Do not add earlier 2013-specification sessions.
 - `vercel.json`: the security headers. `.vercelignore`: keeps `scripts/`, `docs/`, `README.md`, `CLAUDE.md` and `*.code-workspace` out of the deployed site.
 - `scripts/test-past-papers.cjs`: archive data checks (Node 18+, no dependencies; `--live` sends a HEAD request to every Pearson URL).
 - `docs/past-paper-link-audit.md`: dated link-audit records and the maintenance procedure.
