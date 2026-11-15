@@ -705,13 +705,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offse
 /* Text for screen readers only (e.g. a plain-language name for a maths-only table header). */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 
-/* ---------- S1 additions (statistics-1.html) ---------- */
-/* These rules only match markup used on the S1 page; P1 and P2 are unaffected. */
+/* ---------- S1 additions (statistics-1.html; M1 reuses the first two rules) ---------- */
+/* These rules only match markup used on the S1 and M1 pages; P1 and P2 are unaffected. */
 /* Diagram-row items written as <figure>: remove the browser's default figure margin. */
 .diagram-row figure.d-item{margin:0;}
 /* KaTeX sizes a line of inline maths exactly, so fractions on consecutive wrapped lines touch.
-   Give them a little air. S1's worked examples are numbered (id="ex-1" …); the P1 and P2
-   examples have no id, so this selector matches S1 only. */
+   Give them a little air. The S1 and M1 worked examples are numbered (id="ex-1" …); the P1 and P2
+   examples have no id, so this selector matches S1 and M1 only. */
 .example[id^="ex-"] .katex .base:has(.mfrac){padding:3px 0;}
 /* Stem-and-leaf diagrams: a narrow, centred table with its key in the caption.
    It stays a real table on small screens (the general rule turns tables into scroll boxes). */
