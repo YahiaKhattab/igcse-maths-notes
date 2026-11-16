@@ -17,9 +17,9 @@ Open `index.html` to choose a track. P3 and P4 notes are planned, not yet availa
 
 Foundation papers are **not currently offered**. Their portal placeholders are intentionally commented out and retained for possible future use.
 
-## P1, P2 and S1 past papers
+## P1, P2, S1 and M1 past papers
 
-Open `past-papers.html` from the portal or any IAL notes page. The archive covers P1 (WMA11), P2 (WMA12) and S1 (WST01); M1 (WME01) papers have not been added yet. It groups question papers and matching mark schemes by unit, year and session, starting with the sample assessment materials for the 2018 specification. Pearson's 2018-specification catalogue lists S1 papers from October 2020 onwards; the June 2019 and January 2020 S1 papers come from Pearson's past-papers search, which files them in its 2013 folder, and the October 2019 S1 question paper is for registered centres only.
+Open `past-papers.html` from the portal or any IAL notes page. The archive covers all four IAL units: P1 (WMA11), P2 (WMA12), S1 (WST01) and M1 (WME01). It groups question papers and matching mark schemes by unit, year and session, starting with the sample assessment materials for the 2018 specification. Pearson's 2018-specification catalogue lists S1 papers from October 2020 onwards; the June 2019 and January 2020 S1 papers come from Pearson's past-papers search, which files them in its 2013 folder, and the October 2019 S1 question paper is for registered centres only. M1 is the same apart from January 2020, which is in the 2018 catalogue: its June 2019 paper comes from the 2013 folder and its October 2019 question paper is for registered centres only.
 
 Links point to Pearson's official website; the repository does not host copies of exam papers. Recent or otherwise unavailable materials are labelled separately from verified public PDF links: sessions Pearson restricts to registered centres are marked **Centres only**, and papers whose official mark-scheme link is broken are marked **Mark scheme offline at Pearson** (the question paper is still linked). Always check the paper code and variant against your centre's entry information.
 

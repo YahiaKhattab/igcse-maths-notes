@@ -1,6 +1,6 @@
 # Past-paper link audit
 
-This records how the links in `past-papers-data.js` were checked, what was found, and how to keep the archive accurate. The archive covers Pearson Edexcel International A Level Mathematics (2018 specification), units P1 (WMA11), P2 (WMA12) and S1 (WST01).
+This records how the links in `past-papers-data.js` were checked, what was found, and how to keep the archive accurate. The archive covers Pearson Edexcel International A Level Mathematics (2018 specification), units P1 (WMA11), P2 (WMA12), S1 (WST01) and M1 (WME01).
 
 ## Check of 26 October 2026
 
@@ -209,6 +209,90 @@ The full prefix of the 2013-folder URLs is `https://qualifications.pearson.com/c
 | S1 | 24 · 19 (was 21 · 17) | 28 · 20 (was 25 · 18) |
 
 `node scripts/test-past-papers.cjs --live`: **129 of 129** unique URLs answered 200. `checked` stays at 13 November 2026.
+
+## WME01 (M1) audit of 17 November 2026
+
+### Method
+
+- **2018 catalogue:** read in headless Chrome with Exam materials selected and every series expanded. All **1006** items loaded, matching the page's own count. It lists 52 WME01 question-paper and mark-scheme items, from January 2020 to October 2026.
+- **Pearson's past-papers search:** `/en/support/support-topics/exams/past-papers.html`, filtered to IAL Mathematics, read for June 2019 and October 2019, which the 2018 catalogue does not list for WME01. The same page was read for every series from January 2014 to January 2019, to count the 2013-specification sittings.
+- **URLs and covers:** every URL was copied from one of those two listings and requested with curl (HEAD, then GET). The PDFs were saved outside the repository, and their covers and Question 1 compared. Nothing was committed.
+
+### Sessions found and added (28 entries, 20 QP/MS pairs)
+
+| Series | Variant | Status | Question paper | Mark scheme | QP P-number | MS code (as printed) | MS log | Q1 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| October 2026 | 01, 01A | restricted | listed, answers 401 | not listed yet | | | | |
+| June 2026 | 01, 01A | restricted | answers 401 | answers 401 | | | | |
+| January 2026 | 01, 01A | restricted | answers 401 | answers 401 | | | | |
+| October 2025 | 01 | public | `wme01-01-que-20251014.pdf` | `wme01-01-rms-20260122.pdf` | P78844A | `WME01_01 _2510_MS` (space as printed) | P78844A | ✓ beam of weight 240 N, 8 m: 3 + 4 = 7 |
+| October 2025 | 01A | public | `wme01-01a-que-20251014.pdf` | `wme01-01a-rms-20260122.pdf` | P87438A | WME01_01A_2510_MS | P87438A | ✓ collision of 2m and 3m: 3 + 3 = 6 |
+| June 2025 | 01 | public | `wme01-01-que-20250507.pdf` | `wme01-01-rms-20250814.pdf` | P81264A | WME01_01_2506_MS | P81264A | ✓ impulse 4.5mu, v = 3.5u (3), then k |
+| January 2025 | 01 | public | `wme01-01-que-20250111.pdf` | `wme01-01-rms-20250306.pdf` | P76197A | WME01_01_2501_MS | P76197A | ✓ three forces in **i**, **j** form: 4 + 4 = 8 |
+| October 2024 | 01 | public | `wme01-01-que-20241012.pdf` | `wme01-01-rms-20250116.pdf` | P76181A | WME01_01_2410_MS | P76181A | ✓ collision of 4m and 3m, y = 5x/11: 3 + 3 = 6 |
+| June 2024 | 01 | public | `wme01-01-que-20240508.pdf` | `wme01-01-rms-20240815.pdf` | P75718RA | WME01_01_2406_MS | **P75718A** | ✓ slack string becomes taut, S = U/4: 2 + 3 = 5 |
+| January 2024 | 01 | public | `wme01-01-que-20240118.pdf` | `wme01-01-rms-20240307.pdf` | P74317A | WME01_01_2401_MS | P74317A | ✓ ring with a 2 N force, T = 2.5: 3 + 3 = 6 |
+| October 2023 | 01 | public | `wme01-01-que-20231017.pdf` | `wme01-01-rms-20240118.pdf` | P74321A | `WME01_01_rms_20240118` | 74321 | ✓ beam of weight 24 N, 6 m, one tension double the other: 5 |
+| June 2023 | 01 | public | `wme01-01-que-20230517.pdf` | `wme01-01-rms-20230817.pdf` | P72902A | WME01_01_2306_MS | 72902 | ✓ collision, speeds 2u and 3u: 3 + 1 + 3 = 7 |
+| January 2023 | 01 | public | `wme01-01-que-20230118.pdf` | `wme01-01-rms-20230302.pdf` | P72070A | `WME01_01_MS_2301` | P72070A | ✓ train between stations: 3 + 5 + 2 = 10 |
+| October 2022 | 01 | public | `wme01-01-que-20221018.pdf` | `wme01-01-rms-20230112.pdf` | P72151A | WME01_01_2210_MS | P72151A | ✓ railway trucks of 20 and 30 tonnes: 2 + 3 = 5 |
+| June 2022 | 01 | public | `wme01-01-que-20220511.pdf` | `wme01-01-rms-20220818.pdf` | P71403A | WME01_01_2206_MS | P71403A | ✓ impulse 4mu on Q: 3 + 1 = 4 |
+| January 2022 | 01 | public | `WME01_01_que_20220111.pdf` | `WME01_01_rms_20220303.pdf` | P68783A | WME01_01_2201_MS (the log is also printed on a line labelled "Publications Code") | P68783A | ✓ 5 N particle, F = 5 cos 30°: 3 + 3 = 6 |
+| October 2021 | 01 | public | `wme01-01-que-20211014.pdf` | `wme01-01-rms-20220113.pdf` | P66649A | WME01_01_2110_MS | P66649A | ✓ non-uniform 9 m rod, d = 5.5: 6 |
+| June 2021 | 01 | assessment | `WME01_01_que_20210430.pdf` | `WME01_01_rms_20210604.pdf` | P65266A | WME01_01_2106_MS | P65266A | ✓ collision of 3m and 5m, k = 28/3 or 22/3: 2 + 5 = 7 |
+| January 2021 | 01 | public | `WME01_01_que_20210304.pdf` | `wme01-01-msc-20210304.pdf` | P61902A | `WME01_01_2021_MS` | not printed | ✓ stone projected upwards at 20 m s⁻¹: 2 + 4 = 6 |
+| October 2020 | 01 | public | `wme01-01-que-20201017.pdf` | `WME01_01_msc_20210113.pdf` | P65760A | WME01_01_2010_MS | not printed | ✓ collision of m and 2m: 3 + 3 + 1 = 7 |
+| June 2020 | 01 | cancelled | none | none | | | | |
+| January 2020 | 01 | public | `WME01_01_que_20200305.pdf` | `wme01-01-rms-20200305.pdf` | P61293A | WME01_01_2001_MS | not printed | ✓ collision of m₁ and m₂: 3 + 3 + 2 = 8 |
+| October 2019 | 01 | restricted | `…/content/dam/secure/silver/…/ial-wme01-01-oct19.pdf?…` answers 401 | `…/2013/Exam%20materials/WME01_01_msc_20191105.pdf` answers 200 (WME01_01_1910_MS) | | | | the question paper cover cannot be read |
+| June 2019 | 01 | public | `…/2013/Exam%20materials/WME01_01_que_20190604.pdf` | `…/2013/Exam%20materials/WME01_01_rms_20190815.pdf` | P55872A | WME01_01_1906_MS | not printed | ✓ collision of 3m and 2m: 3 + 2 = 5 |
+| 2018 specimen | 01 | specimen | `International-A-Level-Maths-SAMs1.pdf#page=329` | same booklet `#page=353` | WME01/01 cover | "Mechanics M1 Mark scheme" | | ✓ car covering 76 m, then 219 m |
+
+The 2013-folder prefix is `https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2013/Exam%20materials/`. Every other URL is in the 2018 `Exam-materials` folder.
+
+Every public pair agrees on unit (WME01), variant and series on both covers. Wherever the mark scheme prints a log number, it matches the question paper's P-number, apart from June 2024 (see below).
+
+### Special cases
+
+- **June 2024:** the question paper is P75718RA and the mark scheme's log number is P75718A. Question 1 matches in content and marks, so the pair is kept, with a note.
+- **October 2020:** the question paper is dated Thursday 14 May 2020. Pearson reused the cancelled summer paper, as for P1, P2 and S1, and the entry has the same note.
+- **June 2020:** there is no June 2020 series in the 2018 catalogue, and the October 2020 paper is the reused summer paper, so the session is `cancelled`.
+- **June 2021:** the catalogue lists a provisional mark scheme (`WME01_01_msc_20210517.pdf`) and a final one. The entry uses the final mark scheme and the `assessment` status.
+- **January 2020:** unlike S1, the WME01 January 2020 papers are in the 2018 catalogue, so they are not 2013-folder URLs.
+- **June 2019 and October 2019:** the 2018 catalogue lists only a "Modified papers - wme0" zip for these series. Pearson's past-papers search lists the papers in its 2013 folder. June 2019 is `public` with the 2013-folder note. October 2019's question paper is served only from Pearson's registered-centre area (401), and no public copy was found, so the session is `restricted` and its public mark scheme is not linked on its own, as for S1 October 2019.
+- **Duplicate listings:** five upper-case copies answer 302 to `/en/campaigns/404.html`, and each has a lower-case copy that answers 200, which the archive uses:
+  - October 2021 question paper (`WME01_01_que_20211014.pdf`) and mark scheme (`WME01_01_rms_20220113.pdf`);
+  - January 2021 mark scheme (`WME01_01_msc_20210304.pdf`);
+  - October 2020 question paper (`WME01_01_que_20201017.pdf`);
+  - January 2020 mark scheme (`WME01_01_rms_20200305.pdf`).
+- **Regional papers:** WME01 /01A papers are listed from October 2025 onwards. No /01R papers are listed.
+- **Formulae booklet on the covers:** June 2019, January 2020, October 2020 and January 2021 ask for the "Mathematical Formulae and Statistical Tables (Blue)"; every paper from June 2021 asks for the Yellow booklet. S1's covers switch at the same series, so this records a change of booklet, not a different specification. No cover names a specification.
+
+### Statuses used
+
+| Status | Count | Sessions |
+| --- | --- | --- |
+| `public` | 18 | June 2019, January 2020 to October 2025 (excluding June 2021), and October 2025 01A |
+| `assessment` | 1 | June 2021 |
+| `restricted` | 7 | October 2019; January, June and October 2026 (01 and 01A) |
+| `cancelled` | 1 | June 2020 |
+| `specimen` | 1 | 2018 sample assessment |
+
+### Not added
+
+- **2013-specification sittings: 14.** Pearson's past-papers search lists a WME01 question paper or mark scheme for every January and June series from January 2014 to January 2019, and for October 2016, 2017 and 2018 (June 2016 has a mark scheme only). M1's 2018 specification was first assessed in June 2019, so these were not added. The same search also lists the UK GCE paper 6677 "Mechanics M1", which is a different qualification.
+
+### Counts and live check
+
+| Unit | Default view | All versions |
+| --- | --- | --- |
+| P1 | 25 entries · 21 pairs (unchanged) | 31 · 24 (unchanged) |
+| P2 | 25 · 20 (unchanged) | 31 · 23 (unchanged) |
+| S1 | 24 · 19 (unchanged) | 28 · 20 (unchanged) |
+| M1 | 24 · 19 | 28 · 20 |
+
+- `node scripts/test-past-papers.cjs --live`: **167 of 167** unique URLs answered 200, so `checked` moved to 17 November 2026.
+- **P1/P2/S1 statuses:** every restricted P1/P2/S1 entry was re-checked. All 2026 files still answer 401, and S1's October 2019 question paper still answers 401. No status is out of date.
 
 ## Maintaining the archive
 
