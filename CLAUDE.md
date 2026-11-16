@@ -8,7 +8,7 @@ Project context for working on this repository.
 - Deployed by Vercel's Git integration from the repository root to https://igcse-maths-notes.vercel.app/.
 - There are two separate tracks, and they must stay separate (codes, headings, cards and navigation):
   - **International GCSE Mathematics A (4MA1), Higher**: `Final revision 1H notes.html`, `Final_revision_2H_notes -1.html`.
-  - **International A Level Mathematics (2018 spec)**: P1 (WMA11), P2 (WMA12), S1 (WST01), M1 (WME01) and the past-paper archive. The archive covers P1, P2 and S1: **M1 archive entries pending**.
+  - **International A Level Mathematics (2018 spec)**: P1 (WMA11), P2 (WMA12), S1 (WST01), M1 (WME01) and the past-paper archive, which covers all four units.
 - The IGCSE pages (1H and 2H) and the IGCSE section of `index.html` belong to a co-author. They are **out of scope unless a task explicitly says otherwise**: do not open, edit, rename or reformat them.
 
 ## File map
@@ -25,7 +25,7 @@ Project context for working on this repository.
     - It is a native `<details class="unit-menu">`, so it opens and closes with no JavaScript. `initUnitMenu` in `notes.js` only adds Escape (close and refocus the summary), click-outside and close-after-follow.
     - The `<summary>` shows the page's own unit id. The list is P1, P2, S1, M1, in that order.
     - **The list markup must be identical on every notes page.** Only `aria-current="page"` moves, to the page's own link. When a unit is added, add its `<li>` to every notes page.
-    - "Past papers" links to `past-papers.html?unit=<id>` for that page. M1 links to plain `past-papers.html` until the archive has M1 entries.
+    - "Past papers" links to `past-papers.html?unit=<id>` for that page.
     - The panel opens downward on wide screens and upward at `max-width:600px`, where the pill sits at the bottom of the screen.
   - S1 and M1:
     - Worked examples are numbered and carry `id="ex-1"` onwards (26 on S1, 23 on M1). The "S1 additions" section at the end of `notes.css` relies on those IDs to scope one rule to these two pages (extra space around stacked inline fractions). It also styles S1's stem-and-leaf table (`table.stem-leaf`).
@@ -42,7 +42,7 @@ Project context for working on this repository.
       - `restricted` ("Centres only"), `cancelled`, `not-offered`, `upcoming`: no `qp` or `ms`.
       - `unverified`: shows a link to Pearson's catalogue.
     - `msBroken` keeps a dead official mark-scheme URL so it can be restored later.
-    - Entries are ordered by year (newest first), then session (October, June, January, Specimen), then variant (01, 01A, 01R), then unit (P1, P2, S1).
+    - Entries are ordered by year (newest first), then session (October, June, January, Specimen), then variant (01, 01A, 01R), then unit (P1, P2, S1, M1).
   - Pearson's catalogue (`catalogue` in the data file):
     - It is drawn by JavaScript, so read it in a browser: choose Exam materials, then EXPAND ALL. The page's own total ("Exam materials (N)") tells you whether every item loaded.
     - It sometimes lists the same file twice with different case (`WST01_01_…` and `wst01-01-…`), and one copy may redirect to `/en/campaigns/404.html`. Use a listed copy that returns the PDF.
