@@ -11,14 +11,15 @@ A combined study portal for **International GCSE Mathematics A (4MA1), Higher ti
 | International AS/A Level Mathematics | P1 · WMA11 | `pure-mathematics-1.html` |
 | International AS/A Level Mathematics | P2 · WMA12 | `pure-mathematics-2.html` |
 | International AS/A Level Mathematics | S1 · WST01 | `statistics-1.html` |
+| International AS/A Level Mathematics | M1 · WME01 | `mechanics-1.html` |
 
-Open `index.html` to choose a track. P3, P4 and M1 notes are planned, not yet available.
+Open `index.html` to choose a track. P3 and P4 notes are planned, not yet available.
 
 Foundation papers are **not currently offered**. Their portal placeholders are intentionally commented out and retained for possible future use.
 
 ## P1, P2 and S1 past papers
 
-Open `past-papers.html` from the portal or any IAL notes page. The archive covers P1 (WMA11), P2 (WMA12) and S1 (WST01). It groups question papers and matching mark schemes by unit, year and session, starting with the sample assessment materials for the 2018 specification. Pearson's 2018-specification catalogue lists S1 papers from October 2020 onwards; the June 2019 and January 2020 S1 papers come from Pearson's past-papers search, which files them in its 2013 folder, and the October 2019 S1 question paper is for registered centres only.
+Open `past-papers.html` from the portal or any IAL notes page. The archive covers P1 (WMA11), P2 (WMA12) and S1 (WST01); M1 (WME01) papers have not been added yet. It groups question papers and matching mark schemes by unit, year and session, starting with the sample assessment materials for the 2018 specification. Pearson's 2018-specification catalogue lists S1 papers from October 2020 onwards; the June 2019 and January 2020 S1 papers come from Pearson's past-papers search, which files them in its 2013 folder, and the October 2019 S1 question paper is for registered centres only.
 
 Links point to Pearson's official website; the repository does not host copies of exam papers. Recent or otherwise unavailable materials are labelled separately from verified public PDF links: sessions Pearson restricts to registered centres are marked **Centres only**, and papers whose official mark-scheme link is broken are marked **Mark scheme offline at Pearson** (the question paper is still linked). Always check the paper code and variant against your centre's entry information.
 
@@ -57,6 +58,7 @@ The old Netlify configuration has been removed.
 - Keep IGCSE papers and IAL units in their separate tracks, with the correct qualification and paper codes.
 - Add a new notes file only when it is ready, then link it from `index.html` and update the visible availability count.
 - The IAL notes pages share their styles and behaviour: `assets/notes.css` and `assets/notes.js`. Change those files rather than adding inline styles or scripts to a single page.
+- Every IAL notes page has the same Units menu in its switcher pill (P1, P2, S1, M1). When a unit is added, add it to the menu on every notes page so the lists stay identical.
 - Archive units come from the `units` list in `past-papers-data.js`. Adding a unit there (with its entries) adds its button and filters; no change to `past-papers.js` is needed.
 - Keep unfinished cards non-clickable. Do not enable Foundation placeholders unless that scope is deliberately added.
 - For archive updates, verify both PDF covers: unit, session, year and variant must match. Do not infer a working link from a filename pattern or bypass Pearson's access restrictions. Run the archive checks and update the checked date.

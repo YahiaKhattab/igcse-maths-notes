@@ -138,9 +138,25 @@
     document.addEventListener('click', e => { if(e.target.closest('.solution-toggle, #toggleAllBtn')) later(400); });
   }
 
+  // Units menu in the switcher pill. It is a native <details>, so it opens and closes without this.
+  // This adds: Escape closes it and returns focus, a click outside closes it, and it closes after a link is followed.
+  function initUnitMenu(){
+    const menu = document.querySelector('.unit-menu');
+    if(!menu) return;
+    const summary = menu.querySelector('summary');
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Escape' && menu.open){ menu.open = false; if(summary) summary.focus(); }
+    });
+    document.addEventListener('click', e => {
+      if(menu.open && !menu.contains(e.target)) menu.open = false;
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.open = false; }));
+  }
+
   document.addEventListener('DOMContentLoaded', function(){
     safe('initMath', initMath);
     safe('initMenu', initMenu);
+    safe('initUnitMenu', initUnitMenu);
     safe('initScrollspy', initScrollspy);
     safe('initToggles', initToggles);
     safe('initExpandAll', initExpandAll);

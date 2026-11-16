@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Revision notes for Pearson Edexcel International A Level Mechanics 1 (WME01): methods, formulas and worked examples for every topic.">
+<title>Mechanics 1 — Edexcel International A Level Notes</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="assets/notes.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/notes.js"></script>
+
+</head>
+<body>
+
+<nav class="doc-switcher" aria-label="Switch notes">
+  <a href="index.html">&larr; Index</a>
+  <details class="unit-menu">
+    <summary><span class="sr-only">Current unit: </span>M1<span aria-hidden="true"> &#9662;</span></summary>
+    <ul>
+      <li><a href="pure-mathematics-1.html">P1 &middot; Pure Mathematics 1</a></li>
+      <li><a href="pure-mathematics-2.html">P2 &middot; Pure Mathematics 2</a></li>
+      <li><a href="statistics-1.html">S1 &middot; Statistics 1</a></li>
+      <li><a href="mechanics-1.html" aria-current="page">M1 &middot; Mechanics 1</a></li>
+    </ul>
+  </details>
+  <a href="past-papers.html">Past papers</a>
+</nav>
+
+<header class="topbar">
+  <button id="menuBtn" aria-label="Open menu">&#9776;</button>
+  <div class="tbtitle">Mechanics 1 Notes</div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="kicker">Edexcel International A Level</div>
+      <p class="sidebar-title">Mechanics 1</p>
+      <div class="sub">AS Revision Notes &middot; 7 Topics</div>
+      <button id="toggleAllBtn" class="toggle-all-btn" type="button">Expand All Examples</button>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit A &middot; Foundations</div>
+      <a class="nav-link" href="#models"><span class="num">01</span>Mathematical Models in Mechanics</a>
+      <a class="nav-link" href="#vectors"><span class="num">02</span>Vectors in Mechanics</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit B &middot; Motion</div>
+      <a class="nav-link" href="#kinematics"><span class="num">03</span>Kinematics in a Straight Line</a>
+      <a class="nav-link" href="#dynamics"><span class="num">04</span>Dynamics: Newton's Laws</a>
+      <a class="nav-link" href="#momentum-impulse"><span class="num">05</span>Momentum &amp; Impulse</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit C &middot; Equilibrium</div>
+      <a class="nav-link" href="#statics"><span class="num">06</span>Statics of a Particle</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Unit D &middot; Moments</div>
+      <a class="nav-link" href="#moments"><span class="num">07</span>Moments</a>
+    </div>
+
+    <div class="nav-unit">
+      <div class="nav-unit-title">Reference</div>
+      <a class="nav-link" href="#formula-sheet"><span class="num">&#9733;</span>Formula Sheet</a>
+    </div>
+  </nav>
+
+  <main class="main" id="main">
+    <div class="cover">
+      <div class="kicker">Edexcel International A Level &middot; WME01</div>
+      <h1>Mechanics 1</h1>
+      <div class="tagline">A working reference for every method in the M1 syllabus: vectors, motion, forces, momentum and moments, with worked examples organised the way you'll actually need them in the exam room.</div>
+      <div class="cover-grid">
+        <div class="cover-card"><div class="label">Coverage</div><div class="val">7 topics &middot; 4 units</div></div>
+        <div class="cover-card"><div class="label">Includes</div><div class="val">+ Formula Sheet</div></div>
+        <div class="cover-card"><div class="label">Exam</div><div class="val">1 h 30 min &middot; 75 marks</div></div>
+      </div>
+    </div>
+
+    <div class="content" id="contentroot">
+<div class="unit-marker first">Unit A &middot; Foundations</div>
+<h2 class="topic-title" id="models">1. Mathematical Models in Mechanics</h2>
+<div class="topic-meta">The simplifying assumptions behind every mechanics question, and what each one lets you do.</div>
+
+<p>Mechanics questions describe real objects, such as cars, ropes and planks, using a small set of idealised words. Each word is a <em class="def">modelling assumption</em>: it removes a complication and tells you something you can use in the calculation.</p>
+
+<div class="box formula">
+<div class="box-title">Key Facts &mdash; Weight and $g$</div>
+<p><strong>Learn this.</strong> The formulae booklet gives no formulae for M1, so everything in these notes must be known.</p>
+<p>$$W = mg \qquad g = 9.8\text{ m s}^{-2}$$</p>
+<p>Weight is a force, measured in newtons, and it acts vertically downwards. A particle of mass 5 kg has weight $5\times9.8=49$ N.</p>
+</div>
+
+<h3>SI Units</h3>
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Mass</div><div class="gval">kilogram, kg</div></div>
+<div class="gcell"><div class="glabel">Displacement, distance</div><div class="gval">metre, m</div></div>
+<div class="gcell"><div class="glabel">Time</div><div class="gval">second, s</div></div>
+<div class="gcell"><div class="glabel">Velocity, speed</div><div class="gval">$\text{m s}^{-1}$</div></div>
+<div class="gcell"><div class="glabel">Acceleration</div><div class="gval">$\text{m s}^{-2}$</div></div>
+<div class="gcell"><div class="glabel">Force, weight</div><div class="gval">newton, N</div></div>
+<div class="gcell"><div class="glabel">Momentum, impulse</div><div class="gval">newton second, N s</div></div>
+<div class="gcell"><div class="glabel">Moment</div><div class="gval">newton metre, N m</div></div>
+</div>
+
+<h3>Modelling Vocabulary</h3>
+<table>
+<tr><th>Term</th><th>Assumption</th><th>Effect on the calculation</th></tr>
+<tr><td>Particle</td><td>The object's size is ignored: all its mass is at one point.</td><td>Every force acts at the same point, and the object cannot rotate.</td></tr>
+<tr><td>Rod</td><td>Its thickness is ignored and it is rigid, so it does not bend.</td><td>The forces act at points along a line. Use moments.</td></tr>
+<tr><td>Uniform rod</td><td>Its mass is spread evenly along its length.</td><td>The weight acts at the midpoint.</td></tr>
+<tr><td>Non-uniform rod</td><td>Its mass is not spread evenly.</td><td>The weight acts at the centre of mass, which is given or has to be found.</td></tr>
+<tr><td>Light (string, rod or pulley)</td><td>It has no mass.</td><td>Its weight is ignored. The tension is the same all along a light string.</td></tr>
+<tr><td>Inextensible string</td><td>It does not stretch.</td><td>While the string is taut, the connected particles have the same speed and the same size of acceleration.</td></tr>
+<tr><td>Smooth surface</td><td>There is no friction.</td><td>The only contact force is the normal reaction.</td></tr>
+<tr><td>Rough surface</td><td>Friction acts.</td><td>Friction opposes the motion, up to a largest value of $\mu R$.</td></tr>
+<tr><td>Smooth light pulley</td><td>The pulley has no mass and no friction at its axle.</td><td>The tension is the same on both sides of the pulley.</td></tr>
+<tr><td>Peg</td><td>A fixed support that a string passes over or a rod rests on.</td><td>For a smooth peg, the tension is the same on both sides of the string.</td></tr>
+<tr><td>Bead</td><td>A particle with a hole through it, threaded on a wire or string.</td><td>It can only move along the wire or string.</td></tr>
+<tr><td>Wire</td><td>A thin rigid length, smooth or rough, that a bead moves along.</td><td>It is treated as a line. A smooth wire gives no friction on the bead.</td></tr>
+<tr><td>Lamina</td><td>A flat object whose thickness is ignored.</td><td>Its mass is spread over an area, not concentrated at a point.</td></tr>
+<tr><td>Rigid body</td><td>Its shape does not change when forces act on it.</td><td>Forces can turn it as well as move it, so moments matter.</td></tr>
+<tr><td>Air resistance can be ignored</td><td>The air does not slow the object down.</td><td>In free vertical motion the only force is the weight, so the acceleration is $g$ downwards.</td></tr>
+</table>
+
+<h3>Criticising a Model</h3>
+<p>Questions sometimes ask how a model could be improved, or how an assumption has been used. Name the assumption and say what it changed.</p>
+<ul>
+<li>"The string is light" means the tension is the same throughout. A real rope has weight, so the tension would vary along it.</li>
+<li>"The string is inextensible" means both particles have the same acceleration. A real rope stretches a little.</li>
+<li>"The ball is a particle" means air resistance and spin are ignored. Including air resistance would be a refinement.</li>
+</ul>
+
+<div class="box tip">
+<div class="box-title">Exam Technique &mdash; $g$, Accuracy and Diagrams</div>
+<p>The front cover of the WME01 paper tells you to take $g = 9.8\text{ m s}^{-2}$ whenever a numerical value is needed, and to give your answer to either 2 significant figures or 3 significant figures. The examiners' report adds that more accurate answers lose marks, although exact multiples of $g$ are usually accepted. Start every question with a clear force diagram: one arrow for each force, starting on the object it acts on.</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Mixing up mass and weight. Mass is in kilograms; weight is the force $mg$ in newtons. Use the mass in $F=ma$ and in momentum, and draw the weight $mg$ on the force diagram. Also, do not give four or more significant figures after using $g=9.8$.</p>
+</div>
+
+
+<h2 class="topic-title" id="vectors">2. Vectors in Mechanics</h2>
+<div class="topic-meta">Quantities with size and direction: forces, velocities and positions in $\mathbf{i}$, $\mathbf{j}$ form.</div>
+
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p><a href="pure-mathematics-1.html#trig">P1 &mdash; Trigonometry</a> covers $\sin$, $\cos$ and $\tan$ in right-angled triangles. Resolving a vector into components, and finding its direction, uses exactly those ratios.</p>
+</div>
+
+<p>A <em class="def">vector</em> has a magnitude and a direction; a <em class="def">scalar</em> has a magnitude only. Force, displacement, velocity and acceleration are vectors. The unit vectors $\mathbf{i}$ and $\mathbf{j}$ are at right angles: usually horizontal and vertical, or due east and due north.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Vectors</div>
+<p><strong>Learn this</strong> (not in the formulae booklet). For $\mathbf{a} = x\mathbf{i} + y\mathbf{j}$:</p>
+<p>$$|\mathbf{a}| = \sqrt{x^2+y^2} \qquad \tan\theta = \dfrac{y}{x}$$</p>
+<p>where $\theta$ is the angle between $\mathbf{a}$ and the $\mathbf{i}$ direction. Going the other way, a vector of magnitude $F$ at angle $\theta$ to $\mathbf{i}$ is $F\cos\theta\,\mathbf{i} + F\sin\theta\,\mathbf{j}$.</p>
+<p>$$\mathbf{r} = \mathbf{r}_0 + \mathbf{v}t \qquad \mathbf{v} = \mathbf{u} + \mathbf{a}t \qquad \mathbf{F} = m\mathbf{a}$$</p>
+<p>The first is for constant velocity and the second for constant acceleration.</p>
+</div>
+
+<p>For example, a force of 10 N at $30^\circ$ to $\mathbf{i}$ has components $10\cos30^\circ=8.66$ N in the $\mathbf{i}$ direction and $10\sin30^\circ=5$ N in the $\mathbf{j}$ direction.</p>
+
+<h3>Direction: Angle and Bearing</h3>
+<ul>
+<li>The <strong>angle with $\mathbf{i}$</strong> comes from $\tan\theta$. Sketch the vector first so that you know which quadrant it is in.</li>
+<li>A <strong>bearing</strong> is measured clockwise from north and written with three figures. If $\mathbf{j}$ is north and the vector points north-east, the bearing is $90^\circ - \theta$.</li>
+</ul>
+
+<h3>Resultants, Velocity and Acceleration</h3>
+<ul>
+<li>The <strong>resultant</strong> of several vectors is their sum: add the $\mathbf{i}$ components and add the $\mathbf{j}$ components.</li>
+<li><strong>Speed</strong> is the magnitude of the velocity vector.</li>
+<li>For constant velocity, $\text{velocity} = \dfrac{\text{change of displacement}}{\text{time}}$. For constant acceleration, $\text{acceleration} = \dfrac{\text{change of velocity}}{\text{time}}$.</li>
+</ul>
+
+<div class="example" id="ex-1">
+<div class="example-header">Worked Example 1 <span class="tag">Resultant, magnitude and direction</span></div>
+<div class="example-question">
+<p>Three forces act on a particle of mass 2 kg: $\mathbf{F}_1=(5\mathbf{i}+2\mathbf{j})$ N, $\mathbf{F}_2=(-2\mathbf{i}+4\mathbf{j})$ N and $\mathbf{F}_3=(3\mathbf{i}-2\mathbf{j})$ N, where $\mathbf{i}$ is due east and $\mathbf{j}$ is due north.</p>
+<p>Find (a) the resultant force $\mathbf{R}$, (b) the magnitude of $\mathbf{R}$, (c) the angle $\mathbf{R}$ makes with $\mathbf{i}$, and the bearing of $\mathbf{R}$, (d) the acceleration of the particle.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Add the components</div>$\mathbf{R}=(5-2+3)\mathbf{i}+(2+4-2)\mathbf{j}=6\mathbf{i}+4\mathbf{j}$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Magnitude</div>$|\mathbf{R}|=\sqrt{6^2+4^2}=\sqrt{52}=7.211\ldots$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Angle with i</div>Both components are positive, so $\mathbf{R}$ points north-east. $\tan\theta=\dfrac{4}{6}$, so $\theta=33.69\ldots^\circ$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Bearing</div>Bearings are measured clockwise from north, which is the $\mathbf{j}$ direction: $90^\circ-33.69\ldots^\circ=56.30\ldots^\circ$.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(d) Use F = ma</div>$\mathbf{a}=\dfrac{\mathbf{R}}{m}=\dfrac{6\mathbf{i}+4\mathbf{j}}{2}=3\mathbf{i}+2\mathbf{j}$</div>
+</div>
+<div class="example-answer">(a) $(6\mathbf{i}+4\mathbf{j})$ N &nbsp;&middot;&nbsp; (b) $7.21$ N &nbsp;&middot;&nbsp; (c) $33.7^\circ$ to $\mathbf{i}$, bearing $056^\circ$ &nbsp;&middot;&nbsp; (d) $(3\mathbf{i}+2\mathbf{j})\text{ m s}^{-2}$</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 340 252" width="340" height="252" role="img" aria-label="Vector diagram on a square grid. The forces F1 = 5i + 2j, F2 = −2i + 4j and F3 = 3i − 2j are drawn nose to tail from O, ending at the point (6, 4). The resultant R joins O to (6, 4) and makes an angle of 33.7 degrees with the i direction">
+<line x1="70" y1="215" x2="70" y2="35" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="100" y1="215" x2="100" y2="35" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="130" y1="215" x2="130" y2="35" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="160" y1="215" x2="160" y2="35" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="190" y1="215" x2="190" y2="35" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="220" y1="215" x2="220" y2="35" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="250" y1="215" x2="250" y2="35" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="280" y1="215" x2="280" y2="35" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="70" y1="215" x2="280" y2="215" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="70" y1="185" x2="280" y2="185" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="70" y1="155" x2="280" y2="155" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="70" y1="125" x2="280" y2="125" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="70" y1="95" x2="280" y2="95" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="70" y1="65" x2="280" y2="65" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="70" y1="35" x2="280" y2="35" stroke="#e6e3d9" stroke-width="1"/>
+<line x1="70" y1="215" x2="280" y2="215" stroke="#c9c6ba" stroke-width="1.2"/>
+<line x1="70" y1="215" x2="70" y2="35" stroke="#c9c6ba" stroke-width="1.2"/>
+<line class="m1-f" x1="70" y1="215" x2="211.64" y2="158.34" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="220,155 213.05,161.85 210.24,154.83" fill="#1d5bbf"/>
+<text x="167" y="207" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" font-weight="700" font-style="italic">F&#8321;</text>
+<line class="m1-f" x1="220" y1="155" x2="164.02" y2="43.05" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="160,35 167.41,41.36 160.64,44.74" fill="#1d5bbf"/>
+<text x="164" y="93" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" font-weight="700" font-style="italic">F&#8322;</text>
+<line class="m1-f" x1="160" y1="35" x2="242.51" y2="90.01" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="250,95 240.41,93.15 244.61,86.86" fill="#1d5bbf"/>
+<text x="215" y="63" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" font-weight="700" font-style="italic">F&#8323;</text>
+<line class="m1-res" x1="70" y1="215" x2="242.51" y2="99.99" stroke="#a8321f" stroke-width="2.6"/><polygon points="250,95 244.61,103.14 240.41,96.85" fill="#a8321f"/>
+<text x="136" y="153.5" font-family="Georgia,serif" font-size="14" fill="#a8321f" font-weight="700" font-style="italic">R</text>
+<path d="M116,215 A46,46 0 0 0 108.27,189.48" fill="none" stroke="#0f2545" stroke-width="1.2"/>
+<text x="122" y="206" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#0f2545">33.7&#176;</text>
+<line x1="70" y1="240" x2="93" y2="240" stroke="#4a5568" stroke-width="1.6"/><polygon points="100,240 93,242.94 93,237.06" fill="#4a5568"/>
+<text x="106" y="244" font-family="Georgia,serif" font-size="12.5" fill="#4a5568" font-weight="700">i</text>
+<line x1="40" y1="215" x2="40" y2="192" stroke="#4a5568" stroke-width="1.6"/><polygon points="40,185 42.94,192 37.06,192" fill="#4a5568"/>
+<text x="36" y="179" font-family="Georgia,serif" font-size="12.5" fill="#4a5568" font-weight="700">j</text>
+<text x="258" y="99" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568">(6, 4)</text>
+<text x="64" y="230" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#4a5568" text-anchor="end">O</text>
+</svg>
+<div class="diagram-caption">Worked Example 1. Drawn nose to tail, the three forces end where the resultant $\mathbf{R}$ ends.</div>
+</div>
+
+<h3>Position Vectors</h3>
+<p>An object that starts at $\mathbf{r}_0$ and moves with constant velocity $\mathbf{v}$ has position $\mathbf{r}=\mathbf{r}_0+\mathbf{v}t$ at time $t$.</p>
+
+<table>
+<tr><th>Condition</th><th>What to write</th></tr>
+<tr><td>$A$ is due north of $B$</td><td>The $\mathbf{i}$ components are equal, and $A$ has the larger $\mathbf{j}$ component.</td></tr>
+<tr><td>$A$ is due east of $B$</td><td>The $\mathbf{j}$ components are equal, and $A$ has the larger $\mathbf{i}$ component.</td></tr>
+<tr><td>Distance between $A$ and $B$</td><td>$|\mathbf{r}_B-\mathbf{r}_A|$</td></tr>
+<tr><td>Closest approach</td><td>Write $d^2$ as a quadratic in $t$ and complete the square.</td></tr>
+</table>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Work with $d^2$, not $d$, when finding the shortest distance. The square root is awkward, and $d$ is smallest exactly when $d^2$ is smallest.</p>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Giving the angle with $\mathbf{i}$ when the question asks for a bearing, or the other way round. Also, "due north of" needs two checks: equal $\mathbf{i}$ components is not enough, because the object could be due south.</p>
+</div>
+
+<div class="example" id="ex-2">
+<div class="example-header">Worked Example 2 <span class="tag">Position vector and "due north"</span></div>
+<div class="example-question">
+<p>At time $t=0$ a ship $S$ is at the point with position vector $(2\mathbf{i}-5\mathbf{j})$ km relative to a lighthouse $O$. The ship moves with constant velocity $(3\mathbf{i}+4\mathbf{j})\text{ km h}^{-1}$, where $\mathbf{i}$ is due east and $\mathbf{j}$ is due north. A port $P$ has position vector $(14\mathbf{i}+3\mathbf{j})$ km.</p>
+<p>Find (a) the speed of the ship, (b) its position vector at time $t$ hours, (c) the time at which the ship is due north of the port, (d) its distance from the port at that time.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Speed</div>The speed is the magnitude of the velocity: $\sqrt{3^2+4^2}=5\text{ km h}^{-1}$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Position at time t</div>$\mathbf{r}=(2\mathbf{i}-5\mathbf{j})+(3\mathbf{i}+4\mathbf{j})t=(2+3t)\mathbf{i}+(-5+4t)\mathbf{j}$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Equal i components</div>Due north of $P$ means the same $\mathbf{i}$ component as $P$: $2+3t=14$, so $t=4$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Check the j component</div>At $t=4$ the $\mathbf{j}$ component is $-5+4(4)=11$, which is greater than 3. So the ship is north of the port, not south.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(d) Distance</div>The ship is directly north, so the distance is the difference of the $\mathbf{j}$ components: $11-3=8$ km.</div>
+</div>
+<div class="example-answer">(a) $5\text{ km h}^{-1}$ &nbsp;&middot;&nbsp; (b) $(2+3t)\mathbf{i}+(-5+4t)\mathbf{j}$ km &nbsp;&middot;&nbsp; (c) $t=4$ hours &nbsp;&middot;&nbsp; (d) $8$ km</div>
+</div>
+</div>
+</div>
+
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p><a href="pure-mathematics-1.html#quadratics">P1 &mdash; Quadratics</a> covers completing the square. The next example uses it to find the least value of a quadratic in $t$.</p>
+</div>
+
+<div class="example" id="ex-3">
+<div class="example-header">Worked Example 3 <span class="tag">Closest approach of two ships</span></div>
+<div class="example-question">
+<p>At time $t=0$ ship $A$ is at $(-4\mathbf{i}+3\mathbf{j})$ km and ship $B$ is at $(8\mathbf{i}-\mathbf{j})$ km. Ship $A$ has constant velocity $(6\mathbf{i}+2\mathbf{j})\text{ km h}^{-1}$ and ship $B$ has constant velocity $(2\mathbf{i}+5\mathbf{j})\text{ km h}^{-1}$.</p>
+<p>(a) Find the position vectors of $A$ and $B$ at time $t$ hours. (b) Show that the distance $d$ km between the ships satisfies $d^2=25t^2-120t+160$. (c) Find the shortest distance between the ships and the time at which it occurs.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Position vectors</div>$\mathbf{r}_A=(-4+6t)\mathbf{i}+(3+2t)\mathbf{j}$ and $\mathbf{r}_B=(8+2t)\mathbf{i}+(-1+5t)\mathbf{j}$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Vector from A to B</div>$\mathbf{r}_B-\mathbf{r}_A=(12-4t)\mathbf{i}+(-4+3t)\mathbf{j}$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Square the distance</div>$d^2=(12-4t)^2+(-4+3t)^2=144-96t+16t^2+16-24t+9t^2=25t^2-120t+160$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Complete the square</div>$25t^2-120t+160=25(t^2-4.8t)+160=25(t-2.4)^2-144+160=25(t-2.4)^2+16$</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Read off the minimum</div>The squared bracket is never negative, so the least value of $d^2$ is 16, when $t=2.4$. The shortest distance is $\sqrt{16}=4$ km.</div>
+</div>
+<div class="example-answer">Shortest distance $4$ km, at $t=2.4$ hours (2 hours 24 minutes)</div>
+</div>
+</div>
+</div>
+
+
+<div class="unit-marker">Unit B &middot; Motion</div>
+<h2 class="topic-title" id="kinematics">3. Kinematics in a Straight Line</h2>
+<div class="topic-meta">Constant acceleration in a straight line: five equations, a sign convention and four kinds of graph.</div>
+
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Displacement, $s$</div><div class="gval">Distance from the start in a chosen direction. It can be negative.</div></div>
+<div class="gcell"><div class="glabel">Distance</div><div class="gval">The total length of the path travelled. It is never negative.</div></div>
+<div class="gcell"><div class="glabel">Velocity, $v$</div><div class="gval">Rate of change of displacement. Its sign shows the direction.</div></div>
+<div class="gcell"><div class="glabel">Speed</div><div class="gval">The magnitude of the velocity.</div></div>
+</div>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Constant Acceleration</div>
+<p><strong>Learn this</strong> (not in the formulae booklet). With initial velocity $u$, final velocity $v$, acceleration $a$, time $t$ and displacement $s$:</p>
+<p>$$v = u + at \qquad s = \tfrac12(u+v)t$$</p>
+<p>$$s = ut + \tfrac12at^2 \qquad s = vt - \tfrac12at^2$$</p>
+<p>$$v^2 = u^2 + 2as$$</p>
+<p>These equations only work while the acceleration is constant.</p>
+</div>
+
+<table>
+<tr><th>Equation</th><th>Quantity it leaves out</th></tr>
+<tr><td>$v = u + at$</td><td>$s$</td></tr>
+<tr><td>$s = \tfrac12(u+v)t$</td><td>$a$</td></tr>
+<tr><td>$s = ut + \tfrac12at^2$</td><td>$v$</td></tr>
+<tr><td>$s = vt - \tfrac12at^2$</td><td>$u$</td></tr>
+<tr><td>$v^2 = u^2 + 2as$</td><td>$t$</td></tr>
+</table>
+
+<ol>
+<li>Choose a positive direction and keep it for the whole stage.</li>
+<li>List $s$, $u$, $v$, $a$, $t$, filling in what you know. A deceleration is a negative acceleration.</li>
+<li>Pick the equation that contains your three known values and the one you want.</li>
+<li>If the acceleration changes, start a new list. The final velocity of one stage is the initial velocity of the next.</li>
+</ol>
+
+<div class="example" id="ex-4">
+<div class="example-header">Worked Example 4 <span class="tag">Two stages</span></div>
+<div class="example-question">
+<p>A car passes a point $A$ with speed $6\text{ m s}^{-1}$ and accelerates at $2\text{ m s}^{-2}$ for 5 seconds, reaching a point $B$. At $B$ the driver brakes, and the car slows down uniformly, coming to rest at a point $C$, where $BC=64$ m.</p>
+<p>Find (a) the speed of the car at $B$, (b) the distance $AB$, (c) the deceleration from $B$ to $C$, (d) the average speed for the journey from $A$ to $C$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Speed at B</div>From $A$ to $B$: $u=6$, $a=2$, $t=5$. Using $v=u+at$: $v=6+2(5)=16$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Distance AB</div>Using $s=ut+\tfrac12at^2$: $s=6(5)+\tfrac12(2)(5^2)=55$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Deceleration</div>From $B$ to $C$: $u=16$, $v=0$, $s=64$. Using $v^2=u^2+2as$: $0=16^2+2a(64)$, so $a=-2$. The deceleration is $2\text{ m s}^{-2}$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(d) Time from B to C</div>Using $v=u+at$: $0=16-2t$, so $t=8$.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(d) Average speed</div>The total distance is $55+64=119$ m and the total time is $5+8=13$ s, so the average speed is $\dfrac{119}{13}=9.153\ldots$</div>
+</div>
+<div class="example-answer">(a) $16\text{ m s}^{-1}$ &nbsp;&middot;&nbsp; (b) $55$ m &nbsp;&middot;&nbsp; (c) $2\text{ m s}^{-2}$ &nbsp;&middot;&nbsp; (d) $9.15\text{ m s}^{-1}$ (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<h3>Vertical Motion Under Gravity</h3>
+<p>If air resistance is ignored, an object moving freely up or down has acceleration $g$ downwards for the whole of its flight.</p>
+<ul>
+<li>Taking <strong>upwards as positive</strong>, $a=-9.8$.</li>
+<li>At the <strong>greatest height</strong>, $v=0$.</li>
+<li>The object passes each height twice: once going up and once coming down, with the same speed both times.</li>
+<li>When it returns to its starting level, $s=0$.</li>
+</ul>
+
+<div class="example" id="ex-5">
+<div class="example-header">Worked Example 5 <span class="tag">A ball thrown upwards</span></div>
+<div class="example-question">
+<p>A ball is projected vertically upwards from a point $O$ with speed $21\text{ m s}^{-1}$. The ball is modelled as a particle moving freely under gravity.</p>
+<p>Find (a) the greatest height above $O$ reached by the ball, (b) the times at which the ball is 10 m above $O$, (c) the speed of the ball when it returns to $O$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Greatest height</div>Take upwards as positive: $u=21$, $a=-9.8$, and $v=0$ at the top. Using $v^2=u^2+2as$: $0=21^2-2(9.8)h$, so $h=\dfrac{441}{19.6}=22.5$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Set up a quadratic</div>Using $s=ut+\tfrac12at^2$ with $s=10$: $10=21t-4.9t^2$, so $4.9t^2-21t+10=0$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Solve</div>$t=\dfrac{21\pm\sqrt{21^2-4(4.9)(10)}}{2(4.9)}=\dfrac{21\pm\sqrt{245}}{9.8}$, so $t=0.5456\ldots$ (going up) or $t=3.740\ldots$ (coming down).</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Back at O</div>The displacement is zero: $v^2=21^2+2(-9.8)(0)=441$, so the speed is $21\text{ m s}^{-1}$, the same as the speed of projection.</div>
+</div>
+<div class="example-answer">(a) $22.5$ m &nbsp;&middot;&nbsp; (b) $t=0.546$ s and $t=3.74$ s (3 s.f.) &nbsp;&middot;&nbsp; (c) $21\text{ m s}^{-1}$</div>
+</div>
+</div>
+</div>
+
+<h3>Motion Graphs</h3>
+<table>
+<tr><th>Graph</th><th>Gradient</th><th>Area under the graph</th></tr>
+<tr><td>Displacement&ndash;time</td><td>Velocity</td><td>Not used</td></tr>
+<tr><td>Velocity&ndash;time</td><td>Acceleration</td><td>Displacement</td></tr>
+<tr><td>Speed&ndash;time</td><td>Rate of change of speed</td><td>Distance travelled</td></tr>
+<tr><td>Acceleration&ndash;time</td><td>Not used</td><td>Change in velocity</td></tr>
+</table>
+<p>For constant acceleration, a velocity&ndash;time graph is made of straight lines and an acceleration&ndash;time graph is made of horizontal lines. A horizontal section of a velocity&ndash;time graph means constant velocity.</p>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Find the area under a velocity&ndash;time graph by splitting it into triangles and rectangles, or use the area of a trapezium, $\tfrac12(a+b)h$, where $a$ and $b$ are the parallel sides.</p>
+</div>
+
+<div class="example" id="ex-6">
+<div class="example-header">Worked Example 6 <span class="tag">Velocity&ndash;time graph</span></div>
+<div class="example-question">
+<p>A train starts from rest at station $A$ and accelerates uniformly for 20 s until its speed is $24\text{ m s}^{-1}$. It travels at this speed for $T$ seconds, then decelerates uniformly at $0.8\text{ m s}^{-2}$ and comes to rest at station $B$. The distance $AB$ is 3000 m.</p>
+<p>(a) Sketch a velocity&ndash;time graph for the journey. (b) Find the acceleration in the first stage. (c) Find the value of $T$ and the total time for the journey.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Sketch</div>The graph is a trapezium: a straight line up to 24, a horizontal line, then a straight line down to 0. It is shown below with the values found in this solution.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Gradient</div>The acceleration is the gradient of the first line: $\dfrac{24}{20}=1.2\text{ m s}^{-2}$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(c) Time to stop</div>The speed falls from 24 to 0 at $0.8\text{ m s}^{-2}$, so the last stage takes $\dfrac{24}{0.8}=30$ s.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Use the area</div>The area under the graph is the distance. The two triangles have areas $\tfrac12(20)(24)=240$ and $\tfrac12(30)(24)=360$, and the rectangle has area $24T$.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Solve for T</div>$240+24T+360=3000$, so $24T=2400$ and $T=100$. The total time is $20+100+30=150$ s.</div>
+</div>
+<div class="example-answer">(b) $1.2\text{ m s}^{-2}$ &nbsp;&middot;&nbsp; (c) $T=100$, total time $150$ s</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 460 254" width="460" height="254" role="img" aria-label="Velocity–time graph in the shape of a trapezium: the velocity rises from 0 to 24 metres per second in 20 seconds, stays at 24 until t = 120, then falls to 0 at t = 150. The three areas are 240, 2400 and 360 metres, a total of 3000 metres">
+<polygon class="m1-vt" points="60,215 108,65 348,65 420,215" fill="#1d5bbf" fill-opacity="0.14" stroke="#1d5bbf" stroke-width="2.2"/>
+<line x1="108" y1="65" x2="108" y2="215" stroke="#1d5bbf" stroke-width="1" stroke-dasharray="4,4"/>
+<line x1="348" y1="65" x2="348" y2="215" stroke="#1d5bbf" stroke-width="1" stroke-dasharray="4,4"/>
+<line x1="60" y1="65" x2="108" y2="65" stroke="#c9c6ba" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="60" y1="215" x2="440" y2="215" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="60" y1="215" x2="60" y2="30" stroke="#6b7280" stroke-width="1.2"/>
+<line x1="60" y1="215" x2="60" y2="220" stroke="#6b7280" stroke-width="1.2"/>
+<text x="60" y="233" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">0</text>
+<line x1="108" y1="215" x2="108" y2="220" stroke="#6b7280" stroke-width="1.2"/>
+<text x="108" y="233" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">20</text>
+<line x1="348" y1="215" x2="348" y2="220" stroke="#6b7280" stroke-width="1.2"/>
+<text x="348" y="233" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">120</text>
+<line x1="420" y1="215" x2="420" y2="220" stroke="#6b7280" stroke-width="1.2"/>
+<text x="420" y="233" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">150</text>
+<line x1="55" y1="65" x2="60" y2="65" stroke="#6b7280" stroke-width="1.2"/>
+<text x="50" y="69" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">24</text>
+<text x="105" y="207.5" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#0f2545" text-anchor="end" font-weight="700">240 m</text>
+<text x="228" y="146.3" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">2400 m</text>
+<text x="352" y="207.5" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#0f2545" text-anchor="start" font-weight="700">360 m</text>
+<text x="228" y="57" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#4a5568" text-anchor="middle">T = 100 s</text>
+<text x="250" y="248" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430" text-anchor="middle">time, t (s)</text>
+<text x="64" y="24" font-family="Helvetica Neue,Arial" font-size="12" fill="#1c2430">v (m s&#8722;&#185;)</text>
+</svg>
+<div class="diagram-caption">Worked Example 6. The three areas add up to the distance of 3000 m.</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Using one set of constant-acceleration equations across a change of acceleration. Each stage needs its own list of $s$, $u$, $v$, $a$, $t$. Also watch the signs: with upwards positive, the acceleration due to gravity is $-9.8$, even while the object is moving up.</p>
+</div>
+
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p><a href="pure-mathematics-1.html#quadratics">P1 &mdash; Quadratics</a> covers the quadratic formula. When two objects meet, setting their displacements equal often gives a quadratic in $t$.</p>
+</div>
+
+<div class="example" id="ex-7">
+<div class="example-header">Worked Example 7 <span class="tag">One vehicle catches another</span></div>
+<div class="example-question">
+<p>A van $P$ travels along a straight road at a constant speed of $12\text{ m s}^{-1}$. At time $t=0$ the van passes a point $O$. At the same instant a motorcycle $Q$ starts from rest at a point 32 m behind $O$ and moves in the same direction with constant acceleration $2\text{ m s}^{-2}$.</p>
+<p>Find (a) the time at which $Q$ catches $P$, (b) the distance from $O$ at which this happens, (c) the speed of $Q$ at that instant.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Displacements from O</div>At time $t$, the van is at $12t$. The motorcycle starts 32 m behind $O$, so it is at $\tfrac12(2)t^2-32=t^2-32$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Set them equal</div>$t^2-32=12t$, so $t^2-12t-32=0$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(a) Solve</div>$t=\dfrac{12\pm\sqrt{144+128}}{2}=6\pm\sqrt{68}$, so $t=14.246\ldots$ or $t=-2.246\ldots$ The time must be positive, so reject the negative root.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Distance from O</div>Use the van: $12\times14.246\ldots=170.95\ldots$</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Speed of Q</div>Using $v=u+at$: $2\times14.246\ldots=28.49\ldots$</div>
+</div>
+<div class="example-answer">(a) $t=14.2$ s &nbsp;&middot;&nbsp; (b) $171$ m &nbsp;&middot;&nbsp; (c) $28.5\text{ m s}^{-1}$ (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+
+<h2 class="topic-title" id="dynamics">4. Dynamics: Newton's Laws</h2>
+<div class="topic-meta">Forces cause acceleration: Newton's laws, friction, slopes and connected particles.</div>
+
+<ol>
+<li><strong>First law.</strong> A particle stays at rest, or keeps moving with constant velocity, unless a resultant force acts on it.</li>
+<li><strong>Second law.</strong> The resultant force equals mass times acceleration, and the acceleration is in the direction of the resultant force.</li>
+<li><strong>Third law.</strong> If $A$ exerts a force on $B$, then $B$ exerts an equal and opposite force on $A$.</li>
+</ol>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Force and Motion</div>
+<p><strong>Learn this</strong> (not in the formulae booklet):</p>
+<p>$$F = ma \qquad W = mg$$</p>
+<p>$F$ is the <strong>resultant</strong> force in the direction of the acceleration. In vector form, $\mathbf{F} = m\mathbf{a}$.</p>
+<p>$$F \leq \mu R \qquad F = \mu R \text{ when sliding or about to slide}$$</p>
+<p>Here $F$ is the friction, $R$ is the normal reaction and $\mu$ is the coefficient of friction.</p>
+</div>
+
+<h3>The Forces You Will Meet</h3>
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Weight</div><div class="gval">$mg$, vertically downwards.</div></div>
+<div class="gcell"><div class="glabel">Normal reaction, $R$</div><div class="gval">At right angles to the surface, pushing the object away from it.</div></div>
+<div class="gcell"><div class="glabel">Tension, $T$</div><div class="gval">The pull in a taut string or rod, acting along it.</div></div>
+<div class="gcell"><div class="glabel">Thrust</div><div class="gval">The push in a rod that is being compressed.</div></div>
+<div class="gcell"><div class="glabel">Friction, $F$</div><div class="gval">Along the surface, opposing the motion.</div></div>
+<div class="gcell"><div class="glabel">Resistance</div><div class="gval">Any force opposing the motion, such as air resistance.</div></div>
+</div>
+
+<ol>
+<li>Draw a force diagram and mark the direction of the acceleration.</li>
+<li>At right angles to the motion there is no acceleration, so those forces balance. This usually gives $R$.</li>
+<li>Along the direction of motion, write resultant force $=ma$.</li>
+</ol>
+
+<div class="example" id="ex-8">
+<div class="example-header">Worked Example 8 <span class="tag">Driving force and resistance</span></div>
+<div class="example-question">
+<p>A van of mass 1200 kg moves along a straight horizontal road. The engine produces a constant driving force of 2100 N and the total resistance to motion is a constant 600 N.</p>
+<p>(a) Find the acceleration of the van. (b) The van starts from rest. Find the time it takes to reach $20\text{ m s}^{-1}$ and the distance it travels in that time. (c) At $20\text{ m s}^{-1}$ the engine is switched off. Find how much further the van travels before coming to rest.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) F = ma</div>The resultant force forwards is the driving force minus the resistance: $2100-600=1200a$, so $a=1.25\text{ m s}^{-2}$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Time</div>Using $v=u+at$: $20=0+1.25t$, so $t=16$ s.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Distance</div>Using $s=\tfrac12(u+v)t$: $s=\tfrac12(0+20)(16)=160$ m.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) New acceleration</div>With the engine off, the only horizontal force is the resistance: $-600=1200a$, so $a=-0.5\text{ m s}^{-2}$.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Stopping distance</div>Using $v^2=u^2+2as$: $0=20^2+2(-0.5)s$, so $s=400$ m.</div>
+</div>
+<div class="example-answer">(a) $1.25\text{ m s}^{-2}$ &nbsp;&middot;&nbsp; (b) $16$ s, $160$ m &nbsp;&middot;&nbsp; (c) $400$ m</div>
+</div>
+</div>
+</div>
+
+<div class="example" id="ex-9">
+<div class="example-header">Worked Example 9 <span class="tag">A lift</span></div>
+<div class="example-question">
+<p>A lift of mass 650 kg carries a passenger of mass 70 kg. The lift is raised by a vertical cable.</p>
+<p>(a) The lift accelerates upwards at $1.2\text{ m s}^{-2}$. Find the tension in the cable and the normal reaction between the passenger and the floor. (b) Later, still moving upwards, the lift slows down at $1.8\text{ m s}^{-2}$. Find the new normal reaction on the passenger.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Whole system</div>The cable supports the lift and the passenger together, a total mass of $650+70=720$ kg. Taking upwards as positive: $T-720g=720(1.2)$, so $T=720(9.8+1.2)=7920$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Passenger alone</div>Only two forces act on the passenger, the reaction $R$ up and the weight $70g$ down: $R-70g=70(1.2)$, so $R=70(9.8+1.2)=770$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Slowing down</div>The lift is moving up but the acceleration is downwards, so $a=-1.8$: $R-70g=70(-1.8)$, so $R=70(9.8-1.8)=560$ N.</div>
+</div>
+<div class="example-answer">(a) $T=7920$ N, $R=770$ N &nbsp;&middot;&nbsp; (b) $R=560$ N</div>
+</div>
+</div>
+</div>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Find $R$ before you use friction. $R$ equals $mg$ only on a horizontal surface with no other vertical forces. In a lift, on a slope, or when a force acts at an angle, it is different.</p>
+</div>
+
+<h3>Inclined Planes</h3>
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p><a href="pure-mathematics-1.html#trig">P1 &mdash; Trigonometry</a> gives the ratios used to split the weight into two components on a slope.</p>
+</div>
+
+<p>On a plane inclined at angle $\alpha$ to the horizontal, resolve <strong>parallel</strong> and <strong>perpendicular</strong> to the plane, not horizontally and vertically. The motion is along the plane, so only one direction has an acceleration.</p>
+<div class="grid-cells">
+<div class="gcell"><div class="glabel">Weight component down the plane</div><div class="gval">$mg\sin\alpha$</div></div>
+<div class="gcell"><div class="glabel">Weight component into the plane</div><div class="gval">$mg\cos\alpha$</div></div>
+</div>
+
+<div class="example" id="ex-10">
+<div class="example-header">Worked Example 10 <span class="tag">Pulled up a rough plane</span></div>
+<div class="example-question">
+<p>A particle of mass 4 kg is pulled up a rough plane by a force of 40 N acting parallel to the plane. The plane is inclined at $30^\circ$ to the horizontal and the coefficient of friction between the particle and the plane is $0.25$. Find the acceleration of the particle.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Perpendicular to the plane</div>There is no acceleration in this direction, so $R=4g\cos30^\circ=33.94\ldots$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Friction</div>The particle is moving, so friction is at its largest value: $F=0.25R=8.487\ldots$ N. It acts down the plane, opposing the motion.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Parallel to the plane</div>The weight component down the plane is $4g\sin30^\circ=19.6$ N. Taking up the plane as positive: $40-19.6-8.487\ldots=4a$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Solve</div>$11.91\ldots=4a$, so $a=2.978\ldots$</div>
+</div>
+<div class="example-answer">$a=2.98\text{ m s}^{-2}$ (3 s.f.), up the plane</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 380 236" width="380" height="236" role="img" aria-label="Force diagram for a particle on a rough plane inclined at 30 degrees. Four forces act on the particle: the normal reaction R at right angles to the plane, the pulling force P of 40 newtons up the plane, friction F down the plane, and the weight 4g vertically downwards">
+<polygon points="40,206 308.47,51 308.47,206" fill="#f4f1ea" stroke="none"/>
+<line class="m1-incline" x1="40" y1="206" x2="308.47" y2="51" stroke="#0f2545" stroke-width="2"/>
+<line x1="40" y1="206" x2="322.47" y2="206" stroke="#0f2545" stroke-width="1.4"/>
+<line x1="308.47" y1="51" x2="308.47" y2="206" stroke="#c9c6ba" stroke-width="1" stroke-dasharray="4,4"/>
+<polygon points="172.5,129.5 193.29,117.5 181.29,96.72 160.5,108.72" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<line class="m1-force-R" x1="176.89" y1="113.11" x2="145.39" y2="58.55" stroke="#1c7c54" stroke-width="2.2"/><polygon points="140.89,50.75 148.67,56.66 142.12,60.44" fill="#1c7c54"/>
+<text x="124.9" y="46.8" font-family="Georgia,serif" font-size="13" fill="#1c7c54" font-weight="700" font-style="italic">R</text>
+<line class="m1-force-P" x1="176.89" y1="113.11" x2="243.58" y2="74.61" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="251.37,70.11 245.47,77.88 241.69,71.33" fill="#1d5bbf"/>
+<text x="243.4" y="58.1" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" text-anchor="end" font-weight="700" font-style="italic">P<tspan font-family="Helvetica Neue,Arial" font-style="normal"> = 40 N</tspan></text>
+<line class="m1-force-F" x1="176.89" y1="113.11" x2="139.66" y2="134.61" stroke="#a8321f" stroke-width="2.2"/><polygon points="131.86,139.11 137.77,131.33 141.55,137.88" fill="#a8321f"/>
+<text x="117.9" y="133.1" font-family="Georgia,serif" font-size="13" fill="#a8321f" font-weight="700" font-style="italic">F</text>
+<line class="m1-force-W" x1="176.89" y1="113.11" x2="176.89" y2="182.11" stroke="#0f2545" stroke-width="2.2"/><polygon points="176.89,191.11 173.11,182.11 180.67,182.11" fill="#0f2545"/>
+<text x="184.9" y="193.1" font-family="Georgia,serif" font-size="13" fill="#0f2545" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">4</tspan>g</text>
+<path d="M80,206 A40,40 0 0 0 74.64,186" fill="none" stroke="#0f2545" stroke-width="1.2"/>
+<text x="86" y="198" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545">30&#176;</text>
+</svg>
+<div class="diagram-caption">Worked Example 10. The slope is drawn at $30^\circ$; $R$ is at right angles to it and the weight is vertical.</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Writing $R=mg$ on a slope. On an inclined plane $R=mg\cos\alpha$, unless another force also has a component perpendicular to the plane. Also check the direction of friction: it opposes the motion, so it acts down the plane when the particle moves up.</p>
+</div>
+
+<h3>Connected Particles</h3>
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p><a href="pure-mathematics-1.html#simultaneous">P1 &mdash; Simultaneous Equations</a> covers elimination. Two connected particles give two equations in the acceleration and the tension, and adding them removes the tension.</p>
+</div>
+
+<ul>
+<li>Particles joined by a taut, inextensible string have the same speed and the same size of acceleration.</li>
+<li>If they move along the <strong>same straight line</strong> (a car and trailer), you can treat them as one object to find the acceleration. The tension is an internal force and cancels.</li>
+<li>To find the <strong>tension</strong>, look at one particle on its own.</li>
+<li>If the string passes over a <strong>pulley</strong>, the particles move in different directions. Write $F=ma$ for each particle, then add the equations.</li>
+<li>The <strong>force on a pulley</strong> is the resultant of the two tensions. With both parts of the string vertical it is $2T$; with the parts at right angles it is $T\sqrt2$.</li>
+</ul>
+
+<div class="example" id="ex-11">
+<div class="example-header">Worked Example 11 <span class="tag">Car and trailer</span></div>
+<div class="example-question">
+<p>A car of mass 1100 kg tows a trailer of mass 400 kg along a straight horizontal road, using a light horizontal tow bar. The driving force of the car is 3000 N. The resistances to motion are 400 N on the car and 200 N on the trailer.</p>
+<p>(a) Find the acceleration. (b) Find the tension in the tow bar. (c) When the speed is $12\text{ m s}^{-1}$ the tow bar is detached. Find how far the trailer travels before it comes to rest, and the time this takes.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">(a) Whole system</div>The car and trailer move together, so treat them as one object of mass 1500 kg: $3000-400-200=1500a$, so $a=1.6\text{ m s}^{-2}$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(b) Trailer alone</div>The forces on the trailer are the tension forwards and its resistance backwards: $T-200=400(1.6)$, so $T=840$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Check with the car</div>$3000-400-840=1100(1.6)$, and both sides equal 1760.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Trailer after detaching</div>The only horizontal force is now the resistance: $-200=400a$, so $a=-0.5\text{ m s}^{-2}$.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Distance and time</div>$0=12^2+2(-0.5)s$, so $s=144$ m. Then $0=12-0.5t$, so $t=24$ s.</div>
+</div>
+<div class="example-answer">(a) $1.6\text{ m s}^{-2}$ &nbsp;&middot;&nbsp; (b) $840$ N &nbsp;&middot;&nbsp; (c) $144$ m in $24$ s</div>
+</div>
+</div>
+</div>
+
+<div class="example" id="ex-12">
+<div class="example-header">Worked Example 12 <span class="tag">Two particles over a pulley</span></div>
+<div class="example-question">
+<p>Particles of mass 3 kg and 5 kg are attached to the ends of a light inextensible string, which passes over a smooth fixed pulley. The particles hang with the string taut and vertical, and are released from rest.</p>
+<p>Find (a) the acceleration of the particles, (b) the tension in the string, (c) the force exerted on the pulley by the string.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Equation for each particle</div>The 5 kg particle moves down and the 3 kg particle moves up, with the same acceleration $a$: $5g-T=5a$ and $T-3g=3a$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Add the equations</div>The tension cancels: $2g=8a$, so $a=\dfrac g4=2.45\text{ m s}^{-2}$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Tension</div>From the 3 kg particle: $T=3g+3(2.45)=36.75$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(c) Force on the pulley</div>Both parts of the string pull down on the pulley with force $T$: $2T=73.5$ N, vertically downwards.</div>
+</div>
+<div class="example-answer">(a) $2.45\text{ m s}^{-2}$ &nbsp;&middot;&nbsp; (b) $36.8$ N (3 s.f.) &nbsp;&middot;&nbsp; (c) $73.5$ N downwards</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 300 286" width="300" height="286" role="img" aria-label="Two particles hanging from a light string over a smooth fixed pulley: 3 kilograms on the left and 5 kilograms on the right. On each particle the tension T acts upwards and the weight acts downwards. The 3 kilogram particle accelerates upwards and the 5 kilogram particle accelerates downwards, with the same acceleration a">
+<line x1="96" y1="14" x2="204" y2="14" stroke="#0f2545" stroke-width="2.4"/>
+<line x1="150" y1="14" x2="150" y2="36" stroke="#0f2545" stroke-width="1.6"/>
+<circle cx="150" cy="62" r="26" fill="#f4f1ea" stroke="#0f2545" stroke-width="1.8"/>
+<circle cx="150" cy="62" r="3" fill="#0f2545"/>
+<path d="M124,62 A26,26 0 0 1 176,62" fill="none" stroke="#1c2430" stroke-width="1.6"/>
+<line x1="124" y1="62" x2="124" y2="163" stroke="#1c2430" stroke-width="1.6"/>
+<line x1="176" y1="62" x2="176" y2="201" stroke="#1c2430" stroke-width="1.6"/>
+<circle cx="124" cy="176" r="13" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<line class="m1-force-T" x1="124" y1="163" x2="124" y2="128" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="124,119 127.78,128 120.22,128" fill="#1d5bbf"/>
+<text x="115" y="135" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" text-anchor="end" font-weight="700" font-style="italic">T</text>
+<line class="m1-force-W" x1="124" y1="189" x2="124" y2="224" stroke="#0f2545" stroke-width="2.2"/><polygon points="124,233 120.22,224 127.78,224" fill="#0f2545"/>
+<text x="115" y="223" font-family="Georgia,serif" font-size="13" fill="#0f2545" text-anchor="end" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">3</tspan>g</text>
+<text x="144" y="180" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="start">3 kg</text>
+<circle cx="176" cy="214" r="13" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<line class="m1-force-T" x1="176" y1="201" x2="176" y2="166" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="176,157 179.78,166 172.22,166" fill="#1d5bbf"/>
+<text x="185" y="173" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" text-anchor="start" font-weight="700" font-style="italic">T</text>
+<line class="m1-force-W" x1="176" y1="227" x2="176" y2="262" stroke="#0f2545" stroke-width="2.2"/><polygon points="176,271 172.22,262 179.78,262" fill="#0f2545"/>
+<text x="185" y="261" font-family="Georgia,serif" font-size="13" fill="#0f2545" text-anchor="start" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">5</tspan>g</text>
+<text x="156" y="218" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="end">5 kg</text>
+<line x1="78" y1="184" x2="78" y2="158" stroke="#c9862c" stroke-width="1.8" stroke-dasharray="5,3"/><polygon points="78,150 81.36,158 74.64,158" fill="#c9862c"/>
+<text x="72" y="170" font-family="Georgia,serif" font-size="13" fill="#8a5a17" text-anchor="end" font-style="italic">a</text>
+<line x1="222" y1="188" x2="222" y2="214" stroke="#c9862c" stroke-width="1.8" stroke-dasharray="5,3"/><polygon points="222,222 218.64,214 225.36,214" fill="#c9862c"/>
+<text x="228" y="208" font-family="Georgia,serif" font-size="13" fill="#8a5a17" font-style="italic">a</text>
+</svg>
+<div class="diagram-caption">Worked Example 12. The tension is the same on both sides because the pulley is smooth and the string is light.</div>
+</div>
+
+<h3>When the Forces Change</h3>
+<p>If a string breaks or goes slack, or a particle hits the ground, the forces change and so does the acceleration. Treat the motion as two stages.</p>
+<ul>
+<li>The speed at the end of the first stage is the initial speed of the second stage.</li>
+<li>Draw a new force diagram for the second stage. A slack string has no tension.</li>
+<li>Check any limit the question gives, such as a particle not reaching the pulley.</li>
+</ul>
+
+<div class="example" id="ex-13">
+<div class="example-header">Worked Example 13 <span class="tag">Table, pulley and floor</span></div>
+<div class="example-question">
+<p>A particle $A$ of mass 2 kg rests on a rough horizontal table, 2.5 m from a smooth pulley fixed at the edge of the table. The coefficient of friction between $A$ and the table is $0.4$. A light inextensible string passes over the pulley and joins $A$ to a particle $B$ of mass 3 kg, which hangs 0.9 m above the floor. The system is released from rest with the string taut.</p>
+<p>Find (a) the acceleration of the particles, (b) the tension in the string, (c) how much further $A$ moves after $B$ hits the floor, given that $B$ does not rebound.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Friction on A</div>Vertically for $A$: $R=2g=19.6$ N. $A$ is moving, so $F=0.4(19.6)=7.84$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Equation for each particle</div>For $B$, moving down: $3g-T=3a$. For $A$, moving towards the pulley: $T-7.84=2a$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(a) Add the equations</div>$29.4-7.84=5a$, so $5a=21.56$ and $a=4.312\text{ m s}^{-2}$.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Tension</div>$T=7.84+2(4.312)=16.464$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content"><div class="sk">(c) Speed when B lands</div>Both particles have moved 0.9 m from rest: $v^2=2(4.312)(0.9)=7.7616$, so $v=2.785\ldots\text{ m s}^{-1}$.</div>
+</div>
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-content"><div class="sk">(c) A on its own</div>The string is now slack, so the only horizontal force on $A$ is friction: $-7.84=2a$, so $a=-3.92\text{ m s}^{-2}$.</div>
+</div>
+<div class="step">
+<div class="step-num">7</div>
+<div class="step-content"><div class="sk">(c) Further distance</div>$0=7.7616+2(-3.92)s$, so $s=0.99$ m. In total $A$ moves $0.9+0.99=1.89$ m, which is less than 2.5 m, so it stops before reaching the pulley.</div>
+</div>
+<div class="example-answer">(a) $4.31\text{ m s}^{-2}$ &nbsp;&middot;&nbsp; (b) $16.5$ N &nbsp;&middot;&nbsp; (c) $0.99$ m</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 440 262" width="440" height="262" role="img" aria-label="Particle A of mass 2 kilograms on a rough horizontal table, 2.5 metres from a smooth pulley at the edge. A string runs from A over the pulley to particle B of mass 3 kilograms, which hangs 0.9 metres above the floor. On A: reaction R upwards, weight 2g downwards, tension T towards the pulley and friction F away from it. On B: tension T upwards and weight 3g downwards">
+<rect x="24" y="96" width="306" height="10" fill="#f4f1ea" stroke="#0f2545" stroke-width="1.4"/>
+<line x1="322" y1="106" x2="322" y2="246" stroke="#0f2545" stroke-width="1.4"/>
+<line x1="60" y1="106" x2="60" y2="246" stroke="#0f2545" stroke-width="1.4"/>
+<line x1="24" y1="246" x2="420" y2="246" stroke="#0f2545" stroke-width="2"/>
+<circle cx="334" cy="92" r="10" fill="#f4f1ea" stroke="#0f2545" stroke-width="1.6"/>
+<line class="m1-string-h" x1="130" y1="82" x2="334" y2="82" stroke="#1c2430" stroke-width="1.5"/>
+<line x1="344" y1="92" x2="344" y2="150" stroke="#1c2430" stroke-width="1.5"/>
+<rect x="100" y="68" width="30" height="28" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<text x="115" y="86" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#0f2545" text-anchor="middle" font-weight="700">A</text>
+<circle cx="344" cy="162" r="12" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<text x="344" y="166" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#0f2545" text-anchor="middle" font-weight="700">B</text>
+<line class="m1-force-R" x1="115" y1="68" x2="115" y2="33" stroke="#1c7c54" stroke-width="2.2"/><polygon points="115,24 118.78,33 111.22,33" fill="#1c7c54"/>
+<text x="123" y="36" font-family="Georgia,serif" font-size="13" fill="#1c7c54" font-weight="700" font-style="italic">R</text>
+<line class="m1-force-W" x1="115" y1="96" x2="115" y2="135" stroke="#0f2545" stroke-width="2.2"/><polygon points="115,144 111.22,135 118.78,135" fill="#0f2545"/>
+<text x="123" y="140" font-family="Georgia,serif" font-size="13" fill="#0f2545" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">2</tspan>g</text>
+<line class="m1-force-T" x1="130" y1="82" x2="169" y2="82" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="178,82 169,85.78 169,78.22" fill="#1d5bbf"/>
+<text x="160" y="74" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" font-weight="700" font-style="italic">T</text>
+<line class="m1-force-F" x1="100" y1="82" x2="65" y2="82" stroke="#a8321f" stroke-width="2.2"/><polygon points="56,82 65,78.22 65,85.78" fill="#a8321f"/>
+<text x="60" y="74" font-family="Georgia,serif" font-size="13" fill="#a8321f" font-weight="700" font-style="italic">F</text>
+<line class="m1-force-T" x1="344" y1="150" x2="344" y2="121" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="344,112 347.78,121 340.22,121" fill="#1d5bbf"/>
+<text x="352" y="128" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" font-weight="700" font-style="italic">T</text>
+<line class="m1-force-W" x1="344" y1="174" x2="344" y2="205" stroke="#0f2545" stroke-width="2.2"/><polygon points="344,214 340.22,205 347.78,205" fill="#0f2545"/>
+<text x="352" y="208" font-family="Georgia,serif" font-size="13" fill="#0f2545" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">3</tspan>g</text>
+<line x1="390" y1="174" x2="390" y2="246" stroke="#4a5568" stroke-width="1"/>
+<line x1="385" y1="174" x2="395" y2="174" stroke="#4a5568" stroke-width="1"/>
+<line x1="385" y1="246" x2="395" y2="246" stroke="#4a5568" stroke-width="1"/>
+<text x="398" y="214" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568">0.9 m</text>
+<line x1="130" y1="126" x2="334" y2="126" stroke="#4a5568" stroke-width="1"/>
+<line x1="130" y1="121" x2="130" y2="131" stroke="#4a5568" stroke-width="1"/>
+<line x1="334" y1="121" x2="334" y2="131" stroke="#4a5568" stroke-width="1"/>
+<text x="260" y="141" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">2.5 m</text>
+</svg>
+<div class="diagram-caption">Worked Example 13, drawn to scale: $A$ starts 2.5 m from the pulley and $B$ starts 0.9 m above the floor.</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Assuming the tension equals the weight of the hanging particle. That is only true if the system is at rest or moving at constant speed. When it accelerates, find $T$ from $F=ma$. Also, do not keep using the first acceleration after the string has gone slack.</p>
+</div>
+
+
+<h2 class="topic-title" id="momentum-impulse">5. Momentum &amp; Impulse</h2>
+<div class="topic-meta">What a collision conserves, and how a force acting for a time changes the motion.</div>
+
+<p>The <em class="def">momentum</em> of a particle is its mass times its velocity. An <em class="def">impulse</em> is what changes momentum: a force acting for a time. Both are vectors, so in one dimension their signs show their directions.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Momentum and Impulse</div>
+<p><strong>Learn this</strong> (not in the formulae booklet):</p>
+<p>$$\text{momentum} = mv \qquad I = Ft = mv - mu$$</p>
+<p>$$m_1u_1 + m_2u_2 = m_1v_1 + m_2v_2$$</p>
+<p>The second line is the <strong>principle of conservation of momentum</strong> for two particles that collide directly. Momentum and impulse are both measured in N s.</p>
+</div>
+
+<ol>
+<li>Draw a "before" and an "after" diagram, with an arrow for each velocity.</li>
+<li>Choose a positive direction. A velocity in the other direction is negative.</li>
+<li>Write total momentum before $=$ total momentum after.</li>
+<li>For an impulse, use $I=mv-mu$ on <strong>one</strong> particle. The two particles receive equal and opposite impulses.</li>
+</ol>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>If you do not know which way a particle moves after a collision, draw its arrow in the positive direction and call its velocity $v$. A negative answer simply means it moves the other way.</p>
+</div>
+
+<div class="example" id="ex-14">
+<div class="example-header">Worked Example 14 <span class="tag">Collision with a change of direction</span></div>
+<div class="example-question">
+<p>A particle $P$ of mass 2 kg is moving at $6\text{ m s}^{-1}$ on a smooth horizontal surface. It collides directly with a particle $Q$ of mass 3 kg, which is moving towards it at $2\text{ m s}^{-1}$. After the collision the direction of motion of $P$ is reversed and its speed is $1.5\text{ m s}^{-1}$.</p>
+<p>Find (a) the speed and direction of $Q$ after the collision, (b) the magnitude of the impulse exerted on $Q$ in the collision.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Signs</div>Take the original direction of $P$ as positive. Before: $P$ has velocity $6$ and $Q$ has velocity $-2$. After: $P$ has velocity $-1.5$ and $Q$ has velocity $v$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">(a) Conservation of momentum</div>$2(6)+3(-2)=2(-1.5)+3v$, so $6=-3+3v$ and $v=3$. This is positive, so $Q$ now moves in the original direction of $P$: its direction has been reversed too.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">(b) Impulse on Q</div>$I=mv-mu=3(3-(-2))=15$ N s.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">(b) Check with P</div>The impulse on $P$ is $2(-1.5-6)=-15$ N s: the same size, in the opposite direction.</div>
+</div>
+<div class="example-answer">(a) $3\text{ m s}^{-1}$, in the original direction of $P$ &nbsp;&middot;&nbsp; (b) $15$ N s</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 380 198" width="380" height="198" role="img" aria-label="Before and after a direct collision. Before: P, mass 2 kilograms, moves right at 6 metres per second and Q, mass 3 kilograms, moves left at 2 metres per second. After: P moves left at 1.5 metres per second and Q moves right at speed v">
+<text x="18" y="62" font-family="Helvetica Neue,Arial" font-size="12" fill="#4a5568" font-weight="700">Before</text>
+<circle cx="122" cy="58" r="17" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<text x="122" y="62.5" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">P</text>
+<line class="m1-vel-Before-P" x1="80" y1="28" x2="156" y2="28" stroke="#a8321f" stroke-width="2.2"/><polygon points="164,28 156,31.36 156,24.64" fill="#a8321f"/>
+<text x="122" y="20" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#a8321f" text-anchor="middle">6 m s&#8722;&#185;</text>
+<text x="122" y="92" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">2 kg</text>
+<circle cx="262" cy="58" r="17" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<text x="262" y="62.5" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">Q</text>
+<line class="m1-vel-Before-Q" x1="276" y1="28" x2="256" y2="28" stroke="#a8321f" stroke-width="2.2"/><polygon points="248,28 256,24.64 256,31.36" fill="#a8321f"/>
+<text x="262" y="20" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#a8321f" text-anchor="middle">2 m s&#8722;&#185;</text>
+<text x="262" y="92" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">3 kg</text>
+<text x="18" y="168" font-family="Helvetica Neue,Arial" font-size="12" fill="#4a5568" font-weight="700">After</text>
+<circle cx="122" cy="164" r="17" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<text x="122" y="168.5" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">P</text>
+<line class="m1-vel-After-P" x1="132.5" y1="134" x2="119.5" y2="134" stroke="#a8321f" stroke-width="2.2"/><polygon points="111.5,134 119.5,130.64 119.5,137.36" fill="#a8321f"/>
+<text x="122" y="126" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#a8321f" text-anchor="middle">1.5 m s&#8722;&#185;</text>
+<circle cx="262" cy="164" r="17" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<text x="262" y="168.5" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="middle" font-weight="700">Q</text>
+<line class="m1-vel-After-Q" x1="241" y1="134" x2="275" y2="134" stroke="#a8321f" stroke-width="2.2"/><polygon points="283,134 275,137.36 275,130.64" fill="#a8321f"/>
+<text x="262" y="126" font-family="Georgia,serif" font-size="11.5" fill="#a8321f" text-anchor="middle" font-weight="700" font-style="italic">v</text>
+<line x1="18" y1="110" x2="362" y2="110" stroke="#e6e3d9" stroke-width="1"/>
+</svg>
+<div class="diagram-caption">Worked Example 14. Arrow lengths are proportional to the speeds; both particles reverse direction.</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Losing a minus sign when a particle changes direction. A particle that goes from $6\text{ m s}^{-1}$ one way to $1.5\text{ m s}^{-1}$ the other way has changed its velocity by 7.5, not 4.5. Write every velocity with its sign before substituting.</p>
+</div>
+
+<div class="example" id="ex-15">
+<div class="example-header">Worked Example 15 <span class="tag">Impulse of a constant force</span></div>
+<div class="example-question">
+<p>A ball of mass 0.16 kg is moving in a straight line at $5\text{ m s}^{-1}$ when it is struck by a bat. The bat exerts a constant force of 48 N on the ball for 0.05 s, in the direction opposite to the ball's motion. Find the impulse on the ball and its speed immediately after it is struck.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Impulse</div>$I=Ft=48\times0.05=2.4$ N s.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Signs</div>Take the direction of the force as positive. The ball was moving the other way, so $u=-5$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Impulse and momentum</div>$I=mv-mu$ gives $2.4=0.16(v-(-5))$, so $v+5=15$ and $v=10$.</div>
+</div>
+<div class="example-answer">Impulse $2.4$ N s &nbsp;&middot;&nbsp; speed $10\text{ m s}^{-1}$, in the direction of the force</div>
+</div>
+</div>
+</div>
+
+<h3>A String That Becomes Taut</h3>
+<p>When a slack string between two particles suddenly becomes taut, there is a jerk: an impulse in the string. Afterwards the particles move with a <strong>common speed</strong>. Momentum is conserved, and the impulse in the string is the change in momentum of either particle.</p>
+
+<div class="example" id="ex-16">
+<div class="example-header">Worked Example 16 <span class="tag">The jerk in a string</span></div>
+<div class="example-question">
+<p>Particles $A$ of mass 2 kg and $B$ of mass 3 kg lie at rest on a smooth horizontal table, joined by a light inextensible string which is slack. $B$ is projected directly away from $A$ with speed $5\text{ m s}^{-1}$. Find the common speed of the particles just after the string becomes taut, and the magnitude of the impulse in the string.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Conservation of momentum</div>Before the jerk only $B$ is moving. Afterwards both particles move together with speed $v$: $3(5)=(2+3)v$, so $v=3\text{ m s}^{-1}$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Impulse on A</div>$A$ goes from rest to $3\text{ m s}^{-1}$: $I=2(3)-2(0)=6$ N s.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Check with B</div>$B$ loses momentum $3(5)-3(3)=6$ N s, the same amount.</div>
+</div>
+<div class="example-answer">Common speed $3\text{ m s}^{-1}$ &nbsp;&middot;&nbsp; impulse $6$ N s</div>
+</div>
+</div>
+</div>
+
+
+<div class="unit-marker">Unit C &middot; Equilibrium</div>
+<h2 class="topic-title" id="statics">6. Statics of a Particle</h2>
+<div class="topic-meta">Forces in balance: resolving in two directions, limiting friction and the triangle of forces.</div>
+
+<div class="box connect">
+<div class="box-title">&#8612; Builds On</div>
+<p><a href="pure-mathematics-1.html#trig">P1 &mdash; Trigonometry</a> covers the sine and cosine rules, which solve a triangle of forces that is not right-angled.</p>
+</div>
+
+<p>A particle is in <em class="def">equilibrium</em> when the resultant force on it is zero. It is then at rest, or moving with constant velocity.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Equilibrium</div>
+<p><strong>Learn this</strong> (not in the formulae booklet):</p>
+<p>$$\text{resultant force} = 0$$</p>
+<p>So the components in any direction add up to zero. Resolve in <strong>two perpendicular directions</strong> to get two equations.</p>
+<p>$$F \leq \mu R \qquad F = \mu R \text{ in limiting equilibrium}$$</p>
+</div>
+
+<ol>
+<li>Draw a force diagram showing every force on the particle.</li>
+<li>Choose two perpendicular directions. On a slope, use parallel and perpendicular to the plane.</li>
+<li>In each direction, write forces one way $=$ forces the other way.</li>
+<li>Solve the two equations.</li>
+</ol>
+
+<h3>The Triangle of Forces</h3>
+<p>Three forces in equilibrium, drawn nose to tail, form a closed triangle, because their vector sum is zero. The triangle can then be solved with trigonometry. If it is right-angled, use Pythagoras and $\tan$. If not, use the sine rule (learn it) or the cosine rule (given in the formulae booklet under P1).</p>
+
+<div class="example" id="ex-17">
+<div class="example-header">Worked Example 17 <span class="tag">Three forces</span></div>
+<div class="example-question">
+<p>A particle of weight 24 N hangs from a light string. A horizontal force of 10 N holds the particle in equilibrium with the string at an angle $\theta$ to the vertical. Find $\theta$ and the tension $T$ in the string.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Resolve horizontally</div>The horizontal component of the tension balances the 10 N force: $T\sin\theta=10$</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Resolve vertically</div>The vertical component of the tension balances the weight: $T\cos\theta=24$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Divide</div>$\tan\theta=\dfrac{10}{24}$, so $\theta=22.61\ldots^\circ$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Tension</div>Square and add the two equations: $T=\sqrt{10^2+24^2}=26$ N. The triangle of forces gives the same result at once, as its hypotenuse.</div>
+</div>
+<div class="example-answer">$\theta=22.6^\circ$ (3 s.f.) &nbsp;&middot;&nbsp; $T=26$ N</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 420 236" width="420" height="236" role="img" aria-label="Left: a particle hangs from a string that makes an angle theta of 22.6 degrees with the vertical. Three forces act on it: the tension T along the string, a horizontal force of 10 newtons and its weight of 24 newtons. Right: the same three forces drawn nose to tail form a closed right-angled triangle with sides 24, 10 and T">
+<line x1="64.67" y1="14" x2="148.67" y2="14" stroke="#0f2545" stroke-width="2.4"/>
+<line class="m1-string" x1="150" y1="118" x2="106.67" y2="14" stroke="#1c2430" stroke-width="1.4"/>
+<line x1="150" y1="118" x2="150" y2="34" stroke="#c9c6ba" stroke-width="1" stroke-dasharray="4,4"/>
+<line class="m1-force-T" x1="150" y1="118" x2="117.46" y2="39.91" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="114,31.6 120.95,38.45 113.97,41.36" fill="#1d5bbf"/>
+<text x="115.7" y="64.4" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" text-anchor="end" font-weight="700" font-style="italic">T</text>
+<line class="m1-force-H" x1="150" y1="118" x2="177" y2="118" stroke="#a8321f" stroke-width="2.2"/><polygon points="186,118 177,121.78 177,114.22" fill="#a8321f"/>
+<text x="192" y="122" font-family="Helvetica Neue,Arial" font-size="12" fill="#a8321f">10 N</text>
+<line class="m1-force-W" x1="150" y1="118" x2="150" y2="195.4" stroke="#0f2545" stroke-width="2.2"/><polygon points="150,204.4 146.22,195.4 153.78,195.4" fill="#0f2545"/>
+<text x="158" y="200.4" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545">24 N</text>
+<circle cx="150" cy="118" r="5" fill="#0f2545"/>
+<path d="M150,78 A40,40 0 0 0 134.62,81.08" fill="none" stroke="#0f2545" stroke-width="1.2"/>
+<text x="141" y="71" font-family="Georgia,serif" font-size="13" fill="#0f2545" text-anchor="middle" font-style="italic">&#952;</text>
+<text x="334" y="30" font-family="Helvetica Neue,Arial" font-size="11.5" fill="#4a5568" text-anchor="middle">Triangle of forces</text>
+<line class="m1-tri-W" x1="316" y1="62" x2="316" y2="139.4" stroke="#0f2545" stroke-width="2.2"/><polygon points="316,148.4 312.22,139.4 319.78,139.4" fill="#0f2545"/>
+<line class="m1-tri-H" x1="316" y1="148.4" x2="343" y2="148.4" stroke="#a8321f" stroke-width="2.2"/><polygon points="352,148.4 343,152.18 343,144.62" fill="#a8321f"/>
+<line class="m1-tri-T" x1="352" y1="148.4" x2="319.46" y2="70.31" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="316,62 322.95,68.85 315.97,71.76" fill="#1d5bbf"/>
+<text x="308" y="109.2" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545" text-anchor="end">24 N</text>
+<text x="334" y="164.4" font-family="Helvetica Neue,Arial" font-size="12" fill="#a8321f" text-anchor="middle">10 N</text>
+<text x="346" y="105.2" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" font-weight="700" font-style="italic">T</text>
+<path d="M316,92 A30,30 0 0 0 327.54,89.69" fill="none" stroke="#0f2545" stroke-width="1.2"/>
+<text x="323" y="106" font-family="Georgia,serif" font-size="12.5" fill="#0f2545" font-style="italic">&#952;</text>
+</svg>
+<div class="diagram-caption">Worked Example 17. The forces are drawn to scale, and the angle $\theta$ is the same in both pictures.</div>
+</div>
+
+<h3>Friction and Limiting Equilibrium</h3>
+<p>While a particle stays at rest, friction is only as large as it needs to be, up to a largest value of $\mu R$. The words <strong>limiting equilibrium</strong>, <strong>on the point of moving</strong> and <strong>about to slip</strong> all mean that friction has reached that largest value, so $F=\mu R$.</p>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Friction opposes the motion that is about to happen. Decide which way the particle would move if there were no friction, then draw the friction arrow the other way.</p>
+</div>
+
+<div class="example" id="ex-18">
+<div class="example-header">Worked Example 18 <span class="tag">Finding the coefficient of friction</span></div>
+<div class="example-question">
+<p>A box of mass 5 kg rests on a rough horizontal floor. It is pulled by a rope inclined at $30^\circ$ above the horizontal. When the tension in the rope is 20 N the box is on the point of sliding. Find the coefficient of friction between the box and the floor.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Resolve vertically</div>The rope lifts the box slightly, so the reaction is less than the weight: $R+20\sin30^\circ=5g$, so $R=49-10=39$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Resolve horizontally</div>Friction balances the horizontal pull: $F=20\cos30^\circ=17.32\ldots$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Limiting friction</div>The box is about to slide, so $F=\mu R$: $\mu=\dfrac{17.32\ldots}{39}=0.4441\ldots$</div>
+</div>
+<div class="example-answer">$\mu=0.44$ (2 s.f.)</div>
+</div>
+</div>
+</div>
+
+<h3>A Range of Values</h3>
+<p>On a rough slope a particle can be in equilibrium for a whole range of values of a force. At one end of the range it is about to slip down, with friction acting up the plane. At the other end it is about to move up, with friction acting down the plane.</p>
+
+<div class="example" id="ex-19">
+<div class="example-header">Worked Example 19 <span class="tag">Held on a slope by a horizontal force</span></div>
+<div class="example-question">
+<p>A particle of mass 2 kg rests on a rough plane inclined at an angle $\alpha$ to the horizontal, where $\tan\alpha=\dfrac{3}{4}$. The coefficient of friction is $0.5$. A horizontal force of magnitude $P$ newtons acts on the particle, towards the plane, in the vertical plane containing a line of greatest slope. Find the range of values of $P$ for which the particle stays in equilibrium.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Set up</div>$\tan\alpha=\dfrac{3}{4}$ gives $\sin\alpha=0.6$ and $\cos\alpha=0.8$. The weight is $2g=19.6$ N, with components $19.6(0.8)=15.68$ N into the plane and $19.6(0.6)=11.76$ N down the plane.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Perpendicular to the plane</div>$P$ has a component $0.6P$ into the plane, so in both cases $R=15.68+0.6P$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">About to slip down</div>Friction $0.5R$ acts up the plane, helping $P$: $0.8P+0.5(15.68+0.6P)=11.76$. So $0.8P+7.84+0.3P=11.76$, giving $1.1P=3.92$ and $P=3.563\ldots$</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">About to move up</div>Friction $0.5R$ now acts down the plane: $0.8P=11.76+0.5(15.68+0.6P)$. So $0.8P-0.3P=11.76+7.84$, giving $0.5P=19.6$ and $P=39.2$</div>
+</div>
+<div class="example-answer">$3.56\leq P\leq39.2$ (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<div class="diagram-row">
+<figure class="d-item">
+<svg viewBox="0 0 270 200" width="270" height="200" role="img" aria-label="Force diagram for a particle on a rough plane inclined at angle alpha, where tan alpha = 3/4 (about 36.9 degrees). The horizontal force P pushes the particle towards the plane, the normal reaction R is at right angles to the plane, the weight 2g acts vertically downwards, and friction F acts up the plane, because the particle is about to slip down">
+<polygon points="26,176 214.8,34.4 214.8,176" fill="#f4f1ea" stroke="none"/>
+<line class="m1-incline" x1="26" y1="176" x2="214.8" y2="34.4" stroke="#0f2545" stroke-width="2"/>
+<line x1="26" y1="176" x2="228.8" y2="176" stroke="#0f2545" stroke-width="1.4"/>
+<line x1="214.8" y1="34.4" x2="214.8" y2="176" stroke="#c9c6ba" stroke-width="1" stroke-dasharray="4,4"/>
+<polygon points="112.4,111.2 128.4,99.2 116.4,83.2 100.4,95.2" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<line class="m1-force-R" x1="114.4" y1="97.2" x2="85" y2="58" stroke="#1c7c54" stroke-width="2.2"/><polygon points="79.6,50.8 88.02,55.73 81.98,60.27" fill="#1c7c54"/>
+<text x="65.6" y="48.8" font-family="Georgia,serif" font-size="13" fill="#1c7c54" font-weight="700" font-style="italic">R</text>
+<line class="m1-force-P" x1="114.4" y1="97.2" x2="161.4" y2="97.2" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="170.4,97.2 161.4,100.98 161.4,93.42" fill="#1d5bbf"/>
+<text x="176.4" y="101.2" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" font-weight="700" font-style="italic">P</text>
+<line class="m1-force-F" x1="114.4" y1="97.2" x2="142.4" y2="76.2" stroke="#a8321f" stroke-width="2.2"/><polygon points="149.6,70.8 144.67,79.22 140.13,73.18" fill="#a8321f"/>
+<text x="151.6" y="64.8" font-family="Georgia,serif" font-size="13" fill="#a8321f" font-weight="700" font-style="italic">F</text>
+<line class="m1-force-W" x1="114.4" y1="97.2" x2="114.4" y2="148.2" stroke="#0f2545" stroke-width="2.2"/><polygon points="114.4,157.2 110.62,148.2 118.18,148.2" fill="#0f2545"/>
+<text x="121.4" y="159.2" font-family="Georgia,serif" font-size="13" fill="#0f2545" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">2</tspan>g</text>
+<path d="M66,176 A40,40 0 0 0 58,152" fill="none" stroke="#0f2545" stroke-width="1.2"/>
+<text x="72" y="168" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545">&#945;</text>
+</svg>
+<figcaption>smallest $P$: about to slip down, friction up the plane</figcaption>
+</figure>
+<figure class="d-item">
+<svg viewBox="0 0 270 200" width="270" height="200" role="img" aria-label="Force diagram for a particle on a rough plane inclined at angle alpha, where tan alpha = 3/4 (about 36.9 degrees). The horizontal force P pushes the particle towards the plane, the normal reaction R is at right angles to the plane, the weight 2g acts vertically downwards, and friction F acts down the plane, because the particle is about to move up">
+<polygon points="26,176 214.8,34.4 214.8,176" fill="#f4f1ea" stroke="none"/>
+<line class="m1-incline" x1="26" y1="176" x2="214.8" y2="34.4" stroke="#0f2545" stroke-width="2"/>
+<line x1="26" y1="176" x2="228.8" y2="176" stroke="#0f2545" stroke-width="1.4"/>
+<line x1="214.8" y1="34.4" x2="214.8" y2="176" stroke="#c9c6ba" stroke-width="1" stroke-dasharray="4,4"/>
+<polygon points="112.4,111.2 128.4,99.2 116.4,83.2 100.4,95.2" fill="#e8f0fd" stroke="#0f2545" stroke-width="1.6"/>
+<line class="m1-force-R" x1="114.4" y1="97.2" x2="85" y2="58" stroke="#1c7c54" stroke-width="2.2"/><polygon points="79.6,50.8 88.02,55.73 81.98,60.27" fill="#1c7c54"/>
+<text x="65.6" y="48.8" font-family="Georgia,serif" font-size="13" fill="#1c7c54" font-weight="700" font-style="italic">R</text>
+<line class="m1-force-P" x1="114.4" y1="97.2" x2="161.4" y2="97.2" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="170.4,97.2 161.4,100.98 161.4,93.42" fill="#1d5bbf"/>
+<text x="176.4" y="101.2" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" font-weight="700" font-style="italic">P</text>
+<line class="m1-force-F" x1="114.4" y1="97.2" x2="86.4" y2="118.2" stroke="#a8321f" stroke-width="2.2"/><polygon points="79.2,123.6 84.13,115.18 88.67,121.22" fill="#a8321f"/>
+<text x="65.2" y="117.6" font-family="Georgia,serif" font-size="13" fill="#a8321f" font-weight="700" font-style="italic">F</text>
+<line class="m1-force-W" x1="114.4" y1="97.2" x2="114.4" y2="148.2" stroke="#0f2545" stroke-width="2.2"/><polygon points="114.4,157.2 110.62,148.2 118.18,148.2" fill="#0f2545"/>
+<text x="121.4" y="159.2" font-family="Georgia,serif" font-size="13" fill="#0f2545" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">2</tspan>g</text>
+<path d="M66,176 A40,40 0 0 0 58,152" fill="none" stroke="#0f2545" stroke-width="1.2"/>
+<text x="72" y="168" font-family="Helvetica Neue,Arial" font-size="12" fill="#0f2545">&#945;</text>
+</svg>
+<figcaption>largest $P$: about to move up, friction down the plane</figcaption>
+</figure>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Using $F=\mu R$ when the particle is not on the point of moving. In ordinary equilibrium, friction is found by resolving, and all you know is $F\leq\mu R$. Also remember that a force at an angle changes $R$: in the example above, $R$ includes $0.6P$.</p>
+</div>
+
+
+<div class="unit-marker">Unit D &middot; Moments</div>
+<h2 class="topic-title" id="moments">7. Moments</h2>
+<div class="topic-meta">The turning effect of a force, and the two conditions that keep a rod in equilibrium.</div>
+
+<p>A force can turn a rigid body as well as move it. The <em class="def">moment</em> of a force about a point measures that turning effect.</p>
+
+<div class="box formula">
+<div class="box-title">Formula &mdash; Moments</div>
+<p><strong>Learn this</strong> (not in the formulae booklet):</p>
+<p>$$\text{moment} = F \times d$$</p>
+<p>$d$ is the <strong>perpendicular</strong> distance from the point to the line of action of the force. Moments are measured in N m and are either clockwise or anticlockwise. A force of 6 N acting 0.5 m from a pivot has moment $6\times0.5=3$ N m.</p>
+<p>For a rigid body in equilibrium:</p>
+<p>$$\text{resultant force} = 0 \qquad \text{clockwise moments} = \text{anticlockwise moments}$$</p>
+<p>The moments balance about <strong>any</strong> point.</p>
+</div>
+
+<table>
+<tr><th>Situation</th><th>What it tells you</th></tr>
+<tr><td>Uniform rod</td><td>The weight acts at the midpoint.</td></tr>
+<tr><td>Non-uniform rod</td><td>The weight acts at the centre of mass. Call its distance from one end $x$.</td></tr>
+<tr><td>Rod resting on a support</td><td>The support pushes up with a normal reaction.</td></tr>
+<tr><td>Rod hanging from a string</td><td>The string pulls up with a tension.</td></tr>
+<tr><td>On the point of tilting about a support</td><td>The reaction at the other support is zero.</td></tr>
+</table>
+
+<div class="box tip">
+<div class="box-title">Tip</div>
+<p>Take moments about a point where an unknown force acts. That force has no moment about its own point, so it drops out of the equation. Then resolve vertically to find it.</p>
+</div>
+
+<div class="example" id="ex-20">
+<div class="example-header">Worked Example 20 <span class="tag">Two supports</span></div>
+<div class="example-question">
+<p>A uniform rod $AB$ has length 6 m and mass 20 kg. It rests horizontally on two supports, at $C$ and $D$, where $AC=1$ m and $AD=5$ m. A load of mass 12 kg is placed on the rod at the point 4.5 m from $A$. Find the reactions at $C$ and at $D$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Distances from C</div>The weight acts at the midpoint, 3 m from $A$, so $3-1=2$ m from $C$. The load is $4.5-1=3.5$ m from $C$, and $D$ is $5-1=4$ m from $C$.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Moments about C</div>The reaction at $C$ has no moment about $C$: $4R_D=20g(2)+12g(3.5)=82g$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Reaction at D</div>$R_D=20.5g=200.9$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Resolve vertically</div>$R_C+R_D=32g$, so $R_C=11.5g=112.7$ N.</div>
+</div>
+<div class="example-answer">$R_C=113$ N &nbsp;&middot;&nbsp; $R_D=201$ N (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 460 198" width="460" height="198" role="img" aria-label="Uniform rod AB of length 6 metres resting on supports at C, 1 metre from A, and D, 5 metres from A. The weight 20g acts downwards at the midpoint, 3 metres from A, and a load of weight 12g acts downwards 4.5 metres from A. The reactions at C and D act upwards">
+<rect class="m1-rod" x="50" y="92" width="360" height="8" rx="2" fill="#d9d4c5" stroke="#0f2545" stroke-width="1.4"/>
+<polygon points="110,100 101,116 119,116" fill="#f4f1ea" stroke="#0f2545" stroke-width="1.4"/>
+<line class="m1-up" x1="110" y1="92" x2="110" y2="47" stroke="#1c7c54" stroke-width="2.2"/><polygon points="110,38 113.78,47 106.22,47" fill="#1c7c54"/>
+<text x="118" y="52" font-family="Georgia,serif" font-size="13" fill="#1c7c54" font-weight="700" font-style="italic">R<tspan baseline-shift="sub" font-size="9">C</tspan></text>
+<polygon points="350,100 341,116 359,116" fill="#f4f1ea" stroke="#0f2545" stroke-width="1.4"/>
+<line class="m1-up" x1="350" y1="92" x2="350" y2="47" stroke="#1c7c54" stroke-width="2.2"/><polygon points="350,38 353.78,47 346.22,47" fill="#1c7c54"/>
+<text x="358" y="52" font-family="Georgia,serif" font-size="13" fill="#1c7c54" font-weight="700" font-style="italic">R<tspan baseline-shift="sub" font-size="9">D</tspan></text>
+<line class="m1-down" x1="230" y1="100" x2="230" y2="141" stroke="#0f2545" stroke-width="2.2"/><polygon points="230,150 226.22,141 233.78,141" fill="#0f2545"/>
+<text x="222" y="146" font-family="Georgia,serif" font-size="13" fill="#0f2545" text-anchor="end" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">20</tspan>g</text>
+<line class="m1-down" x1="320" y1="100" x2="320" y2="141" stroke="#0f2545" stroke-width="2.2"/><polygon points="320,150 316.22,141 323.78,141" fill="#0f2545"/>
+<text x="312" y="146" font-family="Georgia,serif" font-size="13" fill="#0f2545" text-anchor="end" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">12</tspan>g</text>
+<text x="42" y="101" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="end" font-weight="700">A</text>
+<text x="418" y="101" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="start" font-weight="700">B</text>
+<line x1="50" y1="172" x2="410" y2="172" stroke="#4a5568" stroke-width="1"/>
+<line class="m1-mark" x1="50" y1="167" x2="50" y2="177" stroke="#4a5568" stroke-width="1"/>
+<line class="m1-mark" x1="110" y1="167" x2="110" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="110" y="163" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">C</text>
+<text x="80" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">1 m</text>
+<line class="m1-mark" x1="230" y1="167" x2="230" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="170" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">2 m</text>
+<line class="m1-mark" x1="320" y1="167" x2="320" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="275" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">1.5 m</text>
+<line class="m1-mark" x1="350" y1="167" x2="350" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="350" y="163" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">D</text>
+<text x="335" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">0.5 m</text>
+<line class="m1-mark" x1="410" y1="167" x2="410" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="380" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">1 m</text>
+</svg>
+<div class="diagram-caption">Worked Example 20. Distances are to scale.</div>
+</div>
+
+<div class="example" id="ex-21">
+<div class="example-header">Worked Example 21 <span class="tag">Centre of mass of a non-uniform rod</span></div>
+<div class="example-question">
+<p>A non-uniform rod $AB$ has length 3 m and mass 8 kg. It hangs in equilibrium in a horizontal position from two vertical strings, attached at $A$ and at $B$. The tension in the string at $B$ is 30 N. Find the tension in the string at $A$ and the distance of the centre of mass of the rod from $A$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Resolve vertically</div>The weight is $8g=78.4$ N. The two tensions support it: $T_A+30=78.4$, so $T_A=48.4$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Moments about A</div>Let the centre of mass be $x$ metres from $A$. The tension at $A$ has no moment about $A$: $78.4x=30(3)$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Solve</div>$x=1.147\ldots$</div>
+</div>
+<div class="example-answer">$T_A=48.4$ N &nbsp;&middot;&nbsp; centre of mass $1.15$ m from $A$ (3 s.f.)</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 460 198" width="460" height="198" role="img" aria-label="Non-uniform rod AB of length 3 metres hanging horizontally from vertical strings at A and B. The tension at B is 30 newtons. The weight 8g acts downwards at the centre of mass G, a distance x from A, which is nearer to A than to B">
+<rect class="m1-rod" x="50" y="92" width="360" height="8" rx="2" fill="#d9d4c5" stroke="#0f2545" stroke-width="1.4"/>
+<line x1="50" y1="92" x2="50" y2="16" stroke="#1c2430" stroke-width="1.3"/>
+<line class="m1-up" x1="50" y1="92" x2="50" y2="47" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="50,38 53.78,47 46.22,47" fill="#1d5bbf"/>
+<text x="58" y="52" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" font-weight="700" font-style="italic">T<tspan baseline-shift="sub" font-size="9">A</tspan></text>
+<line x1="410" y1="92" x2="410" y2="16" stroke="#1c2430" stroke-width="1.3"/>
+<line class="m1-up" x1="410" y1="92" x2="410" y2="47" stroke="#1d5bbf" stroke-width="2.2"/><polygon points="410,38 413.78,47 406.22,47" fill="#1d5bbf"/>
+<text x="402" y="52" font-family="Georgia,serif" font-size="13" fill="#1d5bbf" text-anchor="end" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">30 N</tspan></text>
+<line class="m1-down" x1="187.76" y1="100" x2="187.76" y2="141" stroke="#0f2545" stroke-width="2.2"/><polygon points="187.76,150 183.98,141 191.54,141" fill="#0f2545"/>
+<text x="195.8" y="146" font-family="Georgia,serif" font-size="13" fill="#0f2545" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">8</tspan>g</text>
+<text x="42" y="101" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="end" font-weight="700">A</text>
+<text x="418" y="101" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="start" font-weight="700">B</text>
+<line x1="50" y1="172" x2="410" y2="172" stroke="#4a5568" stroke-width="1"/>
+<line class="m1-mark" x1="50" y1="167" x2="50" y2="177" stroke="#4a5568" stroke-width="1"/>
+<line class="m1-mark" x1="187.76" y1="167" x2="187.76" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="187.8" y="163" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">G</text>
+<text x="118.9" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">x</text>
+<line class="m1-mark" x1="410" y1="167" x2="410" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="298.9" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">3 &#8722; x</text>
+</svg>
+<div class="diagram-caption">Worked Example 21. The centre of mass $G$ is nearer to $A$, the end with the larger tension.</div>
+</div>
+
+<div class="example" id="ex-22">
+<div class="example-header">Worked Example 22 <span class="tag">On the point of tilting</span></div>
+<div class="example-question">
+<p>A uniform plank $AB$ has length 5 m and mass 30 kg. It rests horizontally on two supports, at $C$ and $D$, where $AC=1$ m and $AD=3.5$ m. A child of mass 40 kg stands on the plank at $D$ and walks slowly towards $B$. Find how far beyond $D$ the child can walk before the plank tilts, and the reaction at $D$ at that instant.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Tilting condition</div>When the plank is about to tilt about $D$, it is just losing contact with $C$, so the reaction at $C$ is zero.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Distances from D</div>The weight of the plank acts at the midpoint, 2.5 m from $A$, which is $3.5-2.5=1$ m from $D$, on the side of $C$. Let the child be $x$ metres beyond $D$.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Moments about D</div>$30g(1)=40g(x)$, so $x=0.75$. The child is then $3.5+0.75=4.25$ m from $A$, which is still on the plank.</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content"><div class="sk">Resolve vertically</div>With no reaction at $C$, the support at $D$ carries everything: $R_D=70g=686$ N.</div>
+</div>
+<div class="example-answer">The child can walk $0.75$ m beyond $D$ &nbsp;&middot;&nbsp; $R_D=686$ N</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 460 198" width="460" height="198" role="img" aria-label="Uniform plank AB of length 5 metres on supports at C, 1 metre from A, and D, 3.5 metres from A. The weight 30g acts downwards at the midpoint, 1 metre to the left of D. The child's weight 40g acts downwards a distance x to the right of D. The plank is about to tilt about D, so the reaction at C is zero">
+<rect class="m1-rod" x="50" y="92" width="360" height="8" rx="2" fill="#d9d4c5" stroke="#0f2545" stroke-width="1.4"/>
+<polygon points="122,100 113,116 131,116" fill="#f4f1ea" stroke="#0f2545" stroke-width="1.4"/>
+<line class="m1-up" x1="122" y1="92" x2="122" y2="47" stroke="#1c7c54" stroke-width="2.2"/><polygon points="122,38 125.78,47 118.22,47" fill="#1c7c54"/>
+<text x="130" y="52" font-family="Georgia,serif" font-size="13" fill="#1c7c54" font-weight="700" font-style="italic">R<tspan baseline-shift="sub" font-size="9">C</tspan><tspan font-family="Helvetica Neue,Arial" font-style="normal"> = 0</tspan></text>
+<polygon points="302,100 293,116 311,116" fill="#f4f1ea" stroke="#0f2545" stroke-width="1.4"/>
+<line class="m1-up" x1="302" y1="92" x2="302" y2="47" stroke="#1c7c54" stroke-width="2.2"/><polygon points="302,38 305.78,47 298.22,47" fill="#1c7c54"/>
+<text x="294" y="52" font-family="Georgia,serif" font-size="13" fill="#1c7c54" text-anchor="end" font-weight="700" font-style="italic">R<tspan baseline-shift="sub" font-size="9">D</tspan></text>
+<line class="m1-down" x1="230" y1="100" x2="230" y2="141" stroke="#0f2545" stroke-width="2.2"/><polygon points="230,150 226.22,141 233.78,141" fill="#0f2545"/>
+<text x="222" y="146" font-family="Georgia,serif" font-size="13" fill="#0f2545" text-anchor="end" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">30</tspan>g</text>
+<line class="m1-down" x1="356" y1="100" x2="356" y2="141" stroke="#0f2545" stroke-width="2.2"/><polygon points="356,150 352.22,141 359.78,141" fill="#0f2545"/>
+<text x="364" y="146" font-family="Georgia,serif" font-size="13" fill="#0f2545" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">40</tspan>g</text>
+<text x="42" y="101" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="end" font-weight="700">A</text>
+<text x="418" y="101" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="start" font-weight="700">B</text>
+<line x1="50" y1="172" x2="410" y2="172" stroke="#4a5568" stroke-width="1"/>
+<line class="m1-mark" x1="50" y1="167" x2="50" y2="177" stroke="#4a5568" stroke-width="1"/>
+<line class="m1-mark" x1="122" y1="167" x2="122" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="122" y="163" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">C</text>
+<text x="86" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">1 m</text>
+<line class="m1-mark" x1="230" y1="167" x2="230" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="176" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">1.5 m</text>
+<line class="m1-mark" x1="302" y1="167" x2="302" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="302" y="163" font-family="Helvetica Neue,Arial" font-size="11" fill="#4a5568" text-anchor="middle">D</text>
+<text x="266" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">1 m</text>
+<line class="m1-mark" x1="356" y1="167" x2="356" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="329" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">x</text>
+<line class="m1-mark" x1="410" y1="167" x2="410" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="383" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle"></text>
+</svg>
+<div class="diagram-caption">Worked Example 22. About to tilt about $D$: the plank's weight and the child's weight balance on either side of $D$.</div>
+</div>
+
+<div class="box warning">
+<div class="box-title">Common Mistake</div>
+<p>Leaving out the weight of the rod, or measuring a distance from the end of the rod when taking moments about a support. Every distance in a moments equation is measured from the point you are taking moments about.</p>
+</div>
+
+<div class="example" id="ex-23">
+<div class="example-header">Worked Example 23 <span class="tag">One reaction twice the other</span></div>
+<div class="example-question">
+<p>A uniform plank $AB$ has length 4 m and mass 10 kg. It rests horizontally on supports at its ends $A$ and $B$. A load of mass 20 kg is placed on the plank at a distance $x$ metres from $A$. The reaction at $A$ is twice the reaction at $B$. Find the two reactions and the value of $x$.</p>
+</div>
+<button class="solution-toggle" type="button" aria-expanded="false">
+<span class="toggle-label">Show worked solution</span>
+<span class="toggle-icon">&#9662;</span>
+</button>
+<div class="example-solution">
+<div class="example-body">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content"><div class="sk">Resolve vertically</div>$R_A+R_B=30g$. Since $R_A=2R_B$, this gives $3R_B=30g$, so $R_B=10g=98$ N and $R_A=20g=196$ N.</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content"><div class="sk">Moments about A</div>The plank's weight acts 2 m from $A$ and the reaction at $B$ acts 4 m from $A$: $10g(2)+20g(x)=10g(4)$</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content"><div class="sk">Solve</div>Dividing by $10g$: $2+2x=4$, so $x=1$.</div>
+</div>
+<div class="example-answer">$R_A=196$ N, $R_B=98$ N &nbsp;&middot;&nbsp; $x=1$ m</div>
+</div>
+</div>
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 460 198" width="460" height="198" role="img" aria-label="Uniform plank AB of length 4 metres on supports at its ends A and B. The reaction at A is 2R and the reaction at B is R. The weight 10g acts downwards at the midpoint and the load 20g acts downwards a distance x from A, between A and the midpoint">
+<rect class="m1-rod" x="50" y="92" width="360" height="8" rx="2" fill="#d9d4c5" stroke="#0f2545" stroke-width="1.4"/>
+<polygon points="50,100 41,116 59,116" fill="#f4f1ea" stroke="#0f2545" stroke-width="1.4"/>
+<line class="m1-up" x1="50" y1="92" x2="50" y2="47" stroke="#1c7c54" stroke-width="2.2"/><polygon points="50,38 53.78,47 46.22,47" fill="#1c7c54"/>
+<text x="58" y="52" font-family="Georgia,serif" font-size="13" fill="#1c7c54" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">2</tspan>R</text>
+<polygon points="410,100 401,116 419,116" fill="#f4f1ea" stroke="#0f2545" stroke-width="1.4"/>
+<line class="m1-up" x1="410" y1="92" x2="410" y2="47" stroke="#1c7c54" stroke-width="2.2"/><polygon points="410,38 413.78,47 406.22,47" fill="#1c7c54"/>
+<text x="402" y="52" font-family="Georgia,serif" font-size="13" fill="#1c7c54" text-anchor="end" font-weight="700" font-style="italic">R</text>
+<line class="m1-down" x1="140" y1="100" x2="140" y2="141" stroke="#0f2545" stroke-width="2.2"/><polygon points="140,150 136.22,141 143.78,141" fill="#0f2545"/>
+<text x="148" y="146" font-family="Georgia,serif" font-size="13" fill="#0f2545" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">20</tspan>g</text>
+<line class="m1-down" x1="230" y1="100" x2="230" y2="141" stroke="#0f2545" stroke-width="2.2"/><polygon points="230,150 226.22,141 233.78,141" fill="#0f2545"/>
+<text x="238" y="146" font-family="Georgia,serif" font-size="13" fill="#0f2545" font-weight="700" font-style="italic"><tspan font-family="Helvetica Neue,Arial" font-style="normal">10</tspan>g</text>
+<text x="42" y="101" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="end" font-weight="700">A</text>
+<text x="418" y="101" font-family="Helvetica Neue,Arial" font-size="12.5" fill="#0f2545" text-anchor="start" font-weight="700">B</text>
+<line x1="50" y1="172" x2="410" y2="172" stroke="#4a5568" stroke-width="1"/>
+<line class="m1-mark" x1="50" y1="167" x2="50" y2="177" stroke="#4a5568" stroke-width="1"/>
+<line class="m1-mark" x1="140" y1="167" x2="140" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="95" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">x</text>
+<line class="m1-mark" x1="230" y1="167" x2="230" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="185" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">2 &#8722; x</text>
+<line class="m1-mark" x1="410" y1="167" x2="410" y2="177" stroke="#4a5568" stroke-width="1"/>
+<text x="320" y="189" font-family="Helvetica Neue,Arial" font-size="10.5" fill="#4a5568" text-anchor="middle">2 m</text>
+</svg>
+<div class="diagram-caption">Worked Example 23. The load sits nearer to $A$, the support with the larger reaction.</div>
+</div>
+
+
+    </div>
+
+<div class="formula-sheet" id="formula-sheet">
+  <div class="unit-marker first">Quick Recall</div>
+  <h2 class="topic-title">Formula Sheet</h2>
+  <div class="topic-meta">Everything above, compressed to one scan for the night before the exam. The formulae booklet gives nothing for M1, so almost every line is "Learn".</div>
+
+  <div class="fs-grid">
+
+    <div class="fs-card">
+      <h3 class="fs-title">Models</h3>
+      <div class="fline"><span class="flabel">Learn</span>$W=mg$, &nbsp;$g=9.8\text{ m s}^{-2}$</div>
+      <div class="fline"><span class="flabel">Learn</span>after using $g$: answers to 2 or 3 s.f.</div>
+      <div class="fline"><span class="flabel">Learn</span>light: no weight &middot; smooth: no friction &middot; inextensible: same acceleration &middot; uniform: weight at the midpoint</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Vectors</h3>
+      <div class="fline"><span class="flabel">Learn</span>$|x\mathbf{i}+y\mathbf{j}|=\sqrt{x^2+y^2}$, &nbsp;$\tan\theta=\frac yx$</div>
+      <div class="fline"><span class="flabel">Learn</span>$\mathbf{r}=\mathbf{r}_0+\mathbf{v}t$, &nbsp;$\mathbf{v}=\mathbf{u}+\mathbf{a}t$</div>
+      <div class="fline"><span class="flabel">Learn</span>due north: equal $\mathbf{i}$ components, larger $\mathbf{j}$</div>
+      <div class="fline"><span class="flabel">Learn</span>closest approach: complete the square on $d^2$</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Kinematics</h3>
+      <div class="fline"><span class="flabel">Learn</span>$v=u+at$, &nbsp;$s=\frac12(u+v)t$</div>
+      <div class="fline"><span class="flabel">Learn</span>$s=ut+\frac12at^2$, &nbsp;$s=vt-\frac12at^2$</div>
+      <div class="fline"><span class="flabel">Learn</span>$v^2=u^2+2as$</div>
+      <div class="fline"><span class="flabel">Learn</span>$v$&ndash;$t$ graph: gradient $=$ acceleration, area $=$ displacement</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Dynamics</h3>
+      <div class="fline"><span class="flabel">Learn</span>$F=ma$ (resultant force), &nbsp;$\mathbf{F}=m\mathbf{a}$</div>
+      <div class="fline"><span class="flabel">Learn</span>$F\leq\mu R$; &nbsp;$F=\mu R$ when sliding</div>
+      <div class="fline"><span class="flabel">Learn</span>slope: $mg\sin\alpha$ down the plane, $mg\cos\alpha$ into it</div>
+      <div class="fline"><span class="flabel">Learn</span>pulley: one equation per particle, then add; force on pulley $2T$</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Momentum &amp; Impulse</h3>
+      <div class="fline"><span class="flabel">Learn</span>momentum $=mv$</div>
+      <div class="fline"><span class="flabel">Learn</span>$I=Ft=mv-mu$</div>
+      <div class="fline"><span class="flabel">Learn</span>$m_1u_1+m_2u_2=m_1v_1+m_2v_2$</div>
+      <div class="fline"><span class="flabel">Learn</span>string becomes taut: common speed afterwards</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Statics</h3>
+      <div class="fline"><span class="flabel">Learn</span>equilibrium: resultant force $=0$ in two perpendicular directions</div>
+      <div class="fline"><span class="flabel">Learn</span>limiting equilibrium: $F=\mu R$</div>
+      <div class="fline"><span class="flabel">Learn</span>three forces: closed triangle; sine rule</div>
+      <div class="fline"><span class="flabel">Booklet (under P1)</span>cosine rule: $a^2=b^2+c^2-2bc\cos A$</div>
+    </div>
+
+    <div class="fs-card">
+      <h3 class="fs-title">Moments</h3>
+      <div class="fline"><span class="flabel">Learn</span>moment $=F\times d$ (perpendicular distance), in N m</div>
+      <div class="fline"><span class="flabel">Learn</span>equilibrium: resultant force $=0$ and clockwise $=$ anticlockwise moments</div>
+      <div class="fline"><span class="flabel">Learn</span>about to tilt: the other reaction is $0$</div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="doc-footer">
+  Compiled reference notes &middot; not a substitute for the full syllabus &middot; check the current Edexcel International A Level Mathematics specification (Mechanics 1, WME01) for exact requirements
+</footer>
+
+  </main>
+</div>
+
+</body>
+</html>
