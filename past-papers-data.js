@@ -1,12 +1,13 @@
 /* Reviewed official Pearson links. See docs/past-paper-link-audit.md before updating. */
 window.PAST_PAPERS = {
-  "checked": "2026-11-13",
-  "checkedLabel": "13 November 2026",
+  "checked": "2026-11-17",
+  "checkedLabel": "17 November 2026",
   "catalogue": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.coursematerials.html#filterQuery=category:Pearson-UK:Category%2FExam-materials",
   "units": [
     { "id": "P1", "code": "WMA11", "name": "Pure Mathematics 1", "notes": "pure-mathematics-1.html" },
     { "id": "P2", "code": "WMA12", "name": "Pure Mathematics 2", "notes": "pure-mathematics-2.html" },
-    { "id": "S1", "code": "WST01", "name": "Statistics 1", "notes": "statistics-1.html" }
+    { "id": "S1", "code": "WST01", "name": "Statistics 1", "notes": "statistics-1.html" },
+    { "id": "M1", "code": "WME01", "name": "Mechanics 1", "notes": "mechanics-1.html" }
   ],
   "papers": [
     {
@@ -37,6 +38,15 @@ window.PAST_PAPERS = {
       "note": "Listed by Pearson; the question paper requires registered-centre access, and no mark scheme is listed yet."
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2026,
+      "session": "October",
+      "variant": "01",
+      "status": "restricted",
+      "note": "Listed by Pearson; the question paper requires registered-centre access, and no mark scheme is listed yet."
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2026,
@@ -64,6 +74,15 @@ window.PAST_PAPERS = {
       "note": "Listed by Pearson; the question paper requires registered-centre access, and no mark scheme is listed yet."
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2026,
+      "session": "October",
+      "variant": "01A",
+      "status": "restricted",
+      "note": "Listed by Pearson; the question paper requires registered-centre access, and no mark scheme is listed yet."
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2026,
@@ -91,6 +110,15 @@ window.PAST_PAPERS = {
       "note": "Listed by Pearson; question paper and mark scheme require registered-centre access."
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2026,
+      "session": "June",
+      "variant": "01",
+      "status": "restricted",
+      "note": "Listed by Pearson; question paper and mark scheme require registered-centre access."
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2026,
@@ -111,6 +139,15 @@ window.PAST_PAPERS = {
     {
       "unit": "S1",
       "code": "WST01",
+      "year": 2026,
+      "session": "June",
+      "variant": "01A",
+      "status": "restricted",
+      "note": "Listed by Pearson; question paper and mark scheme require registered-centre access."
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
       "year": 2026,
       "session": "June",
       "variant": "01A",
@@ -145,6 +182,15 @@ window.PAST_PAPERS = {
       "note": "Listed by Pearson; question paper and mark scheme require registered-centre access."
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2026,
+      "session": "January",
+      "variant": "01",
+      "status": "restricted",
+      "note": "Listed by Pearson; question paper and mark scheme require registered-centre access."
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2026,
@@ -165,6 +211,15 @@ window.PAST_PAPERS = {
     {
       "unit": "S1",
       "code": "WST01",
+      "year": 2026,
+      "session": "January",
+      "variant": "01A",
+      "status": "restricted",
+      "note": "Listed by Pearson; question paper and mark scheme require registered-centre access."
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
       "year": 2026,
       "session": "January",
       "variant": "01A",
@@ -214,6 +269,20 @@ window.PAST_PAPERS = {
       }
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2025,
+      "session": "October",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-que-20251014.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-rms-20260122.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P78844A",
+        "ms": "WME01; October 2025; MS log P78844A"
+      }
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2025,
@@ -256,6 +325,20 @@ window.PAST_PAPERS = {
       }
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2025,
+      "session": "October",
+      "variant": "01A",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01a-que-20251014.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01a-rms-20260122.pdf",
+      "evidence": {
+        "qp": "WME01/01A; question paper P87438A",
+        "ms": "WME01; October 2025; MS log P87438A"
+      }
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2025,
@@ -295,6 +378,20 @@ window.PAST_PAPERS = {
       "evidence": {
         "qp": "WST01/01; question paper P76176A",
         "ms": "WST01; June 2025; MS log P76176A"
+      }
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2025,
+      "session": "June",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-que-20250507.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-rms-20250814.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P81264A",
+        "ms": "WME01; June 2025; MS log P81264A"
       }
     },
     {
@@ -368,6 +465,20 @@ window.PAST_PAPERS = {
       }
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2025,
+      "session": "January",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-que-20250111.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-rms-20250306.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P76197A",
+        "ms": "WME01; January 2025; MS log P76197A"
+      }
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2024,
@@ -407,6 +518,20 @@ window.PAST_PAPERS = {
       "evidence": {
         "qp": "WST01/01; question paper P76183A",
         "ms": "WST01; October 2024; MS log P76183A"
+      }
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2024,
+      "session": "October",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-que-20241012.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-rms-20250116.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P76181A",
+        "ms": "WME01; October 2024; MS log P76181A"
       }
     },
     {
@@ -450,6 +575,21 @@ window.PAST_PAPERS = {
         "qp": "WST01/01; question paper P75720RA",
         "ms": "WST01; June 2024; MS log P75720RA"
       }
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2024,
+      "session": "June",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-que-20240508.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-rms-20240815.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P75718RA",
+        "ms": "WME01; June 2024; MS log P75718A"
+      },
+      "note": "The mark scheme's log number omits the R in the question paper's P75718RA. Question content was checked to confirm this pairing."
     },
     {
       "unit": "P1",
@@ -523,6 +663,20 @@ window.PAST_PAPERS = {
       }
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2024,
+      "session": "January",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-que-20240118.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-rms-20240307.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P74317A",
+        "ms": "WME01; January 2024; MS log P74317A"
+      }
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2023,
@@ -562,6 +716,20 @@ window.PAST_PAPERS = {
       "evidence": {
         "qp": "WST01/01; question paper P74325A",
         "ms": "WST01; October 2023; MS log 74325"
+      }
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2023,
+      "session": "October",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-que-20231017.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-rms-20240118.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P74321A",
+        "ms": "WME01; October 2023; MS log 74321"
       }
     },
     {
@@ -607,6 +775,20 @@ window.PAST_PAPERS = {
       }
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2023,
+      "session": "June",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-que-20230517.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International-Advanced-Level/Mathematics/2018/Exam-materials/wme01-01-rms-20230817.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P72902A",
+        "ms": "WME01; June 2023; MS log 72902"
+      }
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2023,
@@ -646,6 +828,20 @@ window.PAST_PAPERS = {
       "evidence": {
         "qp": "WST01/01; question paper P72072A",
         "ms": "WST01; January 2023; MS log P72072A"
+      }
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2023,
+      "session": "January",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-que-20230118.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-rms-20230302.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P72070A",
+        "ms": "WME01; January 2023; MS log P72070A"
       }
     },
     {
@@ -691,6 +887,20 @@ window.PAST_PAPERS = {
       }
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2022,
+      "session": "October",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-que-20221018.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-rms-20230112.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P72151A",
+        "ms": "WME01; October 2022; MS log P72151A"
+      }
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2022,
@@ -730,6 +940,20 @@ window.PAST_PAPERS = {
       "evidence": {
         "qp": "WST01/01; question paper P71200A",
         "ms": "WST01; June 2022; MS log P71200A"
+      }
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2022,
+      "session": "June",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-que-20220511.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-rms-20220818.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P71403A",
+        "ms": "WME01; June 2022; MS log P71403A"
       }
     },
     {
@@ -775,6 +999,20 @@ window.PAST_PAPERS = {
       }
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2022,
+      "session": "January",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WME01_01_que_20220111.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WME01_01_rms_20220303.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P68783A",
+        "ms": "WME01; January 2022; MS log P68783A"
+      }
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2021,
@@ -814,6 +1052,20 @@ window.PAST_PAPERS = {
       "evidence": {
         "qp": "WST01/01; question paper P71284A",
         "ms": "WST01; October 2021; MS log P71284A"
+      }
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2021,
+      "session": "October",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-que-20211014.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-rms-20220113.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P66649A",
+        "ms": "WME01; October 2021; MS log P66649A"
       }
     },
     {
@@ -862,6 +1114,21 @@ window.PAST_PAPERS = {
       "note": "Alternative-assessment material with the final mark scheme."
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2021,
+      "session": "June",
+      "variant": "01",
+      "status": "assessment",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WME01_01_que_20210430.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WME01_01_rms_20210604.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P65266A",
+        "ms": "WME01; June 2021; MS log P65266A"
+      },
+      "note": "Alternative-assessment material with the final mark scheme."
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2021,
@@ -901,6 +1168,20 @@ window.PAST_PAPERS = {
       "evidence": {
         "qp": "WST01/01; question paper P65795A",
         "ms": "WST01; January 2021; cover and first-question content checked"
+      }
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2021,
+      "session": "January",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WME01_01_que_20210304.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-msc-20210304.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P61902A",
+        "ms": "WME01; January 2021; cover and first-question content checked"
       }
     },
     {
@@ -949,6 +1230,21 @@ window.PAST_PAPERS = {
       "note": "Pearson reused the cancelled summer paper for this sitting; the question paper carries a summer date."
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2020,
+      "session": "October",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-que-20201017.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WME01_01_msc_20210113.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P65760A",
+        "ms": "WME01; October 2020; cover and first-question content checked"
+      },
+      "note": "Pearson reused the cancelled summer paper for this sitting; the question paper carries a summer date."
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2020,
@@ -969,6 +1265,15 @@ window.PAST_PAPERS = {
     {
       "unit": "S1",
       "code": "WST01",
+      "year": 2020,
+      "session": "June",
+      "variant": "01",
+      "status": "cancelled",
+      "note": "Summer exams were cancelled. The reused papers are listed under October 2020."
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
       "year": 2020,
       "session": "June",
       "variant": "01",
@@ -1019,6 +1324,20 @@ window.PAST_PAPERS = {
       "note": "Pearson files this paper under its 2013 folder; it was sat in the 2018-specification series."
     },
     {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2020,
+      "session": "January",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/WME01_01_que_20200305.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Exam-materials/wme01-01-rms-20200305.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P61293A",
+        "ms": "WME01; January 2020; cover and first-question content checked"
+      }
+    },
+    {
       "unit": "P1",
       "code": "WMA11",
       "year": 2019,
@@ -1049,6 +1368,15 @@ window.PAST_PAPERS = {
     {
       "unit": "S1",
       "code": "WST01",
+      "year": 2019,
+      "session": "October",
+      "variant": "01",
+      "status": "restricted",
+      "note": "Listed by Pearson; the question paper requires registered-centre access, so its public mark scheme is not linked on its own."
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
       "year": 2019,
       "session": "October",
       "variant": "01",
@@ -1095,6 +1423,21 @@ window.PAST_PAPERS = {
       "evidence": {
         "qp": "WST01/01; question paper P56169A",
         "ms": "WST01; June 2019; cover and first-question content checked"
+      },
+      "note": "Pearson files this paper under its 2013 folder; it was sat in the 2018-specification series."
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2019,
+      "session": "June",
+      "variant": "01",
+      "status": "public",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2013/Exam%20materials/WME01_01_que_20190604.pdf",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2013/Exam%20materials/WME01_01_rms_20190815.pdf",
+      "evidence": {
+        "qp": "WME01/01; question paper P55872A",
+        "ms": "WME01; June 2019; cover and first-question content checked"
       },
       "note": "Pearson files this paper under its 2013 folder; it was sat in the 2018-specification series."
     },
@@ -1153,6 +1496,17 @@ window.PAST_PAPERS = {
       "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Specification-and-Sample-Assessment/International-A-Level-Maths-SAMs1.pdf#page=439",
       "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Specification-and-Sample-Assessment/International-A-Level-Maths-SAMs1.pdf#page=467",
       "note": "Combined Pearson booklet: question paper starts at PDF page 439; mark scheme at PDF page 467."
+    },
+    {
+      "unit": "M1",
+      "code": "WME01",
+      "year": 2018,
+      "session": "Specimen",
+      "variant": "01",
+      "status": "specimen",
+      "qp": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Specification-and-Sample-Assessment/International-A-Level-Maths-SAMs1.pdf#page=329",
+      "ms": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Mathematics/2018/Specification-and-Sample-Assessment/International-A-Level-Maths-SAMs1.pdf#page=353",
+      "note": "Combined Pearson booklet: question paper starts at PDF page 329; mark scheme at PDF page 353."
     }
   ]
 };
